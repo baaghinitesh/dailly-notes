@@ -1,0 +1,10 @@
+{
+  "easy": ["Two Sum", "Valid Parentheses", "Merge Sorted Array"],
+  "medium": ["3Sum", "Longest Substring Without Repeating Characters", "Binary Tree Level Order Traversal"],
+  "hard": ["Median of Two Sorted Arrays", "N-Queens", "Regular Expression Matching"],
+  "notes": {
+    "react": ["useState Hook", "useEffect Hook", "React Router Basics"],
+    "java": ["OOP Basics", "Collections Framework", "Multithreading"],
+    "dsa": ["Sorting Algorithms", "Dynamic Programming", "Graph Algorithms"]
+  }
+}
