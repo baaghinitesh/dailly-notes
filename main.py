@@ -91,20 +91,38 @@ def commit_and_push(file_path: str, message: str):
 def daily_task():
     if random.choice([True, False]):
         difficulty, question = pick_dsa_question()
-        prompt = f"Solve this DSA problem in Python with explanation:\n\n{question}"
+        prompt = (
+            f"# DSA Problem ({difficulty.capitalize()})\n\n"
+            f"## Question\n{question}\n\n"
+            "Solve this problem in Python with a step-by-step explanation. "
+            "Format your answer as follows:\n\n"
+            "### Problem Understanding\n"
+            "### Approach\n"
+            "### Python Solution\n"
+            "```python\n# Your solution here\n```\n"
+            "### Complexity Analysis\n"
+        )
         content = generate_content(prompt)
-        file_name = f"dsa/{difficulty}/{question.replace(' ', '_')}.txt"
+        file_name = f"dsa/{difficulty}/{question.replace(' ', '_')}.md"
         save_file(file_name, content)
         commit_and_push(file_name, f"Added DSA solution: {question}")
         print(f"✅ DSA solution added: {question}")
     else:
         section, note = pick_note_topic()
-        prompt = f"Write detailed study notes on: {note}"
+        prompt = (
+            f"# Study Notes - {note}\n\n"
+            "Write detailed and well-structured notes with the following format:\n\n"
+            "## Introduction\n"
+            "## Key Concepts\n- List important points here\n"
+            "## Examples\n- Use code blocks if applicable\n"
+            "## Summary\n"
+        )
         content = generate_content(prompt)
-        file_name = f"notes/{section}/{note.replace(' ', '_')}.txt"
+        file_name = f"notes/{section}/{note.replace(' ', '_')}.md"
         save_file(file_name, content)
         commit_and_push(file_name, f"Added notes: {note}")
         print(f"✅ Notes added: {note}")
+
 
 # ------------------ Run ------------------
 daily_task()

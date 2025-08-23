@@ -2,7 +2,7 @@ name: Auto DSA + Notes
 
 on:
   schedule:
-    - cron: "0 * * * *"   # runs every hour
+    - cron: "30 15 * * *"   # runs every day at 9 PM
   workflow_dispatch:      # manual trigger
 
 jobs:
@@ -26,6 +26,6 @@ jobs:
           API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_REPO: ${{ github.repository }}
           AUTHOR_NAME: "Nitesh Jha"
-          AUTHOR_EMAIL: "your-email@example.com"
+          AUTHOR_EMAIL: "baaghinitesh@gmail.com"
         run: |
           python main.py
