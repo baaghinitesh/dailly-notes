@@ -27,3 +27,6 @@ and pushes them to GitHub twice daily at random times.
 - DSA questions source: LeetCode + curated list (you can extend `topics.json`).
 - Notes are saved in `.txt` format inside `/notes`.
 
+git add .
+git commit -m "first commit"
+git push origin nitesh-branch
