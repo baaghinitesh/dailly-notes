@@ -17,7 +17,7 @@ if not API_KEY or not AUTHOR_NAME or not AUTHOR_EMAIL:
 
 # ------------------ Gemini setup ------------------
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-pro")
+model = genai.GenerativeModel("gemini-1.5-flash")  #add model
 
 # ------------------ Load topics ------------------
 def load_topics():
