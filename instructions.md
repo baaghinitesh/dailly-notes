@@ -31,6 +31,11 @@ git add .
 git commit -m "first commit"
 git push origin nitesh-branch
 
+git add .
+git commit -m "first commit"
+git push origin main
+
 git checkout main
 git pull origin main
 git merge nitesh-branch
+git push origin main
