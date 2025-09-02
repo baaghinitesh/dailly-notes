@@ -17,7 +17,7 @@ if not API_KEY or not AUTHOR_NAME or not AUTHOR_EMAIL:
 
 # ------------------ Gemini setup ------------------
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")  #add model
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 # ------------------ Load topics ------------------
 def load_topics():
@@ -34,16 +34,32 @@ def generate_content(prompt: str) -> str:
     except Exception as e:
         return f"Error generating content: {e}"
 
-# ------------------ Pickers ------------------
+# ------------------ Pickers with Duplicate Check ------------------
 def pick_dsa_question():
-    difficulty = random.choice(["easy", "medium", "hard"])
-    question = random.choice(topics[difficulty])
-    return difficulty, question
+    attempts = 0
+    max_attempts = 20  # Prevent infinite loops if all topics are covered
+    while attempts < max_attempts:
+        difficulty = random.choice(["easy", "medium", "hard"])
+        question = random.choice(topics[difficulty])
+        file_name = f"dsa/{difficulty}/{question.replace(' ', '')}.java"
+        if not os.path.exists(file_name):
+            return difficulty, question
+        attempts += 1
+    print("Could not find a new DSA question after several attempts. Skipping.")
+    return None, None
 
 def pick_note_topic():
-    section = random.choice(list(topics["notes"].keys()))
-    note = random.choice(topics["notes"][section])
-    return section, note
+    attempts = 0
+    max_attempts = 20
+    while attempts < max_attempts:
+        section = random.choice(list(topics["notes"].keys()))
+        note = random.choice(topics["notes"][section])
+        file_name = f"notes/{section}/{note.replace(' ', '_')}.md"
+        if not os.path.exists(file_name):
+            return section, note
+        attempts += 1
+    print("Could not find a new note topic after several attempts. Skipping.")
+    return None, None
 
 # ------------------ File + Git ------------------
 def save_file(path: str, content: str):
@@ -63,75 +79,53 @@ def commit_and_push(file_paths: list, message: str):
 def daily_task():
     if random.choice([True, False]):
         difficulty, question = pick_dsa_question()
-        
-        # Prompt for Java solution
+        if not question: # If no new question was found, exit gracefully
+            print("Skipping DSA task as no new question was found.")
+            sys.exit(0)
+
         java_prompt = (
-            f"/*\n"
-            f"Question: {question}\n"
-            f"Difficulty: {difficulty.capitalize()}\n"
-            f"*/\n\n"
-            f"// Please provide a well-formatted Java solution for the problem above.\n"
-            f"// The class name should be the problem name in CamelCase (e.g., TwoSum).\n"
-            f"public class {question.replace(' ', '')} {{\n"
-            f"    // Your solution here\n"
-            f"}}\n"
+            f"Provide a well-formatted Java solution for the problem: '{question}'.\n"
+            f"The class name must be the problem name in CamelCase (e.g., TwoSum).\n"
+            f"Include the question and difficulty as a comment at the top.\n"
+            f"IMPORTANT: Respond with ONLY the raw Java code. Do not include any extra text or markdown formatting."
         )
         java_solution = generate_content(java_prompt)
-        
-        # Prompt for summary
+        java_solution = java_solution.replace("```java", "").replace("```", "").strip()
+
         summary_prompt = (
-            f"Provide a brief summary and complexity analysis for the Java solution to the following problem:\n"
-            f"Problem: {question}\n\n"
-            f"Format your answer as follows:\n\n"
-            f"## Summary of Approach\n"
-            f"...\n\n"
-            f"## Time and Space Complexity\n"
-            f"- **Time Complexity**: O(...)\n"
-            f"- **Space Complexity**: O(...)\n"
+            f"Provide a brief summary and complexity analysis for the Java solution to the problem: {question}.\n"
+            f"Format the answer as follows:\n\n"
+            f"## Summary of Approach\n...\n\n"
+            f"## Time and Space Complexity\n- Time Complexity: O(...)\n- Space Complexity: O(...)"
         )
         summary_content = generate_content(summary_prompt)
-        
-        # File names and paths
+
         file_name_base = question.replace(' ', '')
         java_file_name = f"dsa/{difficulty}/{file_name_base}.java"
         summary_file_name = f"dsa/{difficulty}/{file_name_base}.md"
-        
-        # Save files
+
         save_file(java_file_name, java_solution)
         save_file(summary_file_name, summary_content)
-        
-        # Commit and push
+
         commit_and_push([java_file_name, summary_file_name], f"Added DSA solution: {question}")
         print(f"✅ DSA solution added: {question}")
-        
+
     else:
         section, note = pick_note_topic()
-        
-        # Prompt for premium notes
+        if not note: # If no new note topic was found, exit gracefully
+            print("Skipping notes task as no new topic was found.")
+            sys.exit(0)
+
         prompt = (
             f"# In-Depth Study Notes: {note}\n\n"
-            "Please provide a comprehensive, well-structured, and premium-quality note on the topic above. "
-            "The notes should be easy to understand for both beginners and intermediate learners. "
-            "Include the following sections:\n\n"
-            "## 1. Introduction\n"
-            "- A brief, engaging overview of the topic.\n\n"
-            "## 2. Core Concepts\n"
-            "- Detailed explanations of the fundamental concepts.\n"
-            "- Use bullet points, bold text, and code snippets for clarity.\n\n"
-            "## 3. Practical Examples\n"
-            "- Provide at least two real-world code examples with clear explanations.\n"
-            "- Use code blocks with syntax highlighting.\n\n"
-            "## 4. Advanced Topics (Optional)\n"
-            "- Briefly touch upon any advanced aspects or best practices related to the topic.\n\n"
-            "## 5. Conclusion\n"
-            "- A concise summary of the key takeaways.\n"
+            "Provide a comprehensive, premium-quality note on the topic. Include these sections:\n"
+            "## 1. Introduction\n## 2. Core Concepts\n## 3. Practical Examples\n## 4. Conclusion"
         )
         content = generate_content(prompt)
         file_name = f"notes/{section}/{note.replace(' ', '_')}.md"
         save_file(file_name, content)
         commit_and_push([file_name], f"Added notes: {note}")
         print(f"✅ Notes added: {note}")
-
 
 # ------------------ Run ------------------
 if __name__ == "__main__":
