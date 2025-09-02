@@ -2,8 +2,8 @@ name: Auto DSA + Notes
 
 on:
   schedule:
-    - cron: "0 8 * * *"  # Runs every day at 8 AM UTC (1:30 PM IST)
-    - cron: "45 19 * * *" # Runs every day at 7:45 PM UTC (1:15 AM IST)
+    # Runs at the top of the hour, every 12 hours (00:00 and 12:00 UTC)
+    - cron: "0 0,12 * * *"
   workflow_dispatch:      # Manual trigger
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: write # <-- Add this line to grant write permissions
+      contents: write
 
     steps:
       - name: Checkout code
@@ -32,4 +32,6 @@ jobs:
           AUTHOR_NAME: "baaghinitesh"
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
         run: |
+          # Wait for a random time (up to 3 hours) to make commits look more human
+          sleep $((RANDOM % 10800))
           python main.py
