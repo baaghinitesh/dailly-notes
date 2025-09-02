@@ -3,7 +3,7 @@ name: Auto DSA + Notes
 on:
   schedule:
     - cron: "0 8 * * *"  # Runs every day at 8 AM UTC (1:30 PM IST)
-    - cron: "30 19 * * *" # Runs every day at 7:30 PM UTC (1 AM IST)
+    - cron: "35 19 * * *" # Runs every day at 7:35 PM UTC (1:05 AM IST)
   workflow_dispatch:      # Manual trigger
 
 jobs:

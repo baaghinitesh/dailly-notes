@@ -30,3 +30,7 @@ and pushes them to GitHub twice daily at random times.
 git add .
 git commit -m "first commit"
 git push origin nitesh-branch
+
+git checkout main
+git pull origin main
+git merge nitesh-branch
