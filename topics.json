@@ -209,7 +209,6 @@
     "Remove Duplicates from Sorted Array II"
   ],
 
-
   "hard": [
     "Median of Two Sorted Arrays",
     "N-Queens",
@@ -310,11 +309,373 @@
     "Minimum Swaps to Group All Ones Together II",
     "Painting a Grid With Three Different Colors"
   ],
-  
 
   "notes": {
-    "react": ["useState Hook", "useEffect Hook", "React Router Basics"],
-    "java": ["OOP Basics", "Collections Framework", "Multithreading"],
-    "dsa": ["Sorting Algorithms", "Dynamic Programming", "Graph Algorithms"]
+    "reactLearningPath": {
+      "1_Fundamentals": [
+        "Introduction to React: What and Why?",
+        "Thinking in Components",
+        "Setting up a React Environment (Vite, Create React App)",
+        "JSX (JavaScript XML): Syntax and Rules",
+        "Rendering Elements",
+        "Functional and Class Components (focus on Functional)",
+        "Props: Passing Data to Components",
+        "State: The `useState` Hook",
+        "Handling Events (e.g., onClick, onChange)",
+        "Conditional Rendering (if, ternary, &&)",
+        "Lists and Keys: Rendering Collections of Data",
+        "Basic Form Handling (Controlled Components)"
+      ],
+      "2_Hooks_In_Depth": [
+        "useState: Functional updates and lazy initial state",
+        "useEffect: Handling Side Effects",
+        "useEffect: Dependency Array ([], [dep], no array)",
+        "useEffect: Cleanup Function",
+        "useContext: Managing Global State without Prop Drilling",
+        "useReducer: For Complex State Logic",
+        "useRef: Accessing DOM Elements and Persisting Mutable Values",
+        "useCallback: Memoizing Functions",
+        "useMemo: Memoizing Computed Values",
+        "Creating Custom Hooks"
+      ],
+      "3_Advanced_Concepts": [
+        "Component Composition vs. Inheritance",
+        "Higher-Order Components (HOCs)",
+        "Render Props Pattern",
+        "Error Boundaries",
+        "Portals: Rendering Components Outside the DOM Hierarchy",
+        "Refs and Forwarding Refs",
+        "React Internals: Virtual DOM and Reconciliation Algorithm (Fiber)",
+        "Context API Deep Dive"
+      ],
+      "4_The_React_Ecosystem": {
+        "Routing": [
+          "React Router: The de-facto standard",
+          "Declarative Routing (`<BrowserRouter>`, `<Routes>`, `<Route>`)",
+          "Navigation (`<Link>`, `useNavigate`)",
+          "Dynamic Routing and URL Parameters (`useParams`)",
+          "Nested Routes and Layouts (`<Outlet>`)",
+          "Protected Routes"
+        ],
+        "State_Management": [
+          "Client State vs. Server State",
+          "Redux Toolkit: The Modern Standard for Global State",
+          "Redux Core Concepts: Store, Actions, Reducers, Slices",
+          "Lightweight Global State: Zustand, Jotai",
+          "Server State Management: TanStack Query (formerly React Query)",
+          "TanStack Query: Caching, Stale-while-revalidate, Mutations"
+        ],
+        "Styling": [
+          "CSS Modules",
+          "CSS-in-JS (Styled Components, Emotion)",
+          "Utility-First CSS (Tailwind CSS)",
+          "UI Component Libraries (Material-UI, Ant Design, Chakra UI)",
+          "Headless UI Libraries (Radix UI, Headless UI)"
+        ],
+        "Forms": [
+          "Controlled vs. Uncontrolled Components Review",
+          "Form Management Libraries: React Hook Form, Formik",
+          "Schema Validation with Yup or Zod"
+        ]
+      },
+      "5_Performance_Optimization": [
+        "Profiling with React DevTools",
+        "Memoization: `React.memo`, `useMemo`, `useCallback`",
+        "Code Splitting with `React.lazy()` and `<Suspense>`",
+        "Windowing/Virtualization for Large Lists (react-window)",
+        "Optimizing Asset Loading"
+      ],
+      "6_Testing": [
+        "Testing Philosophy and Pyramid",
+        "Unit Testing with Jest",
+        "Component Testing with React Testing Library (RTL)",
+        "Mocking API Calls",
+        "End-to-End (E2E) Testing with Cypress or Playwright"
+      ],
+      "7_Modern_And_Experimental_React": [
+        "Concurrent Features: An Overview",
+        "Transitions: `useTransition`",
+        "`useDeferredValue` Hook",
+        "Server Components vs. Client Components ('use client')",
+        "Introduction to React Frameworks (Next.js, Remix)"
+      ],
+      "8_Tooling_And_Best_Practices": [
+        "TypeScript with React",
+        "Linting and Formatting (ESLint, Prettier)",
+        "Build tools (Vite, Webpack)",
+        "Project Structure and Organization",
+        "Accessibility (a11y) in React"
+      ]
+    },
+    "react-native": {
+      "1_Fundamentals": [
+        "Introduction to React Native: What and Why?",
+        "Setting up the Development Environment (Expo Go, React Native CLI)",
+        "Understanding Core Components (View, Text, Image, StyleSheet, Button)",
+        "Handling User Input (TextInput, TouchableOpacity)",
+        "Layout with Flexbox",
+        "Styling in React Native",
+        "Scrolling with ScrollView and FlatList",
+        "Platform-Specific Code (Platform module)"
+      ],
+      "2_Navigation": [
+        "React Navigation: The standard solution",
+        "Stack Navigator for screen-based flows",
+        "Tab Navigator for bottom tab bars",
+        "Drawer Navigator for side menus",
+        "Passing parameters between screens"
+      ],
+      "3_APIs_and_Device_Features": [
+        "Fetching data with the Fetch API or Axios",
+        "Working with AsyncStorage for local storage",
+        "Accessing Device Permissions (Camera, Location, etc.)",
+        "Using the Camera and Photo Library",
+        "Geolocation and Maps",
+        "Push Notifications",
+        "Working with gestures (Gesture Handler)"
+      ],
+      "4_State_Management_and_Architecture": [
+        "State Management options (Redux, Zustand)",
+        "Structuring a React Native project",
+        "Global state vs. local component state",
+        "Offline support and data synchronization"
+      ],
+      "5_Advanced_Topics": [
+        "Animations (Animated API, Reanimated)",
+        "Performance Optimization (Why did you render, Flipper)",
+        "Bridging Native Modules (Java/Kotlin for Android, Swift/Objective-C for iOS)",
+        "Creating custom native UI components",
+        "Testing with Jest and React Native Testing Library"
+      ],
+      "6_Deployment_and_Tooling": [
+        "Building for Android (APKs, App Bundles)",
+        "Building for iOS (TestFlight, App Store)",
+        "Over-the-Air (OTA) updates with Expo Application Services (EAS)",
+        "Debugging with Flipper and React Native Debugger",
+        "Environment variables for different build types"
+      ]
+    },
+    "java": {
+      "1_Core_Java": [
+        "Basics: Variables, Data Types, Operators, Control Flow",
+        "Object-Oriented Programming (OOP): Encapsulation, Inheritance, Polymorphism, Abstraction",
+        "Classes and Objects",
+        "Constructors",
+        "Keywords: static, final, this, super",
+        "Interfaces and Abstract Classes",
+        "Packages and Access Modifiers",
+        "Exception Handling (try-catch-finally, checked vs. unchecked)",
+        "Strings and String Manipulation"
+      ],
+      "2_Collections_Framework": [
+        "Introduction to the Collections Framework",
+        "List Interface (ArrayList, LinkedList)",
+        "Set Interface (HashSet, TreeSet)",
+        "Map Interface (HashMap, TreeMap, LinkedHashMap)",
+        "Queue Interface (PriorityQueue, ArrayDeque)",
+        "Iterators and For-Each Loop"
+      ],
+      "3_Advanced_Java": [
+        "Generics",
+        "Multithreading and Concurrency (Thread class, Runnable interface, synchronized keyword)",
+        "Java Memory Model",
+        "File I/O and NIO",
+        "Java 8 Features: Lambda Expressions, Streams API, Optional class",
+        "Date and Time API",
+        "Annotations and Reflection"
+      ],
+      "4_Java_Ecosystem_and_Frameworks": [
+        "Build Tools: Maven, Gradle",
+        "Spring Framework / Spring Boot (for backend development)",
+        "Unit Testing with JUnit and Mockito",
+        "JDBC for database connectivity",
+        "Introduction to JVM Internals"
+      ]
+    },
+    "dsa": {
+      "1_Complexity_Analysis": [
+        "Introduction to Asymptotic Notations",
+        "Big O Notation (O): Upper Bound",
+        "Big Omega Notation (Ω): Lower Bound",
+        "Big Theta Notation (Θ): Tight Bound",
+        "Time Complexity: Analyzing iterative and recursive algorithms",
+        "Space Complexity: Auxiliary space",
+        "Amortized Analysis",
+        "Master Theorem for analyzing Divide and Conquer algorithms"
+      ],
+      "2_Data_Structures": {
+        "A_Linear": {
+          "Arrays_and_Vectors": [
+            "Static vs. Dynamic Arrays",
+            "Basic Operations (Access, Search, Insert, Delete)",
+            "Multidimensional Arrays"
+          ],
+          "Linked_Lists": [
+            "Singly Linked List",
+            "Doubly Linked List",
+            "Circular Linked List",
+            "Common Problems (Reversal, Cycle Detection)"
+          ],
+          "Stacks": [
+            "LIFO (Last-In, First-Out) Principle",
+            "Implementation (Array, Linked List)",
+            "Applications (Function Calls, Expression Evaluation)"
+          ],
+          "Queues": [
+            "FIFO (First-In, First-Out) Principle",
+            "Implementation (Array, Linked List)",
+            "Circular Queue",
+            "Deque (Double-Ended Queue)",
+            "Priority Queue"
+          ]
+        },
+        "B_Non_Linear": {
+          "Trees": {
+            "Concepts": [
+              "Terminology (Root, Node, Leaf, Height, Depth)",
+              "Tree Traversals: Pre-order, In-order, Post-order, Level-order"
+            ],
+            "Types": [
+              "Binary Tree (BT)",
+              "Binary Search Tree (BST) & Self-Balancing BSTs",
+              "AVL Tree",
+              "Red-Black Tree",
+              "B-Tree and B+ Tree (for databases)",
+              "Trie (Prefix Tree)",
+              "Segment Tree (for range queries)",
+              "Fenwick Tree (Binary Indexed Tree)"
+            ]
+          },
+          "Heaps": [
+            "Min-Heap and Max-Heap",
+            "Heapify and Heap Sort",
+            "Applications (Priority Queues, Dijkstra's Algorithm)"
+          ],
+          "Hash_Tables": [
+            "Hashing Functions (Properties of a good hash function)",
+            "Collision Resolution Techniques (Chaining, Open Addressing)",
+            "HashMap vs. HashSet"
+          ],
+          "Graphs": {
+            "Concepts": [
+              "Terminology (Vertex, Edge, Path, Cycle)",
+              "Types: Directed vs. Undirected, Weighted vs. Unweighted",
+              "Representations: Adjacency Matrix, Adjacency List"
+            ],
+            "Traversals": [
+              "Depth-First Search (DFS)",
+              "Breadth-First Search (BFS)"
+            ]
+          }
+        },
+        "C_Specialized": [
+          "Disjoint Set Union (DSU) / Union-Find",
+          "Bloom Filter"
+        ]
+      },
+      "3_Algorithms": {
+        "A_Algorithmic_Paradigms": {
+          "Brute_Force": ["Iterative and Recursive Approaches"],
+          "Divide_and_Conquer": [
+            "Binary Search",
+            "Merge Sort, Quick Sort",
+            "Closest Pair of Points"
+          ],
+          "Greedy_Algorithms": [
+            "Activity Selection Problem",
+            "Huffman Coding",
+            "Fractional Knapsack"
+          ],
+          "Dynamic_Programming": {
+            "Concepts": [
+              "Memoization vs. Tabulation",
+              "Overlapping Subproblems",
+              "Optimal Substructure"
+            ],
+            "Patterns": [
+              "0/1 Knapsack",
+              "Longest Common Subsequence (LCS)",
+              "Longest Increasing Subsequence (LIS)",
+              "Edit Distance",
+              "Matrix Chain Multiplication",
+              "Coin Change Problem"
+            ]
+          },
+          "Backtracking": [
+            "N-Queens Problem",
+            "Sudoku Solver",
+            "Generating Permutations and Combinations"
+          ],
+          "Two_Pointers_and_Sliding_Window": [
+            "Array and String manipulation problems"
+          ]
+        },
+        "B_Sorting_and_Searching": {
+          "Comparison_Sorts": [
+            "Bubble Sort",
+            "Selection Sort",
+            "Insertion Sort",
+            "Merge Sort",
+            "Quick Sort (with partitioning schemes)",
+            "Heap Sort"
+          ],
+          "Non_Comparison_Sorts": [
+            "Counting Sort",
+            "Radix Sort",
+            "Bucket Sort"
+          ],
+          "Searching": [
+            "Linear Search",
+            "Binary Search (on sorted data)",
+            "Ternary Search"
+          ]
+        },
+        "C_Graph_Algorithms": {
+          "Shortest_Path": [
+            "Dijkstra's Algorithm (for non-negative weights)",
+            "Bellman-Ford Algorithm (for negative weights)",
+            "Floyd-Warshall Algorithm (All-Pairs Shortest Path)"
+          ],
+          "Minimum_Spanning_Tree_MST": [
+            "Kruskal's Algorithm",
+            "Prim's Algorithm"
+          ],
+          "Connectivity": [
+            "Topological Sort (for Directed Acyclic Graphs)",
+            "Strongly Connected Components (Kosaraju's, Tarjan's)",
+            "Bridges and Articulation Points"
+          ],
+          "Flow_and_Matching": [
+            "Maximum Flow (Ford-Fulkerson, Edmonds-Karp)",
+            "Maximum Bipartite Matching"
+          ]
+        },
+        "D_Advanced_Topics": {
+          "String_Algorithms": [
+            "Pattern Searching: KMP Algorithm, Rabin-Karp Algorithm",
+            "Z-Algorithm",
+            "Manacher's Algorithm (for Longest Palindromic Substring)"
+          ],
+          "Bit_Manipulation": [
+            "Bitwise Operators (AND, OR, XOR, NOT, Shifts)",
+            "Common Techniques (Get/Set/Clear bit, Counting set bits)"
+          ],
+          "Number_Theory_and_Math": [
+            "Sieve of Eratosthenes (for prime numbers)",
+            "Euclidean Algorithm (for GCD)",
+            "Modular Exponentiation",
+            "Combinatorics and Probability Basics"
+          ],
+          "Geometric_Algorithms": [
+            "Convex Hull (Graham Scan, Monotone Chain)",
+            "Line Sweep Algorithm"
+          ],
+          "Randomized_Algorithms": [
+            "Monte Carlo and Las Vegas Algorithms",
+            "Quick Sort with random pivot"
+          ]
+        }
+      }
+    }
   }
 }
