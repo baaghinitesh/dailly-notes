@@ -1,18 +1,19 @@
 name: Auto DSA + Notes + Deploy
 
 on:
+  push:
+    branches:
+      - main   # or master, depending on your default branch
   schedule:
-    - cron: "0 0,12 * * *"  # twice daily for build job
-    - cron: "0 0 * * 0"     # every Sunday for cleanup
-  workflow_dispatch:
+    - cron: "0 0,12 * * *"  # twice daily
+  workflow_dispatch:        # manual run button
+
+permissions:
+  contents: write    # required for gh-deploy to push to gh-pages
 
 jobs:
   build:
-    if: github.event.schedule == '0 0,12 * * *'
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout code
@@ -41,12 +42,8 @@ jobs:
         run: mkdocs gh-deploy --force
 
   cleanup:
-    if: github.event.schedule == '0 0 * * 0'
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
+    if: github.event_name == 'schedule'   # only run on Sunday cron
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -54,6 +51,8 @@ jobs:
       - name: Clean up heartbeats
         run: |
           rm -rf docs/heartbeat.txt || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "🧹 Cleanup heartbeat files" || echo "Nothing to commit"
           git push
