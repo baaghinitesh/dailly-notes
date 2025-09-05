@@ -1,5 +1,15 @@
-// Array Nesting
-// Difficulty: Medium
+/*
+Question: Array Nesting
+Difficulty: Medium
+
+You are given an integer array nums of length n where nums[i] is in the range [0, n - 1].
+You are tasked to find the length of the longest chain formed by repeatedly selecting an element from the array,
+then replacing the selected element with the element at its index in the array.
+
+For example:
+nums = [5,4,0,3,1,6,2]
+The longest chain is [5,6,2,3,1,0,4], length = 7.
+*/
 class ArrayNesting {
     public int arrayNesting(int[] nums) {
         int maxLen = 0;
