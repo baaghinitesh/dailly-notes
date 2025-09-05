@@ -1,26 +1,32 @@
-name: Deploy MkDocs
+site_name: Daily Notes
+site_url: https://baaghinitesh.github.io/dailly-notes/
+theme:
+  name: material
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
 
-on:
-  push:
-    branches:
-      - main
+# Automatically include all markdown files
+nav:
+  - Home: index.md
+  - Instructions: instructions.md
+  - DSA: 
+      - 'docs/dsa'
+  - Notes:
+      - 'docs/notes'
 
-permissions:
-  contents: write
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
 
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install mkdocs mkdocs-material
-
-      - name: Build and Deploy
-        run: mkdocs gh-deploy --force
+# Plugins to show directories automatically
+plugins:
+  - search
+  - awesome-pages
