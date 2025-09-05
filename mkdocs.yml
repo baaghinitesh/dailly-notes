@@ -1,0 +1,20 @@
+site_name: Auto DSA Notes
+site_url: https://baaghinitesh.github.io/dailly-notes/
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Instructions: instructions.md
+  - DSA:
+      - Easy: 
+          - dsa/easy/
+      - Medium:
+          - dsa/medium/
+      - Hard:
+          - dsa/hard/
+  - Notes:
+      - Java:
+          - notes/java/
+      - React:
+          - notes/react/

@@ -4,15 +4,14 @@ import sys
 import json
 import git
 import google.generativeai as genai
-import datetime
 
-# ------------------ Get config from environment variables ------------------
+# ------------------ Get config ------------------
 API_KEY = os.environ.get("API_KEY")
 AUTHOR_NAME = os.environ.get("AUTHOR_NAME")
 AUTHOR_EMAIL = os.environ.get("AUTHOR_EMAIL")
 
 if not API_KEY or not AUTHOR_NAME or not AUTHOR_EMAIL:
-    print("Error: Make sure to set API_KEY, AUTHOR_NAME, and AUTHOR_EMAIL environment variables.")
+    print("❌ Missing required environment variables.")
     sys.exit(1)
 
 # ------------------ Gemini setup ------------------
@@ -30,36 +29,37 @@ topics = load_topics()
 def generate_content(prompt: str) -> str:
     try:
         response = model.generate_content(prompt)
-        return response.text.strip() if response.text else "No response generated."
+        return response.text.strip() if response.text else "⚠️ No response generated."
     except Exception as e:
-        return f"Error generating content: {e}"
+        return f"⚠️ Error generating content: {e}"
 
-# ------------------ Pickers with Duplicate Check ------------------
-def pick_dsa_question():
-    attempts = 0
-    max_attempts = 20  # Prevent infinite loops if all topics are covered
-    while attempts < max_attempts:
-        difficulty = random.choice(["easy", "medium", "hard"])
-        question = random.choice(topics[difficulty])
-        file_name = f"dsa/{difficulty}/{question.replace(' ', '')}.java"
-        if not os.path.exists(file_name):
-            return difficulty, question
-        attempts += 1
-    print("Could not find a new DSA question after several attempts. Skipping.")
+# ------------------ Pickers ------------------
+def pick_new_file(path, candidates, format_name):
+    """Ensure we always generate a new file that doesn’t exist yet"""
+    random.shuffle(candidates)
+    for candidate in candidates:
+        fname = format_name(candidate)
+        if not os.path.exists(fname):
+            return candidate, fname
     return None, None
+
+def pick_dsa_question():
+    difficulty = random.choice(["easy", "medium", "hard"])
+    candidates = topics[difficulty]
+    return pick_new_file(
+        f"docs/dsa/{difficulty}/",
+        candidates,
+        lambda q: f"docs/dsa/{difficulty}/{q.replace(' ', '')}"
+    )
 
 def pick_note_topic():
-    attempts = 0
-    max_attempts = 20
-    while attempts < max_attempts:
-        section = random.choice(list(topics["notes"].keys()))
-        note = random.choice(topics["notes"][section])
-        file_name = f"notes/{section}/{note.replace(' ', '_')}.md"
-        if not os.path.exists(file_name):
-            return section, note
-        attempts += 1
-    print("Could not find a new note topic after several attempts. Skipping.")
-    return None, None
+    section = random.choice(list(topics["notes"].keys()))
+    candidates = topics["notes"][section]
+    return pick_new_file(
+        f"docs/notes/{section}/",
+        candidates,
+        lambda n: f"docs/notes/{section}/{n.replace(' ', '_')}.md"
+    )
 
 # ------------------ File + Git ------------------
 def save_file(path: str, content: str):
@@ -69,64 +69,64 @@ def save_file(path: str, content: str):
 
 def commit_and_push(file_paths: list, message: str):
     repo = git.Repo(".")
-    for file_path in file_paths:
-        repo.git.add(file_path)
+    for fp in file_paths:
+        repo.git.add(fp)
     repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
-    origin = repo.remote(name="origin")
-    origin.push()
+    repo.remote(name="origin").push()
 
-# ------------------ Task ------------------
-def daily_task():
-    if random.choice([True, False]):
-        difficulty, question = pick_dsa_question()
-        if not question: # If no new question was found, exit gracefully
-            print("Skipping DSA task as no new question was found.")
-            sys.exit(0)
+# ------------------ Tasks ------------------
+def add_dsa():
+    question, base_path = pick_dsa_question()
+    if not question:
+        print("⚠️ No new DSA question found.")
+        return False
 
-        java_prompt = (
-            f"Provide a well-formatted Java solution for the problem: '{question}'.\n"
-            f"The class name must be the problem name in CamelCase (e.g., TwoSum).\n"
-            f"Include the question and difficulty as a comment at the top.\n"
-            f"IMPORTANT: Respond with ONLY the raw Java code. Do not include any extra text or markdown formatting."
-        )
-        java_solution = generate_content(java_prompt)
-        java_solution = java_solution.replace("```java", "").replace("```", "").strip()
+    java_prompt = (
+        f"Provide a Java solution for: '{question}'.\n"
+        f"Class name = problem name in CamelCase.\n"
+        f"Include question + difficulty as comments.\n"
+        f"Respond ONLY with raw Java code."
+    )
+    java_solution = generate_content(java_prompt).replace("```java", "").replace("```", "").strip()
 
-        summary_prompt = (
-            f"Provide a brief summary and complexity analysis for the Java solution to the problem: {question}.\n"
-            f"Format the answer as follows:\n\n"
-            f"## Summary of Approach\n...\n\n"
-            f"## Time and Space Complexity\n- Time Complexity: O(...)\n- Space Complexity: O(...)"
-        )
-        summary_content = generate_content(summary_prompt)
+    summary_prompt = (
+        f"Write summary + complexity for: {question}.\n"
+        "Format:\n## Summary of Approach\n...\n\n## Time and Space Complexity\n- Time: O(...)\n- Space: O(...)"
+    )
+    summary_content = generate_content(summary_prompt)
 
-        file_name_base = question.replace(' ', '')
-        java_file_name = f"dsa/{difficulty}/{file_name_base}.java"
-        summary_file_name = f"dsa/{difficulty}/{file_name_base}.md"
+    java_file = f"{base_path}.java"
+    md_file = f"{base_path}.md"
 
-        save_file(java_file_name, java_solution)
-        save_file(summary_file_name, summary_content)
+    save_file(java_file, java_solution)
+    save_file(md_file, summary_content)
+    commit_and_push([java_file, md_file], f"📘 Added DSA solution: {question}")
+    print(f"✅ DSA solution added: {question}")
+    return True
 
-        commit_and_push([java_file_name, summary_file_name], f"Added DSA solution: {question}")
-        print(f"✅ DSA solution added: {question}")
+def add_note():
+    note, file_path = pick_note_topic()
+    if not note:
+        print("⚠️ No new note topic found.")
+        return False
 
-    else:
-        section, note = pick_note_topic()
-        if not note: # If no new note topic was found, exit gracefully
-            print("Skipping notes task as no new topic was found.")
-            sys.exit(0)
+    prompt = (
+        f"# {note}\n\n"
+        "Write premium-quality study notes:\n"
+        "## 1. Introduction\n## 2. Core Concepts\n## 3. Practical Examples\n## 4. Conclusion"
+    )
+    content = generate_content(prompt)
 
-        prompt = (
-            f"# In-Depth Study Notes: {note}\n\n"
-            "Provide a comprehensive, premium-quality note on the topic. Include these sections:\n"
-            "## 1. Introduction\n## 2. Core Concepts\n## 3. Practical Examples\n## 4. Conclusion"
-        )
-        content = generate_content(prompt)
-        file_name = f"notes/{section}/{note.replace(' ', '_')}.md"
-        save_file(file_name, content)
-        commit_and_push([file_name], f"Added notes: {note}")
-        print(f"✅ Notes added: {note}")
+    save_file(file_path, content)
+    commit_and_push([file_path], f"📝 Added note: {note}")
+    print(f"✅ Note added: {note}")
+    return True
 
 # ------------------ Run ------------------
 if __name__ == "__main__":
-    daily_task()
+    # Always generate both (guaranteed 2 pushes/day)
+    added_dsa = add_dsa()
+    added_note = add_note()
+
+    if not added_dsa and not added_note:
+        print("⚠️ Nothing new could be generated today.")
