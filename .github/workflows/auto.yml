@@ -3,12 +3,12 @@ name: Auto DSA + Notes + Deploy
 on:
   push:
     branches:
-      - main   # or master, depending on your default branch
+      - main
 
   schedule:
-    - cron: "0 0,12 * * *"  # twice daily (00:00 and 12:00 UTC)
+    - cron: "0 0,12 * * *"  # twice daily
 
-  workflow_dispatch:        # manual run button
+  workflow_dispatch:
     inputs:
       run_count:
         description: "How many times to run generation in this manual trigger"
@@ -16,12 +16,11 @@ on:
         default: "1"
 
 permissions:
-  contents: write    # required for gh-deploy to push to gh-pages
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -34,20 +33,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install mkdocs-material
+          pip install mkdocs-material mkdocs-awesome-pages-plugin
 
       - name: Show trigger information
         run: |
           echo "Triggered by: ${{ github.event_name }}"
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            echo "Manual run via workflow_dispatch"
-          elif [ "${{ github.event_name }}" == "schedule" ]; then
-            echo "Automated run via cron schedule"
-          elif [ "${{ github.event_name }}" == "push" ]; then
-            echo "Run triggered by a push to main branch"
-          else
-            echo "Other trigger: ${{ github.event_name }}"
-          fi
 
       - name: Run automation
         env:
@@ -56,15 +46,14 @@ jobs:
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
           RUN_COUNT: ${{ github.event.inputs.run_count || '1' }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-        run: |
-          python main.py
+        run: python main.py
 
       - name: Deploy MkDocs
         run: mkdocs gh-deploy --force
 
   cleanup:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'   # only run on scheduled cron jobs
+    if: github.event_name == 'schedule'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

@@ -29,4 +29,4 @@ markdown_extensions:
 # Plugins to show directories automatically
 plugins:
   - search
-  - awesome-pages
+  - awesome_pages
