@@ -8,6 +8,7 @@ main.py for Auto DSA + Notes + Deploy
 - Scheduled runs: random delay (up to 3 hours)
 - Adds API timeout to prevent hangs
 - Logs file writes and forces commit of untracked files
+- Sanitizes filenames for notes and Java files
 """
 
 import os
@@ -17,6 +18,7 @@ import json
 import time
 import git
 import signal
+import re
 import google.generativeai as genai
 from typing import Any, List, Iterable
 
@@ -57,6 +59,18 @@ def flatten_to_strings(value: Any) -> List[str]:
     else:
         out.append(str(value))
     return out
+
+def sanitize_filename(name: str, max_length: int = 50) -> str:
+    """Sanitize file names: remove unsafe characters, limit length."""
+    name = name.strip()
+    # Replace spaces and slashes with underscores
+    name = re.sub(r"[ /\\]+", "_", name)
+    # Remove special characters
+    name = re.sub(r"[^A-Za-z0-9_-]", "", name)
+    # Truncate if too long
+    if len(name) > max_length:
+        name = name[:max_length]
+    return name
 
 # ------------------ Timeout handler ------------------
 class TimeoutException(Exception):
@@ -112,7 +126,7 @@ def pick_dsa_question():
     return pick_new_file(
         f"docs/dsa/{difficulty}/",
         candidates,
-        lambda q: f"docs/dsa/{difficulty}/{q.replace(' ', '')}"
+        lambda q: f"docs/dsa/{difficulty}/{sanitize_filename(q)}"
     )
 
 def pick_note_topic():
@@ -124,7 +138,7 @@ def pick_note_topic():
     return pick_new_file(
         f"docs/notes/{section}/",
         candidates,
-        lambda n: f"docs/notes/{section}/{n.replace(' ', '_').replace('/', '_')}.md"
+        lambda n: f"docs/notes/{section}/{sanitize_filename(n)}.md"
     )
 
 # ------------------ File + Git ------------------

@@ -20,7 +20,11 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material
+        run: |
+          pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin mkdocs-filebrowser-plugin
 
-      - name: Build and Deploy
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
