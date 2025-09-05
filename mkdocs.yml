@@ -1,4 +1,4 @@
-site_name: Auto DSA Notes
+site_name: Daily Notes
 site_url: https://baaghinitesh.github.io/dailly-notes/
 theme:
   name: material
@@ -7,14 +7,13 @@ nav:
   - Home: index.md
   - Instructions: instructions.md
   - DSA:
-      - Easy: 
-          - dsa/easy/
-      - Medium:
-          - dsa/medium/
-      - Hard:
-          - dsa/hard/
+      - index: dsa/index.md
   - Notes:
-      - Java:
-          - notes/java/
-      - React:
-          - notes/react/
+      - index: notes/index.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
