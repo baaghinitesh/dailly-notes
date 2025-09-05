@@ -1,13 +1,21 @@
 <div align="center">
+  <!-- Auto-Generate Content Badge -->
   <a href="https://github.com/baaghinitesh/dailly-notes/actions/workflows/auto.yml">
     <img src="https://github.com/baaghinitesh/dailly-notes/actions/workflows/auto.yml/badge.svg" alt="Auto-Generate Content"/>
   </a>
-  <a href="https://www.google.com/search?q=https://github.com/baaghinitesh/dailly-notes/actions/workflows/deploy.yml">
-    <img src="https://www.google.com/search?q=https://github.com/baaghinitesh/dailly-notes/actions/workflows/deploy.yml/badge.svg" alt="Build and Deploy Site"/>
+
+  <!-- Build and Deploy Site Badge -->
+  <a href="https://github.com/baaghinitesh/dailly-notes/actions/workflows/deploy.yml">
+    <img src="https://github.com/baaghinitesh/dailly-notes/actions/workflows/deploy.yml/badge.svg" alt="Build and Deploy Site"/>
   </a>
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="License" />
+
+  <!-- License Badge -->
+  <img src="https://img.shields.io/github/license/baaghinitesh/dailly-notes" alt="License" />
+
+  <!-- Python Version Badge -->
   <img src="https://img.shields.io/badge/python-3.11-blue.svg" alt="Python Version" />
 </div>
+
 
 # Auto DSA & Tech Notes
 
