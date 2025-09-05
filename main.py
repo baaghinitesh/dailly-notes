@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Fixed main.py for Auto DSA + Notes + Deploy
+main.py for Auto DSA + Notes + Deploy
 - Ensures candidates are lists before random.shuffle
 - Flattens nested 'notes' sections in topics.json
 - Manual runs (workflow_dispatch): run immediately, allow RUN_COUNT
 - Push runs: run immediately (no delay)
 - Scheduled runs: random delay (up to 3 hours)
 - Adds API timeout to prevent hangs
+- Logs file writes and forces commit of untracked files
 """
 
 import os
@@ -43,10 +44,7 @@ topics = load_topics()
 
 # ------------------ Helpers ------------------
 def flatten_to_strings(value: Any) -> List[str]:
-    """
-    Recursively flatten nested structures in topics.json to a list of strings.
-    Handles lists, dicts (keys or values), and nested dict/list combos.
-    """
+    """Recursively flatten nested structures in topics.json to a list of strings."""
     out = []
     if isinstance(value, str):
         out.append(value)
@@ -134,37 +132,14 @@ def save_file(path: str, content: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
-
-def commit_and_push(file_paths: list, message: str):
-    repo = git.Repo(".")
-    try:
-        for fp in file_paths:
-            repo.git.add(fp)
-        if repo.is_dirty(path=True, untracked_files=True):
-            repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
-            repo.remote(name="origin").push()
-            print(f"👉 Pushed commit: {message}")
-        else:
-            print("ℹ️ Nothing changed — no commit created.")
-    except Exception as e:
-        print(f"❌ Git push failed: {e}")
-
-# ----------- Log on file creation ----------
-
-def save_file(path: str, content: str):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
     print(f"📄 File written: {path} ({len(content)} chars)")
 
-# ------- Force add untracked files -----------
-
 def commit_and_push(file_paths: list, message: str):
     repo = git.Repo(".")
     try:
-        for fp in file_paths:
-            repo.git.add(fp, force=True)  # ensure untracked files are added
-        if repo.is_dirty(path=True, untracked_files=True):
+        # Stage all changes (including untracked files)
+        repo.git.add(A=True)
+        if repo.is_dirty(untracked_files=True):
             repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
             repo.remote(name="origin").push()
             print(f"👉 Pushed commit: {message}")
@@ -172,7 +147,6 @@ def commit_and_push(file_paths: list, message: str):
             print("ℹ️ Nothing changed — no commit created.")
     except Exception as e:
         print(f"❌ Git push failed: {e}")
-
 
 # ------------------ Tasks ------------------
 def add_dsa():
