@@ -3,8 +3,10 @@
 Fixed main.py for Auto DSA + Notes + Deploy
 - Ensures candidates are lists before random.shuffle
 - Flattens nested 'notes' sections in topics.json
-- Adds manual-trigger behavior: immediate on workflow_dispatch, supports RUN_COUNT
-- Keeps original generation & push behavior
+- Manual runs (workflow_dispatch): run immediately, allow RUN_COUNT
+- Push runs: run immediately (no delay)
+- Scheduled runs: random delay (up to 3 hours)
+- Adds API timeout to prevent hangs
 """
 
 import os
@@ -13,6 +15,7 @@ import sys
 import json
 import time
 import git
+import signal
 import google.generativeai as genai
 from typing import Any, List, Iterable
 
@@ -39,21 +42,6 @@ def load_topics():
 topics = load_topics()
 
 # ------------------ Helpers ------------------
-def ensure_list(obj: Any) -> List:
-    """Return a list version of obj where possible (list(keys) for dicts, list for iterables)."""
-    if obj is None:
-        return []
-    if isinstance(obj, list):
-        return obj.copy()
-    if isinstance(obj, dict):
-        # If it's a dict of lists or dicts, caller may want values; we'll return values by default
-        # but the flatten logic below handles nested structures too.
-        return list(obj.values())
-    if isinstance(obj, (set, tuple)):
-        return list(obj)
-    # fallback: put the object inside a list
-    return [obj]
-
 def flatten_to_strings(value: Any) -> List[str]:
     """
     Recursively flatten nested structures in topics.json to a list of strings.
@@ -62,55 +50,53 @@ def flatten_to_strings(value: Any) -> List[str]:
     out = []
     if isinstance(value, str):
         out.append(value)
-    elif isinstance(value, list) or isinstance(value, tuple) or isinstance(value, set):
+    elif isinstance(value, (list, tuple, set)):
         for v in value:
             out.extend(flatten_to_strings(v))
     elif isinstance(value, dict):
-        # Many entries use dict where values are lists or nested dicts.
-        # We'll use values to find topic strings (not keys) because your topics.json
-        # stores strings under lists in values.
         for v in value.values():
             out.extend(flatten_to_strings(v))
     else:
-        # unknown type: stringify
         out.append(str(value))
     return out
 
+# ------------------ Timeout handler ------------------
+class TimeoutException(Exception):
+    pass
+
+def timeout_handler(signum, frame):
+    raise TimeoutException("API call timed out!")
+
+signal.signal(signal.SIGALRM, timeout_handler)
+
 # ------------------ AI Content Generator ------------------
-def generate_content(prompt: str, max_retries: int = 2) -> str:
-    """Generate content using Gemini. On error, return a warning string (no crash)."""
+def generate_content(prompt: str, max_retries: int = 2, timeout_sec: int = 60) -> str:
+    """Generate content using Gemini with a timeout. On error, return a warning string."""
     for attempt in range(1, max_retries + 1):
         try:
+            signal.alarm(timeout_sec)
             response = model.generate_content(prompt)
-            # model.generate_content returns an object with .text commonly; guard it
+            signal.alarm(0)
             if hasattr(response, "text") and response.text:
                 return response.text.strip()
-            # some sdks return a dictionary-like result
             if isinstance(response, dict):
                 text = response.get("text") or response.get("output")
                 if text:
                     return str(text).strip()
             return "⚠️ No response generated."
+        except TimeoutException:
+            return "⚠️ API call timed out."
         except Exception as e:
             if attempt < max_retries:
-                time.sleep(1 * attempt)
+                time.sleep(attempt)
                 continue
             return f"⚠️ Error generating content: {e}"
+        finally:
+            signal.alarm(0)
 
 # ------------------ Pickers ------------------
 def pick_new_file(path: str, candidates: Iterable[Any], format_name):
-    """
-    Ensure we always pick a candidate that doesn't yet exist as a file.
-    candidates: list or iterable of strings (or convertible to strings)
-    format_name: function(candidate_str) -> filename (full path)
-    Returns (candidate, fname) or (None, None) if nothing available.
-    """
-    # Convert / flatten candidates into a list of strings
-    # If candidates is a dict or nested structure, flatten_to_strings will handle it.
-    flat_candidates = []
-    # If candidates is already a simple iterable of strings/lists, flatten_to_strings will work.
     flat_candidates = flatten_to_strings(candidates)
-    # Remove empty strings and strip whitespace
     flat_candidates = [str(c).strip() for c in flat_candidates if str(c).strip()]
     if not flat_candidates:
         return None, None
@@ -125,7 +111,6 @@ def pick_new_file(path: str, candidates: Iterable[Any], format_name):
 def pick_dsa_question():
     difficulty = random.choice(["easy", "medium", "hard"])
     candidates = topics.get(difficulty, [])
-    # format_name should return a base path WITHOUT extension (we'll append .java / .md later)
     return pick_new_file(
         f"docs/dsa/{difficulty}/",
         candidates,
@@ -133,16 +118,11 @@ def pick_dsa_question():
     )
 
 def pick_note_topic():
-    # choose a high-level section like 'react' or 'java' from topics["notes"]
     notes_root = topics.get("notes", {})
     if not notes_root:
         return None, None
-
-    # pick a random section key (react, java, etc.)
     section = random.choice(list(notes_root.keys()))
-    # the data under each section can itself be a dict of grouped topics or lists
     candidates = notes_root.get(section, [])
-    # pick a candidate (we will format with file name safe for filesystem)
     return pick_new_file(
         f"docs/notes/{section}/",
         candidates,
@@ -156,22 +136,16 @@ def save_file(path: str, content: str):
         f.write(content)
 
 def commit_and_push(file_paths: list, message: str):
-    """
-    Stage the files and commit. If there are no changes (no staged files),
-    skip committing to avoid errors.
-    """
     repo = git.Repo(".")
     try:
         for fp in file_paths:
             repo.git.add(fp)
-        # Check if anything is staged
         if repo.is_dirty(path=True, untracked_files=True):
             repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
-            origin = repo.remote(name="origin")
-            origin.push()
+            repo.remote(name="origin").push()
             print(f"👉 Pushed commit: {message}")
         else:
-            print("ℹ️ Nothing changed — no commit was created.")
+            print("ℹ️ Nothing changed — no commit created.")
     except Exception as e:
         print(f"❌ Git push failed: {e}")
 
@@ -225,36 +199,27 @@ def add_note():
 
 # ------------------ Run / Scheduling Logic ------------------
 def main():
-    # Decide behavior based on how the workflow was invoked.
-    # In GitHub Actions, GITHUB_EVENT_NAME is available in env: 'workflow_dispatch', 'schedule', 'push', etc.
     event_name = os.environ.get("GITHUB_EVENT_NAME", "").lower()
     run_count_env = os.environ.get("RUN_COUNT", "1")
 
-    # By default, only 1 generation per run for scheduled runs.
-    # For manual runs (workflow_dispatch), allow RUN_COUNT (any positive int).
     try:
         run_count = int(run_count_env)
     except Exception:
         run_count = 1
 
-    if event_name != "workflow_dispatch":
-        # Enforce single run for automated invocations
+    if event_name not in ["workflow_dispatch"]:
         run_count = 1
 
-    # Optional random delay for scheduled/automated runs to spread load.
-    # The existing auto.yml had a sleep; this makes it robust even if auto.yml keeps or removes it.
-    if event_name and event_name != "workflow_dispatch":
-        # random delay up to 3 hours (10800 seconds) like your original workflow
-        delay = random.randint(0, 10800)
-        print(f"⏱️ Automated run detected ({event_name}). Sleeping randomly for {delay} seconds to stagger runs.")
+    if event_name == "schedule":
+        delay = random.randint(0, 10800)  # up to 3h
+        print(f"⏱️ Scheduled run detected. Sleeping {delay} seconds...")
         time.sleep(delay)
     else:
-        print(f"▶️ Manual/On-demand run detected ({event_name or 'local/manual'}). Running immediately.")
+        print(f"▶️ Run detected ({event_name or 'local/manual'}). Running immediately.")
 
     any_added = False
     for i in range(run_count):
         print(f"--- Run iteration {i+1} of {run_count} ---")
-        # Always try to generate both
         added_dsa = add_dsa()
         added_note = add_note()
         any_added = any_added or added_dsa or added_note

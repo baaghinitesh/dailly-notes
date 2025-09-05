@@ -36,6 +36,19 @@ jobs:
           pip install -r requirements.txt
           pip install mkdocs-material
 
+      - name: Show trigger information
+        run: |
+          echo "Triggered by: ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "Manual run via workflow_dispatch"
+          elif [ "${{ github.event_name }}" == "schedule" ]; then
+            echo "Automated run via cron schedule"
+          elif [ "${{ github.event_name }}" == "push" ]; then
+            echo "Run triggered by a push to main branch"
+          else
+            echo "Other trigger: ${{ github.event_name }}"
+          fi
+
       - name: Run automation
         env:
           API_KEY: ${{ secrets.GEMINI_API_KEY }}
