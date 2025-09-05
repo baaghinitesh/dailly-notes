@@ -149,6 +149,31 @@ def commit_and_push(file_paths: list, message: str):
     except Exception as e:
         print(f"❌ Git push failed: {e}")
 
+# ----------- Log on file creation ----------
+
+def save_file(path: str, content: str):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"📄 File written: {path} ({len(content)} chars)")
+
+# ------- Force add untracked files -----------
+
+def commit_and_push(file_paths: list, message: str):
+    repo = git.Repo(".")
+    try:
+        for fp in file_paths:
+            repo.git.add(fp, force=True)  # ensure untracked files are added
+        if repo.is_dirty(path=True, untracked_files=True):
+            repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
+            repo.remote(name="origin").push()
+            print(f"👉 Pushed commit: {message}")
+        else:
+            print("ℹ️ Nothing changed — no commit created.")
+    except Exception as e:
+        print(f"❌ Git push failed: {e}")
+
+
 # ------------------ Tasks ------------------
 def add_dsa():
     question, base_path = pick_dsa_question()
