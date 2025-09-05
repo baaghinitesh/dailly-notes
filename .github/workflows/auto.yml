@@ -1,15 +1,16 @@
-name: Auto DSA + Notes
+name: Auto DSA + Notes + Deploy
 
 on:
   schedule:
-    # Runs at the top of the hour, every 12 hours (00:00 and 12:00 UTC)
-    - cron: "0 0,12 * * *"
-  workflow_dispatch:      # Manual trigger
+    - cron: "0 0,12 * * *"  # twice daily for build job
+    - cron: "0 0 * * 0"     # every Sunday for cleanup
+  workflow_dispatch:
 
 jobs:
   build:
+    if: github.event.schedule == '0 0,12 * * *'
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
 
@@ -25,6 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          pip install mkdocs-material
 
       - name: Run automation
         env:
@@ -32,6 +34,26 @@ jobs:
           AUTHOR_NAME: "baaghinitesh"
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
         run: |
-          # Wait for a random time (up to 3 hours) to make commits look more human
-          sleep $((RANDOM % 10800))
+          sleep $((RANDOM % 10800))  # random delay
           python main.py
+
+      - name: Deploy MkDocs
+        run: mkdocs gh-deploy --force
+
+  cleanup:
+    if: github.event.schedule == '0 0 * * 0'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Clean up heartbeats
+        run: |
+          rm -rf docs/heartbeat.txt || true
+          git add -A
+          git commit -m "🧹 Cleanup heartbeat files" || echo "Nothing to commit"
+          git push
