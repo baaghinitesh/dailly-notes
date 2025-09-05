@@ -4,9 +4,16 @@ on:
   push:
     branches:
       - main   # or master, depending on your default branch
+
   schedule:
-    - cron: "0 0,12 * * *"  # twice daily
+    - cron: "0 0,12 * * *"  # twice daily (00:00 and 12:00 UTC)
+
   workflow_dispatch:        # manual run button
+    inputs:
+      run_count:
+        description: "How many times to run generation in this manual trigger"
+        required: false
+        default: "1"
 
 permissions:
   contents: write    # required for gh-deploy to push to gh-pages
@@ -34,8 +41,9 @@ jobs:
           API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AUTHOR_NAME: "baaghinitesh"
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
+          RUN_COUNT: ${{ github.event.inputs.run_count || '1' }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
-          sleep $((RANDOM % 10800))  # random delay
           python main.py
 
       - name: Deploy MkDocs
@@ -43,7 +51,7 @@ jobs:
 
   cleanup:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'   # only run on Sunday cron
+    if: github.event_name == 'schedule'   # only run on scheduled cron jobs
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
