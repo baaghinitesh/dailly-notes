@@ -1,43 +1,26 @@
-site_name: Daily Notes
-site_url: https://baaghinitesh.github.io/dailly-notes/
-theme:
-  name: material
-  features:
-    - navigation.expand
-    - navigation.sections
-    - navigation.instant
-    - search.highlight
-    - search.suggest
-    - content.code.annotate
+name: Deploy MkDocs
 
-nav:
-  - Home: index.md
-  - Instructions: instructions.md
-  - DSA:
-      - index: dsa/index.md
-      - Easy: 
-          - '**/*.md'
-      - Medium:
-          - '**/*.md'
-      - Hard:
-          - '**/*.md'
-      - Solutions:  # This will display java files
-          - '**/*.java'
-  - Notes:
-      - index: notes/index.md
+on:
+  push:
+    branches:
+      - main
 
-markdown_extensions:
-  - admonition
-  - codehilite
-  - footnotes
-  - toc:
-      permalink: true
+permissions:
+  contents: write
 
-extra_css:
-  - 'stylesheets/custom.css'
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-extra_javascript:
-  - 'javascripts/custom.js'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-extra:
-  repository_url: https://github.com/baaghinitesh/dailly-notes
+      - name: Install dependencies
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build and Deploy
+        run: mkdocs gh-deploy --force
