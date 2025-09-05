@@ -2,12 +2,27 @@ site_name: Daily Notes
 site_url: https://baaghinitesh.github.io/dailly-notes/
 theme:
   name: material
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.instant
+    - search.highlight
+    - search.suggest
+    - content.code.annotate
 
 nav:
   - Home: index.md
   - Instructions: instructions.md
   - DSA:
       - index: dsa/index.md
+      - Easy: 
+          - '**/*.md'
+      - Medium:
+          - '**/*.md'
+      - Hard:
+          - '**/*.md'
+      - Solutions:  # This will display java files
+          - '**/*.java'
   - Notes:
       - index: notes/index.md
 
@@ -17,3 +32,12 @@ markdown_extensions:
   - footnotes
   - toc:
       permalink: true
+
+extra_css:
+  - 'stylesheets/custom.css'
+
+extra_javascript:
+  - 'javascripts/custom.js'
+
+extra:
+  repository_url: https://github.com/baaghinitesh/dailly-notes
