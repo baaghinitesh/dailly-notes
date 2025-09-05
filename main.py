@@ -9,6 +9,7 @@ main.py for Auto DSA + Notes + Deploy
 - Adds API timeout to prevent hangs
 - Logs file writes and forces commit of untracked files
 - Sanitizes filenames for notes and Java files
+- Auto-generates Markdown wrapper for Java files for MkDocs display
 """
 
 import os
@@ -63,11 +64,8 @@ def flatten_to_strings(value: Any) -> List[str]:
 def sanitize_filename(name: str, max_length: int = 50) -> str:
     """Sanitize file names: remove unsafe characters, limit length."""
     name = name.strip()
-    # Replace spaces and slashes with underscores
     name = re.sub(r"[ /\\]+", "_", name)
-    # Remove special characters
     name = re.sub(r"[^A-Za-z0-9_-]", "", name)
-    # Truncate if too long
     if len(name) > max_length:
         name = name[:max_length]
     return name
@@ -112,7 +110,6 @@ def pick_new_file(path: str, candidates: Iterable[Any], format_name):
     flat_candidates = [str(c).strip() for c in flat_candidates if str(c).strip()]
     if not flat_candidates:
         return None, None
-
     random.shuffle(flat_candidates)
     for candidate in flat_candidates:
         fname = format_name(candidate)
@@ -151,7 +148,6 @@ def save_file(path: str, content: str):
 def commit_and_push(file_paths: list, message: str):
     repo = git.Repo(".")
     try:
-        # Stage all changes (including untracked files)
         repo.git.add(A=True)
         if repo.is_dirty(untracked_files=True):
             repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
@@ -169,6 +165,7 @@ def add_dsa():
         print("⚠️ No new DSA question found.")
         return False
 
+    # Generate Java code
     java_prompt = (
         f"Provide a Java solution for: '{question}'.\n"
         f"Class name = problem name in CamelCase.\n"
@@ -177,17 +174,25 @@ def add_dsa():
     )
     java_solution = generate_content(java_prompt).replace("```java", "").replace("```", "").strip()
 
+    # Generate summary
     summary_prompt = (
         f"Write summary + complexity for: {question}.\n"
         "Format:\n## Summary of Approach\n...\n\n## Time and Space Complexity\n- Time: O(...)\n- Space: O(...)"
     )
     summary_content = generate_content(summary_prompt)
 
+    # Save Java file
     java_file = f"{base_path}.java"
-    md_file = f"{base_path}.md"
-
     save_file(java_file, java_solution)
-    save_file(md_file, summary_content)
+
+    # Save combined Markdown for MkDocs
+    md_file = f"{base_path}.md"
+    combined_md_content = f"# Problem: {question}\n\n" \
+                          f"{summary_content}\n\n" \
+                          f"## Java Solution\n```java\n{java_solution}\n```"
+    save_file(md_file, combined_md_content)
+
+    # Commit & push both files
     commit_and_push([java_file, md_file], f"📘 Added DSA solution: {question}")
     print(f"✅ DSA solution added: {question}")
     return True
@@ -224,7 +229,7 @@ def main():
         run_count = 1
 
     if event_name == "schedule":
-        delay = random.randint(0, 10800)  # up to 3h
+        delay = random.randint(0, 10800)
         print(f"⏱️ Scheduled run detected. Sleeping {delay} seconds...")
         time.sleep(delay)
     else:
