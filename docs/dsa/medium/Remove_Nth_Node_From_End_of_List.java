@@ -9,7 +9,7 @@ class RemoveNthNodeFromEndOfList {
         ListNode first = dummy;
         ListNode second = dummy;
 
-        // Move 'first' pointer n + 1 steps ahead
+        // Move 'first' pointer n+1 nodes ahead
         for (int i = 0; i <= n; i++) {
             first = first.next;
         }

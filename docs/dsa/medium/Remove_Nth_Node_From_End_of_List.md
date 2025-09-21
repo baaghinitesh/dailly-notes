@@ -2,11 +2,11 @@
 
 ## Summary of Approach
 
-The problem is to remove the nth node from the end of a singly linked list.  The most efficient approach uses two pointers.  We initialize a `fast` pointer and a `slow` pointer, both initially pointing to the head of the list.  The `fast` pointer moves `n` steps ahead of the `slow` pointer.  Then, both pointers move forward together until the `fast` pointer reaches the end of the list. At this point, the `slow` pointer will be positioned `n` nodes before the end, i.e., just before the node to be removed.  We then remove the node pointed to by `slow`'s `next` pointer by adjusting the pointers accordingly.  Handling edge cases, such as an empty list or `n` being larger than the list length, is crucial.
+The problem is to remove the nth node from the end of a singly linked list.  The optimal approach uses two pointers.  We initialize a `fast` pointer and a `slow` pointer, both initially pointing to the head of the list.  The `fast` pointer moves `n` steps ahead of the `slow` pointer.  Then, both pointers move forward simultaneously, maintaining a distance of `n` between them. When the `fast` pointer reaches the end of the list, the `slow` pointer is `n` nodes away from the end, pointing to the node *before* the node to be removed.  We then simply update the `slow` pointer's `next` pointer to skip over the node to be removed.  This avoids the need for a full traversal or extra storage to track node positions.  A special case needs to be handled for removing the head node.
 
 ## Time and Space Complexity
-- Time: O(L) where L is the length of the linked list. We traverse the list at most twice.
-- Space: O(1). The algorithm uses only a constant amount of extra space to store the pointers.
+- Time: O(N) - We traverse the list once to position the pointers.
+- Space: O(1) - We use only a constant number of extra variables (the two pointers).
 
 ## Java Solution
 ```java
@@ -21,7 +21,7 @@ class RemoveNthNodeFromEndOfList {
         ListNode first = dummy;
         ListNode second = dummy;
 
-        // Move 'first' pointer n + 1 steps ahead
+        // Move 'first' pointer n+1 nodes ahead
         for (int i = 0; i <= n; i++) {
             first = first.next;
         }
