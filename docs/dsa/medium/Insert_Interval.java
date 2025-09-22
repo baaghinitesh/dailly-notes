@@ -2,10 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-Given a list of non-overlapping intervals sorted by their start times, insert a given interval into the list such that the resulting list remains sorted and contains no overlapping intervals.
-
-Difficulty: Medium
-*/
+ * Question: Insert Interval (Medium)
+ * Given a list of non-overlapping intervals sorted by their start times, insert a given interval into the list such that the resulting list is also sorted by start times and remains non-overlapping (merge overlapping intervals if necessary).
+ */
 class InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> result = new ArrayList<>();

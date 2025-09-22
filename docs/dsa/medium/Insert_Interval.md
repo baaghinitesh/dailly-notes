@@ -1,26 +1,15 @@
 # Problem: Insert Interval
 
-⚠️ Error generating content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-1.5-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 50
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 22
-}
-]
+## Summary of Approach
+
+The "Insert Interval" problem involves inserting a new interval into a list of non-overlapping, sorted intervals. The goal is to produce a new list of non-overlapping, sorted intervals that includes the inserted interval.
+
+The approach generally involves iterating through the sorted list of intervals.  We maintain a result list.  If the current interval from the input list does not overlap with the new interval, it's added directly to the result list. If there's an overlap, we merge the current interval with the new interval by expanding the start or end times as needed.  This merging continues as long as overlaps exist.  Finally, any remaining intervals from the input list are appended to the result list.
+
+
+## Time and Space Complexity
+- Time: O(N), where N is the number of intervals in the input list. This is because we iterate through the list at most once.  Merging intervals takes constant time for each overlap.
+- Space: O(N). In the worst case, we might need to create a new list of intervals with the same size as the input list (e.g., if the new interval doesn't overlap with any existing intervals).  We may use a small constant amount of extra space for variables.
 
 ## Java Solution
 ```java
@@ -28,10 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-Given a list of non-overlapping intervals sorted by their start times, insert a given interval into the list such that the resulting list remains sorted and contains no overlapping intervals.
-
-Difficulty: Medium
-*/
+ * Question: Insert Interval (Medium)
+ * Given a list of non-overlapping intervals sorted by their start times, insert a given interval into the list such that the resulting list is also sorted by start times and remains non-overlapping (merge overlapping intervals if necessary).
+ */
 class InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> result = new ArrayList<>();
