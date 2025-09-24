@@ -2,10 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class ShortestPathInAGridWithObstaclesElimination {
-    // Question: Given a m * n grid, where each cell is either 0 (empty) or 1 (obstacle).
-    // In one step, you can move up, down, left or right.
-    // You can also eliminate at most k obstacles.
-    // Find the shortest path from the top left cell (0, 0) to the bottom right cell (m-1, n-1).
+    // Question: You are given an m x n integer matrix grid where each cell is either 0 (empty) or 1 (obstacle). You can move up, down, left, or right from a cell. You can eliminate at most k obstacles in your path. Find the shortest path from the top left cell (0, 0) to the bottom right cell (m-1, n-1). If the shortest path is not possible, return -1.
     // Difficulty: Hard
 
     public int shortestPath(int[][] grid, int k) {
@@ -34,23 +31,17 @@ class ShortestPathInAGridWithObstaclesElimination {
             for (int[] dir : dirs) {
                 int newRow = row + dir[0];
                 int newCol = col + dir[1];
-                int newObstacles = obstacles;
 
                 if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n) {
-                    if (grid[newRow][newCol] == 1) {
-                        if (newObstacles > 0) {
-                            newObstacles--;
-                        } else {
-                            continue;
-                        }
-                    }
-                    if (!visited[newRow][newCol][newObstacles]) {
+                    int newObstacles = obstacles - grid[newRow][newCol];
+                    if (newObstacles >= 0 && !visited[newRow][newCol][newObstacles]) {
                         visited[newRow][newCol][newObstacles] = true;
                         queue.offer(new int[]{newRow, newCol, newObstacles, dist + 1});
                     }
                 }
             }
         }
+
         return -1;
     }
 }
