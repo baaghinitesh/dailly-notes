@@ -1,32 +1,35 @@
-/*
-Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
-
-We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
-
-You must solve this problem without using the library's sort function.
-
-Difficulty: Medium
-*/
-class SortColors {
-    public void sortColors(int[] nums) {
-        int n = nums.length;
-        int p0 = 0, p1 = 0;
-        for (int i = 0; i < n; ++i) {
-            if (nums[i] == 0) {
-                swap(nums, i, p0);
-                if (p0 < p1)
-                    swap(nums, i, p1);
-                p0++;
-                p1++;
-            } else if (nums[i] == 1) {
-                swap(nums, i, p1);
-                p1++;
-            }
-        }
-    }
-    private void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
-    }
+⚠️ Error generating content: 429 Quota exceeded for quota metric 'Generate Content API requests per minute' and limit 'GenerateContent request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:780172725669'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
 }
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/generate_content_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "GenerateContentRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "0"
+}
+metadata {
+  key: "consumer"
+  value: "projects/780172725669"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
