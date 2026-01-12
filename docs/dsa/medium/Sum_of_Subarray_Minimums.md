@@ -16,7 +16,7 @@ metadata {
 }
 metadata {
   key: "quota_location"
-  value: "us-central1"
+  value: "us-south1"
 }
 metadata {
   key: "quota_limit"
@@ -54,7 +54,7 @@ metadata {
 }
 metadata {
   key: "quota_location"
-  value: "us-central1"
+  value: "us-south1"
 }
 metadata {
   key: "quota_limit"
