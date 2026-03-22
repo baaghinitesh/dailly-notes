@@ -1,4 +1,4 @@
-name: Generate & Deploy
+name: Generate Content
 
 on:
   schedule:
@@ -18,13 +18,13 @@ permissions:
   contents: write
 
 jobs:
-  generate-and-deploy:
+  generate:
     runs-on: ubuntu-latest
 
     # Queues concurrent runs — never cancels, never runs two at once.
     # Prevents git push conflicts when all 3 cron triggers fire close together.
     concurrency:
-      group: generate-deploy
+      group: generate
       cancel-in-progress: false
 
     steps:
@@ -56,23 +56,10 @@ jobs:
         run: git pull --rebase origin main
 
       - name: Generate content
-        id: generate
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           AUTHOR_NAME: "baaghinitesh"
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
           RUN_COUNT: ${{ github.event.inputs.run_count || '3' }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-        run: |
-          python main.py
-          # Check if any new files were committed (main.py does the push itself)
-          # We just need to know if mkdocs deploy is worth running
-          if git log --oneline -1 | grep -qE "📝|📘|🔄|🤖"; then
-            echo "new_content=true" >> $GITHUB_OUTPUT
-          else
-            echo "new_content=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Deploy to GitHub Pages
-        if: steps.generate.outputs.new_content == 'true' || github.event_name == 'workflow_dispatch'
-        run: mkdocs gh-deploy --force
+        run: python main.py
