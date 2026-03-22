@@ -1,6 +1,6 @@
-groq
-gitpython
-mkdocs
-mkdocs-material[imaging]
-mkdocs-awesome-pages-plugin
-pymdown-extensions
+groq>=1.1.1
+gitpython>=3.1.46
+mkdocs>=1.6,<2.0
+mkdocs-material[imaging]>=9.7,<10.0
+mkdocs-awesome-pages-plugin>=2.10
+pymdown-extensions>=10.21
