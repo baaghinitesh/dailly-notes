@@ -9,6 +9,8 @@ Guarantees:
   - Per-article commit fallback: if batch push fails, retries per-article
   - Exponential backoff on Groq rate limits
   - 3 scheduled runs/day × 3 articles = ~9 new articles/day
+  - Production-safe: never writes to disk until ALL Groq calls succeed;
+    auto-cleans any files written if a subsequent step fails
 """
 
 import os
@@ -36,18 +38,17 @@ if not GROQ_API_KEY:
 client = Groq(api_key=GROQ_API_KEY)
 
 # In-memory set of paths written this run — prevents same-run duplicates
-# even before the file is committed to disk by another iteration
 _written_this_run: set = set()
+
+# ─── Custom exception ─────────────────────────────────────────────────────────
+
+class GroqAPIError(Exception):
+    """Raised when the Groq API fails after all retries."""
+    pass
 
 # ─── Load topics ──────────────────────────────────────────────────────────────
 
 def load_all_topics() -> dict:
-    """
-    Load all topics from the topics/ directory.
-    - DSA easy/medium/hard lists come from topics/dsa.json
-    - All notes sections come from the per-language/topic JSON files
-    Later files in sorted order overwrite earlier ones for the same notes key.
-    """
     merged: dict = {"easy": [], "medium": [], "hard": [], "notes": {}}
     topics_dir = "topics"
 
@@ -84,7 +85,6 @@ print(
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
 def flatten_to_strings(value: Any) -> List[str]:
-    """Recursively flatten any nested structure to a list of strings."""
     out: List[str] = []
     if isinstance(value, str):
         out.append(value)
@@ -109,7 +109,6 @@ def url_encode(text: str) -> str:
 
 
 def read_frontmatter(path: str) -> dict:
-    """Parse YAML frontmatter block from a Markdown file."""
     try:
         with open(path, "r", encoding="utf-8") as f:
             content = f.read()
@@ -152,17 +151,12 @@ def build_frontmatter(
 
 
 def path_is_available(path: str) -> bool:
-    """True if the file doesn't exist on disk AND wasn't written this run."""
     return path not in _written_this_run and not os.path.exists(path)
 
 
 def path_is_updatable(path: str) -> Optional[int]:
-    """
-    Returns current update_count if the file exists and count < MAX_UPDATES.
-    Returns None otherwise.
-    """
     if path in _written_this_run:
-        return None  # already touched this run
+        return None
     if not os.path.exists(path):
         return None
     meta = read_frontmatter(path)
@@ -174,7 +168,11 @@ def path_is_updatable(path: str) -> Optional[int]:
 def call_groq(
     system: str, user: str, max_tokens: int = 4096, retries: int = 4
 ) -> str:
-    """Call Groq with exponential backoff on rate limits."""
+    """
+    Call Groq with exponential backoff on rate limits.
+    Raises GroqAPIError on all non-recoverable failures.
+    Never returns an error string — callers can trust the return value is real content.
+    """
     for attempt in range(1, retries + 1):
         try:
             response = client.chat.completions.create(
@@ -189,20 +187,75 @@ def call_groq(
             return response.choices[0].message.content.strip()
         except Exception as e:
             err = str(e)
-            if "rate_limit" in err.lower() or "429" in err:
-                wait = 2 ** attempt * 10  # 20s, 40s, 80s, 160s
-                print(f"⏳ Rate limited. Waiting {wait}s (attempt {attempt}/{retries})...")
-                time.sleep(wait)
-            elif "model_decommissioned" in err.lower() or "model_not_found" in err.lower():
+            if "model_decommissioned" in err.lower() or "model_not_found" in err.lower():
                 # Non-retryable — wrong model ID, fail immediately
                 print(f"❌ Fatal Groq error (model issue): {e}")
                 sys.exit(1)
+            elif "rate_limit" in err.lower() or "429" in err:
+                wait = 2 ** attempt * 10  # 20s, 40s, 80s, 160s
+                print(f"⏳ Rate limited. Waiting {wait}s (attempt {attempt}/{retries})...")
+                time.sleep(wait)
             else:
-                print(f"❌ Groq error (attempt {attempt}): {e}")
-                if attempt == retries:
-                    return f"⚠️ Content generation failed after {retries} attempts: {e}"
+                print(f"❌ Groq error (attempt {attempt}/{retries}): {e}")
+                if attempt < retries:
+                    time.sleep(5)
+
+    raise GroqAPIError(f"Groq API failed after {retries} attempts")
+
+# ─── File I/O ─────────────────────────────────────────────────────────────────
+
+def save_file(path: str, content: str):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
+    _written_this_run.add(path)
+    print(f"📄 Written: {path} ({len(content):,} chars)")
+
+
+def cleanup_files(paths: List[str]):
+    """Delete files written during a failed article generation and remove empty dirs."""
+    for path in paths:
+        try:
+            if os.path.exists(path):
+                os.remove(path)
+                print(f"🗑️  Cleaned up: {path}")
+                _written_this_run.discard(path)
+                # Remove parent dir if now empty
+                parent = os.path.dirname(path)
+                if os.path.isdir(parent) and not os.listdir(parent):
+                    os.rmdir(parent)
+        except Exception as e:
+            print(f"⚠️  Could not clean up {path}: {e}")
+
+# ─── Git ──────────────────────────────────────────────────────────────────────
+
+def commit_and_push(message: str, retries: int = 3) -> bool:
+    for attempt in range(1, retries + 1):
+        try:
+            repo = git.Repo(".")
+            repo.git.add(A=True)
+            if not repo.is_dirty(untracked_files=True):
+                print("ℹ️  Nothing to commit.")
+                return True
+            repo.index.commit(
+                message,
+                author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL)
+            )
+            repo.remote(name="origin").push()
+            print(f"✅ Pushed: {message}")
+            return True
+        except git.exc.GitCommandError as e:
+            if attempt < retries:
+                print(f"⚠️  Push failed (attempt {attempt}), pulling and retrying: {e}")
+                try:
+                    git.Repo(".").git.pull("--rebase", "origin", "main")
+                except Exception:
+                    pass
                 time.sleep(5)
-    return "⚠️ Content generation failed."
+            else:
+                print(f"❌ Push failed after {retries} attempts: {e}")
+                return False
+    return False
 
 # ─── System prompts ───────────────────────────────────────────────────────────
 
@@ -301,21 +354,13 @@ FORMAT (use exactly these headings):
 - [Edge case 2]
 """
 
-# ─── Smart pickers (no duplicates, fair coverage) ─────────────────────────────
+# ─── Smart pickers ────────────────────────────────────────────────────────────
 
 def pick_new_note() -> Tuple[Optional[str], Optional[str], Optional[str]]:
-    """
-    Pick a (note, path, section) that has never been generated.
-
-    Strategy: build a flat list of ALL (section, topic) pairs across ALL sections,
-    shuffle it globally, then find the first one whose file doesn't exist.
-    This ensures fair coverage across all subjects — no section gets starved.
-    """
     notes_root = topics.get("notes", {})
     if not notes_root:
         return None, None, None
 
-    # Build flat list of all (section, topic_string) pairs
     all_pairs: List[Tuple[str, str]] = []
     for section, content in notes_root.items():
         for topic_str in flatten_to_strings(content):
@@ -334,11 +379,6 @@ def pick_new_note() -> Tuple[Optional[str], Optional[str], Optional[str]]:
 
 
 def pick_note_to_update() -> Tuple[Optional[str], Optional[str], Optional[str], int]:
-    """
-    Pick a (note, path, section, count) for an existing article that can still be updated.
-
-    Strategy: same global shuffle across all sections for fairness.
-    """
     notes_root = topics.get("notes", {})
     if not notes_root:
         return None, None, None, 0
@@ -362,12 +402,6 @@ def pick_note_to_update() -> Tuple[Optional[str], Optional[str], Optional[str], 
 
 
 def pick_dsa() -> Tuple[Tuple[Optional[str], Optional[str]], str]:
-    """
-    Pick a DSA problem that hasn't been solved yet.
-
-    Strategy: shuffle ALL difficulties together so we don't get stuck
-    if one difficulty pool is exhausted.
-    """
     all_dsa: List[Tuple[str, str]] = []
     for difficulty in ("easy", "medium", "hard"):
         for q in topics.get(difficulty, []):
@@ -384,132 +418,125 @@ def pick_dsa() -> Tuple[Tuple[Optional[str], Optional[str]], str]:
 
     return (None, None), "easy"
 
-# ─── File I/O ─────────────────────────────────────────────────────────────────
-
-def save_file(path: str, content: str):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
-    _written_this_run.add(path)
-    print(f"📄 Written: {path} ({len(content):,} chars)")
-
-# ─── Git ──────────────────────────────────────────────────────────────────────
-
-def commit_and_push(message: str, retries: int = 3) -> bool:
-    """Stage all changes, commit, and push. Returns True on success."""
-    for attempt in range(1, retries + 1):
-        try:
-            repo = git.Repo(".")
-            repo.git.add(A=True)
-            if not repo.is_dirty(untracked_files=True):
-                print("ℹ️  Nothing to commit.")
-                return True
-            repo.index.commit(
-                message,
-                author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL)
-            )
-            repo.remote(name="origin").push()
-            print(f"✅ Pushed: {message}")
-            return True
-        except git.exc.GitCommandError as e:
-            if attempt < retries:
-                print(f"⚠️  Push failed (attempt {attempt}), pulling and retrying: {e}")
-                try:
-                    git.Repo(".").git.pull("--rebase", "origin", "main")
-                except Exception:
-                    pass
-                time.sleep(5)
-            else:
-                print(f"❌ Push failed after {retries} attempts: {e}")
-                return False
-    return False
-
 # ─── Content generators ───────────────────────────────────────────────────────
 
 def generate_dsa() -> Optional[str]:
-    """Generate one DSA article. Returns commit message or None on failure."""
+    """
+    Generate one DSA article.
+    ALL Groq calls happen before ANY file is written.
+    On GroqAPIError, cleans up any files already written and returns None.
+    """
     (question, md_path), difficulty = pick_dsa()
     if not question:
         print("⚠️  All DSA problems already generated.")
         return None
 
     print(f"🔧 DSA [{difficulty}]: {question}")
+    written: List[str] = []
 
-    java_code = call_groq(
-        DSA_SYSTEM,
-        f"Problem: {question}\nDifficulty: {difficulty}\nWrite the complete Java solution.",
-        max_tokens=2048,
-    )
-    java_code = re.sub(r"```java\s*|```\s*", "", java_code).strip()
+    try:
+        # ── Step 1: generate all content in memory first ──────────────────────
+        java_code = call_groq(
+            DSA_SYSTEM,
+            f"Problem: {question}\nDifficulty: {difficulty}\nWrite the complete Java solution.",
+            max_tokens=2048,
+        )
+        java_code = re.sub(r"```java\s*|```\s*", "", java_code).strip()
 
-    summary = call_groq(
-        DSA_SUMMARY_SYSTEM,
-        f"Problem: {question}\nDifficulty: {difficulty}\nJava solution:\n{java_code}",
-        max_tokens=700,
-    )
+        summary = call_groq(
+            DSA_SUMMARY_SYSTEM,
+            f"Problem: {question}\nDifficulty: {difficulty}\nJava solution:\n{java_code}",
+            max_tokens=700,
+        )
 
-    java_path = md_path.replace(".md", ".java")
-    save_file(java_path, java_code)
+        # ── Step 2: only write to disk after both calls succeeded ─────────────
+        java_path = md_path.replace(".md", ".java")
+        banner_url = (
+            f"https://image.pollinations.ai/prompt/"
+            f"{url_encode(question)}%20algorithm%20data%20structure"
+            f"?width=800&height=400&nologo=true"
+        )
+        md_content = (
+            f'---\n'
+            f'title: "{question}"\n'
+            f'difficulty: "{difficulty}"\n'
+            f'tags: "dsa, {difficulty}, java, leetcode"\n'
+            f'banner: "{banner_url}"\n'
+            f'update_count: 0\n'
+            f'---\n\n'
+            f'# {question}\n\n'
+            f'![{question}]({banner_url})\n\n'
+            f'{summary}\n\n'
+            f'## Java Solution\n\n'
+            f'```java\n{java_code}\n```\n'
+        )
 
-    banner_url = (
-        f"https://image.pollinations.ai/prompt/"
-        f"{url_encode(question)}%20algorithm%20data%20structure"
-        f"?width=800&height=400&nologo=true"
-    )
-    md_content = (
-        f'---\n'
-        f'title: "{question}"\n'
-        f'difficulty: "{difficulty}"\n'
-        f'tags: "dsa, {difficulty}, java, leetcode"\n'
-        f'banner: "{banner_url}"\n'
-        f'update_count: 0\n'
-        f'---\n\n'
-        f'# {question}\n\n'
-        f'![{question}]({banner_url})\n\n'
-        f'{summary}\n\n'
-        f'## Java Solution\n\n'
-        f'```java\n{java_code}\n```\n'
-    )
-    save_file(md_path, md_content)
-    return f"📘 DSA [{difficulty}]: {question}"
+        save_file(java_path, java_code)
+        written.append(java_path)
+        save_file(md_path, md_content)
+        written.append(md_path)
+
+        return f"📘 DSA [{difficulty}]: {question}"
+
+    except GroqAPIError as e:
+        print(f"❌ DSA generation failed for '{question}': {e}")
+        cleanup_files(written)
+        return None
 
 
 def generate_note() -> Optional[str]:
-    """Generate one new note article. Returns commit message or None."""
+    """
+    Generate one new note article.
+    ALL Groq calls happen before ANY file is written.
+    On GroqAPIError, cleans up any files already written and returns None.
+    """
     note, path, section = pick_new_note()
     if not note:
         print("⚠️  All note topics already generated — trying update instead.")
         return update_existing_note()
 
     print(f"📝 Note [{section}]: {note}")
+    written: List[str] = []
 
-    content_body = call_groq(
-        NOTE_SYSTEM,
-        (
-            f"Write comprehensive, in-depth study notes for: **{note}**\n"
-            f"Context: This is part of the **{section}** learning path.\n"
-            f"Include the banner image at the very top using this URL:\n"
-            f"https://image.pollinations.ai/prompt/"
-            f"{url_encode(note)}%20{url_encode(section)}%20programming"
-            f"?width=800&height=400&nologo=true\n"
-            f"Make the content rich, practical, and interview-ready."
-        ),
-        max_tokens=4096,
-    )
+    try:
+        content_body = call_groq(
+            NOTE_SYSTEM,
+            (
+                f"Write comprehensive, in-depth study notes for: **{note}**\n"
+                f"Context: This is part of the **{section}** learning path.\n"
+                f"Include the banner image at the very top using this URL:\n"
+                f"https://image.pollinations.ai/prompt/"
+                f"{url_encode(note)}%20{url_encode(section)}%20programming"
+                f"?width=800&height=400&nologo=true\n"
+                f"Make the content rich, practical, and interview-ready."
+            ),
+            max_tokens=4096,
+        )
 
-    tags = [
-        section,
-        note.split(":")[0].strip().lower().replace(" ", "-").replace("/", "-"),
-        "programming",
-        "notes",
-    ]
-    frontmatter = build_frontmatter(note, note, section, tags, update_count=0)
-    save_file(path, frontmatter + "\n" + content_body)
-    return f"📝 [{section}] {note}"
+        tags = [
+            section,
+            note.split(":")[0].strip().lower().replace(" ", "-").replace("/", "-"),
+            "programming",
+            "notes",
+        ]
+        frontmatter = build_frontmatter(note, note, section, tags, update_count=0)
+
+        save_file(path, frontmatter + "\n" + content_body)
+        written.append(path)
+
+        return f"📝 [{section}] {note}"
+
+    except GroqAPIError as e:
+        print(f"❌ Note generation failed for '{note}': {e}")
+        cleanup_files(written)
+        return None
 
 
 def update_existing_note() -> Optional[str]:
-    """Append a new section to an existing note. Returns commit message or None."""
+    """
+    Append a new section to an existing note.
+    On GroqAPIError, cleans up and returns None.
+    """
     note, path, section, current_count = pick_note_to_update()
     if not note:
         print("⚠️  No notes available to update either.")
@@ -522,31 +549,44 @@ def update_existing_note() -> Optional[str]:
 
     body = re.sub(r"^---\r?\n[\s\S]*?\r?\n---\r?\n", "", existing).strip()
 
-    new_section_text = call_groq(
-        UPDATE_SYSTEM,
-        (
-            f"Existing article about '{note}' (section: {section}):\n\n"
-            f"{body[:3000]}\n\n"
-            f"Append a new advanced section covering a distinct sub-topic, "
-            f"advanced pattern, or real-world use case not already covered."
-        ),
-        max_tokens=2048,
-    )
+    try:
+        new_section_text = call_groq(
+            UPDATE_SYSTEM,
+            (
+                f"Existing article about '{note}' (section: {section}):\n\n"
+                f"{body[:3000]}\n\n"
+                f"Append a new advanced section covering a distinct sub-topic, "
+                f"advanced pattern, or real-world use case not already covered."
+            ),
+            max_tokens=2048,
+        )
 
-    new_count = current_count + 1
-    meta = read_frontmatter(path)
-    tags_raw = meta.get("tags", f"{section}, programming, notes")
-    tags = [t.strip() for t in tags_raw.split(",")]
-    new_frontmatter = build_frontmatter(
-        note,
-        meta.get("topic", note),
-        meta.get("section", section),
-        tags,
-        new_count,
-    )
+        new_count = current_count + 1
+        meta = read_frontmatter(path)
+        tags_raw = meta.get("tags", f"{section}, programming, notes")
+        tags = [t.strip() for t in tags_raw.split(",")]
+        new_frontmatter = build_frontmatter(
+            note,
+            meta.get("topic", note),
+            meta.get("section", section),
+            tags,
+            new_count,
+        )
 
-    save_file(path, new_frontmatter + "\n" + body + "\n\n" + new_section_text)
-    return f"🔄 [{section}] {note} (v{new_count})"
+        save_file(path, new_frontmatter + "\n" + body + "\n\n" + new_section_text)
+        return f"🔄 [{section}] {note} (v{new_count})"
+
+    except GroqAPIError as e:
+        print(f"❌ Note update failed for '{note}': {e}")
+        # update_existing_note overwrites an existing file — restore original
+        try:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(existing)
+            print(f"↩️  Restored original: {path}")
+            _written_this_run.discard(path)
+        except Exception as restore_err:
+            print(f"⚠️  Could not restore {path}: {restore_err}")
+        return None
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
@@ -558,11 +598,9 @@ def main():
     except ValueError:
         run_count = 3
 
-    # Local runs default to 1 to avoid accidental bulk generation
     if event_name not in ("schedule", "workflow_dispatch"):
         run_count = 1
 
-    # Scheduled: small random delay (0–5 min) to spread load across GitHub infra
     if event_name == "schedule":
         delay = random.randint(0, 300)
         print(f"⏱️  Scheduled run — sleeping {delay}s before starting...")
@@ -573,11 +611,11 @@ def main():
     print(f"🎯 Generating {run_count} article(s) this run\n")
 
     commit_messages: List[str] = []
+    failed_count = 0
 
     for i in range(run_count):
         print(f"\n─── Article {i + 1}/{run_count} ───")
 
-        # 35% DSA, 65% notes — notes are richer for launchyourconcept readers
         if random.random() < 0.35:
             msg = generate_dsa()
         else:
@@ -585,14 +623,14 @@ def main():
 
         if msg:
             commit_messages.append(msg)
+        else:
+            failed_count += 1
 
-        # Pause between Groq calls to stay within rate limits
         if i < run_count - 1:
             time.sleep(10)
 
-    # ── Batch commit + push ──────────────────────────────────────────────────
+    # ── Commit only what succeeded ───────────────────────────────────────────
     if commit_messages:
-        # Build a single descriptive commit message
         if len(commit_messages) == 1:
             batch_msg = commit_messages[0]
         else:
@@ -601,7 +639,6 @@ def main():
 
         success = commit_and_push(batch_msg)
         if not success:
-            # Fallback: try committing each file individually
             print("⚠️  Batch push failed — attempting per-article fallback commits...")
             for msg in commit_messages:
                 commit_and_push(msg)
@@ -609,6 +646,11 @@ def main():
         print("⚠️  No articles were generated this run.")
 
     print(f"\n✅ Done. {len(commit_messages)}/{run_count} articles generated.")
+
+    # Exit with code 1 if every single article failed — marks the GH Actions run red
+    if failed_count == run_count:
+        print("❌ All articles failed. Exiting with error.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
