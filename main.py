@@ -1331,6 +1331,10 @@ def generate_dsa() -> Optional[str]:
     )
 
     # ── Step 2: Generate summary/explanation ────────────────────────────────
+    # Difficulty-aware token budget: complex problems need more tokens
+    _summary_tokens = {"easy": 1500, "medium": 2000, "hard": 2500, "super_advanced": 3000}
+    summary_max_tokens = _summary_tokens.get(difficulty, 2000)
+
     try:
         summary = call_groq(
             DSA_SUMMARY_SYSTEM,
@@ -1340,7 +1344,7 @@ def generate_dsa() -> Optional[str]:
                 f"Difficulty: {difficulty}\n"
                 f"Solution code:\n```{lang_tag}\n{code}\n```"
             ),
-            max_tokens=1000,
+            max_tokens=summary_max_tokens,
             context=f"DSA summary: {question}",
         )
     except (GroqQuotaError, GroqAuthError):
