@@ -135,6 +135,28 @@
   ],
   "notes": {
     "dsa": {
+      "0_Overview": [
+        "What is DSA: Data Structures and Algorithms — The Foundation of Problem Solving",
+        "Why DSA Matters: Coding Interviews, Performance Optimization, System Design",
+        "Big O Notation: Measuring Time and Space Complexity",
+        "Common Complexities: O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ), O(n!)",
+        "Data Structures: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Maps, Heaps",
+        "Algorithm Categories: Sorting, Searching, Divide and Conquer, Dynamic Programming, Greedy, Backtracking",
+        "Problem-Solving Framework: Understand → Plan → Code → Test → Optimize",
+        "LeetCode Patterns: Two Pointers, Sliding Window, Fast/Slow Pointers, Merge Intervals",
+        "LeetCode Patterns: Cyclic Sort, In-place Reversal, BFS, DFS, Two Heaps, Subsets",
+        "LeetCode Patterns: Modified Binary Search, Bitwise XOR, Top K Elements, K-way Merge",
+        "LeetCode Patterns: 0/1 Knapsack, Topological Sort, Trie, Monotonic Stack",
+        "Sorting Algorithms: Bubble, Selection, Insertion, Merge, Quick, Heap, Counting, Radix",
+        "Searching: Linear Search O(n), Binary Search O(log n)",
+        "Graph Algorithms: BFS, DFS, Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal, Prim",
+        "Dynamic Programming: Memoization (Top-down) vs Tabulation (Bottom-up)",
+        "Greedy Algorithms: Local Optimal Choice Leads to Global Optimum",
+        "Backtracking: Explore All Possibilities, Prune Dead Ends",
+        "Interview Strategy: Start with Brute Force, Then Optimize",
+        "Practice Platforms: LeetCode, HackerRank, Codeforces, AtCoder, NeetCode",
+        "Recommended Study Order: Arrays → Strings → Linked Lists → Trees → Graphs → DP"
+      ],
       "1_Complexity_Analysis": [
         "Big O, Omega, Theta Notations",
         "Time Complexity Analysis: Iterative and Recursive",

@@ -1,6 +1,28 @@
 {
   "notes": {
     "devops": {
+      "0_Overview": [
+        "What is DevOps: Culture, Practices, and Tools for Faster, Reliable Delivery",
+        "DevOps vs SRE vs Platform Engineering",
+        "The Three Ways of DevOps: Flow, Feedback, Continuous Learning",
+        "CI/CD: The Core DevOps Practice",
+        "Infrastructure as Code: Treating Servers Like Software",
+        "Immutable Infrastructure: Replace, Don't Patch",
+        "GitOps: Git as the Single Source of Truth for Infrastructure",
+        "Shift Left: Testing and Security Earlier in the Pipeline",
+        "Observability: Metrics, Logs, Traces — The Three Pillars",
+        "SRE Principles: Error Budgets, Toil Reduction, Reliability Targets",
+        "Containerization: Why Docker Changed Everything",
+        "Container Orchestration: Why Kubernetes Became the Standard",
+        "Cloud-native Development: 12-Factor App Principles",
+        "DevSecOps: Security Integrated into the DevOps Pipeline",
+        "On-call Culture and Incident Management",
+        "Blameless Post-mortems",
+        "Feature Flags for Safe Deployments",
+        "Blue-Green and Canary Deployments",
+        "Chaos Engineering: Testing Resilience in Production",
+        "Key DevOps Metrics: DORA Metrics — Deployment Frequency, Lead Time, MTTR, Change Failure Rate"
+      ],
       "1_Linux_and_Shell": [
         "Linux File System Hierarchy",
         "Essential Commands: ls, cd, cp, mv, rm, mkdir, chmod, chown",
@@ -104,6 +126,28 @@
       ]
     },
     "cloud-aws": {
+      "0_Overview": [
+        "What is Cloud Computing: On-demand IT Resources over the Internet",
+        "Cloud Models: IaaS, PaaS, SaaS, FaaS",
+        "Cloud Deployment Models: Public, Private, Hybrid, Multi-cloud",
+        "Why AWS: Largest Cloud Provider, 200+ Services, Global Infrastructure",
+        "AWS Global Infrastructure: Regions, Availability Zones, Edge Locations",
+        "AWS Well-Architected Framework: Operational Excellence, Security, Reliability, Performance, Cost, Sustainability",
+        "Shared Responsibility Model: AWS secures the cloud, you secure what's in it",
+        "AWS Free Tier: What's Free and for How Long",
+        "Core AWS Services Every Developer Should Know: EC2, S3, RDS, Lambda, VPC, IAM",
+        "AWS Pricing Model: Pay-as-you-go, Reserved, Spot Instances",
+        "AWS CLI and SDKs: Programmatic Access",
+        "AWS IAM: The Foundation of AWS Security",
+        "AWS Regions and Latency: Choosing the Right Region",
+        "Serverless on AWS: Lambda, API Gateway, DynamoDB, S3",
+        "Containers on AWS: ECS, EKS, Fargate, ECR",
+        "AWS Networking: VPC, Subnets, Security Groups, Route Tables",
+        "AWS Storage Options: S3, EBS, EFS, Glacier",
+        "AWS Database Options: RDS, Aurora, DynamoDB, ElastiCache, Redshift",
+        "AWS Certifications Roadmap: Cloud Practitioner → Solutions Architect → Developer → DevOps",
+        "AWS vs GCP vs Azure: Key Differences and When to Choose"
+      ],
       "1_AWS_Core": [
         "AWS Global Infrastructure: Regions, AZs, Edge Locations",
         "IAM: Users, Groups, Roles, Policies",

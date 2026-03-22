@@ -1,6 +1,28 @@
 {
   "notes": {
     "web-fundamentals": {
+      "0_Overview": [
+        "What is the Web: HTTP, URLs, Browsers, Servers — How It All Connects",
+        "How a Web Page Loads: DNS → TCP → TLS → HTTP → HTML → CSS → JS → Render",
+        "HTML: Structure and Semantics",
+        "CSS: Presentation and Layout",
+        "JavaScript: Behavior and Interactivity",
+        "The Browser: Rendering Engine, JavaScript Engine, Networking Stack",
+        "DOM: Document Object Model — The Live Tree of HTML Elements",
+        "CSSOM: CSS Object Model — Styles Applied to the DOM",
+        "Critical Rendering Path: Parse HTML → Build DOM → Build CSSOM → Render Tree → Layout → Paint",
+        "HTTP/1.1 vs HTTP/2 vs HTTP/3: Evolution of the Web Protocol",
+        "REST APIs: How Frontend Talks to Backend",
+        "JSON: The Universal Data Format of the Web",
+        "Web Security Basics: HTTPS, CORS, XSS, CSRF, CSP",
+        "Responsive Design: Mobile-first, Media Queries, Flexible Layouts",
+        "Web Performance: Core Web Vitals, LCP, CLS, INP",
+        "Accessibility (a11y): Building for Everyone",
+        "SEO Fundamentals: How Search Engines Discover and Rank Pages",
+        "Progressive Enhancement vs Graceful Degradation",
+        "Single Page Applications (SPA) vs Multi-page Applications (MPA) vs SSR",
+        "Web Standards: W3C, WHATWG, ECMAScript — Who Defines the Web"
+      ],
       "1_HTML": [
         "HTML Document Structure: DOCTYPE, html, head, body",
         "Semantic HTML5: header, nav, main, section, article, aside, footer",

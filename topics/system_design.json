@@ -1,6 +1,28 @@
 {
   "notes": {
     "system-design": {
+      "0_Overview": [
+        "What is System Design: Designing Scalable, Reliable, Maintainable Systems",
+        "Why System Design Matters: Real-world Architecture Decisions",
+        "System Design Interview Framework: Requirements → Estimation → Design → Deep Dive",
+        "Functional vs Non-functional Requirements",
+        "Back-of-the-envelope Estimation: QPS, Storage, Bandwidth",
+        "Scalability: Handling 10x, 100x, 1000x Growth",
+        "Reliability: Systems That Work Correctly Even When Things Fail",
+        "Availability: Uptime SLAs — 99.9% (8.7h/yr), 99.99% (52min/yr), 99.999% (5min/yr)",
+        "Maintainability: Operability, Simplicity, Evolvability",
+        "Trade-offs: Consistency vs Availability, Latency vs Throughput, Cost vs Performance",
+        "Key Components: Load Balancers, Caches, Databases, Message Queues, CDNs",
+        "Stateless vs Stateful Services",
+        "Synchronous vs Asynchronous Communication",
+        "Push vs Pull Architecture",
+        "Monolith vs Microservices: When to Split",
+        "Data Partitioning Strategies: Horizontal, Vertical, Functional",
+        "Replication: Why and How",
+        "Caching at Every Layer: Client, CDN, API, Database",
+        "Rate Limiting and Throttling",
+        "Famous System Design Resources: Designing Data-Intensive Applications (DDIA)"
+      ],
       "1_Fundamentals": [
         "What is System Design and Why it Matters",
         "Horizontal vs Vertical Scaling",
@@ -144,6 +166,28 @@
       ]
     },
     "computer-science": {
+      "0_Overview": [
+        "What is Computer Science: The Study of Computation, Algorithms, and Data",
+        "Core CS Pillars: Algorithms, Data Structures, Operating Systems, Networks, Compilers, Databases",
+        "Why CS Fundamentals Matter for Software Engineers",
+        "Abstraction Layers: Hardware → OS → Runtime → Application",
+        "Von Neumann Architecture: CPU, Memory, I/O",
+        "Binary, Hexadecimal, and Number Systems",
+        "Boolean Logic and Logic Gates",
+        "Data Representation: Integers, Floats (IEEE 754), Characters (ASCII, Unicode)",
+        "Memory Hierarchy: Registers → L1/L2/L3 Cache → RAM → Disk",
+        "CPU Execution Cycle: Fetch, Decode, Execute",
+        "Concurrency vs Parallelism",
+        "Synchronization Primitives: Mutex, Semaphore, Monitor",
+        "Networking Fundamentals: OSI Model, TCP/IP, HTTP",
+        "Compiler vs Interpreter vs JIT",
+        "Formal Languages: Regular, Context-Free, Turing-complete",
+        "Computability: Halting Problem, P vs NP",
+        "Complexity Classes: P, NP, NP-Complete, NP-Hard",
+        "Information Theory: Entropy, Compression, Encoding",
+        "Cryptography Basics: Symmetric, Asymmetric, Hash Functions",
+        "CS Degree Core Courses: Algorithms, OS, Networks, Databases, Compilers, Theory of Computation"
+      ],
       "1_Operating_Systems": [
         "Process vs Thread",
         "Process Lifecycle and States",
