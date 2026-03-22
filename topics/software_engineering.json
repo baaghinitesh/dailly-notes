@@ -1,0 +1,151 @@
+{
+  "notes": {
+    "software-engineering": {
+      "1_Design_Patterns": [
+        "SOLID Principles: Single Responsibility, Open-Closed, Liskov, Interface Segregation, Dependency Inversion",
+        "DRY, KISS, YAGNI Principles",
+        "Creational Patterns: Singleton, Factory Method, Abstract Factory",
+        "Creational Patterns: Builder, Prototype",
+        "Structural Patterns: Adapter, Bridge, Composite, Decorator",
+        "Structural Patterns: Facade, Flyweight, Proxy",
+        "Behavioral Patterns: Chain of Responsibility, Command, Iterator",
+        "Behavioral Patterns: Mediator, Memento, Observer, State",
+        "Behavioral Patterns: Strategy, Template Method, Visitor",
+        "Repository Pattern",
+        "Unit of Work Pattern",
+        "CQRS Pattern",
+        "Event Sourcing Pattern",
+        "Saga Pattern for Distributed Transactions"
+      ],
+      "2_Software_Architecture": [
+        "Monolithic Architecture",
+        "Layered (N-tier) Architecture",
+        "Microservices Architecture",
+        "Event-Driven Architecture",
+        "Hexagonal Architecture (Ports and Adapters)",
+        "Clean Architecture",
+        "Domain-Driven Design (DDD): Entities, Value Objects, Aggregates",
+        "DDD: Bounded Contexts, Ubiquitous Language",
+        "Service-Oriented Architecture (SOA)",
+        "Serverless Architecture",
+        "CQRS and Event Sourcing",
+        "Reactive Architecture"
+      ],
+      "3_API_Design": [
+        "RESTful API Design Principles",
+        "HTTP Methods: GET, POST, PUT, PATCH, DELETE",
+        "HTTP Status Codes: 2xx, 3xx, 4xx, 5xx",
+        "API Versioning: URL, Header, Query Param",
+        "Pagination: Offset, Cursor, Keyset",
+        "API Authentication: API Keys, OAuth, JWT",
+        "GraphQL: Schema, Queries, Mutations, Subscriptions",
+        "GraphQL: Resolvers, DataLoader for N+1 Problem",
+        "gRPC: Protocol Buffers, Service Definition",
+        "gRPC: Unary, Server Streaming, Client Streaming, Bidirectional",
+        "WebSocket API Design",
+        "OpenAPI/Swagger Specification",
+        "API Rate Limiting and Throttling",
+        "Idempotency in API Design",
+        "Hypermedia APIs (HATEOAS)"
+      ],
+      "4_Testing_Strategies": [
+        "Testing Pyramid: Unit, Integration, E2E",
+        "Test-Driven Development (TDD)",
+        "Behavior-Driven Development (BDD)",
+        "Unit Testing Best Practices",
+        "Mocking, Stubbing, and Spying",
+        "Integration Testing Strategies",
+        "Contract Testing with Pact",
+        "Performance Testing: Load, Stress, Spike",
+        "Security Testing: SAST, DAST, Penetration Testing",
+        "Mutation Testing",
+        "Property-Based Testing",
+        "Test Coverage: What it Means and Limitations"
+      ],
+      "5_Code_Quality": [
+        "Clean Code Principles",
+        "Code Review Best Practices",
+        "Refactoring Techniques",
+        "Technical Debt Management",
+        "Code Smells and How to Fix Them",
+        "Static Code Analysis",
+        "Documentation Best Practices",
+        "Semantic Versioning (SemVer)",
+        "Changelog Management",
+        "Pair Programming and Mob Programming"
+      ],
+      "6_Security_Engineering": [
+        "OWASP Top 10: Injection, Broken Auth, XSS, IDOR, Security Misconfiguration",
+        "Authentication vs Authorization",
+        "OAuth 2.0 Flows: Authorization Code, PKCE, Client Credentials",
+        "OpenID Connect (OIDC)",
+        "JWT: Structure, Signing Algorithms (HS256, RS256), Best Practices",
+        "Password Hashing: bcrypt, Argon2, scrypt",
+        "Encryption: Symmetric (AES) and Asymmetric (RSA, ECC)",
+        "TLS/SSL: Handshake, Certificates, Certificate Authorities",
+        "Secrets Management: Vault, AWS Secrets Manager",
+        "Security Headers: CSP, HSTS, X-Frame-Options",
+        "Input Validation and Sanitization",
+        "Principle of Least Privilege",
+        "Zero Trust Security Model"
+      ]
+    },
+    "data-engineering": {
+      "1_Data_Fundamentals": [
+        "Batch Processing vs Stream Processing",
+        "ETL vs ELT",
+        "Data Warehouse vs Data Lake vs Data Lakehouse",
+        "OLTP vs OLAP",
+        "Star Schema and Snowflake Schema",
+        "Slowly Changing Dimensions (SCD)",
+        "Data Quality and Data Governance",
+        "Data Lineage"
+      ],
+      "2_Big_Data_Technologies": [
+        "Apache Hadoop: HDFS, MapReduce, YARN",
+        "Apache Spark: RDDs, DataFrames, Datasets",
+        "Spark: Transformations and Actions",
+        "Spark Streaming and Structured Streaming",
+        "Apache Kafka for Real-time Data Pipelines",
+        "Apache Flink for Stream Processing",
+        "Apache Airflow for Workflow Orchestration",
+        "dbt (Data Build Tool) for Transformations",
+        "Apache Iceberg and Delta Lake"
+      ],
+      "3_Data_Science_Basics": [
+        "NumPy: Arrays, Broadcasting, Linear Algebra",
+        "Pandas: DataFrames, Series, GroupBy, Merge",
+        "Data Visualization: Matplotlib, Seaborn, Plotly",
+        "Machine Learning Basics: Supervised, Unsupervised, Reinforcement",
+        "Scikit-learn: Preprocessing, Models, Pipelines",
+        "Feature Engineering",
+        "Model Evaluation: Accuracy, Precision, Recall, F1, AUC-ROC",
+        "Overfitting and Regularization",
+        "Neural Networks and Deep Learning Basics",
+        "Introduction to LLMs and Transformers"
+      ]
+    },
+    "mobile-development": {
+      "1_Cross_Platform": [
+        "React Native vs Flutter vs Xamarin vs Ionic",
+        "Flutter: Widgets, State Management, Dart Language",
+        "Flutter: BLoC Pattern, Provider, Riverpod",
+        "Capacitor: Web Apps as Native Apps",
+        "Ionic Framework",
+        "Progressive Web Apps (PWA): Service Workers, Web App Manifest",
+        "PWA: Offline Support, Push Notifications, Install Prompt"
+      ],
+      "2_Mobile_Architecture": [
+        "MVC, MVP, MVVM in Mobile",
+        "Clean Architecture for Mobile",
+        "Offline-first Architecture",
+        "Local Database Strategies",
+        "Background Processing on Mobile",
+        "Deep Linking and Universal Links",
+        "App Performance Optimization",
+        "Mobile Security Best Practices",
+        "App Store Guidelines and Review Process"
+      ]
+    }
+  }
+}

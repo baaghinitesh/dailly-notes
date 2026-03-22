@@ -1,0 +1,187 @@
+{
+  "notes": {
+    "system-design": {
+      "1_Fundamentals": [
+        "What is System Design and Why it Matters",
+        "Horizontal vs Vertical Scaling",
+        "Latency vs Throughput",
+        "Availability, Reliability, and Fault Tolerance",
+        "CAP Theorem: Consistency, Availability, Partition Tolerance",
+        "PACELC Theorem",
+        "Consistency Models: Strong, Eventual, Causal",
+        "SLA, SLO, SLI Definitions",
+        "Single Point of Failure (SPOF)",
+        "Redundancy and Replication"
+      ],
+      "2_Networking_Basics": [
+        "HTTP vs HTTPS",
+        "HTTP/1.1 vs HTTP/2 vs HTTP/3 (QUIC)",
+        "TCP vs UDP",
+        "DNS: How Domain Resolution Works",
+        "CDN (Content Delivery Network): How it Works",
+        "WebSockets vs Long Polling vs SSE",
+        "REST vs GraphQL vs gRPC",
+        "API Gateway Pattern",
+        "Reverse Proxy vs Forward Proxy",
+        "Load Balancer: L4 vs L7"
+      ],
+      "3_Load_Balancing_and_Proxies": [
+        "Load Balancing Algorithms: Round Robin, Least Connections, IP Hash, Weighted",
+        "Sticky Sessions",
+        "Health Checks and Circuit Breakers",
+        "Nginx as Load Balancer and Reverse Proxy",
+        "HAProxy",
+        "AWS Elastic Load Balancer (ALB, NLB, CLB)"
+      ],
+      "4_Caching": [
+        "Cache-aside (Lazy Loading) Pattern",
+        "Write-through Cache Pattern",
+        "Write-behind (Write-back) Cache Pattern",
+        "Read-through Cache Pattern",
+        "Cache Eviction Policies: LRU, LFU, FIFO, TTL",
+        "Cache Invalidation Strategies",
+        "Distributed Caching with Redis and Memcached",
+        "CDN Caching",
+        "Browser Caching: Cache-Control, ETag, Last-Modified",
+        "Cache Stampede and Thundering Herd Problem"
+      ],
+      "5_Databases_at_Scale": [
+        "SQL vs NoSQL: When to Use Which",
+        "Database Replication: Master-Slave, Master-Master",
+        "Database Sharding: Horizontal Partitioning",
+        "Consistent Hashing for Sharding",
+        "Database Indexing Strategies",
+        "Read Replicas for Scaling Reads",
+        "CQRS (Command Query Responsibility Segregation)",
+        "Event Sourcing Pattern",
+        "Database Connection Pooling",
+        "Polyglot Persistence"
+      ],
+      "6_Message_Queues_and_Streaming": [
+        "Message Queue vs Message Broker",
+        "Apache Kafka: Topics, Partitions, Consumers, Producers",
+        "Kafka: Consumer Groups and Offset Management",
+        "RabbitMQ: Exchanges, Queues, Bindings",
+        "Redis Pub/Sub and Redis Streams",
+        "AWS SQS and SNS",
+        "Event-Driven Architecture",
+        "Saga Pattern for Distributed Transactions",
+        "Outbox Pattern"
+      ],
+      "7_Microservices": [
+        "Monolith vs Microservices: Trade-offs",
+        "Service Discovery: Client-side and Server-side",
+        "Inter-service Communication: Sync (REST, gRPC) vs Async (Events)",
+        "API Gateway Pattern",
+        "Circuit Breaker Pattern",
+        "Bulkhead Pattern",
+        "Strangler Fig Pattern for Migration",
+        "Service Mesh: Istio, Linkerd",
+        "Sidecar Pattern",
+        "Distributed Tracing: Jaeger, Zipkin, OpenTelemetry"
+      ],
+      "8_Storage_Systems": [
+        "Block Storage vs Object Storage vs File Storage",
+        "AWS S3: Buckets, Objects, Presigned URLs",
+        "Blob Storage Design",
+        "Distributed File Systems: HDFS, GFS",
+        "Data Warehouses: Snowflake, BigQuery, Redshift",
+        "Data Lakes",
+        "OLTP vs OLAP",
+        "Column-oriented vs Row-oriented Databases",
+        "Time-series Databases: InfluxDB, TimescaleDB"
+      ],
+      "9_Design_Patterns": [
+        "Rate Limiting: Token Bucket, Leaky Bucket, Fixed Window, Sliding Window",
+        "Idempotency in APIs",
+        "Distributed Locking with Redis (Redlock)",
+        "Two-Phase Commit (2PC)",
+        "Three-Phase Commit (3PC)",
+        "Leader Election: Raft, Paxos",
+        "Gossip Protocol",
+        "Bloom Filter for Membership Queries",
+        "Count-Min Sketch for Frequency Estimation",
+        "HyperLogLog for Cardinality Estimation"
+      ],
+      "10_Classic_System_Design_Problems": [
+        "Design a URL Shortener (like bit.ly)",
+        "Design a Key-Value Store",
+        "Design a Distributed Cache",
+        "Design a Rate Limiter",
+        "Design a Notification System",
+        "Design a News Feed (like Twitter/Facebook)",
+        "Design a Chat Application (like WhatsApp)",
+        "Design a Video Streaming Service (like YouTube/Netflix)",
+        "Design a Ride-sharing Service (like Uber)",
+        "Design a Search Autocomplete System",
+        "Design a Web Crawler",
+        "Design a Distributed Message Queue",
+        "Design a Distributed File Storage (like Google Drive)",
+        "Design a Recommendation System",
+        "Design an E-commerce Platform",
+        "Design a Payment System",
+        "Design a Distributed ID Generator (Snowflake)",
+        "Design a Metrics and Monitoring System",
+        "Design a Typeahead/Autocomplete",
+        "Design Google Maps"
+      ],
+      "11_Cloud_and_DevOps": [
+        "Cloud Computing Models: IaaS, PaaS, SaaS",
+        "AWS Core Services: EC2, S3, RDS, Lambda, CloudFront",
+        "Serverless Architecture: AWS Lambda, Vercel Functions",
+        "Containerization with Docker",
+        "Docker: Images, Containers, Volumes, Networks",
+        "Docker Compose for Multi-container Apps",
+        "Kubernetes: Pods, Deployments, Services, Ingress",
+        "Kubernetes: ConfigMaps, Secrets, Persistent Volumes",
+        "CI/CD Pipelines: GitHub Actions, Jenkins, GitLab CI",
+        "Infrastructure as Code: Terraform, Pulumi",
+        "Monitoring and Alerting: Prometheus, Grafana",
+        "Centralized Logging: ELK Stack (Elasticsearch, Logstash, Kibana)",
+        "Blue-Green Deployment",
+        "Canary Deployment",
+        "Feature Flags"
+      ]
+    },
+    "computer-science": {
+      "1_Operating_Systems": [
+        "Process vs Thread",
+        "Process Lifecycle and States",
+        "CPU Scheduling Algorithms: FCFS, SJF, Round Robin, Priority",
+        "Context Switching",
+        "Memory Management: Paging, Segmentation",
+        "Virtual Memory and Page Replacement Algorithms",
+        "Deadlock: Conditions, Prevention, Avoidance, Detection",
+        "Semaphores and Mutex",
+        "Inter-Process Communication (IPC): Pipes, Sockets, Shared Memory",
+        "File Systems: FAT, NTFS, ext4",
+        "I/O Management and Device Drivers",
+        "Linux Commands for System Monitoring"
+      ],
+      "2_Computer_Networks": [
+        "OSI Model: 7 Layers Explained",
+        "TCP/IP Model",
+        "IP Addressing: IPv4, IPv6, Subnetting, CIDR",
+        "TCP: Three-way Handshake, Flow Control, Congestion Control",
+        "UDP: Connectionless Communication",
+        "HTTP Protocol Deep Dive",
+        "DNS Resolution Process",
+        "ARP and MAC Addresses",
+        "Routing Protocols: OSPF, BGP",
+        "Firewalls and NAT",
+        "VPN and Tunneling",
+        "Network Security: TLS Handshake"
+      ],
+      "3_Compiler_Design": [
+        "Phases of a Compiler: Lexical, Syntax, Semantic Analysis",
+        "Lexical Analysis and Tokenization",
+        "Context-Free Grammars and Parse Trees",
+        "LL and LR Parsing",
+        "Abstract Syntax Tree (AST)",
+        "Intermediate Code Generation",
+        "Code Optimization Techniques",
+        "Code Generation and Target Machine"
+      ]
+    }
+  }
+}

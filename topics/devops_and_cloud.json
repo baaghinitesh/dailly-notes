@@ -1,0 +1,149 @@
+{
+  "notes": {
+    "devops": {
+      "1_Linux_and_Shell": [
+        "Linux File System Hierarchy",
+        "Essential Commands: ls, cd, cp, mv, rm, mkdir, chmod, chown",
+        "File Viewing: cat, less, head, tail, grep, awk, sed",
+        "Process Management: ps, top, htop, kill, nice",
+        "Networking Commands: ping, curl, wget, netstat, ss, nmap",
+        "Disk Usage: df, du, lsblk",
+        "User and Group Management",
+        "SSH: Key-based Authentication, Config File, Tunneling",
+        "Cron Jobs and Scheduling",
+        "Shell Scripting: Variables, Loops, Conditionals, Functions",
+        "Bash Scripting Best Practices",
+        "Environment Variables and .bashrc/.zshrc",
+        "Package Managers: apt, yum, brew"
+      ],
+      "2_Git_and_Version_Control": [
+        "Git Internals: Objects (blob, tree, commit, tag), Refs",
+        "Git Workflow: init, clone, add, commit, push, pull, fetch",
+        "Branching: branch, checkout, switch, merge, rebase",
+        "Git Rebase: Interactive Rebase, Squashing Commits",
+        "Git Stash",
+        "Git Tags: Lightweight and Annotated",
+        "Git Hooks: pre-commit, pre-push",
+        "Resolving Merge Conflicts",
+        "Git Bisect for Bug Finding",
+        "GitHub Flow vs GitFlow vs Trunk-based Development",
+        "Pull Requests and Code Review Best Practices",
+        "Monorepo vs Polyrepo",
+        "Git Submodules and Subtrees"
+      ],
+      "3_Docker": [
+        "Docker Architecture: Daemon, Client, Registry",
+        "Dockerfile: FROM, RUN, COPY, ADD, ENV, EXPOSE, CMD, ENTRYPOINT",
+        "Docker Build: Layers, Caching, Multi-stage Builds",
+        "Docker Images: pull, push, tag, inspect",
+        "Docker Containers: run, start, stop, exec, logs, rm",
+        "Docker Volumes: Named, Bind Mounts, tmpfs",
+        "Docker Networks: bridge, host, overlay",
+        "Docker Compose: services, volumes, networks, depends_on",
+        "Docker Compose Override Files",
+        "Docker Security: Non-root User, Read-only Filesystem",
+        "Docker Registry: Docker Hub, ECR, GCR",
+        "Optimizing Docker Image Size"
+      ],
+      "4_Kubernetes": [
+        "Kubernetes Architecture: Control Plane, Worker Nodes",
+        "Pods: Lifecycle, Multi-container Pods, Init Containers",
+        "Deployments: Rolling Updates, Rollbacks",
+        "Services: ClusterIP, NodePort, LoadBalancer, ExternalName",
+        "Ingress and Ingress Controllers (Nginx, Traefik)",
+        "ConfigMaps and Secrets",
+        "Persistent Volumes and Persistent Volume Claims",
+        "StatefulSets for Stateful Applications",
+        "DaemonSets and Jobs/CronJobs",
+        "Horizontal Pod Autoscaler (HPA)",
+        "Resource Requests and Limits",
+        "Namespaces and RBAC",
+        "Helm: Package Manager for Kubernetes",
+        "kubectl Commands Cheatsheet",
+        "Kubernetes Networking: CNI Plugins",
+        "Service Mesh with Istio"
+      ],
+      "5_CI_CD": [
+        "CI/CD Concepts: Continuous Integration, Delivery, Deployment",
+        "GitHub Actions: Workflows, Jobs, Steps, Actions",
+        "GitHub Actions: Secrets, Environments, Matrix Builds",
+        "GitLab CI/CD: .gitlab-ci.yml",
+        "Jenkins: Pipelines, Jenkinsfile",
+        "CircleCI Configuration",
+        "ArgoCD for GitOps",
+        "Flux for GitOps",
+        "Deployment Strategies: Blue-Green, Canary, Rolling",
+        "Feature Flags with LaunchDarkly",
+        "Automated Testing in CI Pipelines",
+        "Docker in CI/CD Pipelines",
+        "Kubernetes Deployments via CI/CD"
+      ],
+      "6_Monitoring_and_Observability": [
+        "The Three Pillars: Metrics, Logs, Traces",
+        "Prometheus: Metrics Collection, PromQL",
+        "Grafana: Dashboards and Alerting",
+        "ELK Stack: Elasticsearch, Logstash, Kibana",
+        "Loki for Log Aggregation",
+        "Jaeger and Zipkin for Distributed Tracing",
+        "OpenTelemetry: Unified Observability",
+        "Alertmanager: Alert Routing and Silencing",
+        "SLI, SLO, SLA in Practice",
+        "On-call and Incident Management",
+        "Chaos Engineering with Chaos Monkey"
+      ],
+      "7_Infrastructure_as_Code": [
+        "Terraform: Providers, Resources, Variables, Outputs",
+        "Terraform: State Management, Remote State",
+        "Terraform: Modules and Workspaces",
+        "Terraform: Plan, Apply, Destroy",
+        "Ansible: Playbooks, Roles, Inventory",
+        "Pulumi: Infrastructure with Real Code",
+        "AWS CloudFormation",
+        "Packer for Machine Images",
+        "Vault for Secrets Management"
+      ]
+    },
+    "cloud-aws": {
+      "1_AWS_Core": [
+        "AWS Global Infrastructure: Regions, AZs, Edge Locations",
+        "IAM: Users, Groups, Roles, Policies",
+        "EC2: Instance Types, AMIs, Security Groups, Key Pairs",
+        "EC2 Auto Scaling Groups",
+        "Elastic Load Balancing: ALB, NLB",
+        "VPC: Subnets, Route Tables, Internet Gateway, NAT Gateway",
+        "Security Groups vs NACLs",
+        "S3: Buckets, Objects, Versioning, Lifecycle Policies",
+        "S3: Storage Classes (Standard, IA, Glacier)",
+        "CloudFront CDN",
+        "Route 53: DNS and Health Checks"
+      ],
+      "2_AWS_Databases": [
+        "RDS: Managed Relational Database",
+        "RDS Multi-AZ and Read Replicas",
+        "Aurora: MySQL and PostgreSQL Compatible",
+        "DynamoDB: NoSQL Key-Value and Document Store",
+        "DynamoDB: Partition Key, Sort Key, GSI, LSI",
+        "ElastiCache: Redis and Memcached",
+        "Redshift: Data Warehouse"
+      ],
+      "3_AWS_Serverless": [
+        "Lambda: Functions, Triggers, Layers",
+        "Lambda: Cold Starts and Optimization",
+        "API Gateway: REST and HTTP APIs",
+        "Step Functions: State Machines",
+        "EventBridge: Event Bus and Rules",
+        "SQS: Standard and FIFO Queues",
+        "SNS: Topics and Subscriptions",
+        "DynamoDB Streams",
+        "Serverless Framework and SAM"
+      ],
+      "4_AWS_Containers": [
+        "ECS: Task Definitions, Services, Clusters",
+        "ECS with Fargate (Serverless Containers)",
+        "EKS: Managed Kubernetes",
+        "ECR: Container Registry",
+        "App Runner for Containerized Apps"
+      ]
+    }
+  }
+}

@@ -35,10 +35,45 @@ client = Groq(api_key=GROQ_API_KEY)
 
 # ─── Load topics ──────────────────────────────────────────────────────────────
 
-TOPICS_FILE = "topics.json"
+def load_all_topics() -> dict:
+    """
+    Load and merge all topic files:
+    - topics/dsa.json        → easy, medium, hard, notes.dsa
+    - topics/*.json          → notes.<subject>
+    Falls back to legacy topics.json if topics/ dir doesn't exist.
+    """
+    merged: dict = {"easy": [], "medium": [], "hard": [], "notes": {}}
 
-with open(TOPICS_FILE, "r", encoding="utf-8") as f:
-    topics = json.load(f)
+    topics_dir = "topics"
+    if os.path.isdir(topics_dir):
+        for fname in sorted(os.listdir(topics_dir)):
+            if not fname.endswith(".json"):
+                continue
+            fpath = os.path.join(topics_dir, fname)
+            try:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                # Merge DSA lists
+                for key in ("easy", "medium", "hard"):
+                    if key in data:
+                        merged[key].extend(data[key])
+                # Merge notes sections
+                for subject, content in data.get("notes", {}).items():
+                    merged["notes"][subject] = content
+            except Exception as e:
+                print(f"⚠️ Failed to load {fpath}: {e}")
+    else:
+        # Legacy fallback
+        with open("topics.json", "r", encoding="utf-8") as f:
+            merged = json.load(f)
+
+    return merged
+
+topics = load_all_topics()
+print(f"📚 Loaded topics: {len(topics.get('easy', []))} easy, "
+      f"{len(topics.get('medium', []))} medium, "
+      f"{len(topics.get('hard', []))} hard, "
+      f"{len(topics.get('notes', {}))} note subjects")
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -132,14 +167,17 @@ NOTE_SYSTEM = """You are an expert technical writer creating premium study notes
 
 STRICT FORMATTING RULES — follow exactly:
 1. Use proper Markdown headings (## for sections, ### for subsections)
-2. Every code example MUST use a fenced code block with the language tag, e.g. ```java or ```javascript
-3. Add a context-aware banner image using: ![{topic}](https://image.pollinations.ai/prompt/{url_encoded_topic}?width=800&height=400&nologo=true)
+2. Every code example MUST use a fenced code block with the correct language tag
+   e.g. ```java, ```javascript, ```typescript, ```python, ```go, ```bash, ```sql, ```yaml
+3. Add a context-aware banner image: ![Topic](https://image.pollinations.ai/prompt/{url_encoded_topic}%20programming?width=800&height=400&nologo=true)
 4. Use blockquotes for important notes: > **Note:** ...
-5. Use tables where comparisons are needed
-6. Include at least 3 practical code examples
-7. Do NOT include YAML frontmatter — that is added separately
-8. Do NOT add any preamble like "Here are the notes:" — start directly with the content
-9. Structure: Introduction → Core Concepts → Code Examples → Common Pitfalls → Summary
+5. Use tables where comparisons are needed (e.g. comparing approaches, complexity)
+6. Include at least 3 practical, real-world code examples
+7. Use Mermaid diagrams (```mermaid) for architecture, flow, or sequence diagrams where helpful
+8. Do NOT include YAML frontmatter — that is added separately
+9. Do NOT add any preamble like "Here are the notes:" — start directly with the content
+10. Structure: Introduction → Core Concepts → Code Examples → Real-world Use Cases → Common Pitfalls → Summary
+11. Aim for depth: cover both beginner understanding AND advanced nuances
 """
 
 UPDATE_SYSTEM = """You are an expert technical writer updating an existing study article.
