@@ -1,7 +1,6 @@
-google-generativeai
-schedule
-requests
+groq
 gitpython
 mkdocs
-mkdocs-material
+mkdocs-material[imaging]
 mkdocs-awesome-pages-plugin
+pymdown-extensions

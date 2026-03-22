@@ -1,32 +1,77 @@
 site_name: Daily Notes
 site_url: https://baaghinitesh.github.io/dailly-notes/
+repo_url: https://github.com/baaghinitesh/dailly-notes
+repo_name: baaghinitesh/dailly-notes
+
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
-    - navigation.expand
+    - navigation.tabs
     - navigation.sections
+    - navigation.expand
     - navigation.top
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
     - search.highlight
     - search.share
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+    - toc.follow
 
-# Automatically include all markdown files
-nav:
-  - Home: index.md
-  - Instructions: instructions.md
-  - DSA: 
-      - 'docs/dsa'
-  - Notes:
-      - 'docs/notes'
-
-# Markdown extensions
 markdown_extensions:
   - admonition
-  - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - footnotes
   - toc:
       permalink: true
+      toc_depth: 3
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  - abbr
 
-# Plugins to show directories automatically
 plugins:
-  - search
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - awesome-pages
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/baaghinitesh/dailly-notes

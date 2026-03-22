@@ -1,0 +1,172 @@
+{
+  "notes": {
+    "java": {
+      "1_Core_Java_Basics": [
+        "JDK vs JRE vs JVM: Understanding the Java Platform",
+        "Java Program Structure: main method, packages, imports",
+        "Primitive Data Types: int, long, double, char, boolean",
+        "Type Casting: Widening and Narrowing",
+        "Operators: Arithmetic, Relational, Logical, Bitwise, Ternary",
+        "Control Flow: if-else, switch, for, while, do-while",
+        "Arrays: Declaration, Initialization, Multi-dimensional",
+        "Strings: String class, String Pool, Immutability",
+        "StringBuilder and StringBuffer",
+        "Varargs (Variable Arguments)",
+        "Command Line Arguments"
+      ],
+      "2_OOP_Concepts": [
+        "Classes and Objects: Fields, Methods, Constructors",
+        "Encapsulation: Access Modifiers (public, private, protected, default)",
+        "Inheritance: extends keyword, Method Overriding",
+        "Polymorphism: Compile-time (Overloading) and Runtime (Overriding)",
+        "Abstraction: Abstract Classes and Interfaces",
+        "Interface: default methods, static methods (Java 8+)",
+        "Functional Interfaces and @FunctionalInterface",
+        "this and super keywords",
+        "static keyword: static fields, methods, blocks, nested classes",
+        "final keyword: final variables, methods, classes",
+        "Object class methods: equals(), hashCode(), toString(), clone()",
+        "Nested Classes: Static Nested, Inner, Local, Anonymous"
+      ],
+      "3_Exception_Handling": [
+        "Exception Hierarchy: Throwable, Error, Exception",
+        "Checked vs Unchecked Exceptions",
+        "try-catch-finally block",
+        "try-with-resources (AutoCloseable)",
+        "throw and throws keywords",
+        "Creating Custom Exceptions",
+        "Multi-catch blocks",
+        "Exception Chaining"
+      ],
+      "4_Collections_Framework": [
+        "Collection Hierarchy: Iterable, Collection, List, Set, Queue, Map",
+        "ArrayList: Dynamic array, time complexities",
+        "LinkedList: Doubly linked, use as Deque",
+        "Vector and Stack (legacy)",
+        "HashSet: Hash-based, O(1) operations",
+        "LinkedHashSet: Insertion-order preserved",
+        "TreeSet: Sorted, NavigableSet, Red-Black Tree",
+        "HashMap: Buckets, Load Factor, Rehashing",
+        "LinkedHashMap: Insertion/Access order",
+        "TreeMap: Sorted keys, NavigableMap",
+        "Hashtable vs HashMap",
+        "PriorityQueue: Min-heap by default",
+        "ArrayDeque: Efficient stack and queue",
+        "Collections utility class: sort, shuffle, reverse, binarySearch",
+        "Comparable vs Comparator",
+        "Fail-fast vs Fail-safe Iterators",
+        "ConcurrentHashMap and CopyOnWriteArrayList"
+      ],
+      "5_Generics": [
+        "Generic Classes and Methods",
+        "Type Parameters and Naming Conventions",
+        "Bounded Type Parameters: extends and super",
+        "Wildcards: ?, ? extends T, ? super T",
+        "Type Erasure",
+        "Generic Interfaces",
+        "Restrictions on Generics"
+      ],
+      "6_Java8_Features": [
+        "Lambda Expressions: Syntax and Use Cases",
+        "Functional Interfaces: Predicate, Function, Consumer, Supplier, BiFunction",
+        "Method References: Static, Instance, Constructor",
+        "Streams API: Creating Streams",
+        "Stream Intermediate Operations: filter, map, flatMap, sorted, distinct, limit",
+        "Stream Terminal Operations: collect, forEach, reduce, count, findFirst, anyMatch",
+        "Collectors: toList, toSet, toMap, groupingBy, partitioningBy, joining",
+        "Optional Class: Avoiding NullPointerException",
+        "Default and Static Methods in Interfaces",
+        "New Date and Time API: LocalDate, LocalTime, LocalDateTime, ZonedDateTime",
+        "DateTimeFormatter",
+        "CompletableFuture basics"
+      ],
+      "7_Multithreading_and_Concurrency": [
+        "Thread Lifecycle: New, Runnable, Running, Blocked, Terminated",
+        "Creating Threads: Thread class and Runnable interface",
+        "Thread Methods: start, run, sleep, join, interrupt, yield",
+        "Synchronization: synchronized keyword (method and block)",
+        "Volatile keyword",
+        "Deadlock, Livelock, Starvation",
+        "Inter-thread Communication: wait, notify, notifyAll",
+        "Executor Framework: ExecutorService, ThreadPoolExecutor",
+        "Callable and Future",
+        "java.util.concurrent: CountDownLatch, CyclicBarrier, Semaphore, Phaser",
+        "Atomic Classes: AtomicInteger, AtomicLong, AtomicReference",
+        "Lock Interface: ReentrantLock, ReadWriteLock",
+        "Java Memory Model: Happens-Before Relationship",
+        "Fork/Join Framework",
+        "Virtual Threads (Java 21 Project Loom)"
+      ],
+      "8_IO_and_NIO": [
+        "Byte Streams: InputStream, OutputStream, FileInputStream, FileOutputStream",
+        "Character Streams: Reader, Writer, FileReader, FileWriter",
+        "Buffered Streams: BufferedReader, BufferedWriter",
+        "Serialization and Deserialization",
+        "Java NIO: Channels, Buffers, Selectors",
+        "Path and Files API (java.nio.file)",
+        "Walking a Directory Tree with Files.walk()",
+        "Reading and Writing Files with Files utility class"
+      ],
+      "9_Advanced_Java": [
+        "Reflection API: Class, Method, Field objects",
+        "Annotations: Built-in, Custom Annotations, Retention, Target",
+        "Annotation Processing",
+        "Dynamic Proxies",
+        "ClassLoader and Class Loading Mechanism",
+        "Garbage Collection: Mark-and-Sweep, Generational GC",
+        "GC Algorithms: Serial, Parallel, G1, ZGC, Shenandoah",
+        "JVM Tuning: Heap size, GC flags",
+        "Java Memory Areas: Heap, Stack, Method Area, PC Register",
+        "String Interning and String Pool",
+        "Sealed Classes (Java 17)",
+        "Records (Java 16)",
+        "Pattern Matching for instanceof (Java 16)",
+        "Switch Expressions (Java 14)",
+        "Text Blocks (Java 15)"
+      ],
+      "10_Spring_Framework": [
+        "Spring Core: IoC Container and Dependency Injection",
+        "Bean Lifecycle and Scopes",
+        "Spring Annotations: @Component, @Service, @Repository, @Controller",
+        "@Autowired, @Qualifier, @Primary",
+        "Spring AOP: Aspect, Advice, Pointcut, JoinPoint",
+        "Spring MVC: DispatcherServlet, @RequestMapping, @RestController",
+        "Request and Response handling: @RequestBody, @ResponseBody, @PathVariable",
+        "Spring Boot: Auto-configuration, Starters, Embedded Server",
+        "application.properties and application.yml",
+        "Spring Boot Actuator",
+        "Spring Data JPA: Repositories, JPQL, Named Queries",
+        "Spring Security: Authentication and Authorization",
+        "JWT Authentication with Spring Security",
+        "Spring Boot Testing: @SpringBootTest, MockMvc, @DataJpaTest",
+        "Spring Profiles",
+        "Spring Boot with Docker"
+      ],
+      "11_Design_Patterns_in_Java": [
+        "Creational: Singleton, Factory Method, Abstract Factory, Builder, Prototype",
+        "Structural: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy",
+        "Behavioral: Chain of Responsibility, Command, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor",
+        "Dependency Injection Pattern",
+        "Repository Pattern",
+        "DAO (Data Access Object) Pattern"
+      ],
+      "12_Testing_in_Java": [
+        "JUnit 5: @Test, @BeforeEach, @AfterEach, @BeforeAll, @AfterAll",
+        "Assertions in JUnit 5",
+        "Parameterized Tests",
+        "Mockito: @Mock, @InjectMocks, when().thenReturn()",
+        "Mockito: verify(), ArgumentCaptor",
+        "Integration Testing with Spring Boot Test",
+        "Test-Driven Development (TDD)",
+        "Code Coverage with JaCoCo"
+      ],
+      "13_Build_Tools": [
+        "Maven: POM.xml, Dependencies, Plugins, Lifecycle Phases",
+        "Maven Repository: Local, Central, Remote",
+        "Gradle: build.gradle, Tasks, Dependencies",
+        "Gradle vs Maven Comparison",
+        "Multi-module Projects"
+      ]
+    }
+  }
+}
