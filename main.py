@@ -220,15 +220,23 @@ def read_frontmatter(path: str) -> dict:
         return {}
 
 
+def picsum_seed(text: str) -> int:
+    """Deterministic seed from string — matches JS strToSeed in ArticlePage.tsx."""
+    h = 0
+    for ch in text:
+        h = (31 * h + ord(ch)) & 0xFFFFFFFF
+    # Match JS: (Math.imul(31, h) + charCode) | 0 → signed 32-bit, then abs % 1000
+    if h >= 0x80000000:
+        h -= 0x100000000
+    return abs(h) % 1000
+
+
 def build_frontmatter(
     title: str, topic: str, section: str, tags: List[str], update_count: int
 ) -> str:
     tag_str = ", ".join(tags)
-    banner = (
-        f"https://image.pollinations.ai/prompt/"
-        f"{url_encode(topic)}%20{url_encode(section)}%20programming"
-        f"?width=800&height=400&nologo=true"
-    )
+    seed = picsum_seed(topic + title)
+    banner = f"https://picsum.photos/seed/{seed}/1200/630"
     return (
         f'---\n'
         f'title: "{title}"\n'
@@ -1349,11 +1357,8 @@ def generate_dsa() -> Optional[str]:
         return None
 
     # ── Step 4: Write file ───────────────────────────────────────────────────
-    banner_url = (
-        f"https://image.pollinations.ai/prompt/"
-        f"{url_encode(question)}%20{url_encode(lang)}%20algorithm"
-        f"?width=800&height=400&nologo=true"
-    )
+    seed = picsum_seed(lang + question)
+    banner_url = f"https://picsum.photos/seed/{seed}/1200/630"
     md_content = (
         f'---\n'
         f'title: "{question}"\n'
@@ -1365,7 +1370,6 @@ def generate_dsa() -> Optional[str]:
         f'update_count: 0\n'
         f'---\n\n'
         f'# {question}\n\n'
-        f'![{question}]({banner_url})\n\n'
         f'{summary}\n\n'
         f'## {lang.upper() if lang in ("cpp", "c") else lang.capitalize()} Solution\n\n'
         f'```{lang_tag}\n{code}\n```\n'
@@ -1415,11 +1419,8 @@ def generate_note() -> Optional[str]:
     label = f"{section}/{section_key}" if section_key else section
     print(f"📝 Note [{label}] from [{tf['filename']}]: {note}")
 
-    banner_url = (
-        f"https://image.pollinations.ai/prompt/"
-        f"{url_encode(note)}%20{url_encode(section)}%20programming"
-        f"?width=800&height=400&nologo=true"
-    )
+    seed = picsum_seed(section + note)
+    banner_url = f"https://picsum.photos/seed/{seed}/1200/630"
 
     # ── Step 1: Generate content ─────────────────────────────────────────────
     try:
@@ -1430,10 +1431,7 @@ def generate_note() -> Optional[str]:
                 f"Learning path: **{section}**"
                 + (f" → **{section_key}**" if section_key else "")
                 + "\n\n"
-                f"BANNER IMAGE — use this exact URL as the very first line:\n"
-                f"![{note}]({banner_url})\n\n"
                 f"MANDATORY CHECKLIST — your response will be rejected if any item is missing:\n"
-                f"☐ Banner image as the very first line (URL above)\n"
                 f"☐ ## Introduction — what it is, why it matters, real-world relevance\n"
                 f"☐ ## Core Concepts — precise definitions, mental models, key terminology\n"
                 f"☐ ## How It Works Internally — under-the-hood mechanics, step-by-step\n"
