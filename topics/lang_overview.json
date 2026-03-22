@@ -1,0 +1,82 @@
+{
+  "notes": {
+    "languages-overview": {
+      "1_Language_Comparison": [
+        "Programming Language Paradigms: Imperative, Declarative, OOP, Functional, Procedural",
+        "Compiled vs Interpreted vs JIT-compiled Languages",
+        "Statically Typed vs Dynamically Typed: Trade-offs",
+        "Strongly Typed vs Weakly Typed Languages",
+        "Memory Management: Manual (C/C++), GC (Java/Go/Python), Ownership (Rust)",
+        "Concurrency Models: Threads, Goroutines, Async/Await, Actors, CSP",
+        "Performance Ranking: C/C++ > Rust > Go/Java > JavaScript/Python",
+        "Developer Productivity Ranking: Python > JavaScript > Go > Java > Rust > C++",
+        "Ecosystem Size: JavaScript > Python > Java > C# > PHP > Go > Rust",
+        "TypeScript vs JavaScript: When to Add Types",
+        "Python vs JavaScript: Backend Use Cases",
+        "Go vs Rust: Simplicity vs Safety",
+        "Java vs Kotlin: Same JVM, Modern vs Legacy",
+        "Swift vs Kotlin: iOS vs Android, Surprisingly Similar",
+        "C++ vs Rust: Systems Programming Comparison",
+        "Choosing a Language for Web Backend: Node.js, Go, Python, Java, Rust",
+        "Choosing a Language for Mobile: Swift (iOS), Kotlin (Android), Dart (Flutter)",
+        "Choosing a Language for Data Science: Python, R, Julia",
+        "Choosing a Language for Systems: C, C++, Rust",
+        "Choosing a Language for Scripting: Python, Bash, Ruby"
+      ],
+      "2_Learning_Roadmaps": [
+        "Beginner Path: Python → JavaScript → TypeScript",
+        "Backend Developer Path: JavaScript/TypeScript → Node.js → Go or Java",
+        "Frontend Developer Path: HTML/CSS → JavaScript → TypeScript → React",
+        "Full-stack Path: JavaScript/TypeScript → React → Node.js → Databases",
+        "Mobile Developer Path: Swift (iOS) or Kotlin (Android) or Dart (Flutter)",
+        "Systems Programmer Path: C → C++ → Rust",
+        "Data Scientist Path: Python → NumPy/Pandas → Scikit-learn → Deep Learning",
+        "DevOps Path: Bash → Python → Go → Terraform",
+        "Game Developer Path: C++ or C# (Unity) or GDScript (Godot)",
+        "First Language Recommendation: Python for Beginners",
+        "Second Language Recommendation: JavaScript for Web",
+        "Third Language Recommendation: TypeScript for Scale"
+      ],
+      "3_Language_Features_Comparison": [
+        "Null Handling: null (Java/JS), nil (Go/Swift/Ruby), None (Python), Option<T> (Rust), T? (Kotlin/Swift/TypeScript)",
+        "Error Handling: Exceptions (Java/Python/JS), Result<T,E> (Rust), error return (Go), throws (Swift)",
+        "Concurrency: goroutines (Go), async/await (JS/Python/Rust/Swift/Kotlin), threads (Java/C++), actors (Kotlin/Swift)",
+        "Generics: Java, C++, Rust, TypeScript, Go (1.18+), Swift, Kotlin",
+        "Pattern Matching: Rust, Swift, Kotlin, Scala, Python 3.10+, Java 21+",
+        "Closures/Lambdas: All Modern Languages",
+        "Immutability: val (Kotlin), let (Swift/Rust), const (JS), final (Java)",
+        "Type Inference: TypeScript, Kotlin, Swift, Rust, Go, C++ (auto)",
+        "Operator Overloading: C++, Rust, Kotlin, Swift, Python",
+        "Extension Methods/Functions: Kotlin, Swift, C#, TypeScript (via prototype)",
+        "Destructuring: JavaScript, TypeScript, Python, Rust, Kotlin, Swift",
+        "String Interpolation: JavaScript, Python, Kotlin, Swift, Ruby, Rust"
+      ],
+      "4_Polyglot_Programming": [
+        "Why Learn Multiple Languages",
+        "Language Interoperability: JVM (Java/Kotlin/Scala), .NET (C#/F#/VB)",
+        "FFI: Calling C from Python (ctypes, cffi), Rust (bindgen), Go (cgo)",
+        "WebAssembly: Running Rust, C++, Go in the Browser",
+        "Transpilation: TypeScript → JavaScript, Kotlin → JavaScript",
+        "Embedding Languages: Lua in C++, Python in C",
+        "Polyglot Runtimes: GraalVM",
+        "Language-specific Strengths to Combine",
+        "Code Style and Conventions Across Languages",
+        "Switching Between Languages: Mental Model Shifts"
+      ],
+      "5_Emerging_Languages": [
+        "Zig: C Alternative with Comptime and No Hidden Control Flow",
+        "Nim: Python-like Syntax, Compiles to C",
+        "V: Simple, Fast, Safe Systems Language",
+        "Carbon: Google's C++ Successor Experiment",
+        "Mojo: Python Superset for AI/ML Performance",
+        "Gleam: Type-safe Language on Erlang VM",
+        "Elixir: Functional, Concurrent, on Erlang VM",
+        "Scala: Functional + OOP on JVM",
+        "Haskell: Pure Functional Programming",
+        "Clojure: Lisp on the JVM",
+        "Julia: High-performance Scientific Computing",
+        "Dart: Google's Language for Flutter"
+      ]
+    }
+  }
+}

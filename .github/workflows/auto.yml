@@ -2,14 +2,17 @@ name: Generate & Deploy
 
 on:
   schedule:
-    - cron: "0 3,15 * * *"   # twice daily — 3am and 3pm UTC
+    # 3 runs per day: 6am, 12pm, 6pm UTC
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 18 * * *"
 
   workflow_dispatch:
     inputs:
       run_count:
-        description: "Number of articles to generate"
+        description: "Number of articles to generate (default: 3)"
         required: false
-        default: "1"
+        default: "3"
 
 permissions:
   contents: write
@@ -17,6 +20,12 @@ permissions:
 jobs:
   generate-and-deploy:
     runs-on: ubuntu-latest
+
+    # Queues concurrent runs — never cancels, never runs two at once.
+    # This prevents git push conflicts when all 3 cron triggers fire close together.
+    concurrency:
+      group: generate-deploy
+      cancel-in-progress: false
 
     steps:
       - name: Checkout
@@ -39,12 +48,17 @@ jobs:
           git config user.name "baaghinitesh"
           git config user.email "baaghinitesh@gmail.com"
 
+      # Pull latest AFTER pip install so we always have the freshest topic files
+      # and already-generated article list before picking what to write next.
+      - name: Pull latest commits
+        run: git pull --rebase origin main
+
       - name: Generate content
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           AUTHOR_NAME: "baaghinitesh"
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
-          RUN_COUNT: ${{ github.event.inputs.run_count || '1' }}
+          RUN_COUNT: ${{ github.event.inputs.run_count || '3' }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python main.py
 
