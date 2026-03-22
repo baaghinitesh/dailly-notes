@@ -42,14 +42,18 @@ _written_this_run: set = set()
 # ─── Load topics ──────────────────────────────────────────────────────────────
 
 def load_all_topics() -> dict:
-    """Merge all JSON files from topics/ directory into one structure."""
+    """
+    Load all topics from the topics/ directory.
+    - DSA easy/medium/hard lists come from topics/dsa.json
+    - All notes sections come from the per-language/topic JSON files
+    Later files in sorted order overwrite earlier ones for the same notes key.
+    """
     merged: dict = {"easy": [], "medium": [], "hard": [], "notes": {}}
     topics_dir = "topics"
 
     if not os.path.isdir(topics_dir):
-        # Legacy fallback
-        with open("topics.json", "r", encoding="utf-8") as f:
-            return json.load(f)
+        print("❌ topics/ directory not found")
+        sys.exit(1)
 
     for fname in sorted(os.listdir(topics_dir)):
         if not fname.endswith(".json"):

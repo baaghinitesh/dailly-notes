@@ -1,6 +1,28 @@
 {
   "notes": {
     "software-engineering": {
+      "0_Overview": [
+        "What is Software Engineering: Applying Engineering Principles to Software Development",
+        "Software Engineering vs Computer Science vs Programming",
+        "The Software Development Lifecycle (SDLC): Plan, Design, Implement, Test, Deploy, Maintain",
+        "Agile Methodology: Sprints, Scrum, Kanban, Retrospectives",
+        "Waterfall vs Agile vs Lean vs XP",
+        "SOLID Principles: The Foundation of Good OOP Design",
+        "DRY, KISS, YAGNI: Practical Coding Principles",
+        "Clean Code: Readable, Maintainable, Expressive Code",
+        "Design Patterns: Reusable Solutions to Common Problems",
+        "Software Architecture: The Big Picture of System Structure",
+        "Technical Debt: What It Is and How to Manage It",
+        "Code Review Culture: Why and How",
+        "Testing: Unit, Integration, E2E — The Testing Pyramid",
+        "TDD: Test-Driven Development Workflow",
+        "Refactoring: Improving Code Without Changing Behavior",
+        "Version Control Best Practices: Branching, Commits, PRs",
+        "Documentation: Code Comments, READMEs, ADRs",
+        "Security Engineering: Building Secure Systems by Default",
+        "API Design: REST, GraphQL, gRPC Trade-offs",
+        "Career Growth: Junior → Mid → Senior → Staff → Principal Engineer"
+      ],
       "1_Design_Patterns": [
         "SOLID Principles: Single Responsibility, Open-Closed, Liskov, Interface Segregation, Dependency Inversion",
         "DRY, KISS, YAGNI Principles",
@@ -91,6 +113,28 @@
       ]
     },
     "data-engineering": {
+      "0_Overview": [
+        "What is Data Engineering: Building Pipelines to Move and Transform Data",
+        "Data Engineer vs Data Scientist vs Data Analyst vs ML Engineer",
+        "The Modern Data Stack: Ingestion → Storage → Transformation → Serving",
+        "Batch Processing vs Stream Processing: When to Use Each",
+        "ETL vs ELT: Extract-Transform-Load vs Extract-Load-Transform",
+        "Data Warehouse: Structured, Optimized for Analytics (Snowflake, BigQuery, Redshift)",
+        "Data Lake: Raw Data at Scale (S3, HDFS, Azure Data Lake)",
+        "Data Lakehouse: Best of Both Worlds (Delta Lake, Apache Iceberg)",
+        "OLTP vs OLAP: Transactional vs Analytical Workloads",
+        "Apache Kafka: The Backbone of Real-time Data Pipelines",
+        "Apache Spark: Distributed Data Processing at Scale",
+        "Apache Airflow: Workflow Orchestration for Data Pipelines",
+        "dbt: SQL-based Data Transformation in the Warehouse",
+        "Data Quality: Validation, Monitoring, and Alerting",
+        "Data Governance: Ownership, Lineage, Cataloging",
+        "Schema Evolution: Handling Changing Data Structures",
+        "Partitioning and Clustering for Query Performance",
+        "Data Serialization Formats: JSON, Avro, Parquet, ORC",
+        "Change Data Capture (CDC): Syncing Databases in Real-time",
+        "Key Skills: SQL, Python, Spark, Kafka, Cloud Data Services"
+      ],
       "1_Data_Fundamentals": [
         "Batch Processing vs Stream Processing",
         "ETL vs ELT",
@@ -126,6 +170,28 @@
       ]
     },
     "mobile-development": {
+      "0_Overview": [
+        "Mobile Development Landscape: Native, Cross-platform, Hybrid, PWA",
+        "Native iOS: Swift + SwiftUI/UIKit — Best Performance, Apple Ecosystem",
+        "Native Android: Kotlin + Jetpack Compose/XML — Best Performance, Google Ecosystem",
+        "Cross-platform: React Native (JavaScript), Flutter (Dart), Xamarin (.NET)",
+        "React Native: Write Once, Run on iOS and Android with JavaScript/TypeScript",
+        "Flutter: Write Once, Run Everywhere with Dart — Pixel-perfect UI",
+        "Hybrid Apps: Capacitor/Ionic — Web Tech Wrapped in Native Shell",
+        "PWA: Progressive Web Apps — Web Apps with Native-like Features",
+        "When to Go Native: Performance-critical, Platform-specific Features",
+        "When to Go Cross-platform: Faster Development, Shared Codebase, Smaller Team",
+        "Mobile App Architecture: MVC, MVP, MVVM, Clean Architecture",
+        "State Management on Mobile: Redux, Zustand (RN), BLoC, Provider (Flutter)",
+        "Navigation: React Navigation (RN), Navigator (Flutter)",
+        "Local Storage: AsyncStorage, MMKV, SQLite, Realm",
+        "Push Notifications: FCM (Firebase Cloud Messaging), APNs",
+        "App Store Deployment: Apple App Store, Google Play Store",
+        "Over-the-Air Updates: Expo EAS Update, CodePush",
+        "Mobile Performance: JS Thread vs UI Thread, Hermes Engine, Reanimated",
+        "Deep Linking and Universal Links",
+        "Mobile Security: Certificate Pinning, Biometrics, Secure Storage"
+      ],
       "1_Cross_Platform": [
         "React Native vs Flutter vs Xamarin vs Ionic",
         "Flutter: Widgets, State Management, Dart Language",

@@ -1,6 +1,28 @@
 {
   "notes": {
     "languages-overview": {
+      "0_Overview": [
+        "Why Learn Multiple Programming Languages: Different Tools for Different Problems",
+        "Programming Paradigms: Imperative, Declarative, OOP, Functional, Procedural, Logic",
+        "Compiled vs Interpreted vs JIT: Performance and Developer Experience Trade-offs",
+        "Static vs Dynamic Typing: Catch Errors at Compile Time vs Runtime Flexibility",
+        "Memory Management: Manual (C/C++), Garbage Collected (Java/Go/Python), Ownership (Rust)",
+        "JavaScript: The Language of the Web — Frontend, Backend (Node.js), Mobile (RN)",
+        "TypeScript: JavaScript with Types — The Industry Standard for Large Codebases",
+        "Python: The Most Beginner-friendly Language — Data Science, AI/ML, Scripting, Backend",
+        "Java: Enterprise Standard — Android, Spring Boot, Big Data",
+        "Kotlin: Modern Java — Android Development, Multiplatform",
+        "Go: Simple, Fast, Concurrent — Cloud Infrastructure, Microservices, CLIs",
+        "Rust: Memory-safe Systems Programming — Performance Without GC",
+        "Swift: Apple's Language — iOS, macOS, Server-side (Vapor)",
+        "C/C++: Systems Programming, Game Engines, Embedded, Performance-critical Code",
+        "SQL: The Universal Language for Databases — Every Developer Must Know It",
+        "Bash/Shell: Automation, DevOps, CI/CD Scripts",
+        "Dart: Flutter's Language — Cross-platform Mobile and Web",
+        "PHP: Still Powers 75%+ of the Web — WordPress, Laravel",
+        "Ruby: Developer Happiness — Rails for Rapid Web Development",
+        "Choosing Your First Language: Python for Beginners, JavaScript for Web"
+      ],
       "1_Language_Comparison": [
         "Programming Language Paradigms: Imperative, Declarative, OOP, Functional, Procedural",
         "Compiled vs Interpreted vs JIT-compiled Languages",

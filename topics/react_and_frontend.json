@@ -1,6 +1,28 @@
 {
   "notes": {
     "react": {
+      "0_Overview": [
+        "What is React: A JavaScript Library for Building User Interfaces",
+        "React's Core Idea: UI as a Function of State — UI = f(state)",
+        "Why React: Component-based, Declarative, Huge Ecosystem",
+        "React vs Vue vs Angular vs Svelte: Trade-offs",
+        "Virtual DOM: How React Efficiently Updates the Real DOM",
+        "Reconciliation and the Diffing Algorithm",
+        "React Fiber: The Reconciler Rewrite for Concurrent Features",
+        "JSX: JavaScript + XML Syntax Sugar",
+        "Components: The Building Blocks of React Apps",
+        "Props: Passing Data Down the Component Tree",
+        "State: Data That Changes Over Time",
+        "Hooks: Functions That Let You Use React Features in Function Components",
+        "The Rules of Hooks: Only Call at Top Level, Only in React Functions",
+        "Unidirectional Data Flow: Data Flows Down, Events Flow Up",
+        "React DevTools: Inspecting Component Tree and Performance",
+        "React Ecosystem: React Router, TanStack Query, Zustand, React Hook Form",
+        "React 18 Features: Concurrent Mode, Automatic Batching, Transitions, Suspense",
+        "React 19 Features: Server Components, Actions, use() Hook",
+        "Next.js: The Most Popular React Framework for Production",
+        "When NOT to Use React: Simple Static Sites, Performance-critical Apps"
+      ],
       "1_Fundamentals": [
         "Introduction to React: What and Why",
         "Setting up with Vite and Create React App",
@@ -128,6 +150,28 @@
       ]
     },
     "react-native": {
+      "0_Overview": [
+        "What is React Native: Build Native Mobile Apps with JavaScript and React",
+        "React Native vs Expo: Bare Workflow vs Managed Workflow",
+        "How React Native Works: JS Thread, UI Thread, Bridge (Old) vs JSI (New)",
+        "New Architecture: JSI, Fabric Renderer, TurboModules — No More Bridge",
+        "React Native vs Flutter: JavaScript/TypeScript vs Dart, Community vs Performance",
+        "React Native vs Native (Swift/Kotlin): Trade-offs",
+        "Expo: The Fastest Way to Start a React Native App",
+        "EAS (Expo Application Services): Build, Submit, Update",
+        "Core Components: View, Text, Image, ScrollView, FlatList, TextInput",
+        "Styling: StyleSheet API, Flexbox (column-first by default)",
+        "Navigation: React Navigation — Stack, Tab, Drawer",
+        "State Management: Same as React — Zustand, Redux, TanStack Query",
+        "Device APIs: Camera, Location, Notifications, Biometrics via Expo modules",
+        "Animations: Animated API, Reanimated 2/3, Gesture Handler",
+        "Performance: Hermes Engine, FlatList Optimization, Avoiding Bridge Calls",
+        "Debugging: Flipper, React Native Debugger, Expo Dev Tools",
+        "Testing: Jest, React Native Testing Library, Detox for E2E",
+        "Deployment: App Store (iOS) and Google Play (Android) via EAS Submit",
+        "OTA Updates: Expo EAS Update for Instant JS Updates",
+        "Popular Apps Built with React Native: Facebook, Instagram, Shopify, Discord"
+      ],
       "1_Fundamentals": [
         "React Native vs Expo: Choosing the Right Setup",
         "Core Components: View, Text, Image, ScrollView, FlatList",
@@ -200,6 +244,28 @@
       ]
     },
     "frontend-tooling": {
+      "0_Overview": [
+        "What is Frontend Tooling: The Build Pipeline That Transforms Source Code to Production Assets",
+        "Why Tooling Matters: Transpilation, Bundling, Minification, Tree-shaking",
+        "The Evolution: No Build → Grunt/Gulp → Webpack → Vite/esbuild/Turbopack",
+        "Module Systems: CommonJS (require) → AMD → ES Modules (import/export)",
+        "Transpilation: TypeScript → JavaScript, JSX → JS, Modern JS → Legacy JS",
+        "Bundling: Combining Many Files into Fewer for Faster Loading",
+        "Tree Shaking: Removing Unused Code from the Bundle",
+        "Code Splitting: Loading Only What's Needed, When It's Needed",
+        "Source Maps: Debugging Minified Code in Production",
+        "Hot Module Replacement (HMR): Instant Updates Without Full Page Reload",
+        "Vite: The Modern Standard — ESM-based Dev Server, Rollup for Production",
+        "Webpack: The Veteran — Highly Configurable, Huge Ecosystem",
+        "esbuild: Extremely Fast Go-based Bundler",
+        "Turbopack: Rust-based Webpack Successor from Vercel",
+        "Package Managers: npm vs Yarn vs pnpm — Speed and Disk Usage",
+        "Monorepo Tools: Turborepo, Nx, Lerna",
+        "Code Quality: ESLint (linting) + Prettier (formatting) + TypeScript (types)",
+        "Pre-commit Hooks: Husky + lint-staged for Automated Quality Gates",
+        "Environment Variables: .env files, Vite's import.meta.env, Webpack's DefinePlugin",
+        "CI/CD for Frontend: Build, Test, Lint, Deploy on Every Push"
+      ],
       "1_Build_Tools": [
         "Vite: Fast Dev Server and Build Tool",
         "Webpack: Entry, Output, Loaders, Plugins",
