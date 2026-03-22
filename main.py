@@ -2,15 +2,19 @@
 """
 main.py — Groq/Llama-3 powered content engine for dailly-notes
 
+Folder layout (everything under docs/notes/):
+  docs/notes/{section}/{slug}.md          ← conceptual notes
+  docs/notes/dsa/easy/{slug}.md           ← DSA problem solutions (easy)
+  docs/notes/dsa/medium/{slug}.md         ← DSA problem solutions (medium)
+  docs/notes/dsa/hard/{slug}.md           ← DSA problem solutions (hard)
+
 Guarantees:
-  - No duplicate articles: checks os.path.exists AND tracks generated paths in-memory
-  - Fair section coverage: shuffles ALL (section, topic) pairs globally, not section-first
-  - Batch commit: all articles in a run committed together in one push
-  - Per-article commit fallback: if batch push fails, retries per-article
+  - No duplicate articles
+  - Fair section coverage via global shuffle
+  - Batch commit; per-article fallback on push failure
   - Exponential backoff on Groq rate limits
-  - 3 scheduled runs/day × 3 articles = ~9 new articles/day
-  - Production-safe: never writes to disk until ALL Groq calls succeed;
-    auto-cleans any files written if a subsequent step fails
+  - Production-safe: ALL Groq calls succeed before ANY file is written;
+    auto-cleans files written during a failed article run
 """
 
 import os
@@ -49,7 +53,15 @@ class GroqAPIError(Exception):
 # ─── Load topics ──────────────────────────────────────────────────────────────
 
 def load_all_topics() -> dict:
-    merged: dict = {"easy": [], "medium": [], "hard": [], "notes": {}}
+    """
+    Merge all topic JSON files.
+    Result shape:
+      {
+        "dsa": { "easy": [...], "medium": [...], "hard": [...] },   # DSA problems
+        "notes": { section: content, ... }                          # conceptual notes
+      }
+    """
+    merged: dict = {"dsa": {"easy": [], "medium": [], "hard": []}, "notes": {}}
     topics_dir = "topics"
 
     if not os.path.isdir(topics_dir):
@@ -63,11 +75,16 @@ def load_all_topics() -> dict:
         try:
             with open(fpath, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            for key in ("easy", "medium", "hard"):
-                if key in data:
-                    merged[key].extend(data[key])
+
+            # DSA problem lists live at top-level easy/medium/hard in dsa.json
+            for diff in ("easy", "medium", "hard"):
+                if diff in data:
+                    merged["dsa"][diff].extend(data[diff])
+
+            # All notes sections (including dsa conceptual notes)
             for subject, content in data.get("notes", {}).items():
                 merged["notes"][subject] = content
+
         except Exception as e:
             print(f"⚠️  Failed to load {fpath}: {e}")
 
@@ -75,11 +92,11 @@ def load_all_topics() -> dict:
 
 
 topics = load_all_topics()
+dsa_counts = {d: len(topics["dsa"][d]) for d in ("easy", "medium", "hard")}
 print(
-    f"📚 Loaded: {len(topics.get('easy', []))} easy, "
-    f"{len(topics.get('medium', []))} medium, "
-    f"{len(topics.get('hard', []))} hard DSA problems | "
-    f"{len(topics.get('notes', {}))} note subjects"
+    f"📚 DSA problems: {dsa_counts['easy']} easy, "
+    f"{dsa_counts['medium']} medium, {dsa_counts['hard']} hard | "
+    f"{len(topics['notes'])} note subjects"
 )
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -188,7 +205,6 @@ def call_groq(
         except Exception as e:
             err = str(e)
             if "model_decommissioned" in err.lower() or "model_not_found" in err.lower():
-                # Non-retryable — wrong model ID, fail immediately
                 print(f"❌ Fatal Groq error (model issue): {e}")
                 sys.exit(1)
             elif "rate_limit" in err.lower() or "429" in err:
@@ -220,7 +236,6 @@ def cleanup_files(paths: List[str]):
                 os.remove(path)
                 print(f"🗑️  Cleaned up: {path}")
                 _written_this_run.discard(path)
-                # Remove parent dir if now empty
                 parent = os.path.dirname(path)
                 if os.path.isdir(parent) and not os.listdir(parent):
                     os.rmdir(parent)
@@ -279,13 +294,7 @@ STRICT FORMATTING RULES — follow every rule exactly:
 4. BANNER IMAGE — include exactly this at the very top (before Introduction):
    ![Topic Name](https://image.pollinations.ai/prompt/TOPIC_URL_ENCODED%20programming?width=800&height=400&nologo=true)
 
-5. MERMAID DIAGRAMS — use ```mermaid for architecture, flow, sequence, or class diagrams:
-   ```mermaid
-   graph TD
-     A[Client] --> B[API Gateway]
-     B --> C[Service A]
-     B --> D[Service B]
-   ```
+5. MERMAID DIAGRAMS — use ```mermaid for architecture, flow, sequence, or class diagrams when helpful.
 
 6. CALLOUTS — use blockquotes for notes, warnings, and tips:
    > **Note:** This is important.
@@ -300,7 +309,6 @@ STRICT FORMATTING RULES — follow every rule exactly:
    - Time/space complexity where relevant
    - Performance considerations
    - Interview tips where applicable
-   - Mention related concepts (do not hyperlink)
 
 9. Do NOT include YAML frontmatter — that is added separately.
 10. Aim for 700-1200 words of rich, dense, practical content.
@@ -322,9 +330,9 @@ STRICT RULES:
 DSA_SYSTEM = """You are an expert competitive programmer. Write clean, well-commented Java solutions.
 
 STRICT RULES:
-1. Output ONLY raw Java code — no markdown fences, no explanation text outside comments
+1. Output ONLY the Java solution as a fenced ```java code block — nothing else outside it
 2. Class name must be CamelCase derived from the problem name
-3. Line 1: // Problem: <problem name>
+3. Line 1 (inside class, as comment): // Problem: <problem name>
 4. Line 2: // Difficulty: <difficulty>
 5. Line 3: // Time Complexity: O(...)
 6. Line 4: // Space Complexity: O(...)
@@ -333,7 +341,7 @@ STRICT RULES:
 9. Use standard LeetCode-style method signatures
 """
 
-DSA_SUMMARY_SYSTEM = """You are a technical writer. Write a concise algorithm explanation.
+DSA_SUMMARY_SYSTEM = """You are a technical writer. Write a concise algorithm explanation in Markdown.
 
 FORMAT (use exactly these headings):
 
@@ -356,55 +364,89 @@ FORMAT (use exactly these headings):
 
 # ─── Smart pickers ────────────────────────────────────────────────────────────
 
-def pick_new_note() -> Tuple[Optional[str], Optional[str], Optional[str]]:
+def pick_new_note() -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str]]:
+    """
+    Pick a (note, path, section, section_key) that has never been generated.
+    Path: docs/notes/{section}/{section_key}/{slug}.md
+    For flat arrays (no section keys), section_key is None and path is docs/notes/{section}/{slug}.md
+    """
     notes_root = topics.get("notes", {})
     if not notes_root:
-        return None, None, None
+        return None, None, None, None
 
-    all_pairs: List[Tuple[str, str]] = []
+    # Build (section, section_key, note) triples
+    all_triples: List[Tuple[str, Optional[str], str]] = []
     for section, content in notes_root.items():
-        for topic_str in flatten_to_strings(content):
-            topic_str = topic_str.strip()
-            if topic_str:
-                all_pairs.append((section, topic_str))
+        if isinstance(content, dict):
+            for key, val in content.items():
+                for topic_str in flatten_to_strings(val):
+                    topic_str = topic_str.strip()
+                    if topic_str:
+                        all_triples.append((section, key, topic_str))
+        else:
+            for topic_str in flatten_to_strings(content):
+                topic_str = topic_str.strip()
+                if topic_str:
+                    all_triples.append((section, None, topic_str))
 
-    random.shuffle(all_pairs)
+    random.shuffle(all_triples)
 
-    for section, note in all_pairs:
-        path = f"docs/notes/{section}/{sanitize_filename(note)}.md"
+    for section, section_key, note in all_triples:
+        if section_key:
+            path = f"docs/notes/{section}/{section_key}/{sanitize_filename(note)}.md"
+        else:
+            path = f"docs/notes/{section}/{sanitize_filename(note)}.md"
         if path_is_available(path):
-            return note, path, section
+            return note, path, section, section_key
 
-    return None, None, None
+    return None, None, None, None
 
 
-def pick_note_to_update() -> Tuple[Optional[str], Optional[str], Optional[str], int]:
+def pick_note_to_update() -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str], int]:
+    """
+    Pick a (note, path, section, section_key, count) for an existing article that can still be updated.
+    """
     notes_root = topics.get("notes", {})
     if not notes_root:
-        return None, None, None, 0
+        return None, None, None, None, 0
 
-    all_pairs: List[Tuple[str, str]] = []
+    all_triples: List[Tuple[str, Optional[str], str]] = []
     for section, content in notes_root.items():
-        for topic_str in flatten_to_strings(content):
-            topic_str = topic_str.strip()
-            if topic_str:
-                all_pairs.append((section, topic_str))
+        if isinstance(content, dict):
+            for key, val in content.items():
+                for topic_str in flatten_to_strings(val):
+                    topic_str = topic_str.strip()
+                    if topic_str:
+                        all_triples.append((section, key, topic_str))
+        else:
+            for topic_str in flatten_to_strings(content):
+                topic_str = topic_str.strip()
+                if topic_str:
+                    all_triples.append((section, None, topic_str))
 
-    random.shuffle(all_pairs)
+    random.shuffle(all_triples)
 
-    for section, note in all_pairs:
-        path = f"docs/notes/{section}/{sanitize_filename(note)}.md"
+    for section, section_key, note in all_triples:
+        if section_key:
+            path = f"docs/notes/{section}/{section_key}/{sanitize_filename(note)}.md"
+        else:
+            path = f"docs/notes/{section}/{sanitize_filename(note)}.md"
         count = path_is_updatable(path)
         if count is not None:
-            return note, path, section, count
+            return note, path, section, section_key, count
 
-    return None, None, None, 0
+    return None, None, None, None, 0
 
 
-def pick_dsa() -> Tuple[Tuple[Optional[str], Optional[str]], str]:
+def pick_dsa() -> Tuple[Optional[str], Optional[str], str]:
+    """
+    Pick a DSA problem that hasn't been solved yet.
+    Returns (question, md_path, difficulty).
+    Path: docs/notes/dsa/{difficulty}/{slug}.md
+    """
     all_dsa: List[Tuple[str, str]] = []
     for difficulty in ("easy", "medium", "hard"):
-        for q in topics.get(difficulty, []):
+        for q in topics["dsa"].get(difficulty, []):
             q = str(q).strip()
             if q:
                 all_dsa.append((difficulty, q))
@@ -412,21 +454,22 @@ def pick_dsa() -> Tuple[Tuple[Optional[str], Optional[str]], str]:
     random.shuffle(all_dsa)
 
     for difficulty, question in all_dsa:
-        path = f"docs/dsa/{difficulty}/{sanitize_filename(question)}.md"
+        path = f"docs/notes/dsa/{difficulty}/{sanitize_filename(question)}.md"
         if path_is_available(path):
-            return (question, path), difficulty
+            return question, path, difficulty
 
-    return (None, None), "easy"
+    return None, None, "easy"
 
 # ─── Content generators ───────────────────────────────────────────────────────
 
 def generate_dsa() -> Optional[str]:
     """
-    Generate one DSA article.
+    Generate one DSA problem article.
+    Path: docs/notes/dsa/{difficulty}/{slug}.md
     ALL Groq calls happen before ANY file is written.
     On GroqAPIError, cleans up any files already written and returns None.
     """
-    (question, md_path), difficulty = pick_dsa()
+    question, md_path, difficulty = pick_dsa()
     if not question:
         print("⚠️  All DSA problems already generated.")
         return None
@@ -435,13 +478,15 @@ def generate_dsa() -> Optional[str]:
     written: List[str] = []
 
     try:
-        # ── Step 1: generate all content in memory first ──────────────────────
-        java_code = call_groq(
+        # ── Generate all content in memory first ──────────────────────────────
+        java_raw = call_groq(
             DSA_SYSTEM,
             f"Problem: {question}\nDifficulty: {difficulty}\nWrite the complete Java solution.",
             max_tokens=2048,
         )
-        java_code = re.sub(r"```java\s*|```\s*", "", java_code).strip()
+        # Extract code from fenced block if present
+        java_match = re.search(r"```java\s*([\s\S]*?)```", java_raw)
+        java_code = java_match.group(1).strip() if java_match else re.sub(r"```\w*\s*|```", "", java_raw).strip()
 
         summary = call_groq(
             DSA_SUMMARY_SYSTEM,
@@ -449,8 +494,7 @@ def generate_dsa() -> Optional[str]:
             max_tokens=700,
         )
 
-        # ── Step 2: only write to disk after both calls succeeded ─────────────
-        java_path = md_path.replace(".md", ".java")
+        # ── Only write to disk after both calls succeeded ─────────────────────
         banner_url = (
             f"https://image.pollinations.ai/prompt/"
             f"{url_encode(question)}%20algorithm%20data%20structure"
@@ -460,6 +504,7 @@ def generate_dsa() -> Optional[str]:
             f'---\n'
             f'title: "{question}"\n'
             f'difficulty: "{difficulty}"\n'
+            f'section: "dsa"\n'
             f'tags: "dsa, {difficulty}, java, leetcode"\n'
             f'banner: "{banner_url}"\n'
             f'update_count: 0\n'
@@ -471,8 +516,6 @@ def generate_dsa() -> Optional[str]:
             f'```java\n{java_code}\n```\n'
         )
 
-        save_file(java_path, java_code)
-        written.append(java_path)
         save_file(md_path, md_content)
         written.append(md_path)
 
@@ -486,16 +529,17 @@ def generate_dsa() -> Optional[str]:
 
 def generate_note() -> Optional[str]:
     """
-    Generate one new note article.
+    Generate one new conceptual note article.
+    Path: docs/notes/{section}/{section_key}/{slug}.md
     ALL Groq calls happen before ANY file is written.
-    On GroqAPIError, cleans up any files already written and returns None.
     """
-    note, path, section = pick_new_note()
+    note, path, section, section_key = pick_new_note()
     if not note:
         print("⚠️  All note topics already generated — trying update instead.")
         return update_existing_note()
 
-    print(f"📝 Note [{section}]: {note}")
+    label = f"{section}/{section_key}" if section_key else section
+    print(f"📝 Note [{label}]: {note}")
     written: List[str] = []
 
     try:
@@ -503,7 +547,8 @@ def generate_note() -> Optional[str]:
             NOTE_SYSTEM,
             (
                 f"Write comprehensive, in-depth study notes for: **{note}**\n"
-                f"Context: This is part of the **{section}** learning path.\n"
+                f"Context: This is part of the **{section}** learning path"
+                + (f", section **{section_key}**" if section_key else "") + ".\n"
                 f"Include the banner image at the very top using this URL:\n"
                 f"https://image.pollinations.ai/prompt/"
                 f"{url_encode(note)}%20{url_encode(section)}%20programming"
@@ -524,7 +569,7 @@ def generate_note() -> Optional[str]:
         save_file(path, frontmatter + "\n" + content_body)
         written.append(path)
 
-        return f"📝 [{section}] {note}"
+        return f"📝 [{label}] {note}"
 
     except GroqAPIError as e:
         print(f"❌ Note generation failed for '{note}': {e}")
@@ -533,16 +578,14 @@ def generate_note() -> Optional[str]:
 
 
 def update_existing_note() -> Optional[str]:
-    """
-    Append a new section to an existing note.
-    On GroqAPIError, cleans up and returns None.
-    """
-    note, path, section, current_count = pick_note_to_update()
+    """Append a new section to an existing note. On GroqAPIError, restores original."""
+    note, path, section, section_key, current_count = pick_note_to_update()
     if not note:
         print("⚠️  No notes available to update either.")
         return None
 
-    print(f"🔄 Update [{section}]: {note} → v{current_count + 1}")
+    label = f"{section}/{section_key}" if section_key else section
+    print(f"🔄 Update [{label}]: {note} → v{current_count + 1}")
 
     with open(path, "r", encoding="utf-8") as f:
         existing = f.read()
@@ -574,11 +617,10 @@ def update_existing_note() -> Optional[str]:
         )
 
         save_file(path, new_frontmatter + "\n" + body + "\n\n" + new_section_text)
-        return f"🔄 [{section}] {note} (v{new_count})"
+        return f"🔄 [{label}] {note} (v{new_count})"
 
     except GroqAPIError as e:
         print(f"❌ Note update failed for '{note}': {e}")
-        # update_existing_note overwrites an existing file — restore original
         try:
             with open(path, "w", encoding="utf-8") as f:
                 f.write(existing)
@@ -616,6 +658,7 @@ def main():
     for i in range(run_count):
         print(f"\n─── Article {i + 1}/{run_count} ───")
 
+        # 35% DSA problem solutions, 65% conceptual notes
         if random.random() < 0.35:
             msg = generate_dsa()
         else:
@@ -647,7 +690,7 @@ def main():
 
     print(f"\n✅ Done. {len(commit_messages)}/{run_count} articles generated.")
 
-    # Exit with code 1 if every single article failed — marks the GH Actions run red
+    # Exit with code 1 if every single article failed — marks GH Actions run red
     if failed_count == run_count:
         print("❌ All articles failed. Exiting with error.")
         sys.exit(1)
