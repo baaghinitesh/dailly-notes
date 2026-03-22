@@ -3,10 +3,12 @@
 main.py — Groq/Llama-3 powered content engine for dailly-notes
 
 Folder layout (everything under docs/notes/):
-  docs/notes/{section}/{slug}.md          ← conceptual notes
-  docs/notes/dsa/easy/{slug}.md           ← DSA problem solutions (easy)
-  docs/notes/dsa/medium/{slug}.md         ← DSA problem solutions (medium)
-  docs/notes/dsa/hard/{slug}.md           ← DSA problem solutions (hard)
+  docs/notes/{section}/{section_key}/{slug}.md   ← conceptual notes (all topics)
+  docs/notes/dsa/{lang}/easy/{slug}.md           ← language DSA problems (easy)
+  docs/notes/dsa/{lang}/medium/{slug}.md         ← language DSA problems (medium)
+  docs/notes/dsa/{lang}/hard/{slug}.md           ← language DSA problems (hard)
+  docs/notes/dsa/{lang}/super_advanced/{slug}.md ← language DSA super advanced
+  docs/notes/dsa/{section_key}/{slug}.md         ← DSA conceptual notes
 
 Guarantees:
   - No duplicate articles
@@ -57,11 +59,22 @@ def load_all_topics() -> dict:
     Merge all topic JSON files.
     Result shape:
       {
-        "dsa": { "easy": [...], "medium": [...], "hard": [...] },   # DSA problems
-        "notes": { section: content, ... }                          # conceptual notes
+        "dsa_problems": {
+          "java":       { "easy": [...], "medium": [...], "hard": [...], "super_advanced": [...] },
+          "cpp":        { ... },
+          "c":          { ... },
+          "python":     { ... },
+          "javascript": { ... },
+        },
+        "notes": { section: content, ... }   # conceptual notes for all topics
       }
     """
-    merged: dict = {"dsa": {"easy": [], "medium": [], "hard": []}, "notes": {}}
+    LANGS = ("java", "cpp", "c", "python", "javascript")
+    DIFFS = ("easy", "medium", "hard", "super_advanced")
+    merged: dict = {
+        "dsa_problems": {lang: {d: [] for d in DIFFS} for lang in LANGS},
+        "notes": {},
+    }
     topics_dir = "topics"
 
     if not os.path.isdir(topics_dir):
@@ -76,10 +89,12 @@ def load_all_topics() -> dict:
             with open(fpath, "r", encoding="utf-8") as f:
                 data = json.load(f)
 
-            # DSA problem lists live at top-level easy/medium/hard in dsa.json
-            for diff in ("easy", "medium", "hard"):
-                if diff in data:
-                    merged["dsa"][diff].extend(data[diff])
+            # Language-specific DSA problems: data["problems"][lang][diff]
+            for lang in LANGS:
+                lang_data = data.get("problems", {}).get(lang, {})
+                for diff in DIFFS:
+                    if diff in lang_data:
+                        merged["dsa_problems"][lang][diff].extend(lang_data[diff])
 
             # All notes sections (including dsa conceptual notes)
             for subject, content in data.get("notes", {}).items():
@@ -92,10 +107,14 @@ def load_all_topics() -> dict:
 
 
 topics = load_all_topics()
-dsa_counts = {d: len(topics["dsa"][d]) for d in ("easy", "medium", "hard")}
+total_problems = sum(
+    len(topics["dsa_problems"][lang][diff])
+    for lang in topics["dsa_problems"]
+    for diff in topics["dsa_problems"][lang]
+)
 print(
-    f"📚 DSA problems: {dsa_counts['easy']} easy, "
-    f"{dsa_counts['medium']} medium, {dsa_counts['hard']} hard | "
+    f"📚 DSA problems: {total_problems} total across "
+    f"{len(topics['dsa_problems'])} languages | "
     f"{len(topics['notes'])} note subjects"
 )
 
@@ -327,18 +346,20 @@ STRICT RULES:
 8. Do NOT add any preamble — start directly with the ## heading
 """
 
-DSA_SYSTEM = """You are an expert competitive programmer. Write clean, well-commented Java solutions.
+DSA_SYSTEM = """You are an expert competitive programmer. Write clean, well-commented solutions.
 
 STRICT RULES:
-1. Output ONLY the Java solution as a fenced ```java code block — nothing else outside it
-2. Class name must be CamelCase derived from the problem name
-3. Line 1 (inside class, as comment): // Problem: <problem name>
-4. Line 2: // Difficulty: <difficulty>
-5. Line 3: // Time Complexity: O(...)
-6. Line 4: // Space Complexity: O(...)
-7. Include inline comments explaining key algorithmic steps
-8. The solution must be complete and compilable
-9. Use standard LeetCode-style method signatures
+1. Output ONLY the solution as a fenced code block with the correct language tag — nothing else outside it
+2. Class/function name must be CamelCase or idiomatic for the language
+3. Line 1 (as comment): // Problem: <problem name>  (use # for Python)
+4. Line 2: // Language: <language>
+5. Line 3: // Difficulty: <difficulty>
+6. Line 4: // Time Complexity: O(...)
+7. Line 5: // Space Complexity: O(...)
+8. Include inline comments explaining key algorithmic steps
+9. The solution must be complete and runnable
+10. Use standard LeetCode-style method signatures where applicable
+11. For super_advanced topics, write a complete implementation with explanation comments
 """
 
 DSA_SUMMARY_SYSTEM = """You are a technical writer. Write a concise algorithm explanation in Markdown.
@@ -438,88 +459,101 @@ def pick_note_to_update() -> Tuple[Optional[str], Optional[str], Optional[str], 
     return None, None, None, None, 0
 
 
-def pick_dsa() -> Tuple[Optional[str], Optional[str], str]:
+def pick_dsa() -> Tuple[Optional[str], Optional[str], str, str]:
     """
-    Pick a DSA problem that hasn't been solved yet.
-    Returns (question, md_path, difficulty).
-    Path: docs/notes/dsa/{difficulty}/{slug}.md
+    Pick a language DSA problem that hasn't been solved yet.
+    Returns (question, md_path, lang, difficulty).
+    Path: docs/notes/dsa/{lang}/{difficulty}/{slug}.md
     """
-    all_dsa: List[Tuple[str, str]] = []
-    for difficulty in ("easy", "medium", "hard"):
-        for q in topics["dsa"].get(difficulty, []):
-            q = str(q).strip()
-            if q:
-                all_dsa.append((difficulty, q))
+    LANGS = ("java", "cpp", "c", "python", "javascript")
+    DIFFS = ("easy", "medium", "hard", "super_advanced")
 
-    random.shuffle(all_dsa)
+    all_items: List[Tuple[str, str, str]] = []
+    for lang in LANGS:
+        for diff in DIFFS:
+            for q in topics["dsa_problems"].get(lang, {}).get(diff, []):
+                q = str(q).strip()
+                if q:
+                    all_items.append((lang, diff, q))
 
-    for difficulty, question in all_dsa:
-        path = f"docs/notes/dsa/{difficulty}/{sanitize_filename(question)}.md"
+    random.shuffle(all_items)
+
+    for lang, difficulty, question in all_items:
+        path = f"docs/notes/dsa/{lang}/{difficulty}/{sanitize_filename(question)}.md"
         if path_is_available(path):
-            return question, path, difficulty
+            return question, path, lang, difficulty
 
-    return None, None, "easy"
+    return None, None, "java", "easy"
 
 # ─── Content generators ───────────────────────────────────────────────────────
 
 def generate_dsa() -> Optional[str]:
     """
-    Generate one DSA problem article.
-    Path: docs/notes/dsa/{difficulty}/{slug}.md
+    Generate one language DSA problem article.
+    Path: docs/notes/dsa/{lang}/{difficulty}/{slug}.md
     ALL Groq calls happen before ANY file is written.
-    On GroqAPIError, cleans up any files already written and returns None.
     """
-    question, md_path, difficulty = pick_dsa()
+    question, md_path, lang, difficulty = pick_dsa()
     if not question:
         print("⚠️  All DSA problems already generated.")
         return None
 
-    print(f"🔧 DSA [{difficulty}]: {question}")
+    print(f"🔧 DSA [{lang}/{difficulty}]: {question}")
     written: List[str] = []
 
+    # Map lang to code fence tag
+    lang_tag = {"cpp": "cpp", "c": "c", "python": "python",
+                "javascript": "javascript", "java": "java"}.get(lang, lang)
+
     try:
-        # ── Generate all content in memory first ──────────────────────────────
-        java_raw = call_groq(
+        code_raw = call_groq(
             DSA_SYSTEM,
-            f"Problem: {question}\nDifficulty: {difficulty}\nWrite the complete Java solution.",
+            (
+                f"Problem: {question}\n"
+                f"Language: {lang}\n"
+                f"Difficulty: {difficulty}\n"
+                f"Write the complete {lang} solution."
+            ),
             max_tokens=2048,
         )
-        # Extract code from fenced block if present
-        java_match = re.search(r"```java\s*([\s\S]*?)```", java_raw)
-        java_code = java_match.group(1).strip() if java_match else re.sub(r"```\w*\s*|```", "", java_raw).strip()
+        # Extract code from fenced block
+        code_match = re.search(rf"```{lang_tag}\s*([\s\S]*?)```", code_raw)
+        if not code_match:
+            code_match = re.search(r"```\w*\s*([\s\S]*?)```", code_raw)
+        code = code_match.group(1).strip() if code_match else re.sub(r"```\w*\s*|```", "", code_raw).strip()
 
         summary = call_groq(
             DSA_SUMMARY_SYSTEM,
-            f"Problem: {question}\nDifficulty: {difficulty}\nJava solution:\n{java_code}",
+            f"Problem: {question}\nLanguage: {lang}\nDifficulty: {difficulty}\nSolution:\n{code}",
             max_tokens=700,
         )
 
-        # ── Only write to disk after both calls succeeded ─────────────────────
         banner_url = (
             f"https://image.pollinations.ai/prompt/"
-            f"{url_encode(question)}%20algorithm%20data%20structure"
+            f"{url_encode(question)}%20{url_encode(lang)}%20algorithm"
             f"?width=800&height=400&nologo=true"
         )
         md_content = (
             f'---\n'
             f'title: "{question}"\n'
+            f'language: "{lang}"\n'
             f'difficulty: "{difficulty}"\n'
             f'section: "dsa"\n'
-            f'tags: "dsa, {difficulty}, java, leetcode"\n'
+            f'tags: "dsa, {lang}, {difficulty}, leetcode, algorithms"\n'
             f'banner: "{banner_url}"\n'
             f'update_count: 0\n'
             f'---\n\n'
             f'# {question}\n\n'
             f'![{question}]({banner_url})\n\n'
             f'{summary}\n\n'
-            f'## Java Solution\n\n'
-            f'```java\n{java_code}\n```\n'
+            f'## {lang.upper() if lang in ("cpp","c") else lang.capitalize()} Solution\n\n'
+            f'```{lang_tag}\n{code}\n```\n'
         )
 
         save_file(md_path, md_content)
         written.append(md_path)
 
-        return f"📘 DSA [{difficulty}]: {question}"
+        return f"📘 DSA [{lang}/{difficulty}]: {question}"
 
     except GroqAPIError as e:
         print(f"❌ DSA generation failed for '{question}': {e}")
