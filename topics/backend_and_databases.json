@@ -1,0 +1,201 @@
+{
+  "notes": {
+    "nodejs": {
+      "1_Node_Fundamentals": [
+        "Node.js Architecture: Event Loop, libuv, V8",
+        "Non-blocking I/O and Asynchronous Programming",
+        "Node.js Modules: CommonJS vs ES Modules",
+        "Built-in Modules: fs, path, os, http, https, events, stream, crypto",
+        "process object: env, argv, exit, cwd",
+        "Buffer and Streams: Readable, Writable, Transform, Duplex",
+        "EventEmitter: on, emit, once, removeListener",
+        "Child Processes: spawn, exec, fork",
+        "Worker Threads for CPU-intensive Tasks",
+        "Cluster Module for Multi-core Utilization"
+      ],
+      "2_Express_js": [
+        "Express Setup and Application Structure",
+        "Routing: GET, POST, PUT, DELETE, PATCH",
+        "Route Parameters, Query Strings, Request Body",
+        "Middleware: Built-in, Third-party, Custom",
+        "Error Handling Middleware",
+        "Express Router for Modular Routes",
+        "Serving Static Files",
+        "Template Engines: EJS, Pug, Handlebars",
+        "CORS Configuration",
+        "Rate Limiting and Helmet for Security",
+        "Request Validation with Joi or Zod",
+        "File Uploads with Multer"
+      ],
+      "3_REST_API_Design": [
+        "REST Principles: Stateless, Uniform Interface, Client-Server",
+        "HTTP Methods and Status Codes",
+        "Resource Naming Conventions",
+        "API Versioning Strategies",
+        "Pagination: Offset-based and Cursor-based",
+        "Filtering, Sorting, and Searching",
+        "HATEOAS",
+        "API Documentation with Swagger/OpenAPI",
+        "Postman for API Testing"
+      ],
+      "4_Authentication_and_Authorization": [
+        "Session-based Authentication",
+        "JWT (JSON Web Tokens): Structure, Signing, Verification",
+        "JWT: Access Tokens and Refresh Tokens",
+        "OAuth 2.0 Flow: Authorization Code, Client Credentials",
+        "Passport.js: Local, Google, GitHub Strategies",
+        "bcrypt for Password Hashing",
+        "Role-based Access Control (RBAC)",
+        "API Key Authentication",
+        "Two-Factor Authentication (2FA)"
+      ],
+      "5_Advanced_Node": [
+        "Caching with Redis: GET, SET, EXPIRE, HSET",
+        "Message Queues: Bull/BullMQ with Redis",
+        "WebSockets with Socket.io",
+        "Server-Sent Events (SSE)",
+        "GraphQL with Apollo Server",
+        "gRPC in Node.js",
+        "Microservices Architecture with Node.js",
+        "Node.js Performance Profiling",
+        "Memory Leak Detection in Node.js",
+        "PM2 for Process Management"
+      ]
+    },
+    "databases": {
+      "1_SQL_Fundamentals": [
+        "Relational Database Concepts: Tables, Rows, Columns, Keys",
+        "Primary Key, Foreign Key, Unique, Not Null Constraints",
+        "SELECT Statement: WHERE, ORDER BY, LIMIT, OFFSET",
+        "Filtering: AND, OR, NOT, IN, BETWEEN, LIKE, IS NULL",
+        "Aggregate Functions: COUNT, SUM, AVG, MIN, MAX",
+        "GROUP BY and HAVING",
+        "JOINs: INNER, LEFT, RIGHT, FULL OUTER, CROSS, SELF",
+        "Subqueries: Correlated and Non-correlated",
+        "UNION, INTERSECT, EXCEPT",
+        "INSERT, UPDATE, DELETE Statements",
+        "Transactions: BEGIN, COMMIT, ROLLBACK, SAVEPOINT",
+        "ACID Properties: Atomicity, Consistency, Isolation, Durability"
+      ],
+      "2_SQL_Advanced": [
+        "Window Functions: ROW_NUMBER, RANK, DENSE_RANK, NTILE",
+        "Window Functions: LAG, LEAD, FIRST_VALUE, LAST_VALUE",
+        "CTEs (Common Table Expressions) with WITH clause",
+        "Recursive CTEs",
+        "Views: Creating, Updating, Dropping",
+        "Materialized Views",
+        "Stored Procedures and Functions",
+        "Triggers",
+        "Indexes: B-Tree, Hash, Composite, Partial, Covering",
+        "Query Optimization and EXPLAIN ANALYZE",
+        "Normalization: 1NF, 2NF, 3NF, BCNF",
+        "Denormalization for Performance",
+        "Partitioning: Range, List, Hash",
+        "Database Sharding Concepts"
+      ],
+      "3_PostgreSQL": [
+        "PostgreSQL Data Types: JSONB, Arrays, UUID, ENUM",
+        "Full-Text Search in PostgreSQL",
+        "PostgreSQL Indexing: GIN, GiST, BRIN",
+        "PostgreSQL Extensions: pg_trgm, PostGIS, uuid-ossp",
+        "Row-Level Security (RLS)",
+        "PostgreSQL Replication: Streaming, Logical",
+        "Connection Pooling with PgBouncer",
+        "PostgreSQL Performance Tuning"
+      ],
+      "4_MongoDB": [
+        "MongoDB Document Model: Collections, Documents, BSON",
+        "CRUD Operations: insertOne, find, updateOne, deleteOne",
+        "Query Operators: $eq, $gt, $in, $and, $or, $not",
+        "Update Operators: $set, $push, $pull, $inc, $unset",
+        "Aggregation Pipeline: $match, $group, $project, $sort, $lookup",
+        "Indexes in MongoDB: Single, Compound, Text, Geospatial",
+        "Schema Design: Embedding vs Referencing",
+        "Mongoose ODM: Schema, Model, Validation",
+        "Mongoose: Virtuals, Middleware (Hooks), Population",
+        "MongoDB Transactions",
+        "MongoDB Atlas and Cloud Deployment",
+        "Change Streams for Real-time Data"
+      ],
+      "5_Redis": [
+        "Redis Data Structures: String, List, Set, Sorted Set, Hash",
+        "Redis Commands: GET, SET, DEL, EXPIRE, TTL",
+        "Redis as Cache: Cache-aside, Write-through, Write-behind",
+        "Redis Pub/Sub for Messaging",
+        "Redis Streams",
+        "Redis Transactions: MULTI, EXEC, DISCARD",
+        "Redis Lua Scripting",
+        "Redis Persistence: RDB and AOF",
+        "Redis Cluster and Sentinel",
+        "Redis with Node.js: ioredis, node-redis"
+      ],
+      "6_ORMs_and_Query_Builders": [
+        "Prisma ORM: Schema, Migrations, Client",
+        "Prisma: Relations, Nested Writes, Transactions",
+        "TypeORM: Entities, Repositories, Relations",
+        "Sequelize: Models, Associations, Migrations",
+        "Knex.js: Query Builder",
+        "Drizzle ORM: Type-safe SQL"
+      ]
+    },
+    "python": {
+      "1_Python_Basics": [
+        "Python Syntax: Indentation, Comments, Variables",
+        "Data Types: int, float, str, bool, None",
+        "String Methods and f-strings",
+        "Lists: Indexing, Slicing, Methods",
+        "Tuples: Immutability and Use Cases",
+        "Dictionaries: CRUD Operations, Methods",
+        "Sets: Union, Intersection, Difference",
+        "Control Flow: if-elif-else, for, while, break, continue",
+        "Functions: def, return, *args, **kwargs",
+        "List Comprehensions and Generator Expressions",
+        "Lambda Functions",
+        "Built-in Functions: map, filter, zip, enumerate, sorted"
+      ],
+      "2_Python_OOP": [
+        "Classes and Objects",
+        "Instance, Class, and Static Methods",
+        "__init__, __str__, __repr__, __len__, __eq__",
+        "Inheritance and super()",
+        "Multiple Inheritance and MRO",
+        "Abstract Classes with abc module",
+        "Dataclasses",
+        "Properties: @property, @setter",
+        "Descriptors",
+        "Metaclasses"
+      ],
+      "3_Python_Advanced": [
+        "Decorators: Function and Class Decorators",
+        "Context Managers: with statement, __enter__, __exit__",
+        "Generators and yield",
+        "Iterators and __iter__, __next__",
+        "Coroutines and asyncio",
+        "async/await in Python",
+        "Threading vs Multiprocessing vs asyncio",
+        "GIL (Global Interpreter Lock)",
+        "Type Hints and mypy",
+        "Walrus Operator :=",
+        "Pattern Matching (Python 3.10+)"
+      ],
+      "4_Python_Ecosystem": [
+        "pip and virtual environments (venv, pipenv, poetry)",
+        "File I/O: open, read, write, with statement",
+        "JSON, CSV, XML handling",
+        "Regular Expressions with re module",
+        "datetime module",
+        "pathlib for File System Operations",
+        "logging module",
+        "argparse for CLI Tools",
+        "unittest and pytest",
+        "requests library for HTTP",
+        "FastAPI: Modern Python Web Framework",
+        "Django: Full-stack Web Framework",
+        "Flask: Lightweight Web Framework",
+        "SQLAlchemy ORM",
+        "Pydantic for Data Validation",
+        "Celery for Task Queues"
+      ]
+    }
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "notes": {
+    "react": {
+      "1_Fundamentals": [
+        "Introduction to React: What and Why",
+        "Setting up with Vite and Create React App",
+        "JSX Syntax and Rules",
+        "Functional Components",
+        "Props: Passing and Receiving Data",
+        "useState Hook",
+        "Handling Events: onClick, onChange, onSubmit",
+        "Conditional Rendering: if, ternary, &&",
+        "Lists and Keys",
+        "Controlled Form Components",
+        "Component Composition"
+      ],
+      "2_Hooks_In_Depth": [
+        "useState: Functional Updates and Lazy Initialization",
+        "useEffect: Side Effects and Dependency Array",
+        "useEffect: Cleanup Functions",
+        "useContext: Global State without Prop Drilling",
+        "useReducer: Complex State Logic",
+        "useRef: DOM Access and Mutable Values",
+        "useCallback: Memoizing Functions",
+        "useMemo: Memoizing Computed Values",
+        "useId Hook",
+        "useTransition and useDeferredValue",
+        "useImperativeHandle with forwardRef",
+        "Custom Hooks: Building and Patterns"
+      ],
+      "3_Advanced_Patterns": [
+        "Higher-Order Components (HOCs)",
+        "Render Props Pattern",
+        "Compound Components Pattern",
+        "Controlled vs Uncontrolled Components",
+        "Error Boundaries",
+        "Portals: Rendering Outside DOM Hierarchy",
+        "Refs and forwardRef",
+        "Context API Deep Dive",
+        "React.memo for Component Memoization",
+        "Lazy Loading with React.lazy and Suspense",
+        "Code Splitting Strategies"
+      ],
+      "4_State_Management": [
+        "Client State vs Server State",
+        "Redux Toolkit: Store, Slices, Actions, Reducers",
+        "Redux Toolkit: createAsyncThunk for Async Actions",
+        "Redux DevTools",
+        "Zustand: Lightweight Global State",
+        "Jotai: Atomic State Management",
+        "Recoil: Atoms and Selectors",
+        "TanStack Query: Fetching, Caching, Synchronizing",
+        "TanStack Query: Mutations and Optimistic Updates",
+        "SWR: Stale-While-Revalidate Pattern"
+      ],
+      "5_Routing": [
+        "React Router v6: BrowserRouter, Routes, Route",
+        "Link and NavLink Components",
+        "useNavigate and useLocation Hooks",
+        "Dynamic Routes and useParams",
+        "Nested Routes and Outlet",
+        "Protected Routes and Auth Guards",
+        "Lazy Loading Routes",
+        "Search Params with useSearchParams",
+        "React Router Loaders and Actions (v6.4+)"
+      ],
+      "6_Forms_and_Validation": [
+        "React Hook Form: register, handleSubmit, formState",
+        "React Hook Form: Controller for UI Libraries",
+        "Zod Schema Validation",
+        "Yup Schema Validation",
+        "Formik: Form State Management",
+        "File Upload Handling",
+        "Multi-step Forms"
+      ],
+      "7_Styling_in_React": [
+        "CSS Modules in React",
+        "Styled Components: Tagged Template Literals",
+        "Styled Components: Props-based Styling and Theming",
+        "Emotion CSS-in-JS",
+        "Tailwind CSS with React",
+        "Radix UI: Accessible Headless Components",
+        "shadcn/ui Component Library",
+        "Framer Motion: Animations and Transitions",
+        "React Spring for Physics-based Animations"
+      ],
+      "8_Performance": [
+        "React DevTools Profiler",
+        "Avoiding Unnecessary Re-renders",
+        "React.memo, useMemo, useCallback Best Practices",
+        "Virtualization with react-window and react-virtual",
+        "Image Optimization in React",
+        "Bundle Analysis with webpack-bundle-analyzer",
+        "Web Vitals in React Apps"
+      ],
+      "9_Testing": [
+        "Jest: Unit Testing Setup",
+        "React Testing Library: render, screen, userEvent",
+        "Testing Hooks with renderHook",
+        "Mocking API Calls with MSW (Mock Service Worker)",
+        "Snapshot Testing",
+        "End-to-End Testing with Playwright",
+        "End-to-End Testing with Cypress"
+      ],
+      "10_Next_js": [
+        "Next.js App Router vs Pages Router",
+        "Server Components and Client Components",
+        "File-based Routing in Next.js",
+        "Data Fetching: fetch with cache options",
+        "Server Actions",
+        "Static Generation (SSG) and Server-Side Rendering (SSR)",
+        "Incremental Static Regeneration (ISR)",
+        "Next.js Image and Font Optimization",
+        "Middleware in Next.js",
+        "API Routes",
+        "Next.js with TypeScript",
+        "Deploying Next.js to Vercel"
+      ],
+      "11_TypeScript_with_React": [
+        "TypeScript Basics: Types, Interfaces, Enums",
+        "Typing Props and State",
+        "Typing Event Handlers",
+        "Generic Components",
+        "Typing Custom Hooks",
+        "Utility Types: Partial, Required, Pick, Omit, Record",
+        "Discriminated Unions for Component Variants",
+        "Type Guards and Narrowing"
+      ]
+    },
+    "react-native": {
+      "1_Fundamentals": [
+        "React Native vs Expo: Choosing the Right Setup",
+        "Core Components: View, Text, Image, ScrollView, FlatList",
+        "StyleSheet API and Inline Styles",
+        "Flexbox Layout in React Native",
+        "Handling Touch: TouchableOpacity, Pressable, TouchableHighlight",
+        "TextInput: Keyboard Types, returnKeyType, onSubmitEditing",
+        "Platform-specific Code: Platform.OS, Platform.select()",
+        "Dimensions API and useWindowDimensions",
+        "SafeAreaView and StatusBar"
+      ],
+      "2_Navigation": [
+        "React Navigation v6 Setup",
+        "Stack Navigator: push, pop, replace",
+        "Bottom Tab Navigator",
+        "Drawer Navigator",
+        "Nested Navigators",
+        "Passing Params Between Screens",
+        "Deep Linking Configuration",
+        "Authentication Flow with Navigation"
+      ],
+      "3_Data_and_Storage": [
+        "Fetch API and Axios in React Native",
+        "AsyncStorage for Persistent Key-Value Storage",
+        "MMKV: Fast Key-Value Storage",
+        "SQLite with expo-sqlite",
+        "Realm Database",
+        "WatermelonDB for Offline-first Apps",
+        "Redux Persist for State Persistence"
+      ],
+      "4_Device_APIs": [
+        "Camera: expo-camera and react-native-vision-camera",
+        "Image Picker: expo-image-picker",
+        "Location and Maps: expo-location, react-native-maps",
+        "Push Notifications: Expo Notifications, Firebase Cloud Messaging",
+        "Biometric Authentication: expo-local-authentication",
+        "Sensors: Accelerometer, Gyroscope, Barometer",
+        "Haptic Feedback",
+        "Clipboard API",
+        "Sharing: expo-sharing",
+        "File System: expo-file-system"
+      ],
+      "5_Animations": [
+        "Animated API: Value, timing, spring, decay",
+        "Animated: Interpolation and Extrapolation",
+        "React Native Reanimated 2: useSharedValue, useAnimatedStyle",
+        "Reanimated: withTiming, withSpring, withSequence",
+        "Gesture Handler: Pan, Pinch, Tap Gestures",
+        "Lottie Animations",
+        "Moti: Declarative Animations"
+      ],
+      "6_Performance": [
+        "JavaScript Thread vs UI Thread",
+        "Hermes JavaScript Engine",
+        "FlatList Optimization: keyExtractor, getItemLayout, windowSize",
+        "Image Caching with expo-image",
+        "Avoiding Bridge Bottlenecks",
+        "Profiling with Flipper",
+        "Memory Leak Detection"
+      ],
+      "7_Deployment": [
+        "EAS Build: Building for iOS and Android",
+        "EAS Submit: App Store and Play Store Submission",
+        "EAS Update: Over-the-Air Updates",
+        "App Signing: Keystores and Certificates",
+        "Environment Variables with app.config.js",
+        "App Store Optimization (ASO)",
+        "TestFlight for iOS Beta Testing",
+        "Google Play Internal Testing Track"
+      ]
+    },
+    "frontend-tooling": {
+      "1_Build_Tools": [
+        "Vite: Fast Dev Server and Build Tool",
+        "Webpack: Entry, Output, Loaders, Plugins",
+        "Webpack: Code Splitting and Lazy Loading",
+        "Rollup for Library Bundling",
+        "esbuild: Extremely Fast Bundler",
+        "Parcel: Zero-config Bundler",
+        "Turbopack: Rust-based Webpack Successor"
+      ],
+      "2_Package_Management": [
+        "npm: package.json, scripts, semver",
+        "Yarn: Workspaces, PnP",
+        "pnpm: Efficient Disk Usage",
+        "Monorepo Management: Turborepo, Nx",
+        "npx and Package Execution"
+      ],
+      "3_Code_Quality": [
+        "ESLint: Configuration, Rules, Plugins",
+        "Prettier: Code Formatting",
+        "Husky and lint-staged for Pre-commit Hooks",
+        "TypeScript: Strict Mode and tsconfig.json",
+        "Storybook: Component Development and Documentation",
+        "Chromatic: Visual Regression Testing"
+      ]
+    }
+  }
+}
