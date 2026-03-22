@@ -26,7 +26,7 @@ from groq import Groq
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 AUTHOR_NAME  = os.environ.get("AUTHOR_NAME", "baaghinitesh")
 AUTHOR_EMAIL = os.environ.get("AUTHOR_EMAIL", "baaghinitesh@gmail.com")
-MODEL        = "llama3-70b-8192"
+MODEL        = "llama-3.3-70b-versatile"
 MAX_UPDATES  = 5
 
 if not GROQ_API_KEY:
@@ -193,6 +193,10 @@ def call_groq(
                 wait = 2 ** attempt * 10  # 20s, 40s, 80s, 160s
                 print(f"⏳ Rate limited. Waiting {wait}s (attempt {attempt}/{retries})...")
                 time.sleep(wait)
+            elif "model_decommissioned" in err.lower() or "model_not_found" in err.lower():
+                # Non-retryable — wrong model ID, fail immediately
+                print(f"❌ Fatal Groq error (model issue): {e}")
+                sys.exit(1)
             else:
                 print(f"❌ Groq error (attempt {attempt}): {e}")
                 if attempt == retries:
