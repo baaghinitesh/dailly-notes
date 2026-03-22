@@ -19,7 +19,25 @@
         "Lowest Common Ancestor of BST", "Happy Number",
         "Power of Two", "Power of Three", "Count Bits",
         "Hamming Distance", "Pascal Triangle", "Plus One",
-        "Add Binary", "Roman to Integer", "Longest Common Prefix"
+        "Add Binary", "Roman to Integer", "Longest Common Prefix",
+        "Sqrt of a Number", "Reverse Words in a String",
+        "Find All Numbers Disappeared in Array", "Intersection of Two Arrays",
+        "Ransom Note", "Isomorphic Strings", "Word Pattern",
+        "Find the Difference", "Sum of Left Leaves", "Convert Sorted Array to BST",
+        "Balanced Binary Tree", "Minimum Depth of Binary Tree",
+        "Count Complete Tree Nodes", "Average of Levels in Binary Tree",
+        "Flood Fill", "Island Perimeter", "Number of Segments in a String",
+        "Detect Capital", "Reverse String II", "Student Attendance Record I",
+        "Longest Continuous Increasing Subsequence", "Degree of an Array",
+        "1-bit and 2-bit Characters", "Find Pivot Index",
+        "Largest Number At Least Twice of Others", "Monotonic Array",
+        "Sort Array by Parity", "Squares of a Sorted Array",
+        "Check If N and Its Double Exist", "Replace Elements with Greatest Element on Right",
+        "Height Checker", "Third Maximum Number", "Find N Unique Integers Sum to Zero",
+        "Shuffle the Array", "Kids With the Greatest Number of Candies",
+        "Richest Customer Wealth", "Running Sum of 1d Array",
+        "Number of Good Pairs", "Defanging an IP Address",
+        "Concatenation of Array", "Final Value of Variable After Performing Operations"
       ],
       "medium": [
         "3Sum", "Longest Substring Without Repeating Characters",
@@ -43,7 +61,34 @@
         "Partition Equal Subset Sum", "Target Sum",
         "Pacific Atlantic Water Flow", "Accounts Merge",
         "Task Scheduler", "Decode String", "Daily Temperatures",
-        "Subarray Sum Equals K", "Min Stack", "Evaluate Reverse Polish Notation"
+        "Subarray Sum Equals K", "Min Stack", "Evaluate Reverse Polish Notation",
+        "Find Minimum in Rotated Sorted Array", "Search a 2D Matrix",
+        "Koko Eating Bananas", "Time Based Key-Value Store",
+        "Maximum Product Subarray", "Word Break",
+        "Longest Common Subsequence", "Edit Distance",
+        "Unique Paths II", "Jump Game II",
+        "Gas Station", "Hand of Straights",
+        "Merge Triplets to Form Target Triplet", "Partition Labels",
+        "Valid Parenthesis String", "Number of Connected Components in Undirected Graph",
+        "Graph Valid Tree", "Redundant Connection",
+        "Surrounded Regions", "Rotting Oranges",
+        "Walls and Gates", "Cheapest Flights Within K Stops",
+        "Network Delay Time", "Swim in Rising Water",
+        "Alien Dictionary", "Reconstruct Itinerary",
+        "Min Cost to Connect All Points", "Path With Minimum Effort",
+        "House Robber II", "Palindromic Substrings",
+        "Counting Bits", "Missing Ranges",
+        "Summary Ranges", "Find All Anagrams in a String",
+        "Minimum Size Subarray Sum", "Longest Repeating Character Replacement",
+        "Permutation in String", "Fruit Into Baskets",
+        "Maximum Number of Vowels in a Substring of Given Length",
+        "Maximum Average Subarray I", "Grumpy Bookstore Owner",
+        "Minimum Operations to Reduce X to Zero", "Maximum Points You Can Obtain from Cards",
+        "Frequency of the Most Frequent Element", "Longest Subarray of 1s After Deleting One Element",
+        "Maximum Erasure Value", "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold",
+        "Count Number of Nice Subarrays", "Replace the Substring for Balanced String",
+        "Max Consecutive Ones III", "Binary Subarrays With Sum",
+        "Subarrays with K Different Integers", "Minimum Window Substring"
       ],
       "hard": [
         "Median of Two Sorted Arrays", "Trapping Rain Water",
@@ -63,7 +108,35 @@
         "Swim in Rising Water", "Russian Doll Envelopes",
         "Split Array Largest Sum", "K Inverse Pairs Array",
         "Minimum Cost to Merge Stones", "Cracking the Safe",
-        "Word Search II", "Robot Room Cleaner", "Basic Calculator"
+        "Word Search II", "Robot Room Cleaner", "Basic Calculator",
+        "Expression Add Operators", "Remove Boxes",
+        "Strange Printer", "Zuma Game",
+        "Minimum Number of Refueling Stops", "Tallest Billboard",
+        "Minimum Cost to Hire K Workers", "Maximize Sum of Array After K Negations",
+        "Candy", "Jump Game III",
+        "Jump Game VII", "Minimum Jumps to Reach Home",
+        "Frog Jump", "Stone Game IV",
+        "Stone Game V", "Stone Game VI",
+        "Stone Game VII", "Stone Game VIII",
+        "Minimum Cost to Cut a Stick", "Minimum Cost to Fill Given Weight in a Bag",
+        "Minimum Number of Days to Eat N Oranges", "Minimum Difficulty of a Job Schedule",
+        "Minimum Number of Taps to Open to Water a Garden",
+        "Video Stitching", "Minimum Number of Arrows to Burst Balloons",
+        "Non-overlapping Intervals", "Minimum Interval to Include Each Query",
+        "Maximum Number of Events That Can Be Attended II",
+        "Maximum Profit in Job Scheduling with Cooldown",
+        "Recover Binary Search Tree", "Binary Tree Cameras",
+        "Distribute Coins in Binary Tree", "Vertical Order Traversal of Binary Tree",
+        "All Nodes Distance K in Binary Tree", "Maximum Width of Binary Tree",
+        "Count Good Nodes in Binary Tree", "Flatten Nested List Iterator",
+        "Design In-Memory File System", "Design Search Autocomplete System",
+        "Design Twitter", "Design Phone Directory",
+        "Design Hit Counter", "Design Log Storage System",
+        "Design Underground System", "Design Browser History",
+        "Design Circular Queue", "Design Circular Deque",
+        "Design Skiplist", "Design HashMap from Scratch",
+        "Design HashSet from Scratch", "Design Linked List",
+        "Design Stack with Increment Operation", "Design Front Middle Back Queue"
       ],
       "super_advanced": [
         "Suffix Array and LCP Array Construction",
@@ -85,7 +158,27 @@
         "Parallel Binary Search",
         "Bitset Optimization for DP",
         "Matrix Exponentiation for Fibonacci and Linear Recurrences",
-        "Berlekamp-Massey Algorithm"
+        "Berlekamp-Massey Algorithm",
+        "Suffix Automaton Construction and Applications",
+        "Palindromic Tree (Eertree) for Palindrome Problems",
+        "Wavelet Tree for Range Queries",
+        "Offline Dynamic Connectivity",
+        "Segment Tree with Fractional Cascading",
+        "Li Chao Tree for Convex Hull Trick",
+        "Slope Trick for DP Optimization",
+        "Aliens Trick (Lambda Optimization)",
+        "Dominator Tree in Directed Graphs",
+        "Virtual Tree (Auxiliary Tree) Technique",
+        "Small-to-Large Merging on Trees",
+        "DSU on Tree (Sack Algorithm)",
+        "Euler Tour with Segment Tree for Subtree Queries",
+        "Rerooting Technique for Tree DP",
+        "Competitive Programming: ICPC World Finals Problems",
+        "Competitive Programming: Codeforces Div 1 E Problems",
+        "Competitive Programming: AtCoder Grand Contest Problems",
+        "Competitive Programming: IOI 2023 Problems",
+        "Competitive Programming: Google Code Jam Finals",
+        "Competitive Programming: Meta Hacker Cup Finals"
       ]
     },
     "cpp": {
@@ -104,7 +197,18 @@
         "GCD using Euclidean Algorithm", "Power of a Number",
         "Sum of Digits of a Number", "Reverse a Linked List",
         "Detect Loop in Linked List", "Stack using Array",
-        "Queue using Array", "Valid Parentheses using Stack"
+        "Queue using Array", "Valid Parentheses using Stack",
+        "Count Vowels and Consonants", "Check Anagram",
+        "Find Missing Number in Array", "Single Number XOR",
+        "Move Zeroes to End", "Rotate Array by K",
+        "Maximum Subarray Kadane's Algorithm", "Climbing Stairs DP",
+        "Best Time to Buy and Sell Stock", "Contains Duplicate",
+        "Intersection of Two Arrays", "Union of Two Arrays",
+        "Find Second Largest Element", "Count Occurrences of Element",
+        "Check Sorted Array", "Reverse Words in String",
+        "Count Words in String", "Remove Spaces from String",
+        "Convert Decimal to Binary", "Convert Binary to Decimal",
+        "Print All Divisors of a Number", "Sum of First N Natural Numbers"
       ],
       "medium": [
         "STL vector map set unordered_map usage", "Sorting with Custom Comparator",
@@ -127,7 +231,14 @@
         "Course Schedule Topological Sort", "Word Search Backtracking",
         "Implement LRU Cache using list and unordered_map",
         "Implement Trie with Insert Search StartsWith",
-        "Serialize Deserialize Binary Tree", "Binary Tree Level Order Traversal"
+        "Serialize Deserialize Binary Tree", "Binary Tree Level Order Traversal",
+        "Lowest Common Ancestor Binary Tree", "Diameter of Binary Tree",
+        "Flatten Binary Tree to Linked List", "Construct Binary Tree from Traversals",
+        "Validate Binary Search Tree", "Kth Smallest in BST",
+        "Inorder Successor in BST", "Delete Node in BST",
+        "Recover Binary Search Tree", "Count Nodes in Complete Binary Tree",
+        "Maximum Width of Binary Tree", "Right Side View of Binary Tree",
+        "Zigzag Level Order Traversal", "Vertical Order Traversal"
       ],
       "hard": [
         "Segment Tree with Lazy Propagation", "Persistent Segment Tree",
@@ -150,7 +261,12 @@
         "Chinese Remainder Theorem", "Miller-Rabin Primality Test",
         "Pollard's Rho Factorization", "Gaussian Elimination",
         "Simplex Algorithm Linear Programming", "Game Theory Sprague-Grundy",
-        "Competitive Programming: ICPC-style Problem Solving"
+        "Competitive Programming: ICPC-style Problem Solving",
+        "Suffix Automaton in C++", "Palindromic Tree in C++",
+        "Wavelet Tree in C++", "Li Chao Tree in C++",
+        "Slope Trick DP in C++", "Aliens Trick in C++",
+        "DSU on Tree in C++", "Small-to-Large Merging in C++",
+        "Virtual Tree in C++", "Rerooting DP in C++"
       ],
       "super_advanced": [
         "Offline Dynamic Connectivity with Link-Cut Trees",
@@ -172,7 +288,12 @@
         "Burnside's Lemma and Polya Enumeration",
         "Matroid Intersection",
         "Submodular Function Optimization",
-        "Competitive Programming: IOI-style Partial Scoring"
+        "Competitive Programming: IOI-style Partial Scoring",
+        "Segment Tree Beats in C++",
+        "Offline Queries with Rollback DSU",
+        "Parallel Persistent Segment Tree",
+        "Compressed Segment Tree (Dynamic Segment Tree)",
+        "Euler Tour with HLD for Path Queries"
       ]
     },
     "c": {
@@ -191,7 +312,17 @@
         "Check Palindrome", "Fibonacci Series",
         "Factorial Recursive and Iterative", "GCD using Euclid",
         "Check Prime", "Sum of Array Elements",
-        "Matrix Addition and Multiplication", "Transpose of Matrix"
+        "Matrix Addition and Multiplication", "Transpose of Matrix",
+        "Count Digits in a Number", "Reverse a String in C",
+        "Check Anagram in C", "Find Second Largest in Array",
+        "Rotate Array in C", "Move Zeroes in C",
+        "Missing Number in Array", "Single Number XOR in C",
+        "Count Set Bits in C", "Power of Two Check in C",
+        "Sum of Digits Recursively", "Print Multiplication Table",
+        "Check Perfect Number", "Check Strong Number",
+        "Print Floyd's Triangle", "Print Diamond Pattern",
+        "Convert Celsius to Fahrenheit", "Simple Calculator using Switch",
+        "Swap Two Numbers Without Temp", "Find LCM of Two Numbers"
       ],
       "medium": [
         "Linked List: Insert Delete Search Traverse", "Doubly Linked List Operations",
@@ -208,7 +339,17 @@
         "Matrix Chain Multiplication", "Edit Distance",
         "N-Queens Backtracking in C", "Rat in a Maze",
         "Sudoku Solver in C", "Bit Manipulation Tricks in C",
-        "Memory Pool Allocator", "Implementing a Generic Stack in C"
+        "Memory Pool Allocator", "Implementing a Generic Stack in C",
+        "Circular Queue Implementation", "Deque using Doubly Linked List",
+        "Priority Queue using Min-Heap", "AVL Tree Rotations in C",
+        "Trie Implementation in C", "Segment Tree in C",
+        "Fenwick Tree in C", "KMP Pattern Matching in C",
+        "Rabin-Karp Rolling Hash in C", "Z-Algorithm in C",
+        "Longest Palindromic Substring in C", "Sliding Window Maximum in C",
+        "Two Pointers Technique in C", "Prefix Sum Array in C",
+        "Sparse Table for RMQ in C", "Disjoint Set Union in C",
+        "Topological Sort DFS in C", "Detect Cycle in Directed Graph",
+        "Detect Cycle in Undirected Graph", "Bipartite Graph Check"
       ],
       "hard": [
         "Red-Black Tree Implementation in C", "AVL Tree with Rotations",
@@ -225,7 +366,17 @@
         "Custom Memory Allocator with Buddy System",
         "Implementing a Mini Interpreter in C",
         "Implementing a Mini Compiler: Lexer and Parser",
-        "Implementing a Hash Map from Scratch in C"
+        "Implementing a Hash Map from Scratch in C",
+        "Implementing a Thread-Safe Queue in C",
+        "Implementing a Ring Buffer in C",
+        "Implementing a Bloom Filter in C",
+        "Implementing a Radix Sort in C",
+        "Implementing a Counting Sort in C",
+        "Implementing a Merge Sort for Linked List in C",
+        "Implementing a Quickselect Algorithm in C",
+        "Implementing a Median of Medians in C",
+        "Implementing a Splay Tree in C",
+        "Implementing a Fibonacci Heap in C"
       ],
       "super_advanced": [
         "Writing a Garbage Collector in C",
@@ -237,7 +388,12 @@
         "Writing a JSON Parser in C",
         "Implementing a TCP Server from Scratch in C",
         "Writing a Simple Shell in C",
-        "Implementing a Database Storage Engine in C"
+        "Implementing a Database Storage Engine in C",
+        "Writing a Memory-Safe String Library in C",
+        "Implementing a Cooperative Multitasking Scheduler in C",
+        "Writing a Simple ELF Loader in C",
+        "Implementing a Trie-based Autocomplete Engine in C",
+        "Writing a Portable Atomic Operations Library in C"
       ]
     },
     "python": {
@@ -256,7 +412,18 @@
         "Valid Parentheses", "FizzBuzz",
         "Find Missing Number", "Single Number XOR",
         "Maximum Subarray Kadane", "Climbing Stairs DP",
-        "Best Time to Buy and Sell Stock", "Contains Duplicate"
+        "Best Time to Buy and Sell Stock", "Contains Duplicate",
+        "Reverse Words in String", "Count Vowels in String",
+        "Check Armstrong Number", "Find Second Largest",
+        "Rotate List by K", "Move Zeroes",
+        "Intersection of Two Lists", "Union of Two Lists",
+        "Flatten Nested List", "Deep Copy a List",
+        "Zip and Unzip Lists", "Enumerate Usage",
+        "Dictionary Comprehension", "Set Operations",
+        "Defaultdict Usage", "OrderedDict Usage",
+        "Counter Usage", "Deque Usage",
+        "Heapq Usage", "Bisect Usage",
+        "Itertools Combinations Permutations", "Functools Reduce"
       ],
       "medium": [
         "Sliding Window Maximum with deque", "Two Pointers Technique",
@@ -276,7 +443,21 @@
         "Implement Trie", "Design HashMap",
         "Subarray Sum Equals K", "Daily Temperatures Monotonic Stack",
         "Decode String Stack", "Generate Parentheses Backtracking",
-        "Permutations and Combinations", "N-Queens Backtracking"
+        "Permutations and Combinations", "N-Queens Backtracking",
+        "Spiral Matrix", "Rotate Image",
+        "Set Matrix Zeroes", "Search a 2D Matrix",
+        "Find Peak Element", "Search in Rotated Sorted Array",
+        "Kth Largest Element with heapq", "Top K Frequent Elements",
+        "Group Anagrams", "Merge Intervals",
+        "Insert Interval", "Jump Game",
+        "Jump Game II", "Gas Station",
+        "Task Scheduler", "Minimum Window Substring",
+        "Longest Repeating Character Replacement", "Permutation in String",
+        "Find All Anagrams in String", "Minimum Size Subarray Sum",
+        "Maximum Product Subarray", "House Robber",
+        "House Robber II", "Palindromic Substrings",
+        "Decode Ways", "Unique Paths",
+        "Unique Paths II", "Coin Change II"
       ],
       "hard": [
         "Segment Tree in Python", "Fenwick Tree in Python",
@@ -293,7 +474,26 @@
         "Longest Valid Parentheses Stack", "Binary Tree Maximum Path Sum",
         "Serialize Deserialize N-ary Tree", "Count of Smaller Numbers After Self",
         "Russian Doll Envelopes LIS", "Split Array Largest Sum Binary Search",
-        "Maximum Profit in Job Scheduling DP", "Shortest Path Visiting All Nodes BFS"
+        "Maximum Profit in Job Scheduling DP", "Shortest Path Visiting All Nodes BFS",
+        "Recover Binary Search Tree Morris Traversal",
+        "Binary Tree Cameras Greedy",
+        "Distribute Coins in Binary Tree",
+        "Vertical Order Traversal of Binary Tree",
+        "All Nodes Distance K in Binary Tree",
+        "Maximum Width of Binary Tree",
+        "Count Good Nodes in Binary Tree",
+        "Minimum Cost to Connect All Points Prim",
+        "Path With Minimum Effort Binary Search",
+        "Swim in Rising Water Binary Search",
+        "Cheapest Flights Within K Stops Bellman-Ford",
+        "Network Delay Time Dijkstra",
+        "Find Critical and Pseudo-Critical Edges in MST",
+        "Reconstruct Itinerary Hierholzer",
+        "Minimum Number of Refueling Stops DP",
+        "Tallest Billboard DP",
+        "Stone Game IV DP",
+        "Strange Printer DP",
+        "Remove Boxes DP"
       ],
       "super_advanced": [
         "Implementing a Python Interpreter in Python",
@@ -305,7 +505,12 @@
         "Abstract Syntax Tree Manipulation with ast module",
         "Writing a Bytecode Optimizer",
         "Implementing a Type Checker with mypy Plugins",
-        "Competitive Programming in Python: PyPy Tricks and Optimizations"
+        "Competitive Programming in Python: PyPy Tricks and Optimizations",
+        "Implementing a Persistent Red-Black Tree in Python",
+        "Writing a Reactive Dataflow Engine in Python",
+        "Implementing a Distributed Task Queue in Python",
+        "Writing a Mini Database with B-Tree in Python",
+        "Implementing a JIT Compiler Concept in Python"
       ]
     },
     "javascript": {
@@ -324,7 +529,18 @@
         "Deep Clone an Object", "Debounce Function",
         "Throttle Function", "Memoize Function",
         "Curry Function", "Compose and Pipe Functions",
-        "Event Emitter Implementation", "Promise.all Implementation"
+        "Event Emitter Implementation", "Promise.all Implementation",
+        "Array Chunking", "Flatten Array to Depth",
+        "Group By Function", "Zip Arrays",
+        "Intersection of Arrays", "Difference of Arrays",
+        "Unique Values in Array", "Sort Array of Objects",
+        "Find Duplicates in Array", "Rotate Array",
+        "Move Zeroes", "Missing Number",
+        "Single Number XOR", "Maximum Subarray",
+        "Climbing Stairs", "Valid Anagram",
+        "First Unique Character", "Reverse Linked List",
+        "Merge Two Sorted Lists", "Maximum Depth of Binary Tree",
+        "Invert Binary Tree"
       ],
       "medium": [
         "Sliding Window Technique", "Two Pointers Pattern",
@@ -344,7 +560,20 @@
         "Generate Parentheses", "Permutations Backtracking",
         "N-Queens Backtracking", "Combination Sum",
         "Async Queue with Concurrency Limit", "Observable Pattern Implementation",
-        "Virtual DOM Diff Algorithm", "Implementing a Mini Redux"
+        "Virtual DOM Diff Algorithm", "Implementing a Mini Redux",
+        "Implementing a Pub-Sub System", "Implementing a Middleware Pipeline",
+        "Implementing a Rate Limiter", "Implementing a Circuit Breaker",
+        "Implementing a Retry with Exponential Backoff",
+        "Implementing a Task Scheduler with Priority Queue",
+        "Implementing a Lazy Evaluation System",
+        "Implementing a Memoization with WeakMap",
+        "Implementing a Deep Equal Function",
+        "Implementing a Flatten and Unflatten Object",
+        "Implementing a Template Engine",
+        "Implementing a Simple State Machine",
+        "Implementing a Finite Automaton",
+        "Implementing a Parser Combinator",
+        "Implementing a Reactive Store like Zustand"
       ],
       "hard": [
         "Segment Tree in JavaScript", "Fenwick Tree in JavaScript",
@@ -366,7 +595,17 @@
         "Implementing a Proxy-based State Manager",
         "Implementing a Web Worker Thread Pool",
         "Implementing a Service Worker Cache Strategy",
-        "Implementing a WebSocket Server with Node.js"
+        "Implementing a WebSocket Server with Node.js",
+        "Implementing a GraphQL Schema and Resolver",
+        "Implementing a REST API with Express from Scratch",
+        "Implementing a JWT Authentication System",
+        "Implementing a Real-time Collaborative Editor (CRDT)",
+        "Implementing a Distributed Cache with Node.js",
+        "Implementing a Message Queue with Node.js",
+        "Implementing a Stream Processing Pipeline",
+        "Implementing a Plugin System with Dynamic Imports",
+        "Implementing a Code Sandbox with iframe",
+        "Implementing a Virtual Scroll List"
       ],
       "super_advanced": [
         "V8 Engine Internals: Hidden Classes and Inline Caches",
@@ -378,7 +617,12 @@
         "Implementing a Module Bundler from Scratch",
         "WebAssembly Integration with JavaScript",
         "Implementing a Reactive Signals System",
-        "Competitive Programming in JavaScript: Optimization Tricks"
+        "Competitive Programming in JavaScript: Optimization Tricks",
+        "Implementing a Persistent Data Structure in JavaScript",
+        "Writing a Structural Sharing Immutable Library",
+        "Implementing a Transducer Library",
+        "Writing a Lazy Sequence Library",
+        "Implementing a Continuation-Passing Style Transformer"
       ]
     }
   },
@@ -411,7 +655,12 @@
         "Time Complexity Analysis: Iterative and Recursive",
         "Space Complexity and Auxiliary Space",
         "Amortized Analysis",
-        "Master Theorem for Divide and Conquer"
+        "Master Theorem for Divide and Conquer",
+        "Best Case vs Worst Case vs Average Case Analysis",
+        "Recurrence Relations and Solving Them",
+        "Complexity of Common Sorting Algorithms",
+        "Complexity of Common Graph Algorithms",
+        "Complexity of Common DP Problems"
       ],
       "2_Arrays_and_Strings": [
         "Static vs Dynamic Arrays",
@@ -423,7 +672,12 @@
         "KMP Pattern Matching Algorithm",
         "Rabin-Karp Algorithm",
         "Z-Algorithm",
-        "Manacher's Algorithm for Palindromes"
+        "Manacher's Algorithm for Palindromes",
+        "Boyer-Moore Voting Algorithm",
+        "Dutch National Flag Algorithm",
+        "Cyclic Sort Pattern",
+        "Merge Intervals Pattern",
+        "Interval Scheduling Maximization"
       ],
       "3_Linked_Lists": [
         "Singly and Doubly Linked Lists",
@@ -432,7 +686,10 @@
         "Reversing a Linked List (Iterative and Recursive)",
         "Merge Two Sorted Linked Lists",
         "Finding Middle of Linked List",
-        "LRU Cache Implementation"
+        "LRU Cache Implementation",
+        "Skip List Data Structure",
+        "XOR Linked List",
+        "Linked List Sorting Algorithms"
       ],
       "4_Stacks_and_Queues": [
         "Stack: LIFO Principle and Applications",
@@ -440,7 +697,11 @@
         "Queue: FIFO Principle",
         "Circular Queue and Deque",
         "Priority Queue and Heap",
-        "Implementing Stack using Queues and vice versa"
+        "Implementing Stack using Queues and vice versa",
+        "Monotonic Queue Pattern",
+        "Stack-based Expression Evaluation",
+        "Next Greater Element Pattern",
+        "Largest Rectangle in Histogram using Stack"
       ],
       "5_Trees": [
         "Binary Tree Traversals: Pre, In, Post, Level Order",
@@ -451,14 +712,25 @@
         "Fenwick Tree (Binary Indexed Tree)",
         "Trie (Prefix Tree) for String Problems",
         "Lowest Common Ancestor (LCA)",
-        "Diameter and Height of Binary Tree"
+        "Diameter and Height of Binary Tree",
+        "Morris Traversal: O(1) Space Tree Traversal",
+        "Euler Tour Technique",
+        "Heavy-Light Decomposition",
+        "Centroid Decomposition",
+        "B-Tree and B+ Tree",
+        "Splay Tree and Self-Adjusting Trees"
       ],
       "6_Heaps": [
         "Min-Heap and Max-Heap",
         "Heapify and Heap Sort",
         "K-th Largest/Smallest Element",
         "Merge K Sorted Lists using Heap",
-        "Median of a Data Stream"
+        "Median of a Data Stream",
+        "Fibonacci Heap",
+        "Binomial Heap",
+        "Leftist Tree and Skew Heap",
+        "Two Heaps Pattern for Median",
+        "Heap-based Priority Queue Applications"
       ],
       "7_Graphs": [
         "Graph Representations: Adjacency Matrix and List",
@@ -471,7 +743,16 @@
         "Union-Find / Disjoint Set Union (DSU)",
         "Strongly Connected Components: Kosaraju's and Tarjan's",
         "Bridges and Articulation Points",
-        "Maximum Flow: Ford-Fulkerson and Edmonds-Karp"
+        "Maximum Flow: Ford-Fulkerson and Edmonds-Karp",
+        "Bipartite Graph Detection and Matching",
+        "A* Search Algorithm",
+        "Johnson's Algorithm for All-Pairs Shortest Path",
+        "Minimum Spanning Tree Applications",
+        "Graph Coloring Problem",
+        "Hamiltonian Path and Cycle",
+        "Eulerian Path and Circuit",
+        "Network Flow: Min-Cut Max-Flow Theorem",
+        "2-SAT Problem"
       ],
       "8_Dynamic_Programming": [
         "Memoization vs Tabulation",
@@ -486,7 +767,14 @@
         "Egg Drop Problem",
         "Bitmask DP",
         "Digit DP",
-        "DP on Trees"
+        "DP on Trees",
+        "Interval DP",
+        "DP on Grids",
+        "DP with Convex Hull Trick",
+        "DP with Divide and Conquer Optimization",
+        "DP with Knuth-Yao Optimization",
+        "Aliens Trick (Lambda Optimization)",
+        "Slope Trick for DP"
       ],
       "9_Backtracking": [
         "N-Queens Problem",
@@ -494,7 +782,11 @@
         "Generating All Permutations",
         "Generating All Subsets (Power Set)",
         "Word Search in Grid",
-        "Rat in a Maze"
+        "Rat in a Maze",
+        "Hamiltonian Cycle Backtracking",
+        "Graph Coloring Backtracking",
+        "Combination Sum Backtracking",
+        "Palindrome Partitioning"
       ],
       "10_Greedy_Algorithms": [
         "Activity Selection Problem",
@@ -502,7 +794,11 @@
         "Fractional Knapsack",
         "Job Scheduling with Deadlines",
         "Minimum Number of Platforms",
-        "Gas Station Problem"
+        "Gas Station Problem",
+        "Jump Game Greedy",
+        "Candy Distribution Problem",
+        "Minimum Spanning Tree Greedy",
+        "Interval Scheduling Greedy"
       ],
       "11_Bit_Manipulation": [
         "Bitwise Operators: AND, OR, XOR, NOT, Shifts",
@@ -510,7 +806,11 @@
         "Counting Set Bits (Brian Kernighan's Algorithm)",
         "Power of Two Check",
         "XOR Tricks: Finding Missing/Duplicate Numbers",
-        "Bit Masking for Subsets"
+        "Bit Masking for Subsets",
+        "Bit Manipulation in DP (Bitmask DP)",
+        "POPCOUNT and Hamming Distance",
+        "Bit Tricks for Competitive Programming",
+        "Two's Complement and Signed Integers"
       ],
       "12_Math_and_Number_Theory": [
         "Sieve of Eratosthenes",
@@ -519,7 +819,56 @@
         "Modular Arithmetic and Modular Exponentiation",
         "Combinatorics: nCr, nPr",
         "Catalan Numbers",
-        "Fast Exponentiation"
+        "Fast Exponentiation",
+        "Chinese Remainder Theorem",
+        "Miller-Rabin Primality Test",
+        "Pollard's Rho Factorization",
+        "Euler's Totient Function",
+        "Mobius Function and Inclusion-Exclusion",
+        "Gaussian Elimination",
+        "Matrix Exponentiation",
+        "Berlekamp-Massey Algorithm"
+      ],
+      "13_Advanced_Data_Structures": [
+        "Segment Tree with Lazy Propagation",
+        "Persistent Segment Tree",
+        "Sparse Table for Range Minimum Query",
+        "Suffix Array and Suffix Tree",
+        "Suffix Automaton",
+        "Palindromic Tree (Eertree)",
+        "Wavelet Tree",
+        "Van Emde Boas Tree",
+        "Treap (Randomized BST)",
+        "Splay Tree",
+        "Link-Cut Tree",
+        "Kinetic Heaps",
+        "Bloom Filter",
+        "Count-Min Sketch",
+        "HyperLogLog"
+      ],
+      "14_String_Algorithms": [
+        "KMP Failure Function",
+        "Z-Algorithm for Pattern Matching",
+        "Rabin-Karp Rolling Hash",
+        "Aho-Corasick Multi-Pattern Search",
+        "Suffix Array Construction",
+        "Longest Common Prefix Array",
+        "Burrows-Wheeler Transform",
+        "Manacher's Algorithm",
+        "Palindromic Tree Applications",
+        "Suffix Automaton Applications"
+      ],
+      "15_Competitive_Programming": [
+        "Fast I/O in Competitive Programming",
+        "STL Tricks for Competitive Programming",
+        "Coordinate Compression",
+        "Offline Query Processing",
+        "Square Root Decomposition",
+        "Mo's Algorithm for Range Queries",
+        "Parallel Binary Search",
+        "Bitset Optimization",
+        "Randomized Algorithms in CP",
+        "Heuristics and Approximation Algorithms"
       ]
     }
   }
