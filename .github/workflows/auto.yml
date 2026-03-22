@@ -2,17 +2,18 @@ name: Generate Content
 
 on:
   schedule:
-    # 3 runs per day: 6am, 12pm, 6pm UTC
+    # 4 runs per day: 6am, 10am, 2pm, 6pm UTC
     - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
+    - cron: "0 10 * * *"
+    - cron: "0 14 * * *"
     - cron: "0 18 * * *"
 
   workflow_dispatch:
     inputs:
       run_count:
-        description: "Number of articles to generate (default: 3)"
+        description: "Number of articles to generate (default: 5)"
         required: false
-        default: "3"
+        default: "5"
 
 permissions:
   contents: write
@@ -21,8 +22,8 @@ jobs:
   generate:
     runs-on: ubuntu-latest
 
-    # Queues concurrent runs — never cancels, never runs two at once.
-    # Prevents git push conflicts when all 3 cron triggers fire close together.
+    # Queue concurrent runs — never cancels, never runs two at once.
+    # Prevents git push conflicts when cron triggers fire close together.
     concurrency:
       group: generate
       cancel-in-progress: false
@@ -47,7 +48,6 @@ jobs:
         run: |
           git config user.name "baaghinitesh"
           git config user.email "baaghinitesh@gmail.com"
-          # Embed token in remote URL so gitpython push works without SSH keys
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/baaghinitesh/dailly-notes.git
 
       # Pull latest AFTER pip install so we always have the freshest topic files
@@ -60,6 +60,6 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           AUTHOR_NAME: "baaghinitesh"
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
-          RUN_COUNT: ${{ github.event.inputs.run_count || '3' }}
+          RUN_COUNT: ${{ github.event.inputs.run_count || '5' }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python main.py
