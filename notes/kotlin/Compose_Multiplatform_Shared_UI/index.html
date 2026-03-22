@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://baaghinitesh.github.io/dailly-notes/notes/software-engineering/">
+        <link rel="canonical" href="https://baaghinitesh.github.io/dailly-notes/notes/kotlin/Compose_Multiplatform_Shared_UI/">
       
       
-        <link rel="prev" href="../rust/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../swift/">
+        <link rel="next" href="../../languages-overview/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Software Engineering - Daily Notes</title>
+        <title>Compose Multiplatform: Shared UI - Daily Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#software-engineering" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Daily Notes" class="md-header__button md-logo" aria-label="Daily Notes" data-md-component="logo">
+    <a href="../../.." title="Daily Notes" class="md-header__button md-logo" aria-label="Daily Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Software Engineering
+              Compose Multiplatform: Shared UI
             
           </span>
         </div>
@@ -228,7 +228,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -247,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../instructions/" class="md-tabs__link">
+      <a href="../../../instructions/" class="md-tabs__link">
         
   
   
@@ -268,7 +268,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../dsa/" class="md-tabs__link">
+        <a href="../../../dsa/" class="md-tabs__link">
           
   
   
@@ -292,7 +292,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -328,7 +328,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Daily Notes" class="md-nav__button md-logo" aria-label="Daily Notes" data-md-component="logo">
+    <a href="../../.." title="Daily Notes" class="md-nav__button md-logo" aria-label="Daily Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -358,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -385,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../instructions/" class="md-nav__link">
+      <a href="../../../instructions/" class="md-nav__link">
         
   
   
@@ -443,7 +443,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../dsa/" class="md-nav__link ">
+            <a href="../../../dsa/" class="md-nav__link ">
               
   
   
@@ -512,7 +512,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../dsa/easy/" class="md-nav__link ">
+            <a href="../../../dsa/easy/" class="md-nav__link ">
               
   
   
@@ -586,7 +586,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../dsa/hard/" class="md-nav__link ">
+            <a href="../../../dsa/hard/" class="md-nav__link ">
               
   
   
@@ -630,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dsa/hard/Maximal_Rectangle/" class="md-nav__link">
+      <a href="../../../dsa/hard/Maximal_Rectangle/" class="md-nav__link">
         
   
   
@@ -691,7 +691,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../dsa/medium/" class="md-nav__link ">
+            <a href="../../../dsa/medium/" class="md-nav__link ">
               
   
   
@@ -819,7 +819,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -891,7 +891,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../cloud-aws/" class="md-nav__link ">
+            <a href="../../cloud-aws/" class="md-nav__link ">
               
   
   
@@ -966,7 +966,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../computer-science/" class="md-nav__link ">
+            <a href="../../computer-science/" class="md-nav__link ">
               
   
   
@@ -1041,7 +1041,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../cpp/" class="md-nav__link ">
+            <a href="../../cpp/" class="md-nav__link ">
               
   
   
@@ -1116,7 +1116,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../data-engineering/" class="md-nav__link ">
+            <a href="../../data-engineering/" class="md-nav__link ">
               
   
   
@@ -1191,7 +1191,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../databases/" class="md-nav__link ">
+            <a href="../../databases/" class="md-nav__link ">
               
   
   
@@ -1266,7 +1266,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../devops/" class="md-nav__link ">
+            <a href="../../devops/" class="md-nav__link ">
               
   
   
@@ -1345,7 +1345,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../dsa/" class="md-nav__link ">
+            <a href="../../dsa/" class="md-nav__link ">
               
   
   
@@ -1389,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dsa/Rat_in_a_Maze/" class="md-nav__link">
+      <a href="../../dsa/Rat_in_a_Maze/" class="md-nav__link">
         
   
   
@@ -1417,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dsa/Two_Pointer_Technique/" class="md-nav__link">
+      <a href="../../dsa/Two_Pointer_Technique/" class="md-nav__link">
         
   
   
@@ -1481,7 +1481,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../frontend-tooling/" class="md-nav__link ">
+            <a href="../../frontend-tooling/" class="md-nav__link ">
               
   
   
@@ -1560,7 +1560,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../golang/" class="md-nav__link ">
+            <a href="../../golang/" class="md-nav__link ">
               
   
   
@@ -1604,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/Goroutines_and_Channels/" class="md-nav__link">
+      <a href="../../golang/Goroutines_and_Channels/" class="md-nav__link">
         
   
   
@@ -1632,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/syncWaitGroup_Waiting_for_Goroutines/" class="md-nav__link">
+      <a href="../../golang/syncWaitGroup_Waiting_for_Goroutines/" class="md-nav__link">
         
   
   
@@ -1702,7 +1702,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../java/" class="md-nav__link ">
+            <a href="../../java/" class="md-nav__link ">
               
   
   
@@ -1746,7 +1746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../java/CompletableFuture/" class="md-nav__link">
+      <a href="../../java/CompletableFuture/" class="md-nav__link">
         
   
   
@@ -1774,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../java/Functional_Interfaces_FunctionalInterface/" class="md-nav__link">
+      <a href="../../java/Functional_Interfaces_FunctionalInterface/" class="md-nav__link">
         
   
   
@@ -1802,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../java/JDK_vs_JRE_vs_JVM/" class="md-nav__link">
+      <a href="../../java/JDK_vs_JRE_vs_JVM/" class="md-nav__link">
         
   
   
@@ -1835,8 +1835,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1858,17 +1860,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../kotlin/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1892,7 +1892,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_12">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1909,10 +1909,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../kotlin/Compose_Multiplatform_Shared_UI/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compose Multiplatform: Shared UI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1928,6 +1953,129 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-simple-composable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Simple Composable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-material-design-composable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Material Design Composable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-platform-specific-composable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Platform-Specific Composable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-world Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls-how-to-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Pitfalls &amp; How to Avoid Them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary / Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1976,7 +2124,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../languages-overview/" class="md-nav__link ">
+            <a href="../../languages-overview/" class="md-nav__link ">
               
   
   
@@ -2051,7 +2199,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../mobile-development/" class="md-nav__link ">
+            <a href="../../mobile-development/" class="md-nav__link ">
               
   
   
@@ -2126,7 +2274,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../nodejs/" class="md-nav__link ">
+            <a href="../../nodejs/" class="md-nav__link ">
               
   
   
@@ -2203,7 +2351,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../python/" class="md-nav__link ">
+            <a href="../../python/" class="md-nav__link ">
               
   
   
@@ -2247,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/Python_Decorators/" class="md-nav__link">
+      <a href="../../python/Python_Decorators/" class="md-nav__link">
         
   
   
@@ -2313,7 +2461,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../react/" class="md-nav__link ">
+            <a href="../../react/" class="md-nav__link ">
               
   
   
@@ -2357,7 +2505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../react/useState_Hook/" class="md-nav__link">
+      <a href="../../react/useState_Hook/" class="md-nav__link">
         
   
   
@@ -2421,7 +2569,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../react-native/" class="md-nav__link ">
+            <a href="../../react-native/" class="md-nav__link ">
               
   
   
@@ -2496,7 +2644,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../rust/" class="md-nav__link ">
+            <a href="../../rust/" class="md-nav__link ">
               
   
   
@@ -2540,8 +2688,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2563,15 +2709,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_20" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_20" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../software-engineering/" class="md-nav__link ">
               
   
   
@@ -2590,7 +2738,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_20_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_20_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_20">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2646,7 +2794,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../swift/" class="md-nav__link ">
+            <a href="../../swift/" class="md-nav__link ">
               
   
   
@@ -2723,7 +2871,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../system-design/" class="md-nav__link ">
+            <a href="../../system-design/" class="md-nav__link ">
               
   
   
@@ -2767,7 +2915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../system-design/CAP_Theorem/" class="md-nav__link">
+      <a href="../../system-design/CAP_Theorem/" class="md-nav__link">
         
   
   
@@ -2833,7 +2981,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../typescript/" class="md-nav__link ">
+            <a href="../../typescript/" class="md-nav__link ">
               
   
   
@@ -2877,7 +3025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../typescript/TypeScript_Generics/" class="md-nav__link">
+      <a href="../../typescript/TypeScript_Generics/" class="md-nav__link">
         
   
   
@@ -2943,7 +3091,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../web-fundamentals/" class="md-nav__link ">
+            <a href="../../web-fundamentals/" class="md-nav__link ">
               
   
   
@@ -2987,7 +3135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-fundamentals/requestIdleCallback_for_Background_Work/" class="md-nav__link">
+      <a href="../../web-fundamentals/requestIdleCallback_for_Background_Work/" class="md-nav__link">
         
   
   
@@ -3040,8 +3188,119 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-simple-composable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Simple Composable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-material-design-composable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Material Design Composable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-platform-specific-composable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Platform-Specific Composable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-world Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls-how-to-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Pitfalls &amp; How to Avoid Them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary / Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3061,15 +3320,105 @@
   
 
 
-<h1 id="software-engineering">Software Engineering<a class="headerlink" href="#software-engineering" title="Permanent link">&para;</a></h1>
-<p>Notes on design patterns, architecture, API design, testing, and security.</p>
-<p>Content is generated automatically and updated regularly.</p>
+  <h1>Compose Multiplatform: Shared UI</h1>
+
+<p><img alt="Compose Multiplatform: Shared UI" src="https://image.pollinations.ai/prompt/Compose%20Multiplatform%20Shared%20UI%20kotlin%20programming?width=800&amp;height=400&amp;nologo=true" /></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Compose Multiplatform is a UI framework developed by JetBrains, allowing developers to build user interfaces for multiple platforms, including Android, Desktop, and Web, using a single codebase. The Shared UI component is a crucial part of this framework, enabling developers to share UI code across different platforms. In this article, we will delve into the world of Compose Multiplatform: Shared UI, exploring its core concepts, code examples, real-world use cases, and common pitfalls to avoid.</p>
+<h2 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
+<p>Compose Multiplatform: Shared UI is built on top of the Kotlin programming language and utilizes the Compose framework. The core concepts of Shared UI include:</p>
+<ul>
+<li><strong>Composables</strong>: These are the building blocks of the UI, represented as functions that return a UI element.</li>
+<li><strong>State</strong>: Compose uses a state-driven approach, where the UI is updated based on the state of the application.</li>
+<li><strong>Layout</strong>: Compose provides a flexible layout system, allowing developers to create complex layouts using a simple and intuitive API.</li>
+<li><strong>Material Design</strong>: Compose Multiplatform: Shared UI supports Material Design, a design system developed by Google, providing a consistent look and feel across different platforms.</li>
+</ul>
+<p>To use Compose Multiplatform: Shared UI, developers need to create a multi-module project, with a separate module for the shared UI code. This module will contain the Composable functions, which can be used across different platforms.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Shared UI module</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nd">@Composable</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">Greeting</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, </span><span class="si">$</span><span class="n">name</span><span class="s">!&quot;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Permanent link">&para;</a></h2>
+<p>Here are a few examples of using Compose Multiplatform: Shared UI:</p>
+<h3 id="example-1-simple-composable">Example 1: Simple Composable<a class="headerlink" href="#example-1-simple-composable" title="Permanent link">&para;</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Shared UI module</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nd">@Composable</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">Counter</span><span class="p">(</span><span class="n">count</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">onIncrement</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onIncrement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Increment&quot;</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Count: </span><span class="si">$</span><span class="n">count</span><span class="s">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="example-2-material-design-composable">Example 2: Material Design Composable<a class="headerlink" href="#example-2-material-design-composable" title="Permanent link">&para;</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Shared UI module</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nd">@Composable</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">MaterialGreeting</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">MaterialTheme</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="n">Surface</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="n">Greeting</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="example-3-platform-specific-composable">Example 3: Platform-Specific Composable<a class="headerlink" href="#example-3-platform-specific-composable" title="Permanent link">&para;</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Android module</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nd">@Composable</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">AndroidGreeting</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">AndroidView</span><span class="p">(</span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">TextView</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="n">view</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, </span><span class="si">$</span><span class="n">name</span><span class="s">!&quot;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="real-world-use-cases">Real-world Use Cases<a class="headerlink" href="#real-world-use-cases" title="Permanent link">&para;</a></h2>
+<p>Compose Multiplatform: Shared UI has several real-world use cases, including:</p>
+<ul>
+<li><strong>Cross-platform development</strong>: Shared UI enables developers to share UI code across different platforms, reducing development time and increasing code reuse.</li>
+<li><strong>Complex UI components</strong>: Compose Multiplatform: Shared UI provides a flexible and powerful API for creating complex UI components, making it ideal for building custom UI elements.</li>
+<li><strong>Material Design</strong>: Shared UI supports Material Design, making it easy to create consistent and visually appealing UI components across different platforms.</li>
+</ul>
+<h2 id="common-pitfalls-how-to-avoid-them">Common Pitfalls &amp; How to Avoid Them<a class="headerlink" href="#common-pitfalls-how-to-avoid-them" title="Permanent link">&para;</a></h2>
+<p>When using Compose Multiplatform: Shared UI, there are several common pitfalls to avoid:</p>
+<blockquote>
+<p><strong>Warning:</strong> Avoid using platform-specific APIs in the shared UI module, as this can lead to compatibility issues.
+<strong>Tip:</strong> Use the <code>@Composable</code> annotation to mark Composable functions, ensuring they are properly optimized and rendered by the Compose framework.
+<strong>Note:</strong> Be mindful of the state management approach used in the shared UI module, as this can affect the overall performance and behavior of the application.</p>
+</blockquote>
+<p>To avoid these pitfalls, developers should:</p>
+<ul>
+<li>Keep the shared UI module platform-agnostic, avoiding platform-specific APIs and focusing on shared UI logic.</li>
+<li>Use the <code>@Composable</code> annotation to mark Composable functions, ensuring they are properly optimized and rendered by the Compose framework.</li>
+<li>Implement a robust state management approach, using tools like <code>State</code> and <code>MutableState</code> to manage state changes and updates.</li>
+</ul>
+<h2 id="summary-key-takeaways">Summary / Key Takeaways<a class="headerlink" href="#summary-key-takeaways" title="Permanent link">&para;</a></h2>
+<p>In summary, Compose Multiplatform: Shared UI is a powerful framework for building shared UI components across different platforms. By understanding the core concepts, code examples, and real-world use cases, developers can create complex and visually appealing UI components, while avoiding common pitfalls and ensuring a smooth and efficient development process. Key takeaways include:</p>
+<ul>
+<li>Use the <code>@Composable</code> annotation to mark Composable functions.</li>
+<li>Keep the shared UI module platform-agnostic, avoiding platform-specific APIs.</li>
+<li>Implement a robust state management approach using <code>State</code> and <code>MutableState</code>.</li>
+<li>Use Material Design to create consistent and visually appealing UI components.</li>
+</ul>
+<p>By following these guidelines and best practices, developers can unlock the full potential of Compose Multiplatform: Shared UI and create high-quality, cross-platform applications with a shared UI codebase. </p>
+<pre class="mermaid"><code>graph TD
+    A[Shared UI Module] --&gt; B[Android Module]
+    A --&gt; C[Desktop Module]
+    A --&gt; D[Web Module]
+    B --&gt; E[Android App]
+    C --&gt; F[Desktop App]
+    D --&gt; G[Web App]</code></pre>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -3137,10 +3486,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
