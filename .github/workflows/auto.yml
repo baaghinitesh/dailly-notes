@@ -1,17 +1,13 @@
-name: Auto DSA + Notes + Deploy
+name: Generate & Deploy
 
 on:
-  push:
-    branches:
-      - main
-
   schedule:
-    - cron: "0 0,12 * * *"  # twice daily
+    - cron: "0 3,15 * * *"   # twice daily — 3am and 3pm UTC
 
   workflow_dispatch:
     inputs:
       run_count:
-        description: "How many times to run generation in this manual trigger"
+        description: "Number of articles to generate"
         required: false
         default: "1"
 
@@ -19,50 +15,38 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  generate-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install mkdocs-material mkdocs-awesome-pages-plugin
+        run: pip install -r requirements.txt
 
-      - name: Show trigger information
+      - name: Configure git
         run: |
-          echo "Triggered by: ${{ github.event_name }}"
+          git config user.name "baaghinitesh"
+          git config user.email "baaghinitesh@gmail.com"
 
-      - name: Run automation
+      - name: Generate content
         env:
-          API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           AUTHOR_NAME: "baaghinitesh"
           AUTHOR_EMAIL: "baaghinitesh@gmail.com"
           RUN_COUNT: ${{ github.event.inputs.run_count || '1' }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python main.py
 
-      - name: Deploy MkDocs
+      - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
-
-  cleanup:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Clean up heartbeats
-        run: |
-          rm -rf docs/heartbeat.txt || true
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "🧹 Cleanup heartbeat files" || echo "Nothing to commit"
-          git push

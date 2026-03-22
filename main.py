@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-main.py for Auto DSA + Notes + Deploy
-- Ensures candidates are lists before random.shuffle
-- Flattens nested 'notes' sections in topics.json
-- Manual runs (workflow_dispatch): run immediately, allow RUN_COUNT
-- Push runs: run immediately (no delay)
-- Scheduled runs: random delay (up to 3 hours)
-- Adds API timeout to prevent hangs
-- Logs file writes and forces commit of untracked files
-- Sanitizes filenames for notes and Java files
-- Auto-generates Markdown wrapper for Java files for MkDocs display
+main.py — Groq/Llama-3 powered content engine for dailly-notes
+- Generates rich Markdown notes with YAML frontmatter
+- Tracks update_count per article (max 5 updates before skipping)
+- Generates DSA solutions in Java with Markdown wrapper
+- Proper rate limiting and retry logic for Groq API
+- No signal.SIGALRM (cross-platform safe)
+- Single workflow: generate → commit → deploy
 """
 
 import os
@@ -17,205 +14,358 @@ import random
 import sys
 import json
 import time
-import git
-import signal
 import re
-import google.generativeai as genai
+import git
 from typing import Any, List, Iterable
+from groq import Groq
 
-# ------------------ Get config ------------------
-API_KEY = os.environ.get("API_KEY")
-AUTHOR_NAME = os.environ.get("AUTHOR_NAME")
-AUTHOR_EMAIL = os.environ.get("AUTHOR_EMAIL")
+# ─── Config ───────────────────────────────────────────────────────────────────
 
-if not API_KEY or not AUTHOR_NAME or not AUTHOR_EMAIL:
-    print("❌ Missing required environment variables: API_KEY / AUTHOR_NAME / AUTHOR_EMAIL")
+GROQ_API_KEY  = os.environ.get("GROQ_API_KEY")
+AUTHOR_NAME   = os.environ.get("AUTHOR_NAME", "baaghinitesh")
+AUTHOR_EMAIL  = os.environ.get("AUTHOR_EMAIL", "baaghinitesh@gmail.com")
+MODEL         = "llama3-70b-8192"   # Groq's fastest large model
+MAX_UPDATES   = 5                   # max times an article gets updated
+
+if not GROQ_API_KEY:
+    print("❌ Missing GROQ_API_KEY environment variable")
     sys.exit(1)
 
-# ------------------ Gemini setup ------------------
-genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+client = Groq(api_key=GROQ_API_KEY)
 
-# ------------------ Load topics ------------------
+# ─── Load topics ──────────────────────────────────────────────────────────────
+
 TOPICS_FILE = "topics.json"
 
-def load_topics():
-    with open(TOPICS_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+with open(TOPICS_FILE, "r", encoding="utf-8") as f:
+    topics = json.load(f)
 
-topics = load_topics()
+# ─── Helpers ──────────────────────────────────────────────────────────────────
 
-# ------------------ Helpers ------------------
 def flatten_to_strings(value: Any) -> List[str]:
-    """Recursively flatten nested structures in topics.json to a list of strings."""
+    """Recursively flatten nested topics.json structures to a list of strings."""
     out = []
     if isinstance(value, str):
         out.append(value)
-    elif isinstance(value, (list, tuple, set)):
+    elif isinstance(value, (list, tuple)):
         for v in value:
             out.extend(flatten_to_strings(v))
     elif isinstance(value, dict):
         for v in value.values():
             out.extend(flatten_to_strings(v))
-    else:
-        out.append(str(value))
     return out
 
-def sanitize_filename(name: str, max_length: int = 50) -> str:
-    """Sanitize file names: remove unsafe characters, limit length."""
+
+def sanitize_filename(name: str, max_length: int = 60) -> str:
     name = name.strip()
     name = re.sub(r"[ /\\]+", "_", name)
-    name = re.sub(r"[^A-Za-z0-9_-]", "", name)
-    if len(name) > max_length:
-        name = name[:max_length]
-    return name
+    name = re.sub(r"[^A-Za-z0-9_\-]", "", name)
+    return name[:max_length]
 
-# ------------------ Timeout handler ------------------
-class TimeoutException(Exception):
-    pass
 
-def timeout_handler(signum, frame):
-    raise TimeoutException("API call timed out!")
-
-signal.signal(signal.SIGALRM, timeout_handler)
-
-# ------------------ AI Content Generator ------------------
-def generate_content(prompt: str, max_retries: int = 2, timeout_sec: int = 60) -> str:
-    """Generate content using Gemini with a timeout. On error, return a warning string."""
-    for attempt in range(1, max_retries + 1):
-        try:
-            signal.alarm(timeout_sec)
-            response = model.generate_content(prompt)
-            signal.alarm(0)
-            if hasattr(response, "text") and response.text:
-                return response.text.strip()
-            if isinstance(response, dict):
-                text = response.get("text") or response.get("output")
-                if text:
-                    return str(text).strip()
-            return "⚠️ No response generated."
-        except TimeoutException:
-            return "⚠️ API call timed out."
-        except Exception as e:
-            if attempt < max_retries:
-                time.sleep(attempt)
+def read_frontmatter(path: str) -> dict:
+    """Parse YAML frontmatter from an existing markdown file."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            content = f.read()
+        m = re.match(r"^---\r?\n([\s\S]*?)\r?\n---\r?\n", content)
+        if not m:
+            return {}
+        meta = {}
+        for line in m.group(1).split("\n"):
+            idx = line.find(":")
+            if idx == -1:
                 continue
-            return f"⚠️ Error generating content: {e}"
-        finally:
-            signal.alarm(0)
+            k = line[:idx].strip()
+            v = line[idx+1:].strip().strip('"\'')
+            if k:
+                meta[k] = v
+        return meta
+    except Exception:
+        return {}
 
-# ------------------ Pickers ------------------
-def pick_new_file(path: str, candidates: Iterable[Any], format_name):
-    flat_candidates = flatten_to_strings(candidates)
-    flat_candidates = [str(c).strip() for c in flat_candidates if str(c).strip()]
-    if not flat_candidates:
+
+def build_frontmatter(title: str, topic: str, tags: List[str], update_count: int) -> str:
+    tag_str = ", ".join(tags)
+    banner = f"https://image.pollinations.ai/prompt/{topic.replace(' ', '%20')}%20programming?width=800&height=400&nologo=true"
+    return f"""---
+title: "{title}"
+topic: "{topic}"
+tags: "{tag_str}"
+banner: "{banner}"
+update_count: {update_count}
+---
+"""
+
+# ─── Groq API call with retry ─────────────────────────────────────────────────
+
+def call_groq(system: str, user: str, max_tokens: int = 4096, retries: int = 3) -> str:
+    """Call Groq API with exponential backoff on rate limit errors."""
+    for attempt in range(1, retries + 1):
+        try:
+            response = client.chat.completions.create(
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user",   "content": user},
+                ],
+                max_tokens=max_tokens,
+                temperature=0.7,
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            err = str(e)
+            if "rate_limit" in err.lower() or "429" in err:
+                wait = 2 ** attempt * 10   # 20s, 40s, 80s
+                print(f"⏳ Rate limited. Waiting {wait}s before retry {attempt}/{retries}...")
+                time.sleep(wait)
+            else:
+                print(f"❌ Groq API error (attempt {attempt}): {e}")
+                if attempt == retries:
+                    return f"⚠️ Content generation failed after {retries} attempts: {e}"
+                time.sleep(5)
+    return "⚠️ Content generation failed."
+
+# ─── System prompts ───────────────────────────────────────────────────────────
+
+NOTE_SYSTEM = """You are an expert technical writer creating premium study notes for software engineers.
+
+STRICT FORMATTING RULES — follow exactly:
+1. Use proper Markdown headings (## for sections, ### for subsections)
+2. Every code example MUST use a fenced code block with the language tag, e.g. ```java or ```javascript
+3. Add a context-aware banner image using: ![{topic}](https://image.pollinations.ai/prompt/{url_encoded_topic}?width=800&height=400&nologo=true)
+4. Use blockquotes for important notes: > **Note:** ...
+5. Use tables where comparisons are needed
+6. Include at least 3 practical code examples
+7. Do NOT include YAML frontmatter — that is added separately
+8. Do NOT add any preamble like "Here are the notes:" — start directly with the content
+9. Structure: Introduction → Core Concepts → Code Examples → Common Pitfalls → Summary
+"""
+
+UPDATE_SYSTEM = """You are an expert technical writer updating an existing study article.
+
+RULES:
+1. Do NOT rewrite the existing content — only APPEND a new section at the end
+2. The new section must cover a distinct sub-topic, advanced pattern, or real-world use case not already covered
+3. Use the same Markdown formatting as the existing article
+4. Add at least one new code example with proper language tag
+5. Start your response with a new ## heading
+6. Do NOT include YAML frontmatter
+"""
+
+DSA_SYSTEM = """You are an expert competitive programmer. Provide clean, well-commented Java solutions.
+
+RULES:
+1. Output ONLY raw Java code — no markdown fences, no explanation
+2. Class name must be CamelCase derived from the problem name
+3. Include the problem name and difficulty as a comment at the top
+4. Include time and space complexity as comments
+5. The solution must be complete and compilable
+"""
+
+# ─── Pickers ──────────────────────────────────────────────────────────────────
+
+def pick_new_file(candidates: Iterable[Any], format_path):
+    flat = [str(c).strip() for c in flatten_to_strings(candidates) if str(c).strip()]
+    if not flat:
         return None, None
-    random.shuffle(flat_candidates)
-    for candidate in flat_candidates:
-        fname = format_name(candidate)
-        if not os.path.exists(fname):
-            return candidate, fname
+    random.shuffle(flat)
+    for candidate in flat:
+        path = format_path(candidate)
+        if not os.path.exists(path):
+            return candidate, path
     return None, None
 
-def pick_dsa_question():
+
+def pick_updatable_file(candidates: Iterable[Any], format_path):
+    """Pick an existing file with update_count < MAX_UPDATES."""
+    flat = [str(c).strip() for c in flatten_to_strings(candidates) if str(c).strip()]
+    random.shuffle(flat)
+    for candidate in flat:
+        path = format_path(candidate)
+        if os.path.exists(path):
+            meta = read_frontmatter(path)
+            count = int(meta.get("update_count", 0))
+            if count < MAX_UPDATES:
+                return candidate, path, count
+    return None, None, 0
+
+
+def pick_dsa():
     difficulty = random.choice(["easy", "medium", "hard"])
     candidates = topics.get(difficulty, [])
-    return pick_new_file(
-        f"docs/dsa/{difficulty}/",
+    question, path = pick_new_file(
         candidates,
-        lambda q: f"docs/dsa/{difficulty}/{sanitize_filename(q)}"
+        lambda q: f"docs/dsa/{difficulty}/{sanitize_filename(q)}.md"
     )
+    return (question, path), difficulty
 
-def pick_note_topic():
+
+def pick_note():
     notes_root = topics.get("notes", {})
     if not notes_root:
-        return None, None
+        return None, None, None
     section = random.choice(list(notes_root.keys()))
     candidates = notes_root.get(section, [])
-    return pick_new_file(
-        f"docs/notes/{section}/",
+    note, path = pick_new_file(
         candidates,
         lambda n: f"docs/notes/{section}/{sanitize_filename(n)}.md"
     )
+    return note, path, section
 
-# ------------------ File + Git ------------------
+
+def pick_note_to_update():
+    notes_root = topics.get("notes", {})
+    if not notes_root:
+        return None, None, None, 0
+    sections = list(notes_root.keys())
+    random.shuffle(sections)
+    for section in sections:
+        candidates = notes_root.get(section, [])
+        note, path, count = pick_updatable_file(
+            candidates,
+            lambda n, s=section: f"docs/notes/{s}/{sanitize_filename(n)}.md"
+        )
+        if note:
+            return note, path, section, count
+    return None, None, None, 0
+
+# ─── File + Git ───────────────────────────────────────────────────────────────
+
 def save_file(path: str, content: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
-    print(f"📄 File written: {path} ({len(content)} chars)")
+    print(f"📄 Written: {path} ({len(content)} chars)")
 
-def commit_and_push(file_paths: list, message: str):
+
+def commit_and_push(message: str):
     repo = git.Repo(".")
-    try:
-        repo.git.add(A=True)
-        if repo.is_dirty(untracked_files=True):
-            repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
-            repo.remote(name="origin").push()
-            print(f"👉 Pushed commit: {message}")
-        else:
-            print("ℹ️ Nothing changed — no commit created.")
-    except Exception as e:
-        print(f"❌ Git push failed: {e}")
+    repo.git.add(A=True)
+    if repo.is_dirty(untracked_files=True):
+        repo.index.commit(message, author=git.Actor(AUTHOR_NAME, AUTHOR_EMAIL))
+        repo.remote(name="origin").push()
+        print(f"✅ Pushed: {message}")
+    else:
+        print("ℹ️ Nothing to commit.")
 
-# ------------------ Tasks ------------------
+# ─── Tasks ────────────────────────────────────────────────────────────────────
+
 def add_dsa():
-    question, base_path = pick_dsa_question()
+    result, difficulty = pick_dsa()
+    question, md_path = result
     if not question:
-        print("⚠️ No new DSA question found.")
+        print("⚠️ No new DSA question to add.")
         return False
 
-    # Generate Java code
-    java_prompt = (
-        f"Provide a Java solution for: '{question}'.\n"
-        f"Class name = problem name in CamelCase.\n"
-        f"Include question + difficulty as comments.\n"
-        f"Respond ONLY with raw Java code."
-    )
-    java_solution = generate_content(java_prompt).replace("```java", "").replace("```", "").strip()
+    print(f"🔧 Generating DSA: {question} ({difficulty})")
 
-    # Generate summary
-    summary_prompt = (
-        f"Write summary + complexity for: {question}.\n"
-        "Format:\n## Summary of Approach\n...\n\n## Time and Space Complexity\n- Time: O(...)\n- Space: O(...)"
+    # Java solution
+    java_code = call_groq(
+        DSA_SYSTEM,
+        f"Problem: {question}\nDifficulty: {difficulty}\nWrite the complete Java solution.",
+        max_tokens=2048
     )
-    summary_content = generate_content(summary_prompt)
+    java_code = re.sub(r"```java\s*|```\s*", "", java_code).strip()
+
+    # Summary
+    summary = call_groq(
+        "You are a technical writer. Write a concise algorithm summary.",
+        f"Problem: {question}\nJava solution:\n{java_code}\n\nWrite:\n## Approach\n...\n\n## Complexity\n- Time: O(...)\n- Space: O(...)",
+        max_tokens=512
+    )
 
     # Save Java file
-    java_file = f"{base_path}.java"
-    save_file(java_file, java_solution)
+    java_path = md_path.replace(".md", ".java")
+    save_file(java_path, java_code)
 
-    # Save combined Markdown for MkDocs
-    md_file = f"{base_path}.md"
-    combined_md_content = f"# Problem: {question}\n\n" \
-                          f"{summary_content}\n\n" \
-                          f"## Java Solution\n```java\n{java_solution}\n```"
-    save_file(md_file, combined_md_content)
+    # Save Markdown
+    banner_topic = question.replace(" ", "%20")
+    md_content = f"""---
+title: "{question}"
+difficulty: "{difficulty}"
+tags: "dsa, {difficulty}, java"
+banner: "https://image.pollinations.ai/prompt/{banner_topic}%20algorithm?width=800&height=400&nologo=true"
+update_count: 0
+---
 
-    # Commit & push both files
-    commit_and_push([java_file, md_file], f"📘 Added DSA solution: {question}")
-    print(f"✅ DSA solution added: {question}")
+# {question}
+
+![{question}](https://image.pollinations.ai/prompt/{banner_topic}%20algorithm?width=800&height=400&nologo=true)
+
+{summary}
+
+## Java Solution
+
+```java
+{java_code}
+```
+"""
+    save_file(md_path, md_content)
+    commit_and_push(f"📘 DSA: {question} ({difficulty})")
     return True
+
 
 def add_note():
-    note, file_path = pick_note_topic()
+    note, path, section = pick_note()
     if not note:
-        print("⚠️ No new note topic found.")
-        return False
+        # Try updating an existing one instead
+        return update_note()
 
-    prompt = (
-        f"# {note}\n\n"
-        "Write premium-quality study notes:\n"
-        "## 1. Introduction\n## 2. Core Concepts\n## 3. Practical Examples\n## 4. Conclusion"
+    print(f"📝 Generating note: {note} [{section}]")
+    url_topic = note.replace(" ", "%20")
+
+    content_body = call_groq(
+        NOTE_SYSTEM,
+        f"Write comprehensive study notes for: **{note}**\nContext: This is part of the {section} learning path.",
+        max_tokens=4096
     )
-    content = generate_content(prompt)
 
-    save_file(file_path, content)
-    commit_and_push([file_path], f"📝 Added note: {note}")
-    print(f"✅ Note added: {note}")
+    tags = [section, note.split(":")[0].strip().lower().replace(" ", "-")]
+    frontmatter = build_frontmatter(note, note, tags, update_count=0)
+    full_content = frontmatter + "\n" + content_body
+
+    save_file(path, full_content)
+    commit_and_push(f"📝 Note: {note}")
     return True
 
-# ------------------ Run / Scheduling Logic ------------------
+
+def update_note():
+    note, path, section, current_count = pick_note_to_update()
+    if not note:
+        print("⚠️ No notes available to update.")
+        return False
+
+    print(f"🔄 Updating note: {note} (update #{current_count + 1})")
+
+    with open(path, "r", encoding="utf-8") as f:
+        existing = f.read()
+
+    # Strip frontmatter for the prompt
+    body = re.sub(r"^---\r?\n[\s\S]*?\r?\n---\r?\n", "", existing).strip()
+
+    new_section = call_groq(
+        UPDATE_SYSTEM,
+        f"Existing article about '{note}':\n\n{body[:3000]}\n\nAppend a new advanced section.",
+        max_tokens=2048
+    )
+
+    new_count = current_count + 1
+
+    # Rebuild frontmatter with updated count
+    meta = read_frontmatter(path)
+    tags_raw = meta.get("tags", section)
+    tags = [t.strip() for t in tags_raw.split(",")]
+    new_frontmatter = build_frontmatter(note, meta.get("topic", note), tags, new_count)
+
+    updated = new_frontmatter + "\n" + body + "\n\n" + new_section
+
+    save_file(path, updated)
+    commit_and_push(f"🔄 Updated note: {note} (v{new_count})")
+    return True
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
+
 def main():
     event_name = os.environ.get("GITHUB_EVENT_NAME", "").lower()
     run_count_env = os.environ.get("RUN_COUNT", "1")
@@ -225,25 +375,31 @@ def main():
     except Exception:
         run_count = 1
 
-    if event_name not in ["workflow_dispatch"]:
+    # Only allow multiple runs on manual dispatch
+    if event_name != "workflow_dispatch":
         run_count = 1
 
+    # Scheduled runs: random delay up to 2 hours to spread load
     if event_name == "schedule":
-        delay = random.randint(0, 10800)
-        print(f"⏱️ Scheduled run detected. Sleeping {delay} seconds...")
+        delay = random.randint(0, 7200)
+        print(f"⏱️ Scheduled run. Sleeping {delay}s...")
         time.sleep(delay)
     else:
-        print(f"▶️ Run detected ({event_name or 'local/manual'}). Running immediately.")
+        print(f"▶️ Running immediately ({event_name or 'local'})")
 
-    any_added = False
     for i in range(run_count):
-        print(f"--- Run iteration {i+1} of {run_count} ---")
-        added_dsa = add_dsa()
-        added_note = add_note()
-        any_added = any_added or added_dsa or added_note
+        print(f"\n─── Iteration {i+1}/{run_count} ───")
+        # 50/50 chance: add DSA or add/update note
+        if random.random() < 0.5:
+            add_dsa()
+        else:
+            add_note()
+        # Small pause between iterations to respect rate limits
+        if i < run_count - 1:
+            time.sleep(3)
 
-    if not any_added:
-        print("⚠️ Nothing new could be generated today.")
+    print("\n✅ Done.")
+
 
 if __name__ == "__main__":
     main()

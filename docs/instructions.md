@@ -1,41 +1,33 @@
-# Instructions
+# Setup & Configuration
 
-This project automatically generates DSA practice questions + solutions and notes using the Gemini API, 
-and pushes them to GitHub twice daily at random times.
+This project automatically generates study notes and DSA solutions using Groq's Llama-3 70B model, deployed to GitHub Pages via GitHub Actions.
 
-## Features
-- DSA problems (Easy/Medium/Hard)
-- Notes for selected topic of the day
-- Two commits per day (1 file per commit)
-- File names are topic-related, not by timestamp
-- Supports separate React, Java, and DSA notes folders
+## Requirements
 
-## Setup
-1. Clone this repository.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Add your GitHub repository remote.
-4. Run the automation with:
-   ```bash
-   python main.py
-   ```
+- Python 3.11+
+- A [Groq API key](https://console.groq.com)
+- GitHub repository with Pages enabled
 
-## Notes
-- Uses Gemini API (your API key is already embedded in `config.py`).
-- DSA questions source: LeetCode + curated list (you can extend `topics.json`).
-- Notes are saved in `.txt` format inside `/notes`.
+## Local Setup
 
-git add .
-git commit -m "first commit"
-git push origin nitesh-branch
+```bash
+pip install -r requirements.txt
+export GROQ_API_KEY=your_key_here
+python main.py
+```
 
-git add .
-git commit -m "first commit"
-git push origin main
+## GitHub Actions Setup
 
-git checkout main
-git pull origin main
-git merge nitesh-branch
-git push origin main
+Add a repository secret named `GROQ_API_KEY` with your Groq API key.
+
+The workflow runs automatically twice daily (3am and 3pm UTC) and can also be triggered manually from the Actions tab with a custom `run_count`.
+
+## Content Structure
+
+- `docs/notes/{topic}/` — Study notes (React, Java, React Native, DSA)
+- `docs/dsa/{easy,medium,hard}/` — LeetCode solutions in Java
+- `topics.json` — Source of truth for all topics
+
+## Extending Topics
+
+Edit `topics.json` to add new topics. The automation will pick them up on the next run.
