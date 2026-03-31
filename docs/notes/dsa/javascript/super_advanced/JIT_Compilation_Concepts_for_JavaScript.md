@@ -43,7 +43,7 @@ Output: result = 5
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is code cached?}
+    A[Start] --> B{"Is code cached?"}
     B -->|Yes| C[Return cached function]
     B -->|No| D[Compile code]
     D --> E[Cache compiled function]

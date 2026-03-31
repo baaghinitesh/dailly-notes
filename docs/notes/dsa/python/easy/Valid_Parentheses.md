@@ -47,12 +47,12 @@ Output: True
 flowchart TD
     A[Start] --> B[Initialize Stack and Dictionary]
     B --> C[Iterate Through String]
-    C --> D{Is Character Opening Parenthesis?}
+    C --> D{"Is Character Opening Parenthesis?"}
     D -->|Yes| E[Push to Stack]
-    D -->|No| F{Is Character Closing Parenthesis?}
+    D -->|No| F{"Is Character Closing Parenthesis?"}
     F -->|Yes| G[Check Top of Stack and Pop if Match]
     F -->|No| H[Skip Character]
-    G --> I{Is Stack Empty After Iteration?}
+    G --> I{"Is Stack Empty After Iteration?"}
     I -->|Yes| J[Return True]
     I -->|No| K[Return False]
     C --> L[End of String]

@@ -42,7 +42,7 @@ Output: { id: 3, name: 'New User', email: 'new@example.com' }
 ```mermaid
 flowchart TD
     A[Start] --> B[Receive Request]
-    B --> C{Route Defined?}
+    B --> C{"Route Defined?"}
     C -->|Yes| D[Execute Route Handler]
     C -->|No| E[404 Not Found]
     D --> F{Request Type}

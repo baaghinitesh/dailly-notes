@@ -56,7 +56,7 @@ This will run the `eslint` package and initialize a new configuration file.
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[npx] -->|check if package is installed| B[Local/Global Installation]
+    A[npx] -->|check if package is installed| B["Local/Global Installation"]
     B -->|if installed, use installed version| C[Run Package]
     A -->|if not installed, download and install| D[Temporary Installation]
     D -->|run package| C

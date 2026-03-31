@@ -37,7 +37,7 @@ Output: [15, 54, 30]
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B[Divide array into sqrt(n) blocks]
+    A[Start] --> B["Divide array into sqrt(n) blocks"]
     B --> C[Sort queries based on block id and right boundary]
     C --> D[Initialize window and result vector]
     D --> E[Process queries]

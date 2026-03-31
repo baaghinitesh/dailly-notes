@@ -82,7 +82,7 @@ This example shows how the IDE's go-to-definition feature can help navigate to t
 graph TD
     A[Code Editor] -->|Syntax Analysis| B[Parser]
     B -->|Semantic Analysis| C[Analyzer]
-    C -->|Caching| D[(Cache)]
+    C -->|Caching| D["(Cache)"]
 
     %% Branching out the core features from the Cache
     D -->|Autocomplete| E[Code Completion]

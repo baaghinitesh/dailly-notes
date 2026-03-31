@@ -68,12 +68,12 @@ Output: False
 ```mermaid
 flowchart TD
     A[Start] --> B[Initialize memo dictionary]
-    B --> C[Call dp(n)]
-    C --> D{Is n in memo?}
-    D -->|Yes| E[Return memo[n]]
+    B --> C["Call dp(n)"]
+    C --> D{"Is n in memo?"}
+    D -->|Yes| E["Return memo[n"]]
     D -->|No| F[Try all possible moves]
-    F --> G[Call dp(n - move)]
-    G --> H{Is dp(n - move) False?}
+    F --> G["Call dp(n - move)"]
+    G --> H{"Is dp(n - move) False?"}
     H -->|Yes| I[Return True]
     H -->|No| J[Continue trying moves]
     J --> F

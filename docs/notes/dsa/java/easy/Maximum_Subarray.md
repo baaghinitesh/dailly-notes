@@ -43,7 +43,7 @@ This walkthrough demonstrates how the algorithm iterates through the array, maki
 flowchart TD
     A[Start] --> B[Initialize maxSum and currentSum]
     B --> C[Iterate through array]
-    C --> D{currentSum + current element > current element?}
+    C --> D{"currentSum + current element > current element?"}
     D -->|Yes| E[Update currentSum]
     D -->|No| F[Reset currentSum]
     E --> G[Update maxSum]

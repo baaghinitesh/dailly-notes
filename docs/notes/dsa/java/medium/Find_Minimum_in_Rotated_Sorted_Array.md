@@ -39,13 +39,13 @@ This walkthrough demonstrates how the algorithm efficiently finds the minimum el
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Middle element > Rightmost element?}
+    A[Start] --> B{"Middle element > Rightmost element?"}
     B -->|Yes| C[Move left pointer to mid + 1]
     B -->|No| D[Move right pointer to mid]
-    C --> E{Left pointer < Right pointer?}
+    C --> E{"Left pointer < Right pointer?"}
     D --> E
     E -->|Yes| B
-    E -->|No| F[Return nums[left]]
+    E -->|No| F["Return nums[left"]]
     F --> G[End]
 ```
 This flowchart illustrates the decision-making process of the algorithm, showing how it iteratively adjusts the search space based on comparisons.

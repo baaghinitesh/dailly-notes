@@ -123,9 +123,9 @@ This example demonstrates the transpilation of a TypeScript class with a decorat
 ```mermaid
 graph TD
     A[Source Code] -->|Lexical Analysis| B[Tokens]
-    B -->|Syntax Analysis| C[Abstract Syntax Tree (AST)]
+    B -->|Syntax Analysis| C["Abstract Syntax Tree (AST)"]
     C -->|Semantic Analysis| D[Analyzed AST]
-    D -->|Transformation| E[Intermediate Representation (IR)]
+    D -->|Transformation| E["Intermediate Representation (IR)"]
     E -->|Code Generation| F[Target Language Code]
     F -->|Execution| G[Result]
     style A fill:#f9f,stroke:#333,stroke-width:4px

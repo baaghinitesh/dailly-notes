@@ -38,13 +38,13 @@ This example demonstrates how the algorithm calculates the factorial of 5.
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is n < 0?}
+    A[Start] --> B{"Is n < 0?"}
     B -->|Yes| C[Return NaN]
-    B -->|No| D{Is n 0 or 1?}
+    B -->|No| D{"Is n 0 or 1?"}
     D -->|Yes| E[Return 1]
     D -->|No| F[Initialize result = 1]
     F --> G[Iterate from i = 2 to n]
-    G --> H{Is i <= n?}
+    G --> H{"Is i <= n?"}
     H -->|Yes| I[Multiply result by i]
     H -->|No| J[Return result]
 ```

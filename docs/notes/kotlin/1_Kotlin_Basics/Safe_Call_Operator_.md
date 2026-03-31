@@ -82,7 +82,7 @@ In this example, the length property of the address object is accessed only if a
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[Object] -->|?.| B[Property/Method]
+    A[Object] -->|?.| B["Property/Method"]
     B -->|returns null if null| C[Result]
     A -->|null check| D[Null]
     D -->|returns null| C

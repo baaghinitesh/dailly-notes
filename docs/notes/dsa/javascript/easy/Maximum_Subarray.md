@@ -42,10 +42,10 @@ Output: 6
 flowchart TD
     A[Start] --> B[Initialize maxSum and currentSum]
     B --> C[Iterate through array]
-    C --> D{currentSum + nums[i] > nums[i]}
-    D -->|Yes| E[currentSum = currentSum + nums[i]]
-    D -->|No| F[currentSum = nums[i]]
-    E --> G[Update maxSum if currentSum > maxSum]
+    C --> D{"currentSum + nums[i] > nums[i]"}
+    D -->|Yes| E["currentSum = currentSum + nums[i"]]
+    D -->|No| F["currentSum = nums[i"]]
+    E --> G["Update maxSum if currentSum > maxSum"]
     F --> G
     G --> H[Repeat iteration until end of array]
     H --> I[Return maxSum]

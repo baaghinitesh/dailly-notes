@@ -38,13 +38,13 @@ This example demonstrates the algorithm's ability to correctly identify a palind
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is string empty?}
+    A[Start] --> B{"Is string empty?"}
     B -->|Yes| C[Return true]
     B -->|No| D[Initialize left and right pointers]
-    D --> E{Do characters at left and right pointers match?}
+    D --> E{"Do characters at left and right pointers match?"}
     E -->|No| F[Return false]
     E -->|Yes| G[Move pointers closer to center]
-    G --> H{Have pointers met?}
+    G --> H{"Have pointers met?"}
     H -->|Yes| I[Return true]
     H -->|No| E
 ```

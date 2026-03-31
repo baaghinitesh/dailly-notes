@@ -103,7 +103,7 @@ graph TD
     A[Type T] --> B[Keyof T]
     B --> C[Type K]
     C --> D[Mapped Type]
-    D --> E[Pick<T, K>]
+    D --> E["Pick<T, K>"]
     E --> F[Subset of Properties]
     F --> G[New Type]
     style A fill:#f9f,stroke:#333,stroke-width:4px

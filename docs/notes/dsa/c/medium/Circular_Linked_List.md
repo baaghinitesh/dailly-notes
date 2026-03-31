@@ -49,7 +49,7 @@ flowchart TD
     C --> D{tortoise == hare}
     D -->|Yes| E[Return circular]
     D -->|No| C
-    C --> F{hare == NULL or hare->next == NULL}
+    C --> F{"hare == NULL or hare->next == NULL"}
     F -->|Yes| G[Return not circular]
     F -->|No| C
 ```

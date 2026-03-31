@@ -147,7 +147,7 @@ export default TodoList;
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[HTML/CSS] -->|parsed by browser| B[DOM/CSSOM]
+    A["HTML/CSS"] -->|parsed by browser| B["DOM/CSSOM"]
     B -->|combined| C[Render Tree]
     C -->|rendered| D[Web Page]
     D -->|user interaction| E[JavaScript]

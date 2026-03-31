@@ -40,12 +40,12 @@ This walkthrough demonstrates how the algorithm handles the key constraint of de
 flowchart TD
     A[Start] --> B{Initialize Pointers}
     B --> C[Move Right Pointer]
-    C --> D{More than one zero?}
+    C --> D{"More than one zero?"}
     D -->|Yes| E[Move Left Pointer]
     D -->|No| F[Update Max Length]
     E --> C
     F --> C
-    C --> G{End of Array?}
+    C --> G{"End of Array?"}
     G -->|Yes| H[Return Max Length]
     G -->|No| C
 ```

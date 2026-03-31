@@ -40,7 +40,7 @@ flowchart TD
     B --> C[Print "Hello, World!"]
     C --> D[Prompt user for input]
     D --> E[Read user input]
-    E --> F{Is input empty?}
+    E --> F{"Is input empty?"}
     F -->|Yes| G[Print default message]
     F -->|No| H[Print greeting message]
     H --> I[End]

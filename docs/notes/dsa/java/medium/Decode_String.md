@@ -56,11 +56,11 @@ Step 9: Return decoded string
 ```mermaid
 flowchart TD
     A[Start] --> B[Process Character]
-    B --> C{Is Digit?}
+    B --> C{"Is Digit?"}
     C -->|Yes| D[Update Current Count]
-    C -->|No| E{Is '['?}
+    C -->|No| E{"Is '['?"}
     E -->|Yes| F[Push Current String and Count to Stack]
-    E -->|No| G{Is ']'?}
+    E -->|No| G{"Is ']'?"}
     G -->|Yes| H[Pop Previous String and Count from Stack]
     G -->|No| I[Append Character to Current String]
     H --> J[Repeat Current String and Append to Previous String]

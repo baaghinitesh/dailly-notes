@@ -113,14 +113,14 @@ int main() {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is queue empty?}
+    A[Start] --> B{"Is queue empty?"}
     B -->|Yes| C[Add element to queue]
-    B -->|No| D{Is element greater than queue front?}
+    B -->|No| D{"Is element greater than queue front?"}
     D -->|Yes| E[Remove elements from queue front]
     D -->|No| F[Add element to queue back]
     E --> F
     F --> G[Update queue]
-    G --> H{Is queue full?}
+    G --> H{"Is queue full?"}
     H -->|Yes| I[Remove elements from queue front]
     H -->|No| J[End]
     I --> J

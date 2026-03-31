@@ -41,9 +41,9 @@ Output: [1, -1, -1, 3, 4]
 ```mermaid
 flowchart TD
     A[Start] --> B[Put key-value pair]
-    B --> C{Key in cache?}
+    B --> C{"Key in cache?"}
     C -->|Yes| D[Update value and move to front]
-    C -->|No| E{Cache full?}
+    C -->|No| E{"Cache full?"}
     E -->|Yes| F[Remove least recently used element]
     E -->|No| G[Add new element to front]
     G --> H[Update map]

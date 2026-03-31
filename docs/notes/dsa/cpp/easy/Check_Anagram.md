@@ -36,7 +36,7 @@ Output: true, indicating that "listen" and "silent" are anagrams.
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Are lengths of s and t equal?}
+    A[Start] --> B{"Are lengths of s and t equal?"}
     B -->|Yes| C[Sort both strings]
     B -->|No| D[Return false]
     C --> E[Compare sorted strings]

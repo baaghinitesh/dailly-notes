@@ -138,7 +138,7 @@ car.brake()
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[Protocol] -->|conforms to| B[Class/Struct/Enum]
+    A[Protocol] -->|conforms to| B["Class/Struct/Enum"]
     B -->|implements| C[Methods]
     B -->|implements| D[Properties]
     B -->|implements| E[Other Requirements]

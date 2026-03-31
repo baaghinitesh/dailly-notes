@@ -57,7 +57,7 @@ This example demonstrates a regex pattern that uses lookahead to assert the pres
 graph TD
     A[Regex Pattern] -->|applied to| B[String]
     B -->|matched by| C[Regex Engine]
-    C -->|uses| D[DFA/NFA Algorithm]
+    C -->|uses| D["DFA/NFA Algorithm"]
     D -->|with| E[Backtracking]
     E -->|and| F[Caching]
     F -->|improves| G[Performance]

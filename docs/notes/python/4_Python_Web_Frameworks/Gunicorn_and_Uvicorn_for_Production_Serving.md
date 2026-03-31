@@ -119,7 +119,7 @@ This will start Gunicorn with the custom configuration.
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[Client] -->|Request| B[Gunicorn/Uvicorn]
+    A[Client] -->|Request| B["Gunicorn/Uvicorn"]
     B -->|Assign Request| C[Worker Process]
     C -->|Handle Request| D[Application]
     D -->|Return Response| C

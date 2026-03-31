@@ -43,13 +43,13 @@ This walkthrough demonstrates the algorithm's ability to track reachable positio
 flowchart TD
     A[Start] --> B[Initialize reachable array and maxReachable variable]
     B --> C[Iterate through the string]
-    C --> D{Is current position within jump range?}
+    C --> D{"Is current position within jump range?"}
     D -->|Yes| E[Check if previous positions can reach current position]
     D -->|No| F[Move to next position]
     E -->|Reachable| G[Mark current position as reachable and update maxReachable]
     E -->|Not Reachable| F
     G --> F
-    F --> H{Is last position reachable?}
+    F --> H{"Is last position reachable?"}
     H -->|Yes| I[Return true]
     H -->|No| J[Return false]
 ```

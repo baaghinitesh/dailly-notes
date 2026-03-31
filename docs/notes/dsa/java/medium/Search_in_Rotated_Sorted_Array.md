@@ -41,14 +41,14 @@ This example exercises the main logic path of the algorithm, where we determine 
 flowchart TD
     A[Start] --> B[Initialize left and right pointers]
     B --> C[Calculate mid index]
-    C --> D{Is left half sorted?}
+    C --> D{"Is left half sorted?"}
     D -->|Yes| E[Check if target is in left half]
     D -->|No| F[Check if target is in right half]
     E -->|Yes| G[Update right pointer]
     E -->|No| H[Update left pointer]
     F -->|Yes| H
     F -->|No| G
-    G --> I{Is target found?}
+    G --> I{"Is target found?"}
     H --> I
     I -->|Yes| J[Return target index]
     I -->|No| C

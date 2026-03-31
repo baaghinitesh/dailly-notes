@@ -89,7 +89,7 @@ console.log(tuple[1][1]); // outputs: undefined
 ```mermaid
 graph TD
     %% Start: Actions and Initial state
-    A([Tuple Creation]) --> B[Tuple Initialization]
+    A("[Tuple Creation]") --> B[Tuple Initialization]
     B -->|Triggers| C[Type System Analysis]
     
     %% Type System subgraph (Analysis Phase)
@@ -109,8 +109,8 @@ graph TD
     H -.->|Powers| J
 
     %% End state branch (Runtime Phase)
-    I --> K([Code Execution])
-    K --> L((Output))
+    I --> K("[Code Execution]")
+    K --> L("(Output"))
 ```
 The diagram illustrates the internal mechanics of tuples in TypeScript, from creation to execution.
 

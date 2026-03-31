@@ -80,8 +80,8 @@ This example demonstrates dynamic memory allocation using the `new` operator and
 graph TD
     A[Variable x] --> B[Memory Address]
     B --> C[Pointer ptr]
-    C --> D[Address-of Operator (&)]
-    D --> E[Dereference Operator (*)]
+    C --> D["Address-of Operator (&)"]
+    D --> E["Dereference Operator (*)"]
     E --> F[Value at ptr]
     F --> G[Output]
     style A fill:#f9f,stroke:#333,stroke-width:4px

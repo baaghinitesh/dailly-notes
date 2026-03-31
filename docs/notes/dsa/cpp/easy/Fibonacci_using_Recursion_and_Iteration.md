@@ -37,7 +37,7 @@ Output: Fibonacci number at position 5 = 5
 ```mermaid
 flowchart TD
     A[Start] --> B{Recursive or Iterative}
-    B -->|Recursive| C[Calculate Fibonacci(n-1) + Fibonacci(n-2)]
+    B -->|Recursive| C["Calculate Fibonacci(n-1) + Fibonacci(n-2)"]
     B -->|Iterative| D[Initialize prev = 0, curr = 1]
     D --> E[Iterate from i = 2 to n]
     E --> F[Calculate next = prev + curr]

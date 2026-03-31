@@ -49,7 +49,7 @@ Output (Both): 120
 ```mermaid
 flowchart TD
     A[Start] --> B[Input Number]
-    B --> C{Is Input Negative?}
+    B --> C{"Is Input Negative?"}
     C -->|Yes| D[Return -1]
     C -->|No| E{Choose Method}
     E -->|Recursive| F[Calculate Factorial Recursively]

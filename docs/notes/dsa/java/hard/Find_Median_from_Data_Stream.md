@@ -57,14 +57,14 @@ Output: [1.5, 2.0]
 ```mermaid
 flowchart TD
     A[Start] --> B[Add number to data stream]
-    B --> C{Is max heap empty?}
+    B --> C{"Is max heap empty?"}
     C -->|Yes| D[Add to max heap]
-    C -->|No| E{Is number less than or equal to max heap's top?}
+    C -->|No| E{"Is number less than or equal to max heap's top?"}
     E -->|Yes| D
     E -->|No| F[Add to min heap]
     F --> G[Balance heaps]
     G --> H[Find median]
-    H --> I{Is total number of elements odd?}
+    H --> I{"Is total number of elements odd?"}
     I -->|Yes| J[Return max heap's top]
     I -->|No| K[Return average of max heap's top and min heap's top]
 ```

@@ -45,11 +45,11 @@ This walkthrough demonstrates how the algorithm explores all possible jumps from
 flowchart TD
     A[Start] --> B[Initialize queue with position 0]
     B --> C[Dequeue position, explore neighbors]
-    C --> D{Is next position forbidden or visited?}
+    C --> D{"Is next position forbidden or visited?"}
     D -->|Yes| C
     D -->|No| E[Enqueue next position, mark as visited]
     E --> C
-    C --> F{Is target position reached?}
+    C --> F{"Is target position reached?"}
     F -->|Yes| G[Return minimum jumps]
     F -->|No| C
 ```

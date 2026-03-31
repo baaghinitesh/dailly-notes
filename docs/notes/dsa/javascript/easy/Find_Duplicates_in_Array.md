@@ -43,12 +43,12 @@ Output: [2, 3]
 flowchart TD
     A[Start] --> B[Initialize Sets]
     B --> C[Iterate Through Array]
-    C --> D{Number in uniqueNums?}
+    C --> D{"Number in uniqueNums?"}
     D -->|Yes| E[Add to duplicateNums]
     D -->|No| F[Add to uniqueNums]
     E --> C
     F --> C
-    C --> G{End of Array?}
+    C --> G{"End of Array?"}
     G -->|Yes| H[Return duplicateNums]
     G -->|No| C
 ```

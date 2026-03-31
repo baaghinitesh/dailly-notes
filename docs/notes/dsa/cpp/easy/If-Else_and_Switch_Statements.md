@@ -43,10 +43,10 @@ Output:
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is x greater than 5?}
+    A[Start] --> B{"Is x greater than 5?"}
     B -->|Yes| C[Print "x is greater than 5"]
     B -->|No| D[Print "x is less than or equal to 5"]
-    A --> E{Is c 'a' or 'b'?}
+    A --> E{"Is c 'a' or 'b'?"}
     E -->|'a'| F[Print "Character is 'a'"]
     E -->|'b'| G[Print "Character is 'b'"]
     E -->|Neither| H[Print "Character is neither 'a' nor 'b'"]

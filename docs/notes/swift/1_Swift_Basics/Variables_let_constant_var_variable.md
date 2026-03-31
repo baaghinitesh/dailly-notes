@@ -96,7 +96,7 @@ graph TD
     B --> C[Initialization]
     C --> D[Memory Storage]
     D --> E[Variable Usage]
-    E --> F[Reassignment (var only)]
+    E --> F["Reassignment (var only)"]
     F --> G[Updated Memory Storage]
     G --> H[Updated Variable Usage]
     style A fill:#f9f,stroke:#333,stroke-width:4px

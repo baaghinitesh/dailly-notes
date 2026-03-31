@@ -85,13 +85,13 @@ This function sorts an array using the merge sort algorithm. The time complexity
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[Input Size] --> B[O(1)]
-    A --> C[O(log n)]
-    A --> D[O(n)]
-    A --> E[O(n log n)]
-    A --> F[O(n²)]
-    A --> G[O(2ⁿ)]
-    A --> H[O(n!)]
+    A[Input Size] --> B["O(1)"]
+    A --> C["O(log n)"]
+    A --> D["O(n)"]
+    A --> E["O(n log n)"]
+    A --> F["O(n²)"]
+    A --> G["O(2ⁿ)"]
+    A --> H["O(n!)"]
     B --> I[Constant Time]
     C --> J[Logarithmic Time]
     D --> K[Linear Time]

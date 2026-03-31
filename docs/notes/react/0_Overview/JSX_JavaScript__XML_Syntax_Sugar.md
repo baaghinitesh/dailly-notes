@@ -113,7 +113,7 @@ graph TD
     B --> C[AST]
     C --> D[Transformer]
     D --> E[JavaScript Code]
-    E --> F[Browser/Node.js]
+    E --> F["Browser/Node.js"]
     F --> G[DOM]
     G --> H[Rendered UI]
     H --> I[User Interaction]

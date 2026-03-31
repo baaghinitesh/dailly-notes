@@ -39,18 +39,20 @@ Output: 3
 ```mermaid
 flowchart TD
     A[Start] --> B[Initialize candidate and count]
-    B --> C[Iterate through array]
-    C --> D{Is current element same as candidate?}
+    B --> C{"More elements in array?"}
+    C -->|Yes| D{"Is current element same as candidate?"}
     D -->|Yes| E[Increment count]
     D -->|No| F[Decrement count]
-    F --> G{Is count zero?}
+    F --> G{"Is count zero?"}
     G -->|Yes| H[Update candidate and reset count]
     G -->|No| C
-    C --> I[End of array]
+    H --> C
+    E --> C
+    C -->|No| I[End of array iteration]
     I --> J[Verification pass]
-    J --> K{Is candidate occurrences more than n/2?}
+    J --> K{"Is candidate occurrences more than n/2?"}
     K -->|Yes| L[Return candidate]
-    K -->|No| M[Return -1 (no majority)]
+    K -->|No| M["Return -1 (no majority)"]
 ```
 
 ## Key Insight

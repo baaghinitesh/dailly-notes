@@ -41,7 +41,7 @@ In this example, there are 5 distinct ways to climb a staircase with 4 steps: [1
 flowchart TD
     A[Start] --> B[Initialize DP table with base cases]
     B --> C[Fill up DP table]
-    C --> D[Return dp[n]]
+    C --> D["Return dp[n"]]
     D --> E[End]
 ```
 This flowchart shows the high-level decision flow of the algorithm.
