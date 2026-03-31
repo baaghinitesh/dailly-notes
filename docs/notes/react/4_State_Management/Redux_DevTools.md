@@ -85,14 +85,14 @@ This example shows how to inspect the state using the `getState()` method.
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Store] -->|dispatch|> B[Middleware]
-    B -->|record|> C[DevTools]
-    C -->|display|> D[Graphical Interface]
-    D -->|inspect|> E[Developer]
-    E -->|dispatch|> B
-    E -->|inspect|> A
-    A -->|getState|> E
+graph TD
+    A[Store] -->|dispatch| B[Middleware]
+    B -->|record| C[DevTools]
+    C -->|display| D[Graphical Interface]
+    D -->|inspect| E[Developer]
+    E -->|dispatch| B
+    E -->|inspect| A
+    A -->|getState| E
 ```
 This diagram shows the flow of data between the store, middleware, DevTools, and graphical interface.
 

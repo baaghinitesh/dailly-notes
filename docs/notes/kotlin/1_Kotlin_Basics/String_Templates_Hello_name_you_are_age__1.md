@@ -80,7 +80,7 @@ This example shows how to use string templates with recursive functions to creat
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Parse String Template] --> B[Identify Expressions]
     B --> C[Evaluate Expressions]
     C --> D[Convert Results to Strings]

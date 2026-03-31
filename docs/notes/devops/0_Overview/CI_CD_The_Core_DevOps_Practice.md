@@ -115,7 +115,7 @@ This example uses Python to define a pipeline that builds a Docker image, pushes
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Code Commit] --> B[Build]
     B --> C[Test]
     C --> D[Deploy]

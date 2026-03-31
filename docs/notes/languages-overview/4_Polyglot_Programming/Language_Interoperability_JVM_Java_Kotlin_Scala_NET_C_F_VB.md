@@ -71,21 +71,21 @@ This example demonstrates advanced interop between Java and .NET using the **JNA
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Java] -->|FFI|> B[JNI]
-    B -->|JNI|> C[.NET]
-    C -->|P/Invoke|> D[C#]
-    D -->|P/Invoke|> E[.NET]
-    E -->|FFI|> F[Java]
-    F -->|FFI|> G[Scala]
-    G -->|FFI|> H[.NET]
-    H -->|P/Invoke|> I[C#]
-    I -->|P/Invoke|> J[.NET]
-    J -->|FFI|> K[Java]
-    K -->|FFI|> L[Scala]
-    L -->|FFI|> M[.NET]
-    M -->|P/Invoke|> N[C#]
-    N -->|P/Invoke|> O[.NET]
+graph TD
+    A[Java] -->|FFI| B[JNI]
+    B -->|JNI| C[.NET]
+    C -->|P/Invoke| D[C#]
+    D -->|P/Invoke| E[.NET]
+    E -->|FFI| F[Java]
+    F -->|FFI| G[Scala]
+    G -->|FFI| H[.NET]
+    H -->|P/Invoke| I[C#]
+    I -->|P/Invoke| J[.NET]
+    J -->|FFI| K[Java]
+    K -->|FFI| L[Scala]
+    L -->|FFI| M[.NET]
+    M -->|P/Invoke| N[C#]
+    N -->|P/Invoke| O[.NET]
 ```
 This diagram illustrates the language interoperability process between Java, .NET, and Scala.
 

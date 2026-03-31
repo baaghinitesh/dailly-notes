@@ -95,7 +95,7 @@ EXPLAIN (ANALYZE) SELECT * FROM large_table JOIN another_table ON large_table.id
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Query Execution] --> B[Shared Buffer Cache]
     B --> C[Data Blocks]
     C --> D[Disk]

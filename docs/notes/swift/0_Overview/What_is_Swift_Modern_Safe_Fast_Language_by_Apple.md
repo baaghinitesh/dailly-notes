@@ -115,16 +115,16 @@ print("Final Balance: \(account.balance)")
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Source Code] -->|Compilation|> B[IR]
-    B -->|Optimization|> C[Optimized IR]
-    C -->|Linking|> D[Executable]
-    D -->|Execution|> E[CPU]
-    E -->|Runtime Checks|> F[Memory Safety]
-    F -->|Type Checking|> G[Type Safety]
-    G -->|Error Handling|> H[Error Messages]
-    H -->|Debugging|> I[Debugging Tools]
-    I -->|Code Improvement|> J[Refactored Code]
+graph TD
+    A[Source Code] -->|Compilation| B[IR]
+    B -->|Optimization| C[Optimized IR]
+    C -->|Linking| D[Executable]
+    D -->|Execution| E[CPU]
+    E -->|Runtime Checks| F[Memory Safety]
+    F -->|Type Checking| G[Type Safety]
+    G -->|Error Handling| H[Error Messages]
+    H -->|Debugging| I[Debugging Tools]
+    I -->|Code Improvement| J[Refactored Code]
 ```
 This diagram illustrates the Swift compilation and execution process, from source code to executable, with various stages of optimization, linking, and runtime checks.
 

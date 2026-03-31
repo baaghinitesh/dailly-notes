@@ -104,7 +104,7 @@ This example shows an ArgoCD configuration with a custom sync policy for an appl
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Git Repository] --> B[ArgoCD]
     B --> C[Kubernetes Cluster]
     C --> D[Application]

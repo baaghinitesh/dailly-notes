@@ -116,14 +116,14 @@ send(pid, {:message, "Hello, world!"})
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Elixir Code] -->|Compilation|> B[BEAM Bytecode]
-    B -->|Execution|> C[BEAM Virtual Machine]
-    C -->|Concurrency|> D[Actors]
-    D -->|Message Passing|> E[Actor 1]
-    D -->|Message Passing|> F[Actor 2]
-    E -->|Message Passing|> F
-    F -->|Message Passing|> E
+graph TD
+    A[Elixir Code] -->|Compilation| B[BEAM Bytecode]
+    B -->|Execution| C[BEAM Virtual Machine]
+    C -->|Concurrency| D[Actors]
+    D -->|Message Passing| E[Actor 1]
+    D -->|Message Passing| F[Actor 2]
+    E -->|Message Passing| F
+    F -->|Message Passing| E
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

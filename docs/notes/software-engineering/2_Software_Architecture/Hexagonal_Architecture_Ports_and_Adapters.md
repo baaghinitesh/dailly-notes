@@ -140,13 +140,13 @@ In this example, the `Logger` interface is a port that defines how the applicati
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Application Core] -->|uses|> B[Port]
-    B -->|implemented by|> C[Adapter]
-    C -->|interacts with|> D[Infrastructure]
-    A -->|uses|> E[Port]
-    E -->|implemented by|> F[Adapter]
-    F -->|interacts with|> G[Presentation]
+graph TD
+    A[Application Core] -->|uses| B[Port]
+    B -->|implemented by| C[Adapter]
+    C -->|interacts with| D[Infrastructure]
+    A -->|uses| E[Port]
+    E -->|implemented by| F[Adapter]
+    F -->|interacts with| G[Presentation]
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#ccc,stroke:#333,stroke-width:4px
     style C fill:#ccc,stroke:#333,stroke-width:4px

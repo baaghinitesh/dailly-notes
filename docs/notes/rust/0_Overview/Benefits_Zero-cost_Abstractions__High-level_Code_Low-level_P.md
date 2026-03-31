@@ -131,13 +131,13 @@ This example demonstrates an advanced abstraction, where a trait is defined and 
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Rust Code] -->|Compile-time evaluation|> B[Machine Code]
-    B -->|Optimization|> C[Optimized Machine Code]
-    C -->|Specialization|> D[Specialized Machine Code]
-    D -->|Inlining|> E[Inlined Machine Code]
-    E -->|Execution|> F[Result]
-    F -->|Feedback|> A
+graph TD
+    A[Rust Code] -->|Compile-time evaluation| B[Machine Code]
+    B -->|Optimization| C[Optimized Machine Code]
+    C -->|Specialization| D[Specialized Machine Code]
+    D -->|Inlining| E[Inlined Machine Code]
+    E -->|Execution| F[Result]
+    F -->|Feedback| A
 ```
 This diagram illustrates the process of zero-cost abstractions in Rust, from compile-time evaluation to execution.
 

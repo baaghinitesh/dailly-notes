@@ -84,7 +84,7 @@ This function sorts an array using the merge sort algorithm. The time complexity
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Input Size] --> B[O(1)]
     A --> C[O(log n)]
     A --> D[O(n)]

@@ -161,7 +161,7 @@ func main() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Function Call] --> B[Error Occurs]
     B --> C[Error Returned]
     C --> D[Error Checked]

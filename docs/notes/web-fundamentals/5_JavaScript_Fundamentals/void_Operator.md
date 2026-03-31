@@ -88,14 +88,14 @@ void fetchUser(1).then((user) => {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Void Operator] -->|takes operand|> B[Operand Evaluation]
-    B -->|returns value|> C[Return Value Discarding]
-    C -->|returns undefined|> D[Void Operator Return]
-    D -->|used in expression|> E[Expression Evaluation]
-    E -->|evaluates to undefined|> F[Final Result]
-    F -->|output|> G[Console Log]
-    G -->|prints undefined|> H[Output]
+graph TD
+    A[Void Operator] -->|takes operand| B[Operand Evaluation]
+    B -->|returns value| C[Return Value Discarding]
+    C -->|returns undefined| D[Void Operator Return]
+    D -->|used in expression| E[Expression Evaluation]
+    E -->|evaluates to undefined| F[Final Result]
+    F -->|output| G[Console Log]
+    G -->|prints undefined| H[Output]
 ```
 
 The void operator works by taking an operand, evaluating its return value, discarding the return value, and returning **undefined**. This process is illustrated in the above diagram, which shows the step-by-step execution of the void operator.

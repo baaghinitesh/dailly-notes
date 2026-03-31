@@ -92,15 +92,15 @@ for grade, group in itertools.groupby(students, key=lambda x: x['grade']):
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Input Iterables] -->|itertools.chain|> B[Combined Iterator]
-    B -->|itertools.product|> C[Cartesian Product]
-    C -->|itertools.combinations|> D[Combinations]
-    D -->|itertools.permutations|> E[Permutations]
-    E -->|itertools.groupby|> F[Grouped Iterator]
-    F -->|itertools.islice|> G[Sliced Iterator]
-    G -->|itertools.cycle|> H[Cycled Iterator]
-    H -->|Output|> I[Result]
+graph TD
+    A[Input Iterables] -->|itertools.chain| B[Combined Iterator]
+    B -->|itertools.product| C[Cartesian Product]
+    C -->|itertools.combinations| D[Combinations]
+    D -->|itertools.permutations| E[Permutations]
+    E -->|itertools.groupby| F[Grouped Iterator]
+    F -->|itertools.islice| G[Sliced Iterator]
+    G -->|itertools.cycle| H[Cycled Iterator]
+    H -->|Output| I[Result]
 ```
 The diagram above illustrates the flow of data through the various **itertools** functions. The input iterables are first combined using **itertools.chain**, then the Cartesian product is generated using **itertools.product**. The combinations and permutations are then generated using **itertools.combinations** and **itertools.permutations**, respectively. The resulting iterator is then grouped using **itertools.groupby**, sliced using **itertools.islice**, and cycled using **itertools.cycle**.
 

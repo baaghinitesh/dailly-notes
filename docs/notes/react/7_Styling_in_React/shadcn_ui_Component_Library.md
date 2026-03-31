@@ -100,12 +100,12 @@ const App = () => {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Component Registration] -->|register|> B[Props Validation]
-    B -->|validate|> C[State Management]
-    C -->|update|> D[Rendering]
-    D -->|render|> E[UI Update]
-    E -->|update|> C
+graph TD
+    A[Component Registration] -->|register| B[Props Validation]
+    B -->|validate| C[State Management]
+    C -->|update| D[Rendering]
+    D -->|render| E[UI Update]
+    E -->|update| C
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

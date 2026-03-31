@@ -179,16 +179,16 @@ main()
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Prisma Schema] -->|generate|> B[Auto-generated Types]
-    B -->|import|> C[TypeScript Code]
-    C -->|type checking|> D[Type Safety]
-    D -->|compile|> E[JavaScript Code]
-    E -->|execute|> F[Database Interaction]
-    F -->|data|> G[Prisma Client]
-    G -->|data|> H[TypeScript Code]
-    H -->|type checking|> I[Type Safety]
-    I -->|compile|> J[JavaScript Code]
+graph TD
+    A[Prisma Schema] -->|generate| B[Auto-generated Types]
+    B -->|import| C[TypeScript Code]
+    C -->|type checking| D[Type Safety]
+    D -->|compile| E[JavaScript Code]
+    E -->|execute| F[Database Interaction]
+    F -->|data| G[Prisma Client]
+    G -->|data| H[TypeScript Code]
+    H -->|type checking| I[Type Safety]
+    I -->|compile| J[JavaScript Code]
 ```
 This diagram illustrates the workflow of using Prisma's auto-generated types with TypeScript. It shows how the Prisma schema is used to generate auto-generated types, which are then imported into TypeScript code. The TypeScript code is type-checked to ensure type safety, and then compiled into JavaScript code. The JavaScript code interacts with the database using the Prisma client, and the data is sent back to the TypeScript code for type checking and compilation.
 

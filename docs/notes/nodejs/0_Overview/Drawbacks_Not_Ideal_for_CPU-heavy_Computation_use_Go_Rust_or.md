@@ -115,14 +115,14 @@ This example uses Go to perform CPU-intensive computation, such as calculating t
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Node.js] -->|uses|> B[V8 JavaScript engine]
-    B -->|executes|> C[JavaScript code]
-    C -->|performs|> D[CPU-intensive computation]
-    D -->|can lead to|> E[performance issues]
-    E -->|can be solved by|> F[using worker threads or alternative technologies]
-    F -->|allows for|> G[concurrent and parallel programming]
-    G -->|improves|> H[performance and scalability]
+graph TD
+    A[Node.js] -->|uses| B[V8 JavaScript engine]
+    B -->|executes| C[JavaScript code]
+    C -->|performs| D[CPU-intensive computation]
+    D -->|can lead to| E[performance issues]
+    E -->|can be solved by| F[using worker threads or alternative technologies]
+    F -->|allows for| G[concurrent and parallel programming]
+    G -->|improves| H[performance and scalability]
 ```
 This diagram illustrates the relationship between Node.js, the V8 JavaScript engine, and CPU-intensive computation. It also shows how using worker threads or alternative technologies can improve performance and scalability.
 

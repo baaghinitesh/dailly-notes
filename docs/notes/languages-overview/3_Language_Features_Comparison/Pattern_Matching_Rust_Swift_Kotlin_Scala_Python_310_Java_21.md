@@ -82,15 +82,15 @@ This example demonstrates advanced pattern matching in Scala. The `match` statem
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Input Value] -->|Match|> B[Pattern 1]
-    B -->|Match|> C[Pattern 2]
-    C -->|Match|> D[Pattern 3]
-    D -->|No Match|> E[Default]
-    E -->|Execute|> F[Code Block]
-    F -->|Return|> G[Result]
-    G -->|Output|> H[Final Result]
-    H -->|End|> I[End of Process]
+graph TD
+    A[Input Value] -->|Match| B[Pattern 1]
+    B -->|Match| C[Pattern 2]
+    C -->|Match| D[Pattern 3]
+    D -->|No Match| E[Default]
+    E -->|Execute| F[Code Block]
+    F -->|Return| G[Result]
+    G -->|Output| H[Final Result]
+    H -->|End| I[End of Process]
 ```
 This diagram illustrates the pattern matching process. The input value is matched against each pattern, and the first match is executed.
 

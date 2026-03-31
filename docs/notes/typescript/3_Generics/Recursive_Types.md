@@ -104,7 +104,7 @@ This example defines a recursive type `RecursiveList`, which has a `head` proper
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
   A[RecursiveType] --> B[Value: string]
   A --> C[Next: RecursiveType | null]
   C --> D[RecursiveType]

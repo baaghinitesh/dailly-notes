@@ -137,18 +137,18 @@ car.brake()
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Protocol] -->|conforms to|> B[Class/Struct/Enum]
-    B -->|implements|> C[Methods]
-    B -->|implements|> D[Properties]
-    B -->|implements|> E[Other Requirements]
-    C -->|defined by|> A
-    D -->|defined by|> A
-    E -->|defined by|> A
-    F[Swift Compiler] -->|verifies|> B
-    F -->|checks|> C
-    F -->|checks|> D
-    F -->|checks|> E
+graph TD
+    A[Protocol] -->|conforms to| B[Class/Struct/Enum]
+    B -->|implements| C[Methods]
+    B -->|implements| D[Properties]
+    B -->|implements| E[Other Requirements]
+    C -->|defined by| A
+    D -->|defined by| A
+    E -->|defined by| A
+    F[Swift Compiler] -->|verifies| B
+    F -->|checks| C
+    F -->|checks| D
+    F -->|checks| E
 ```
 
 The diagram illustrates the relationship between a protocol, a class/struct/enum, and the Swift compiler. The protocol defines the requirements that the class/struct/enum must implement, and the Swift compiler verifies that the class/struct/enum conforms to the protocol by checking that it implements all the required methods, properties, and other requirements.

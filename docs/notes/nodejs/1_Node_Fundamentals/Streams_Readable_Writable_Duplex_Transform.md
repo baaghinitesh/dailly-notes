@@ -126,28 +126,28 @@ socket.on('end', () => {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Readable Stream] -->|read()|> B[Buffer]
-    B -->|on('data')|> C[Consumer]
-    C -->|process()|> D[Processed Data]
-    D -->|on('end')|> E[End of Stream]
-    E -->|cleanup()|> F[Stream Closed]
+graph TD
+    A[Readable Stream] -->|read()| B[Buffer]
+    B -->|on('data')| C[Consumer]
+    C -->|process()| D[Processed Data]
+    D -->|on('end')| E[End of Stream]
+    E -->|cleanup()| F[Stream Closed]
 
-    G[Writable Stream] -->|write()|> H[Buffer]
-    H -->|on('drain')|> I[Write Complete]
-    I -->|on('finish')|> J[Stream Closed]
+    G[Writable Stream] -->|write()| H[Buffer]
+    H -->|on('drain')| I[Write Complete]
+    I -->|on('finish')| J[Stream Closed]
 
-    K[Duplex Stream] -->|read()|> L[Buffer]
-    L -->|on('data')|> M[Consumer]
-    M -->|process()|> N[Processed Data]
-    N -->|write()|> O[Buffer]
-    O -->|on('drain')|> P[Write Complete]
+    K[Duplex Stream] -->|read()| L[Buffer]
+    L -->|on('data')| M[Consumer]
+    M -->|process()| N[Processed Data]
+    N -->|write()| O[Buffer]
+    O -->|on('drain')| P[Write Complete]
 
-    Q[Transform Stream] -->|read()|> R[Buffer]
-    R -->|on('data')|> S[Transformer]
-    S -->|transform()|> T[Transformed Data]
-    T -->|write()|> U[Buffer]
-    U -->|on('drain')|> V[Write Complete]
+    Q[Transform Stream] -->|read()| R[Buffer]
+    R -->|on('data')| S[Transformer]
+    S -->|transform()| T[Transformed Data]
+    T -->|write()| U[Buffer]
+    U -->|on('drain')| V[Write Complete]
 ```
 This diagram illustrates the different types of streams and how they work internally.
 

@@ -108,7 +108,7 @@ ReactDOM.render(<DataComponent />, document.getElementById('root'));
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[JSX Code] --> B[Parser]
     B --> C[AST]
     C --> D[Transformer]

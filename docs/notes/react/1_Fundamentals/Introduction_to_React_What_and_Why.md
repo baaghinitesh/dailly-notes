@@ -138,7 +138,7 @@ This example demonstrates the use of **effect hooks** and **async data fetching*
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
   A[React Component] --> B[JSX]
   B --> C[Virtual DOM]
   C --> D[Reconciliation]

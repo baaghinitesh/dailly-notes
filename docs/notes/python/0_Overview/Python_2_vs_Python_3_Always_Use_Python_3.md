@@ -70,7 +70,7 @@ print(name)  # Output: Rémi (but may cause encoding issues)
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Python Code] --> B[Syntax Parsing]
     B --> C[Bytecode Generation]
     C --> D[Execution]

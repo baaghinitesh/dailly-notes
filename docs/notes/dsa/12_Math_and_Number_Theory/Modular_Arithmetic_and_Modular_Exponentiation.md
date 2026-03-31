@@ -123,15 +123,15 @@ print(result)  # Output: 11
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Modular Arithmetic] -->|uses|> B[Modulo Operator]
-    B -->|reduces|> C[Remainder]
-    C -->|used in|> D[Modular Exponentiation]
-    D -->|uses|> E[Exponentiation by Squaring]
-    E -->|reduces|> F[Result]
-    F -->|used in|> G[Cryptography]
-    G -->|secures|> H[Online Transactions]
-    H -->|protects|> I[Digital Data]
+graph TD
+    A[Modular Arithmetic] -->|uses| B[Modulo Operator]
+    B -->|reduces| C[Remainder]
+    C -->|used in| D[Modular Exponentiation]
+    D -->|uses| E[Exponentiation by Squaring]
+    E -->|reduces| F[Result]
+    F -->|used in| G[Cryptography]
+    G -->|secures| H[Online Transactions]
+    H -->|protects| I[Digital Data]
 ```
 The diagram illustrates the relationship between modular arithmetic, modular exponentiation, and cryptography. Modular arithmetic uses the modulo operator to reduce numbers to their remainder, which is then used in modular exponentiation to raise numbers to a power. Modular exponentiation is used in cryptography to secure online transactions and protect digital data.
 

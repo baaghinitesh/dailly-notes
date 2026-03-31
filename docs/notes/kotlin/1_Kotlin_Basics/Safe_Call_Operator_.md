@@ -81,15 +81,15 @@ In this example, the length property of the address object is accessed only if a
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Object] -->|?.|> B[Property/Method]
-    B -->|returns null if null|> C[Result]
-    A -->|null check|> D[Null]
-    D -->|returns null|> C
-    C -->|returns value|> E[Value]
-    E -->|used in code|> F[Code]
-    F -->|compiles to bytecode|> G[Bytecode]
-    G -->|executes at runtime|> H[Result]
+graph TD
+    A[Object] -->|?.| B[Property/Method]
+    B -->|returns null if null| C[Result]
+    A -->|null check| D[Null]
+    D -->|returns null| C
+    C -->|returns value| E[Value]
+    E -->|used in code| F[Code]
+    F -->|compiles to bytecode| G[Bytecode]
+    G -->|executes at runtime| H[Result]
 ```
 This diagram illustrates the flow of the safe call operator, from the object to the property or method, and finally to the result.
 

@@ -206,15 +206,15 @@ int main() {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Text] -->|n|> B[Pattern]
-    B -->|m|> C[Hash Value]
-    C -->|h|> D[Modulus]
-    D -->|q|> E[Rolling Hash]
-    E -->|d|> F[Comparison]
-    F -->|match|> G[Pattern Found]
-    F -->|no match|> H[Next Window]
-    H -->|i < n - m|> E
-    G -->|print index|> I[End]
+    A[Text] -->|n| B[Pattern]
+    B -->|m| C[Hash Value]
+    C -->|h| D[Modulus]
+    D -->|q| E[Rolling Hash]
+    E -->|d| F[Comparison]
+    F -->|match| G[Pattern Found]
+    F -->|no match| H[Next Window]
+    H -->|i < n - m| E
+    G -->|print index| I[End]
 ```
 The diagram illustrates the Rabin-Karp Algorithm's flow, including the calculation of the hash value, the comparison of the hash values, and the rolling hash.
 

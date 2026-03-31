@@ -81,16 +81,16 @@ print_user_info(**user_data)
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Iterable] -->|Evaluation|> B[Unpacking]
-    B -->|Assignment|> C[Variables]
-    C -->|Binding|> D[Values]
-    D -->|Error Handling|> E[Error]
-    E -->|Exception|> F[Crash]
-    F -->|Reliable Code|> G[Execution]
-    G -->|Output|> H[Result]
-    H -->|Success|> I[Done]
-    I -->|Repeat|> A
+graph TD
+    A[Iterable] -->|Evaluation| B[Unpacking]
+    B -->|Assignment| C[Variables]
+    C -->|Binding| D[Values]
+    D -->|Error Handling| E[Error]
+    E -->|Exception| F[Crash]
+    F -->|Reliable Code| G[Execution]
+    G -->|Output| H[Result]
+    H -->|Success| I[Done]
+    I -->|Repeat| A
 ```
 
 The diagram illustrates the process of unpacking in Python, from evaluation to assignment and error handling. It highlights the importance of proper error handling to prevent crashes and ensure reliable code execution.

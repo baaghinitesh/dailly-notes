@@ -123,7 +123,7 @@ This example demonstrates nested validation using Zod's **z.object()** and **z.a
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Schema Definition] --> B[Type Inference]
     B --> C[Runtime Validation]
     C --> D[Error Handling]

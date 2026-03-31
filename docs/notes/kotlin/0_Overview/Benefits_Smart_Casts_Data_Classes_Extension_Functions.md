@@ -74,7 +74,7 @@ This code demonstrates how extension functions can add functionality to existing
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Kotlin Code] --> B[Compiler]
     B --> C[Java Bytecode]
     C --> D[JVM]

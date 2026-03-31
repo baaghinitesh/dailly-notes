@@ -118,15 +118,15 @@ This playbook configures a load balancer on a group of hosts defined in the **lo
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Ansible Controller] -->|Reads|> B[Inventory]
-    A -->|Reads|> C[Playbook]
-    A -->|Executes|> D[Tasks]
-    D -->|Uses|> E[Modules]
-    D -->|Uses|> F[Roles]
-    E -->|Executes on|> G[Managed Hosts]
-    F -->|Configures|> G
-    G -->|Reports back to|> A
+graph TD
+    A[Ansible Controller] -->|Reads| B[Inventory]
+    A -->|Reads| C[Playbook]
+    A -->|Executes| D[Tasks]
+    D -->|Uses| E[Modules]
+    D -->|Uses| F[Roles]
+    E -->|Executes on| G[Managed Hosts]
+    F -->|Configures| G
+    G -->|Reports back to| A
 ```
 This diagram shows the high-level flow of Ansible's execution model. The Ansible controller reads the inventory and playbook, executes tasks on the managed hosts, and uses modules and roles to configure the hosts.
 

@@ -100,7 +100,7 @@ int main() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Integer Types] --> B[int]
     A --> C[long]
     A --> D[long long]

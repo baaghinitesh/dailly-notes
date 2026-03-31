@@ -123,17 +123,17 @@ class ImageDownloaderActivity : AppCompatActivity() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[WorkRequest] -->|enqueue|> B[WorkManager]
-    B -->|schedule|> C[Worker]
-    C -->|doWork|> D[Result]
-    D -->|success|> E[WorkRequest completion]
-    D -->|failure|> F[WorkRequest retry]
-    F -->|backoff|> B
-    B -->| Constraints |> G[Network connectivity]
-    B -->| Constraints |> H[Battery level]
-    G -->|connected|> C
-    H -->|above threshold|> C
+graph TD
+    A[WorkRequest] -->|enqueue| B[WorkManager]
+    B -->|schedule| C[Worker]
+    C -->|doWork| D[Result]
+    D -->|success| E[WorkRequest completion]
+    D -->|failure| F[WorkRequest retry]
+    F -->|backoff| B
+    B -->| Constraints | G[Network connectivity]
+    B -->| Constraints | H[Battery level]
+    G -->|connected| C
+    H -->|above threshold| C
 ```
 This diagram illustrates the workflow of WorkManager, from enqueuing a WorkRequest to executing the Worker and handling the result.
 

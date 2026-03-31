@@ -54,14 +54,14 @@ This example demonstrates a regex pattern that uses lookahead to assert the pres
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Regex Pattern] -->|applied to|> B[String]
-    B -->|matched by|> C[Regex Engine]
-    C -->|uses|> D[DFA/NFA Algorithm]
-    D -->|with|> E[Backtracking]
-    E -->|and|> F[Caching]
-    F -->|improves|> G[Performance]
-    G -->|and|> H[Match Result]
+graph TD
+    A[Regex Pattern] -->|applied to| B[String]
+    B -->|matched by| C[Regex Engine]
+    C -->|uses| D[DFA/NFA Algorithm]
+    D -->|with| E[Backtracking]
+    E -->|and| F[Caching]
+    F -->|improves| G[Performance]
+    G -->|and| H[Match Result]
 ```
 This diagram illustrates the internal workings of the regex engine and how it applies the regex pattern to the input string.
 

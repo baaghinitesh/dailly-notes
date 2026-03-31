@@ -64,12 +64,12 @@ flowchart TD
     C --> D[Update Tree]
     D --> E[Return Result]
     E --> F[End]
-    B -->|build_tree|> G[Build Left Subtree]
-    B -->|build_tree|> H[Build Right Subtree]
-    C -->|query|> I[Query Left Subtree]
-    C -->|query|> J[Query Right Subtree]
-    D -->|update|> K[Update Left Subtree]
-    D -->|update|> L[Update Right Subtree]
+    B -->|build_tree| G[Build Left Subtree]
+    B -->|build_tree| H[Build Right Subtree]
+    C -->|query| I[Query Left Subtree]
+    C -->|query| J[Query Right Subtree]
+    D -->|update| K[Update Left Subtree]
+    D -->|update| L[Update Right Subtree]
 ```
 ## Key Insight
 > **Tip:** The key insight is to use a Divide-and-Conquer approach to build the tree and query/update the tree, allowing for efficient range queries and updates in O(log n) time.

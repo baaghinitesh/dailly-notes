@@ -95,14 +95,14 @@ console.log(evenNumbers); // [2, 4]
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[JavaScript Library] -->|Type Definitions|> B[@types Package]
-    B -->|Installation|> C[Project]
-    C -->|Type Checking|> D[TypeScript Compiler]
-    D -->|Error Reporting|> E[Developer]
-    E -->|Code Correction|> C
-    C -->|Type Definitions|> F[DefinitelyTyped]
-    F -->|Type Definitions|> B
+graph TD
+    A[JavaScript Library] -->|Type Definitions| B[@types Package]
+    B -->|Installation| C[Project]
+    C -->|Type Checking| D[TypeScript Compiler]
+    D -->|Error Reporting| E[Developer]
+    E -->|Code Correction| C
+    C -->|Type Definitions| F[DefinitelyTyped]
+    F -->|Type Definitions| B
 ```
 
 The diagram shows the relationship between a JavaScript library, an @types package, a project, the TypeScript compiler, and DefinitelyTyped. The @types package provides type definitions for the JavaScript library, which are used by the TypeScript compiler to check the types of the code in the project. The developer uses the type definitions to correct any type-related errors in the code. DefinitelyTyped is a central location where developers can find and contribute type definitions for their favorite libraries.

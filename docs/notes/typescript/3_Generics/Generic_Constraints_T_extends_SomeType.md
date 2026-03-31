@@ -83,16 +83,16 @@ In this example, the `createArray` function has a generic parameter `T` that is 
 
 ## Visual Diagram
 ```mermaid
-graph LR
-  A[Type Parameter T] -->|extends|> B[SomeType]
-  B -->|subtype|> C[SubType1]
-  B -->|subtype|> D[SubType2]
-  C -->|implements|> E[Interface1]
-  D -->|implements|> F[Interface2]
-  E -->|extends|> G[BaseInterface]
-  F -->|extends|> G
-  G -->|extends|> H[Object]
-  H -->|extends|> I[unknown]
+graph TD
+  A[Type Parameter T] -->|extends| B[SomeType]
+  B -->|subtype| C[SubType1]
+  B -->|subtype| D[SubType2]
+  C -->|implements| E[Interface1]
+  D -->|implements| F[Interface2]
+  E -->|extends| G[BaseInterface]
+  F -->|extends| G
+  G -->|extends| H[Object]
+  H -->|extends| I[unknown]
 ```
 This diagram illustrates the relationship between a type parameter `T`, its constraint `SomeType`, and its subtypes `SubType1` and `SubType2`. The subtypes implement interfaces `Interface1` and `Interface2`, which extend a base interface `BaseInterface`. The base interface extends the `Object` type, which extends the `unknown` type.
 

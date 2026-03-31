@@ -95,7 +95,7 @@ This example defines a recursive `fibonacci` function and tests it using Proptes
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Property Definition] --> B[Test Generation]
     B --> C[Property Checking]
     C --> D[Shrinking]

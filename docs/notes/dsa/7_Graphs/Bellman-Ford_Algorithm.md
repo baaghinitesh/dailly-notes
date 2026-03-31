@@ -215,17 +215,17 @@ int main() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Source] -->|0|> B
-    A -->|4|> C
-    B -->|-1|> A
-    B -->|3|> C
-    B -->|2|> D
-    B -->|2|> E
-    C -->|0|> C
-    D -->|1|> B
-    D -->|5|> C
-    E -->|-3|> D
+graph TD
+    A[Source] -->|0| B
+    A -->|4| C
+    B -->|-1| A
+    B -->|3| C
+    B -->|2| D
+    B -->|2| E
+    C -->|0| C
+    D -->|1| B
+    D -->|5| C
+    E -->|-3| D
 ```
 The diagram shows a weighted graph with 5 vertices and 9 edges. The Bellman-Ford algorithm can be used to find the shortest path from the source vertex A to all other vertices.
 

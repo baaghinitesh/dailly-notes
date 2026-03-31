@@ -226,7 +226,7 @@ int main() {
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Root Node] --> B[Left Child]
     A --> C[Right Child]
     B --> D[Left Grandchild]

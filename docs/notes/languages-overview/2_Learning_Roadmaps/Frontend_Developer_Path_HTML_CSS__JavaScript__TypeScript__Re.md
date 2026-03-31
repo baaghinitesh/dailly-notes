@@ -146,18 +146,18 @@ export default TodoList;
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[HTML/CSS] -->|parsed by browser|> B[DOM/CSSOM]
-    B -->|combined|> C[Render Tree]
-    C -->|rendered|> D[Web Page]
-    D -->|user interaction|> E[JavaScript]
-    E -->|modifies|> B
-    B -->|updated|> C
-    C -->|re-rendered|> D
-    D -->|state change|> F[React]
-    F -->|updates virtual DOM|> G[Virtual DOM]
-    G -->|diffed|> H[Real DOM]
-    H -->|updated|> D
+graph TD
+    A[HTML/CSS] -->|parsed by browser| B[DOM/CSSOM]
+    B -->|combined| C[Render Tree]
+    C -->|rendered| D[Web Page]
+    D -->|user interaction| E[JavaScript]
+    E -->|modifies| B
+    B -->|updated| C
+    C -->|re-rendered| D
+    D -->|state change| F[React]
+    F -->|updates virtual DOM| G[Virtual DOM]
+    G -->|diffed| H[Real DOM]
+    H -->|updated| D
 ```
 This diagram illustrates the flow of data from HTML/CSS to the browser's rendering engine, and then to JavaScript and React.
 

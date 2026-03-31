@@ -98,14 +98,14 @@ class CustomNotificationHandler: NSObject, UNUserNotificationCenterDelegate {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[App] -->|Registers with APNs|> B(APNs)
-    B -->|Generates device token|> C(Device)
-    C -->|Sends device token to app server|> D(App Server)
-    D -->|Creates notification payload|> E(Notification Payload)
-    E -->|Sends notification to APNs|> B
-    B -->|Routes notification to device|> C
-    C -->|Displays notification to user|> F(User)
+graph TD
+    A[App] -->|Registers with APNs| B(APNs)
+    B -->|Generates device token| C(Device)
+    C -->|Sends device token to app server| D(App Server)
+    D -->|Creates notification payload| E(Notification Payload)
+    E -->|Sends notification to APNs| B
+    B -->|Routes notification to device| C
+    C -->|Displays notification to user| F(User)
 ```
 This diagram illustrates the flow of push notifications from the app to the user, highlighting the key components and interactions involved.
 

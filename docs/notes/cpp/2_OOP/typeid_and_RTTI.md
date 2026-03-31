@@ -136,7 +136,7 @@ int main() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Base] -->| inheritance | B[Derived]
     C[typeid] -->| returns | D[std::type_info]
     E[RTTI] -->| uses | F[typeid]

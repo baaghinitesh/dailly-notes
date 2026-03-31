@@ -101,21 +101,21 @@ print(quick_sort([5, 2, 8, 3, 1, 6, 4]))
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Unsorted List] -->|Bubble Sort|> B[Sorted List]
-    A -->|Merge Sort|> C[Merge]
-    C -->|Split|> D[Left Sublist]
-    C -->|Split|> E[Right Sublist]
-    D -->|Merge Sort|> F[Sorted Left Sublist]
-    E -->|Merge Sort|> G[Sorted Right Sublist]
-    F -->|Merge|> H[Merged List]
-    G -->|Merge|> H
-    A -->|Quick Sort|> I[Pivot]
-    I -->|Partition|> J[Left Partition]
-    I -->|Partition|> K[Right Partition]
-    J -->|Quick Sort|> L[Sorted Left Partition]
-    K -->|Quick Sort|> M[Sorted Right Partition]
-    L -->|Combine|> N[Sorted List]
-    M -->|Combine|> N
+    A[Unsorted List] -->|Bubble Sort| B[Sorted List]
+    A -->|Merge Sort| C[Merge]
+    C -->|Split| D[Left Sublist]
+    C -->|Split| E[Right Sublist]
+    D -->|Merge Sort| F[Sorted Left Sublist]
+    E -->|Merge Sort| G[Sorted Right Sublist]
+    F -->|Merge| H[Merged List]
+    G -->|Merge| H
+    A -->|Quick Sort| I[Pivot]
+    I -->|Partition| J[Left Partition]
+    I -->|Partition| K[Right Partition]
+    J -->|Quick Sort| L[Sorted Left Partition]
+    K -->|Quick Sort| M[Sorted Right Partition]
+    L -->|Combine| N[Sorted List]
+    M -->|Combine| N
 ```
 This diagram illustrates the basic steps involved in each sorting algorithm.
 

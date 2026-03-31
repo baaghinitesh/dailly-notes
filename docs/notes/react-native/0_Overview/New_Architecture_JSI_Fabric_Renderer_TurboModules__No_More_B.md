@@ -69,7 +69,7 @@ turboModules.register('myTurboModule', () => {
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[JSI Initialization] --> B[Fabric Renderer Initialization]
     B --> C[TurboModules Registration]
     C --> D[Component Rendering]

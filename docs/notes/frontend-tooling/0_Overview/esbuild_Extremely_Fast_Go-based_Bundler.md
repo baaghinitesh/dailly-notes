@@ -167,16 +167,16 @@ esbuild.build(config).then(() => {
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[esbuild] -->|loads|> B[config.json]
-    B -->|parses|> C[build config]
-    C -->|bundles|> D[code]
-    D -->|minifies|> E[minified code]
-    E -->|writes|> F[bundle.js]
-    F -->|serves|> G[web server]
-    G -->|serves|> H[client]
-    H -->|requests|> G
-    G -->|serves|> H
+graph TD
+    A[esbuild] -->|loads| B[config.json]
+    B -->|parses| C[build config]
+    C -->|bundles| D[code]
+    D -->|minifies| E[minified code]
+    E -->|writes| F[bundle.js]
+    F -->|serves| G[web server]
+    G -->|serves| H[client]
+    H -->|requests| G
+    G -->|serves| H
 ```
 The diagram illustrates the **esbuild** process, from loading the configuration file to serving the bundled and minified code to the client.
 

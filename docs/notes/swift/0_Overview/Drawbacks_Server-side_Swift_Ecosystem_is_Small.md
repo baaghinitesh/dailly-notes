@@ -109,7 +109,7 @@ This example demonstrates an advanced example with authentication and authorizat
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Client] -->| Request | B[Server]
     B -->| Authentication | C[Auth Service]
     C -->| Validate Token | D[Token Service]

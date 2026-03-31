@@ -113,14 +113,14 @@ console.log(preventPathTraversal(filePath));
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[User Input] -->|Validation|> B[Input Validation]
-    B -->|Sanitization|> C[Input Sanitization]
-    C -->|Canonicalization|> D[Canonicalization]
-    D -->|Access Control|> E[Access Control]
-    E -->|File Access|> F[File Access]
-    F -->|Error Handling|> G[Error Handling]
-    G -->|Response|> H[Response]
+graph TD
+    A[User Input] -->|Validation| B[Input Validation]
+    B -->|Sanitization| C[Input Sanitization]
+    C -->|Canonicalization| D[Canonicalization]
+    D -->|Access Control| E[Access Control]
+    E -->|File Access| F[File Access]
+    F -->|Error Handling| G[Error Handling]
+    G -->|Response| H[Response]
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

@@ -108,14 +108,14 @@ This example shows how to use operators like `filter` and `map` to transform the
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Collector] -->|collect|> B[Flow]
-    B -->|emit|> C[Data]
-    C -->|collect|> A
-    B -->|cancel|> D[Collector]
-    D -->|cancel|> B
-    E[Repository] -->|getData|> B
-    F[Network Call] -->|fetchData|> E
+graph TD
+    A[Collector] -->|collect| B[Flow]
+    B -->|emit| C[Data]
+    C -->|collect| A
+    B -->|cancel| D[Collector]
+    D -->|cancel| B
+    E[Repository] -->|getData| B
+    F[Network Call] -->|fetchData| E
 ```
 This diagram illustrates the relationship between the collector, flow, data, and repository. It shows how the collector collects data from the flow, and how the flow emits data. It also shows how the repository fetches data from the network.
 

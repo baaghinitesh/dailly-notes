@@ -55,7 +55,7 @@ CompletableFuture<String> async = CompletableFuture
 ## Execution Flow
 
 ```mermaid
-graph LR
+graph TD
     A[supplyAsync\nfetchUserId] -->|thenApply| B[fetchUserName]
     B -->|thenApply| C[format greeting]
     C -->|thenApply| D[toUpperCase]

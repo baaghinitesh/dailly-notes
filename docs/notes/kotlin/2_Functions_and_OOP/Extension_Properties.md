@@ -95,7 +95,7 @@ This code defines an extension property `firstOrDefault` on the `List` class and
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Extension Property Definition] --> B[Compiler Generates Static Method]
     B --> C[Static Method Called]
     C --> D[Property Getter or Setter Called]

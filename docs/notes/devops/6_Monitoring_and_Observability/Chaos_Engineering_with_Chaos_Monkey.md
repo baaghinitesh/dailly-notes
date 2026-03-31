@@ -181,7 +181,7 @@ run_chaos_monkey(instances)
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Instance Selection] --> B[Termination]
     B --> C[Monitoring]
     C --> D[Analysis]

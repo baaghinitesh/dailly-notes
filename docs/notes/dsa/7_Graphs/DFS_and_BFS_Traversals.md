@@ -165,7 +165,7 @@ graph.dfs_iterative(1)
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Start Node] --> B[Node 2]
     A --> C[Node 3]
     B --> D[Node 4]

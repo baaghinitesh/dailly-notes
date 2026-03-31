@@ -82,7 +82,7 @@ console.log(calculateTotalPrice(prices));  // Output: 62.97
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Code Duplication] --> B[DRY Principle]
     B --> C[Extract Function]
     C --> D[Maintainable Code]

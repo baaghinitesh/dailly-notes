@@ -91,7 +91,7 @@ print(numbers) // Output: [1, 2, 3, 4]
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Variable Declaration] --> B[Memory Allocation]
     B --> C[Initialization]
     C --> D[Memory Storage]

@@ -88,14 +88,14 @@ This example demonstrates an advanced usage of esbuild, including specifying env
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Input Files] -->|parsed|> B[AST]
-    B -->|bundled|> C[Bundle]
-    C -->|minified|> D[Minified Bundle]
-    D -->|code generation|> E[Output Code]
-    E -->|sourcemap generation|> F[Sourcemap]
-    F -->|code splitting|> G[Split Bundle]
-    G -->|output|> H[Final Output]
+graph TD
+    A[Input Files] -->|parsed| B[AST]
+    B -->|bundled| C[Bundle]
+    C -->|minified| D[Minified Bundle]
+    D -->|code generation| E[Output Code]
+    E -->|sourcemap generation| F[Sourcemap]
+    F -->|code splitting| G[Split Bundle]
+    G -->|output| H[Final Output]
 ```
 This diagram illustrates the internal workflow of esbuild, from parsing the input files to generating the final output code.
 

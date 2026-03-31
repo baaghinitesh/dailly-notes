@@ -121,13 +121,13 @@ This example demonstrates the transpilation of a TypeScript class with a decorat
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Source Code] -->|Lexical Analysis|> B[Tokens]
-    B -->|Syntax Analysis|> C[Abstract Syntax Tree (AST)]
-    C -->|Semantic Analysis|> D[Analyzed AST]
-    D -->|Transformation|> E[Intermediate Representation (IR)]
-    E -->|Code Generation|> F[Target Language Code]
-    F -->|Execution|> G[Result]
+graph TD
+    A[Source Code] -->|Lexical Analysis| B[Tokens]
+    B -->|Syntax Analysis| C[Abstract Syntax Tree (AST)]
+    C -->|Semantic Analysis| D[Analyzed AST]
+    D -->|Transformation| E[Intermediate Representation (IR)]
+    E -->|Code Generation| F[Target Language Code]
+    F -->|Execution| G[Result]
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

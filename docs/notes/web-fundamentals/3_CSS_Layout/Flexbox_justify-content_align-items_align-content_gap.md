@@ -127,15 +127,15 @@ This example creates an advanced flexbox layout with multiple flex items that ar
 
 ## Visual Diagram
 ```mermaid
-graph LR
-  A[Flex Container] -->|display: flex|> B[Flex Formatting Context]
-  B -->|main axis|> C[Flex Item 1]
-  B -->|main axis|> D[Flex Item 2]
-  B -->|main axis|> E[Flex Item 3]
-  C -->|justify-content|> F[Distributed along main axis]
-  D -->|align-items|> G[Aligned along cross axis]
-  E -->|align-content|> H[Aligned along cross axis when multiple lines]
-  F -->|gap|> I[Gaps between flex items]
+graph TD
+  A[Flex Container] -->|display: flex| B[Flex Formatting Context]
+  B -->|main axis| C[Flex Item 1]
+  B -->|main axis| D[Flex Item 2]
+  B -->|main axis| E[Flex Item 3]
+  C -->|justify-content| F[Distributed along main axis]
+  D -->|align-items| G[Aligned along cross axis]
+  E -->|align-content| H[Aligned along cross axis when multiple lines]
+  F -->|gap| I[Gaps between flex items]
 ```
 This diagram illustrates the key concepts of Flexbox, including the flex container, flex formatting context, main axis, cross axis, and the properties used to control the layout of flex items.
 

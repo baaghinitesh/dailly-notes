@@ -122,7 +122,7 @@ This example demonstrates the optimization of **GOMAXPROCS** to improve the perf
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
 	A[Goroutine Creation] --> B[Scheduler Selection]
 	B --> C[Context Switching]
 	C --> D[Goroutine Execution]

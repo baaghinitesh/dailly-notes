@@ -177,7 +177,7 @@ int main() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Node 1] --> B[Node 2]
     B --> C[Node 3]
     C --> D[Node 4]

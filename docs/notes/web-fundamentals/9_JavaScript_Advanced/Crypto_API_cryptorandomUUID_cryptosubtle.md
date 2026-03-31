@@ -83,16 +83,16 @@ console.log(originalData); // Output: "Hello, World!"
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Generate Random UUID] -->|crypto.randomUUID()|> B[Format UUID String]
-    B -->|return|> C[Web Application]
-    C -->|use UUID|> D[Store Data]
-    D -->|retrieve data|> E[Web Application]
-    E -->|use crypto.subtle|> F[Encrypt Data]
-    F -->|return encrypted data|> G[Store Encrypted Data]
-    G -->|retrieve encrypted data|> H[Web Application]
-    H -->|use crypto.subtle|> I[Decrypt Data]
-    I -->|return decrypted data|> J[Web Application]
+graph TD
+    A[Generate Random UUID] -->|crypto.randomUUID()| B[Format UUID String]
+    B -->|return| C[Web Application]
+    C -->|use UUID| D[Store Data]
+    D -->|retrieve data| E[Web Application]
+    E -->|use crypto.subtle| F[Encrypt Data]
+    F -->|return encrypted data| G[Store Encrypted Data]
+    G -->|retrieve encrypted data| H[Web Application]
+    H -->|use crypto.subtle| I[Decrypt Data]
+    I -->|return decrypted data| J[Web Application]
 ```
 This diagram illustrates the flow of data through the `crypto` API, from generating a random UUID to encrypting and decrypting data using the `crypto.subtle` API.
 

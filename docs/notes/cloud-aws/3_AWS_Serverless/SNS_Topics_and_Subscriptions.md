@@ -100,16 +100,16 @@ print(response['SubscriptionArn'])
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Publishers] -->|Publish Message|> B(SNS Topic)
-    B -->|Send Message|> C[Subscribers]
-    C -->|Process Message|> D[Applications]
-    D -->|Send Response|> E[Subscribers]
-    E -->|Receive Response|> F[Publishers]
-    F -->|Verify Response|> G[SNS Topic]
-    G -->|Update Subscription|> H[Subscribers]
-    H -->|Receive Updated Subscription|> I[Publishers]
-    I -->|Send Next Message|> J(SNS Topic)
+graph TD
+    A[Publishers] -->|Publish Message| B(SNS Topic)
+    B -->|Send Message| C[Subscribers]
+    C -->|Process Message| D[Applications]
+    D -->|Send Response| E[Subscribers]
+    E -->|Receive Response| F[Publishers]
+    F -->|Verify Response| G[SNS Topic]
+    G -->|Update Subscription| H[Subscribers]
+    H -->|Receive Updated Subscription| I[Publishers]
+    I -->|Send Next Message| J(SNS Topic)
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#ccc,stroke:#333,stroke-width:4px
     style D fill:#f9f,stroke:#333,stroke-width:4px

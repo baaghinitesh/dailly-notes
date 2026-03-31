@@ -79,13 +79,13 @@ This example illustrates the modularity of open source software, where component
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Developer] -->|contributes code|> B[Open Source Project]
-    B -->|reviewed by|> C[Community]
-    C -->|merged into|> D[Main Codebase]
-    D -->|released as|> E[New Version]
-    E -->|used by|> F[End Users]
-    F -->|provides feedback|> A
+graph TD
+    A[Developer] -->|contributes code| B[Open Source Project]
+    B -->|reviewed by| C[Community]
+    C -->|merged into| D[Main Codebase]
+    D -->|released as| E[New Version]
+    E -->|used by| F[End Users]
+    F -->|provides feedback| A
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style B fill:#ccc,stroke:#333,stroke-width:2px
     style C fill:#aaa,stroke:#333,stroke-width:2px

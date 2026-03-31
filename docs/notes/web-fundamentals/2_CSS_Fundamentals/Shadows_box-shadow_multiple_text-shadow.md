@@ -61,15 +61,15 @@ When a browser renders an element with a **box-shadow** or **text-shadow** prope
 
 ## Visual Diagram
 ```mermaid
-graph LR
-  A[Element] -->|box-shadow|> B[Shadow Layer]
-  B -->|offset|> C[Shadow Offset]
-  C -->|blur radius|> D[Shadow Blur]
-  D -->|spread radius|> E[Shadow Spread]
-  E -->|color|> F[Shadow Color]
-  F -->|compositing|> G[Final Shadow Effect]
-  G -->|rendering|> H[Browser Rendering]
-  H -->|display|> I[Final Display]
+graph TD
+  A[Element] -->|box-shadow| B[Shadow Layer]
+  B -->|offset| C[Shadow Offset]
+  C -->|blur radius| D[Shadow Blur]
+  D -->|spread radius| E[Shadow Spread]
+  E -->|color| F[Shadow Color]
+  F -->|compositing| G[Final Shadow Effect]
+  G -->|rendering| H[Browser Rendering]
+  H -->|display| I[Final Display]
 ```
 The diagram illustrates the process of rendering a **box-shadow** property, from calculating the shadow's offset and blur radius to compositing and rendering the final shadow effect.
 

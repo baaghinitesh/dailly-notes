@@ -113,22 +113,22 @@ fn main() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[C++ Code] -->|Compilation|> B[Machine Code]
-    B -->|Execution|> C[Sequential Execution Model]
-    C -->|Memory Access|> D[Stack-Based Memory Layout]
-    D -->|Memory Management|> E[Manual Memory Management]
-    E -->|Error Handling|> F[Exceptions]
-    F -->|Concurrency|> G[Low-Level Concurrency Primitives]
-    G -->|Performance|> H[High-Performance Computing]
+graph TD
+    A[C++ Code] -->|Compilation| B[Machine Code]
+    B -->|Execution| C[Sequential Execution Model]
+    C -->|Memory Access| D[Stack-Based Memory Layout]
+    D -->|Memory Management| E[Manual Memory Management]
+    E -->|Error Handling| F[Exceptions]
+    F -->|Concurrency| G[Low-Level Concurrency Primitives]
+    G -->|Performance| H[High-Performance Computing]
 
-    I[Rust Code] -->|Compilation|> J[LLVM IR]
-    J -->|Execution|> K[Concurrent Execution Model]
-    K -->|Memory Access|> L[Heap-Based Memory Layout]
-    L -->|Memory Management|> M[Memory Safety]
-    M -->|Error Handling|> N[Result Type]
-    N -->|Concurrency|> O[High-Level Concurrency Abstractions]
-    O -->|Performance|> P[High-Performance Computing]
+    I[Rust Code] -->|Compilation| J[LLVM IR]
+    J -->|Execution| K[Concurrent Execution Model]
+    K -->|Memory Access| L[Heap-Based Memory Layout]
+    L -->|Memory Management| M[Memory Safety]
+    M -->|Error Handling| N[Result Type]
+    N -->|Concurrency| O[High-Level Concurrency Abstractions]
+    O -->|Performance| P[High-Performance Computing]
 ```
 The diagram illustrates the compilation, execution, and memory management pipelines of C++ and Rust.
 

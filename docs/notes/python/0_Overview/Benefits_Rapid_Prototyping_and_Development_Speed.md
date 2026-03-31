@@ -135,15 +135,15 @@ web_scraper("https://www.google.com")
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Rapid Prototyping] -->|Iterate Quickly|> B[Test and Validate]
-    B -->|Gather Feedback|> C[Refine and Improve]
-    C -->|Repeat the Cycle|> A
-    D[Agile Development] -->|Emphasize Flexibility|> A
-    E[Minimum Viable Product] -->|Satisfy Early Customers|> B
-    F[Python Syntax and Semantics] -->|Enable Rapid Development|> A
-    G[Libraries and Frameworks] -->|Provide Pre-built Functionality|> A
-    H[Interpreted Nature] -->|Allow for Quick Testing|> A
+graph TD
+    A[Rapid Prototyping] -->|Iterate Quickly| B[Test and Validate]
+    B -->|Gather Feedback| C[Refine and Improve]
+    C -->|Repeat the Cycle| A
+    D[Agile Development] -->|Emphasize Flexibility| A
+    E[Minimum Viable Product] -->|Satisfy Early Customers| B
+    F[Python Syntax and Semantics] -->|Enable Rapid Development| A
+    G[Libraries and Frameworks] -->|Provide Pre-built Functionality| A
+    H[Interpreted Nature] -->|Allow for Quick Testing| A
 ```
 The diagram illustrates the rapid prototyping process, including the iteration cycle, agile development, and the role of Python's syntax, libraries, and interpreted nature.
 

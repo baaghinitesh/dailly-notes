@@ -251,7 +251,7 @@ private:
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Root] --> B[Left Child]
     A --> C[Right Child]
     B --> D[Left Grandchild]

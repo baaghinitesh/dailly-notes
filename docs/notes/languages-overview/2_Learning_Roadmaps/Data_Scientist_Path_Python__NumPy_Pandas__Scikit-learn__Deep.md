@@ -120,7 +120,7 @@ print(f'Accuracy: {np.mean(predictions.argmax(-1) == y_test)}')
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Data Ingestion] --> B[Data Preprocessing]
     B --> C[Exploratory Data Analysis]
     C --> D[Model Building]

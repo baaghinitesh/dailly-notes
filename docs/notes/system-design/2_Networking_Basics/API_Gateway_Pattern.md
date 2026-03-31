@@ -120,17 +120,17 @@ app.listen(port, () => {
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    Client[Client] -->|Request|> API_Gateway[API Gateway]
-    API_Gateway -->|Route Request|> Microservice1[Microservice 1]
-    API_Gateway -->|Route Request|> Microservice2[Microservice 2]
-    Microservice1 -->|Response|> API_Gateway
-    Microservice2 -->|Response|> API_Gateway
-    API_Gateway -->|Response|> Client
-    API_Gateway -->|Cache Response|> Redis[Redis]
-    Redis -->|Cached Response|> API_Gateway
-    API_Gateway -->|Authenticate Request|> OAuth2[OAuth 2.0]
-    OAuth2 -->|Access Token|> API_Gateway
+graph TD
+    Client[Client] -->|Request| API_Gateway[API Gateway]
+    API_Gateway -->|Route Request| Microservice1[Microservice 1]
+    API_Gateway -->|Route Request| Microservice2[Microservice 2]
+    Microservice1 -->|Response| API_Gateway
+    Microservice2 -->|Response| API_Gateway
+    API_Gateway -->|Response| Client
+    API_Gateway -->|Cache Response| Redis[Redis]
+    Redis -->|Cached Response| API_Gateway
+    API_Gateway -->|Authenticate Request| OAuth2[OAuth 2.0]
+    OAuth2 -->|Access Token| API_Gateway
 ```
 The diagram illustrates the API Gateway Pattern, showing how the API Gateway routes requests to microservices, caches responses, and authenticates requests using OAuth 2.0.
 

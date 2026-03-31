@@ -181,7 +181,7 @@ fn main() {
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Game Loop] --> B[Input Handling]
     B --> C[Game State Update]
     C --> D[Graphics Rendering]

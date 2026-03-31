@@ -118,13 +118,13 @@ This will start Gunicorn with the custom configuration.
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Client] -->|Request|> B[Gunicorn/Uvicorn]
-    B -->|Assign Request|> C[Worker Process]
-    C -->|Handle Request|> D[Application]
-    D -->|Return Response|> C
-    C -->|Return Response|> B
-    B -->|Return Response|> A
+graph TD
+    A[Client] -->|Request| B[Gunicorn/Uvicorn]
+    B -->|Assign Request| C[Worker Process]
+    C -->|Handle Request| D[Application]
+    D -->|Return Response| C
+    C -->|Return Response| B
+    B -->|Return Response| A
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

@@ -130,16 +130,16 @@ print(classification_report(y_test, y_pred))
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Data] -->|Preprocessing|> B[Transformer]
-    B -->|Fit|> C[Scaler]
-    C -->|Transform|> D[Scaled Data]
-    D -->|Split|> E[Training Data]
-    E -->|Train|> F[Model]
-    F -->|Predict|> G[Predictions]
-    G -->|Evaluate|> H[Metrics]
-    H -->|Tune|> I[Hyperparameters]
-    I -->|Optimize|> J[Optimized Model]
+graph TD
+    A[Data] -->|Preprocessing| B[Transformer]
+    B -->|Fit| C[Scaler]
+    C -->|Transform| D[Scaled Data]
+    D -->|Split| E[Training Data]
+    E -->|Train| F[Model]
+    F -->|Predict| G[Predictions]
+    G -->|Evaluate| H[Metrics]
+    H -->|Tune| I[Hyperparameters]
+    I -->|Optimize| J[Optimized Model]
 ```
 The diagram illustrates the machine learning workflow, from data preprocessing to model evaluation and optimization.
 

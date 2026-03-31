@@ -120,7 +120,7 @@ val products = database.query("SELECT * FROM products WHERE price > ?", 10.0)
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Database Schema] --> B[Query]
     B --> C[Transaction]
     C --> D[Cursor]

@@ -99,7 +99,7 @@ In this example, we use **Pick<T, K>** to create a new type `UserAddress` that o
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Type T] --> B[Keyof T]
     B --> C[Type K]
     C --> D[Mapped Type]

@@ -77,7 +77,7 @@ This example demonstrates dynamic memory allocation using the `new` operator and
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Variable x] --> B[Memory Address]
     B --> C[Pointer ptr]
     C --> D[Address-of Operator (&)]

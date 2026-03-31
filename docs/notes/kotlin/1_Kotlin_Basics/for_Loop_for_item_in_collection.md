@@ -99,7 +99,7 @@ This example demonstrates an advanced usage of a **for loop**, finding the first
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Start] --> B[Initialize Iteration Variable]
     B --> C[Check if End of Collection is Reached]
     C -->|Yes| D[End Loop]

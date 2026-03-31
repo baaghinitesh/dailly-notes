@@ -194,7 +194,7 @@ print("Articulation Points:", articulation_points)
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A --> B
     A --> C
     B --> D

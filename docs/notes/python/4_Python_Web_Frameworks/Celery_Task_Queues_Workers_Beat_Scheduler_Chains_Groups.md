@@ -109,14 +109,14 @@ This example defines a chain of tasks that executes a series of mathematical ope
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Application] -->|create task|> B[Broker]
-    B -->|store task|> C[Queue]
-    D[Worker] -->|request task|> C
-    C -->|send task|> D
-    D -->|execute task|> E[Result]
-    E -->|store result|> F[Result Backend]
-    F -->|return result|> A
+graph TD
+    A[Application] -->|create task| B[Broker]
+    B -->|store task| C[Queue]
+    D[Worker] -->|request task| C
+    C -->|send task| D
+    D -->|execute task| E[Result]
+    E -->|store result| F[Result Backend]
+    F -->|return result| A
 ```
 This diagram shows the flow of tasks through the Celery system, from creation to execution and result storage.
 

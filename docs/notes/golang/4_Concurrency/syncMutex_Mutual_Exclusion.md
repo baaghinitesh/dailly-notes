@@ -158,14 +158,14 @@ This example demonstrates an advanced usage of `sync.Mutex` to protect a shared 
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Goroutine 1] -->|Lock()|> B[Mutex]
-    B -->|Acquire Lock|> C[Goroutine 1 Executes]
-    C -->|Unlock()|> D[Mutex]
-    D -->|Release Lock|> E[Goroutine 2]
-    E -->|Lock()|> B
-    B -->|Acquire Lock|> F[Goroutine 2 Executes]
-    F -->|Unlock()|> D
+graph TD
+    A[Goroutine 1] -->|Lock()| B[Mutex]
+    B -->|Acquire Lock| C[Goroutine 1 Executes]
+    C -->|Unlock()| D[Mutex]
+    D -->|Release Lock| E[Goroutine 2]
+    E -->|Lock()| B
+    B -->|Acquire Lock| F[Goroutine 2 Executes]
+    F -->|Unlock()| D
     style B fill:#f9f,stroke:#333,stroke-width:4px
 ```
 This diagram illustrates the basic flow of acquiring and releasing a lock using `sync.Mutex`.

@@ -103,17 +103,17 @@ export default App;
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[app.config.js] -->|read|> B[Build System]
-    B -->|parse|> C[Environment Variables]
-    C -->|store|> D[Memory]
-    D -->|use|> E[Build Configuration]
-    E -->|configure|> F[Application]
-    F -->|build|> G[Package]
-    G -->|deploy|> H[Server]
-    H -->|serve|> I[Client]
-    I -->|request|> J[API]
-    J -->|response|> I
+graph TD
+    A[app.config.js] -->|read| B[Build System]
+    B -->|parse| C[Environment Variables]
+    C -->|store| D[Memory]
+    D -->|use| E[Build Configuration]
+    E -->|configure| F[Application]
+    F -->|build| G[Package]
+    G -->|deploy| H[Server]
+    H -->|serve| I[Client]
+    I -->|request| J[API]
+    J -->|response| I
 ```
 This diagram illustrates the flow of environment variables from the **app.config.js** file to the build system, and ultimately to the application and server.
 

@@ -168,7 +168,7 @@ This example demonstrates a bulkhead implementation with a circuit breaker that 
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Request] --> B{Bulkhead}
     B -->|allow| C[Component]
     B -->|reject| D[Error]

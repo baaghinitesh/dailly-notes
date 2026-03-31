@@ -139,19 +139,19 @@ sqs.receiveMessage({ QueueUrl: queueUrl, MaxNumberOfMessages: 10 }, (err, data) 
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Producer] -->|send message|> B(SQS Queue)
-    B -->|store message|> C[Message Storage]
-    C -->|retrieve message|> D[Consumer]
-    D -->|process message|> E[Message Processing]
-    E -->|send acknowledgement|> B
-    B -->|delete message|> C
-    F[Publisher] -->|publish message|> G(SNS Topic)
-    G -->|store message|> H[Message Storage]
-    H -->|send message|> I[Subscriber]
-    I -->|process message|> J[Message Processing]
-    J -->|send acknowledgement|> G
-    G -->|delete message|> H
+graph TD
+    A[Producer] -->|send message| B(SQS Queue)
+    B -->|store message| C[Message Storage]
+    C -->|retrieve message| D[Consumer]
+    D -->|process message| E[Message Processing]
+    E -->|send acknowledgement| B
+    B -->|delete message| C
+    F[Publisher] -->|publish message| G(SNS Topic)
+    G -->|store message| H[Message Storage]
+    H -->|send message| I[Subscriber]
+    I -->|process message| J[Message Processing]
+    J -->|send acknowledgement| G
+    G -->|delete message| H
 ```
 This diagram illustrates the flow of messages between producers, consumers, and messaging services.
 

@@ -85,7 +85,7 @@ SELECT * FROM orders WHERE 'item2' = ANY(items);
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[PostgreSQL] --> B[UUID]
     A --> C[JSONB]
     A --> D[JSON]
@@ -93,13 +93,13 @@ graph LR
     A --> F[HSTORE]
     A --> G[INET]
     A --> H[CIDR]
-    B -->|uses|> I[uuid_generate_v4]
-    C -->|stores|> J[JSONB data]
-    D -->|stores|> K[JSON data]
-    E -->|supports|> L[array operations]
-    F -->|stores|> M[key-value pairs]
-    G -->|stores|> N[IP addresses]
-    H -->|represents|> O[network ranges]
+    B -->|uses| I[uuid_generate_v4]
+    C -->|stores| J[JSONB data]
+    D -->|stores| K[JSON data]
+    E -->|supports| L[array operations]
+    F -->|stores| M[key-value pairs]
+    G -->|stores| N[IP addresses]
+    H -->|represents| O[network ranges]
 ```
 This diagram illustrates the relationship between PostgreSQL and its specific data types, as well as the internal mechanics and operations supported by each type.
 

@@ -91,15 +91,15 @@ consumer.on('message', (message) => {
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Producer] -->|emit event|> B[Broker]
-    B -->|route event|> C[Topic]
-    C -->|store event|> D[Message Queue]
-    D -->|send event|> E[Consumer]
-    E -->|process event|> F[Reaction]
-    F -->|trigger action|> G[External System]
-    G -->|send response|> H[Consumer]
-    H -->|process response|> I[Final Reaction]
+graph TD
+    A[Producer] -->|emit event| B[Broker]
+    B -->|route event| C[Topic]
+    C -->|store event| D[Message Queue]
+    D -->|send event| E[Consumer]
+    E -->|process event| F[Reaction]
+    F -->|trigger action| G[External System]
+    G -->|send response| H[Consumer]
+    H -->|process response| I[Final Reaction]
 ```
 This diagram illustrates the flow of events in an EDA system, from the producer emitting an event to the consumer processing the event and triggering a reaction.
 

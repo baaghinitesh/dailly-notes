@@ -82,7 +82,7 @@ This example demonstrates how to add multiple event listeners to the document an
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[User presses key] --> B[Browser generates keydown event]
     B --> C[Event is propagated through DOM]
     C --> D[Event object is created]

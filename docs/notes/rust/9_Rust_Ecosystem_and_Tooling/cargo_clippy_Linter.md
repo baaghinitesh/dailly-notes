@@ -90,7 +90,7 @@ This will generate multiple warnings about unnecessary clones.
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[Rust Code] --> B[Code Analysis]
     B --> C[Lint Application]
     C --> D[Rule Checking]
