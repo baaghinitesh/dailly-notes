@@ -87,17 +87,30 @@ console.log(tuple[1][1]); // outputs: undefined
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Tuple Creation] --> B[Type Inference]
-    B --> C[Type Checking]
-    C --> D[Tuple Initialization]
-    D --> E[Accessing Tuple Elements]
-    E --> F[Type Widening]
-    F --> G[Error Handling]
-    G --> H[Type Safety]
-    H --> I[Code Completion]
-    I --> J[Code Execution]
-    J --> K[Output]
+graph TD
+    %% Start: Actions and Initial state
+    A([Tuple Creation]) --> B[Tuple Initialization]
+    B -->|Triggers| C[Type System Analysis]
+    
+    %% Type System subgraph (Analysis Phase)
+    subgraph C [Type System Analysis]
+        D[Type Inference] --> E[Type Checking]
+        E --> F[Error Handling]
+        G[Type Widening] -.-> D
+    end
+    
+    %% Usage branch
+    B --> H[Accessing Tuple Elements]
+    H --> E
+    
+    %% Benefits subgraph (powered by analysis/usage)
+    E --> I[Type Safety]
+    C -.->|Powers| J[Code Completion]
+    H -.->|Powers| J
+
+    %% End state branch (Runtime Phase)
+    I --> K([Code Execution])
+    K --> L((Output))
 ```
 The diagram illustrates the internal mechanics of tuples in TypeScript, from creation to execution.
 
