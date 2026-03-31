@@ -3,7 +3,7 @@ title: "When NOT to Use: Quick scripts, prototypes, tiny utilities"
 topic: "When NOT to Use: Quick scripts, prototypes, tiny utilities"
 section: "typescript"
 tags: "typescript, when-not-to-use, programming, notes, interview"
-banner: "https://picsum.photos/seed/326/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20When%20NOT%20to%20Use%20Quick%20scripts,%20prototypes,%20tiny%20utilities%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

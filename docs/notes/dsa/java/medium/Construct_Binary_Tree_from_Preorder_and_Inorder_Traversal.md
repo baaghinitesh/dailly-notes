@@ -4,7 +4,7 @@ language: "java"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, java, medium, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/767/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

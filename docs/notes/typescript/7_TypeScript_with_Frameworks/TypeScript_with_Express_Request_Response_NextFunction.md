@@ -3,7 +3,7 @@ title: "TypeScript with Express: Request, Response, NextFunction"
 topic: "TypeScript with Express: Request, Response, NextFunction"
 section: "typescript"
 tags: "typescript, typescript-with-express, programming, notes, interview"
-banner: "https://picsum.photos/seed/520/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20TypeScript%20with%20Express%20Request,%20Response,%20NextFunction%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

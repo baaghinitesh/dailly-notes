@@ -4,7 +4,7 @@ language: "java"
 difficulty: "super_advanced"
 section: "dsa"
 tags: "dsa, java, super_advanced, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/16/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20SMAWK%20Algorithm%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

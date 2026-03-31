@@ -3,7 +3,7 @@ title: "Concurrency: goroutines (Go), async/await (JS/Python/Rust/Swift/Kotlin),
 topic: "Concurrency: goroutines (Go), async/await (JS/Python/Rust/Swift/Kotlin), threads (Java/C++), actors (Kotlin/Swift)"
 section: "languages-overview"
 tags: "languages-overview, concurrency, programming, notes, interview"
-banner: "https://picsum.photos/seed/408/1200/630"
+banner: "https://image.pollinations.ai/prompt/languages-overview%20Concurrency%20goroutines%20(Go),%20asyncawait%20(JSPythonRustSwiftKotlin),%20threads%20(JavaC++),%20actors%20(KotlinSwift)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

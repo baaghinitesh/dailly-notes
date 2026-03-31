@@ -3,7 +3,7 @@ title: "Floyd's Cycle Detection Algorithm"
 topic: "Floyd's Cycle Detection Algorithm"
 section: "dsa"
 tags: "dsa, floyd's-cycle-detection-algorithm, programming, notes, interview"
-banner: "https://picsum.photos/seed/88/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Floyd's%20Cycle%20Detection%20Algorithm%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

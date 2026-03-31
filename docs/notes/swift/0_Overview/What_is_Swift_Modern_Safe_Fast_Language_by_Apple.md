@@ -3,7 +3,7 @@ title: "What is Swift: Modern, Safe, Fast Language by Apple"
 topic: "What is Swift: Modern, Safe, Fast Language by Apple"
 section: "swift"
 tags: "swift, what-is-swift, programming, notes, interview"
-banner: "https://picsum.photos/seed/856/1200/630"
+banner: "https://image.pollinations.ai/prompt/swift%20What%20is%20Swift%20Modern,%20Safe,%20Fast%20Language%20by%20Apple%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

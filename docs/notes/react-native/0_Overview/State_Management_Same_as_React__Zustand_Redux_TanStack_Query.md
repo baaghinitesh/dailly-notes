@@ -3,7 +3,7 @@ title: "State Management: Same as React — Zustand, Redux, TanStack Query"
 topic: "State Management: Same as React — Zustand, Redux, TanStack Query"
 section: "react-native"
 tags: "react-native, state-management, programming, notes, interview"
-banner: "https://picsum.photos/seed/246/1200/630"
+banner: "https://image.pollinations.ai/prompt/react-native%20State%20Management%20Same%20as%20React%20—%20Zustand,%20Redux,%20TanStack%20Query%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

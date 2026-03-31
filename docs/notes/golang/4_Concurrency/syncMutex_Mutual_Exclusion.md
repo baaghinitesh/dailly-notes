@@ -3,7 +3,7 @@ title: "sync.Mutex: Mutual Exclusion"
 topic: "sync.Mutex: Mutual Exclusion"
 section: "golang"
 tags: "golang, sync.mutex, programming, notes, interview"
-banner: "https://picsum.photos/seed/40/1200/630"
+banner: "https://image.pollinations.ai/prompt/golang%20sync.Mutex%20Mutual%20Exclusion%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

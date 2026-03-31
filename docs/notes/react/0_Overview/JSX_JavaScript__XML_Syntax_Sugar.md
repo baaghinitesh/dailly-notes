@@ -3,7 +3,7 @@ title: "JSX: JavaScript + XML Syntax Sugar"
 topic: "JSX: JavaScript + XML Syntax Sugar"
 section: "react"
 tags: "react, jsx, programming, notes, interview"
-banner: "https://picsum.photos/seed/494/1200/630"
+banner: "https://image.pollinations.ai/prompt/react%20JSX%20JavaScript%20+%20XML%20Syntax%20Sugar%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

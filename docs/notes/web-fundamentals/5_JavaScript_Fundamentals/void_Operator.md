@@ -3,7 +3,7 @@ title: "void Operator"
 topic: "void Operator"
 section: "web-fundamentals"
 tags: "web-fundamentals, void-operator, programming, notes, interview"
-banner: "https://picsum.photos/seed/256/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20void%20Operator%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "Safe Call Operator: ?."
 topic: "Safe Call Operator: ?."
 section: "kotlin"
 tags: "kotlin, safe-call-operator, programming, notes, interview"
-banner: "https://picsum.photos/seed/16/1200/630"
+banner: "https://image.pollinations.ai/prompt/kotlin%20Safe%20Call%20Operator%20?.%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

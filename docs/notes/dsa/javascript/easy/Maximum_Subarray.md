@@ -4,7 +4,7 @@ language: "javascript"
 difficulty: "easy"
 section: "dsa"
 tags: "dsa, javascript, easy, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/254/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Maximum%20Subarray%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

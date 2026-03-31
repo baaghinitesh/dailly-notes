@@ -3,7 +3,7 @@ title: "Task: Creating Concurrent Work"
 topic: "Task: Creating Concurrent Work"
 section: "swift"
 tags: "swift, task, programming, notes, interview"
-banner: "https://picsum.photos/seed/12/1200/630"
+banner: "https://image.pollinations.ai/prompt/swift%20Task%20Creating%20Concurrent%20Work%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

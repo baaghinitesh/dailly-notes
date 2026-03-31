@@ -3,7 +3,7 @@ title: "BlockingQueue: ArrayBlockingQueue, LinkedBlockingQueue"
 topic: "BlockingQueue: ArrayBlockingQueue, LinkedBlockingQueue"
 section: "java"
 tags: "java, blockingqueue, programming, notes, interview"
-banner: "https://picsum.photos/seed/676/1200/630"
+banner: "https://image.pollinations.ai/prompt/java%20BlockingQueue%20ArrayBlockingQueue,%20LinkedBlockingQueue%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

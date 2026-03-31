@@ -3,7 +3,7 @@ title: "Keyboard Events: keydown, keyup, key vs keyCode"
 topic: "Keyboard Events: keydown, keyup, key vs keyCode"
 section: "web-fundamentals"
 tags: "web-fundamentals, keyboard-events, programming, notes, interview"
-banner: "https://picsum.photos/seed/792/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20Keyboard%20Events%20keydown,%20keyup,%20key%20vs%20keyCode%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

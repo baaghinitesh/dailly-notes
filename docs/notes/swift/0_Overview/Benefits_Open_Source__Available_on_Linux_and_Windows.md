@@ -3,7 +3,7 @@ title: "Benefits: Open Source — Available on Linux and Windows"
 topic: "Benefits: Open Source — Available on Linux and Windows"
 section: "swift"
 tags: "swift, benefits, programming, notes, interview"
-banner: "https://picsum.photos/seed/522/1200/630"
+banner: "https://image.pollinations.ai/prompt/swift%20Benefits%20Open%20Source%20—%20Available%20on%20Linux%20and%20Windows%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

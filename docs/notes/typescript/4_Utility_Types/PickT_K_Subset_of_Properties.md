@@ -3,7 +3,7 @@ title: "Pick<T, K>: Subset of Properties"
 topic: "Pick<T, K>: Subset of Properties"
 section: "typescript"
 tags: "typescript, pick<t,-k>, programming, notes, interview"
-banner: "https://picsum.photos/seed/384/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20Pick<T,%20K>%20Subset%20of%20Properties%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

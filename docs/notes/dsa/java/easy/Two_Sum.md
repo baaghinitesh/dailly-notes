@@ -4,13 +4,13 @@ language: "java"
 difficulty: "easy"
 section: "dsa"
 tags: "dsa, java, easy, leetcode, algorithms"
-banner: "https://picsum.photos/seed/twosum-java/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Two%20Sum%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
 # Two Sum
 
-![Two Sum](https://picsum.photos/seed/twosum-java/1200/630)
+![Two Sum](https://image.pollinations.ai/prompt/dsa%20Two%20Sum%20programming%20abstract?width=1200&height=630&nologo=true)
 
 ## Approach
 Use a HashMap to store each number and its index as we iterate. For each element, check if its complement (`target - num`) already exists in the map. This gives us O(n) time instead of the brute-force O(n²).

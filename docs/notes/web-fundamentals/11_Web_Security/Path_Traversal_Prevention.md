@@ -3,7 +3,7 @@ title: "Path Traversal Prevention"
 topic: "Path Traversal Prevention"
 section: "web-fundamentals"
 tags: "web-fundamentals, path-traversal-prevention, programming, notes, interview"
-banner: "https://picsum.photos/seed/240/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20Path%20Traversal%20Prevention%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

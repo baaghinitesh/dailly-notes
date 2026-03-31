@@ -4,7 +4,7 @@ language: "java"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, java, medium, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/399/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Validate%20Binary%20Search%20Tree%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

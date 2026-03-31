@@ -3,7 +3,7 @@ title: "Rabin-Karp Algorithm"
 topic: "Rabin-Karp Algorithm"
 section: "dsa"
 tags: "dsa, rabin-karp-algorithm, programming, notes, interview"
-banner: "https://picsum.photos/seed/352/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Rabin-Karp%20Algorithm%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

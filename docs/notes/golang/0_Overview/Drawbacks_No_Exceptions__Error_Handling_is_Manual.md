@@ -3,7 +3,7 @@ title: "Drawbacks: No Exceptions — Error Handling is Manual"
 topic: "Drawbacks: No Exceptions — Error Handling is Manual"
 section: "golang"
 tags: "golang, drawbacks, programming, notes, interview"
-banner: "https://picsum.photos/seed/32/1200/630"
+banner: "https://image.pollinations.ai/prompt/golang%20Drawbacks%20No%20Exceptions%20—%20Error%20Handling%20is%20Manual%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

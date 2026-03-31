@@ -4,13 +4,13 @@ language: "javascript"
 difficulty: "easy"
 section: "dsa"
 tags: "dsa, javascript, easy, map, leetcode"
-banner: "https://picsum.photos/seed/twosum-js/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Two%20Sum%20with%20Map%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
 # Two Sum with Map
 
-![Two Sum JavaScript](https://picsum.photos/seed/twosum-js/1200/630)
+![Two Sum JavaScript](https://image.pollinations.ai/prompt/dsa%20Two%20Sum%20with%20Map%20programming%20abstract?width=1200&height=630&nologo=true)
 
 ## Approach
 Use a JavaScript `Map` to store number→index pairs. For each element, check if `target - num` exists in the map. `Map.has()` and `Map.get()` are O(1) average.

@@ -3,7 +3,7 @@ title: "Shadows: box-shadow (multiple), text-shadow"
 topic: "Shadows: box-shadow (multiple), text-shadow"
 section: "web-fundamentals"
 tags: "web-fundamentals, shadows, programming, notes, interview"
-banner: "https://picsum.photos/seed/600/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20Shadows%20box-shadow%20(multiple),%20text-shadow%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

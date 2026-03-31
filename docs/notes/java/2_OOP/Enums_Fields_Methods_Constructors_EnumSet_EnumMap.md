@@ -3,7 +3,7 @@ title: "Enums: Fields, Methods, Constructors, EnumSet, EnumMap"
 topic: "Enums: Fields, Methods, Constructors, EnumSet, EnumMap"
 section: "java"
 tags: "java, enums, programming, notes, interview"
-banner: "https://picsum.photos/seed/336/1200/630"
+banner: "https://image.pollinations.ai/prompt/java%20Enums%20Fields,%20Methods,%20Constructors,%20EnumSet,%20EnumMap%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

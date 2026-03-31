@@ -235,8 +235,8 @@ def build_frontmatter(
     title: str, topic: str, section: str, tags: List[str], update_count: int
 ) -> str:
     tag_str = ", ".join(tags)
-    seed = picsum_seed(topic + title)
-    banner = f"https://picsum.photos/seed/{seed}/1200/630"
+    prompt = url_encode(f"{section} {title} programming abstract")
+    banner = f"https://image.pollinations.ai/prompt/{prompt}?width=1200&height=630&nologo=true"
     return (
         f'---\n'
         f'title: "{title}"\n'
@@ -642,11 +642,16 @@ Every code example must be:
 
 RULE 3 — DIAGRAMS (MANDATORY)
 The ## Visual Diagram section MUST contain a ```mermaid block.
+CRITICAL MERMAID RULES:
+1. Strict Edge Labels: Do NOT use trailing arrows (e.g., A -->|Text| B, NEVER use A -->|Text|> B).
+2. Smart Direction: Use flowchart TD for >= 5 nodes or loops. Use LR ONLY for 2-4 node linear chains. Never make horizontal 8+ node chains.
+3. Clean Nodes: Always quote node text if it has special characters `()`, `?`, `/` (e.g., id["Return -1 (error)"]).
+4. Proper Cycles: In algorithms, looping paths must properly connect back to the condition node (no dead ends).
 Choose the most appropriate diagram type:
 - flowchart TD — for algorithms, decision trees, process flows
 - sequenceDiagram — for request/response flows, API interactions
 - classDiagram — for OOP relationships, design patterns
-- graph LR — for dependency graphs, data flow
+- graph LR — for short dependency graphs, data flow
 Make the diagram DETAILED — at least 6 nodes/steps.
 
 RULE 4 — COMPARISON TABLE (MANDATORY)
@@ -739,7 +744,7 @@ RULES:
 3. Start your response with a new ## heading — absolutely no preamble
 4. MUST include at least one COMPLETE, RUNNABLE code example with inline comments
 5. MUST include at least one callout: > **Note/Warning/Tip/Interview:**
-6. ADD a ```mermaid diagram if the new concept has a visual component (flow, sequence, architecture)
+6. ADD a ```mermaid diagram if the new concept has a visual component (flow, sequence, architecture). Use strict valid syntax: quote text nodes with special chars, no trailing edge arrows like `|Text|>`, use TD for 5+ nodes.
 7. ADD a comparison table if you're comparing approaches or trade-offs
 8. Do NOT include YAML frontmatter
 9. Target 400-600 words — write fully, do not cut short
@@ -824,9 +829,15 @@ Use a realistic example that exercises the main logic path.
 ```mermaid
 flowchart TD
     A[Start] --> B[...]
-    B --> C[...]
+    B --> C{"Condition?"}
+    C -->|Yes| D[...]
 ```
 Show the algorithm's decision flow or data transformation visually.
+CRITICAL MERMAID RULES:
+1. Ensure flowchart logic paths don't hit dead ends if they are loops.
+2. Quote special chars in nodes (e.g., `C{"Condition?"}`). 
+3. Never use `-->|Text|>` with a trailing arrow.
+4. Use TD for >4 nodes, and NO hidden unicode characters.
 
 ## Key Insight
 > **Tip:** The single most important insight — the "aha moment" that makes this solution click. Write it as a memorable one-liner.

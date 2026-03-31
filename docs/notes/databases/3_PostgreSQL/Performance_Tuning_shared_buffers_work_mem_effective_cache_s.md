@@ -3,7 +3,7 @@ title: "Performance Tuning: shared_buffers, work_mem, effective_cache_size"
 topic: "Performance Tuning: shared_buffers, work_mem, effective_cache_size"
 section: "databases"
 tags: "databases, performance-tuning, programming, notes, interview"
-banner: "https://picsum.photos/seed/290/1200/630"
+banner: "https://image.pollinations.ai/prompt/databases%20Performance%20Tuning%20shared_buffers,%20work_mem,%20effective_cache_size%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

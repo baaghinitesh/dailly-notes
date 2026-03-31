@@ -3,11 +3,11 @@ title: "Big O Notation: Measuring Time and Space Complexity"
 topic: "Big O Notation: Measuring Time and Space Complexity"
 section: "dsa"
 tags: "dsa, complexity, big-o, algorithms, notes"
-banner: "https://picsum.photos/seed/bigo-dsa/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Big%20O%20Notation%20Measuring%20Time%20and%20Space%20Complexity%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
-![Big O Notation](https://picsum.photos/seed/bigo-dsa/1200/630)
+![Big O Notation](https://image.pollinations.ai/prompt/dsa%20Big%20O%20Notation%20Measuring%20Time%20and%20Space%20Complexity%20programming%20abstract?width=1200&height=630&nologo=true)
 
 ## Introduction
 

@@ -3,7 +3,7 @@ title: "Pattern Matching: Rust, Swift, Kotlin, Scala, Python 3.10+, Java 21+"
 topic: "Pattern Matching: Rust, Swift, Kotlin, Scala, Python 3.10+, Java 21+"
 section: "languages-overview"
 tags: "languages-overview, pattern-matching, programming, notes, interview"
-banner: "https://picsum.photos/seed/744/1200/630"
+banner: "https://image.pollinations.ai/prompt/languages-overview%20Pattern%20Matching%20Rust,%20Swift,%20Kotlin,%20Scala,%20Python%203.10+,%20Java%2021+%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

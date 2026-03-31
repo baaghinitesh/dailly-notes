@@ -4,7 +4,7 @@ language: "cpp"
 difficulty: "super_advanced"
 section: "dsa"
 tags: "dsa, cpp, super_advanced, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/740/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Fusion%20Trees%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

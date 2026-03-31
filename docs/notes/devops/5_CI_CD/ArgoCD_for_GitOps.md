@@ -3,7 +3,7 @@ title: "ArgoCD for GitOps"
 topic: "ArgoCD for GitOps"
 section: "devops"
 tags: "devops, argocd-for-gitops, programming, notes, interview"
-banner: "https://picsum.photos/seed/480/1200/630"
+banner: "https://image.pollinations.ai/prompt/devops%20ArgoCD%20for%20GitOps%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

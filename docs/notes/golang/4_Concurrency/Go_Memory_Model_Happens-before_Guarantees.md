@@ -3,7 +3,7 @@ title: "Go Memory Model: Happens-before Guarantees"
 topic: "Go Memory Model: Happens-before Guarantees"
 section: "golang"
 tags: "golang, go-memory-model, programming, notes, interview"
-banner: "https://picsum.photos/seed/152/1200/630"
+banner: "https://image.pollinations.ai/prompt/golang%20Go%20Memory%20Model%20Happens-before%20Guarantees%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

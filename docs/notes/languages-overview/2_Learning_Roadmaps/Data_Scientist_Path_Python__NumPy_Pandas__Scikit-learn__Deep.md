@@ -3,7 +3,7 @@ title: "Data Scientist Path: Python → NumPy/Pandas → Scikit-learn → Deep L
 topic: "Data Scientist Path: Python → NumPy/Pandas → Scikit-learn → Deep Learning"
 section: "languages-overview"
 tags: "languages-overview, data-scientist-path, programming, notes, interview"
-banner: "https://picsum.photos/seed/672/1200/630"
+banner: "https://image.pollinations.ai/prompt/languages-overview%20Data%20Scientist%20Path%20Python%20→%20NumPyPandas%20→%20Scikit-learn%20→%20Deep%20Learning%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

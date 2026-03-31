@@ -3,7 +3,7 @@ title: "Transpilation: TypeScript → JavaScript, Kotlin → JavaScript"
 topic: "Transpilation: TypeScript → JavaScript, Kotlin → JavaScript"
 section: "languages-overview"
 tags: "languages-overview, transpilation, programming, notes, interview"
-banner: "https://picsum.photos/seed/256/1200/630"
+banner: "https://image.pollinations.ai/prompt/languages-overview%20Transpilation%20TypeScript%20→%20JavaScript,%20Kotlin%20→%20JavaScript%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

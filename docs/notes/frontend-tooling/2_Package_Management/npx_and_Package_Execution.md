@@ -3,7 +3,7 @@ title: "npx and Package Execution"
 topic: "npx and Package Execution"
 section: "frontend-tooling"
 tags: "frontend-tooling, npx-and-package-execution, programming, notes, interview"
-banner: "https://picsum.photos/seed/128/1200/630"
+banner: "https://image.pollinations.ai/prompt/frontend-tooling%20npx%20and%20Package%20Execution%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

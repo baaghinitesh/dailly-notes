@@ -3,7 +3,7 @@ title: "AWS SQS and SNS"
 topic: "AWS SQS and SNS"
 section: "system-design"
 tags: "system-design, aws-sqs-and-sns, programming, notes, interview"
-banner: "https://picsum.photos/seed/936/1200/630"
+banner: "https://image.pollinations.ai/prompt/system-design%20AWS%20SQS%20and%20SNS%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -4,7 +4,7 @@ language: "python"
 difficulty: "super_advanced"
 section: "dsa"
 tags: "dsa, python, super_advanced, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/16/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Abstract%20Syntax%20Tree%20Manipulation%20with%20ast%20module%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

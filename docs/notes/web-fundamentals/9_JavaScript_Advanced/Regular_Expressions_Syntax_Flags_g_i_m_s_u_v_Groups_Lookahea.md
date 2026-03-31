@@ -3,7 +3,7 @@ title: "Regular Expressions: Syntax, Flags (g, i, m, s, u, v), Groups, Lookahead
 topic: "Regular Expressions: Syntax, Flags (g, i, m, s, u, v), Groups, Lookahead, Lookbehind"
 section: "web-fundamentals"
 tags: "web-fundamentals, regular-expressions, programming, notes, interview"
-banner: "https://picsum.photos/seed/956/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20Regular%20Expressions%20Syntax,%20Flags%20(g,%20i,%20m,%20s,%20u,%20v),%20Groups,%20Lookahead,%20Lookbehind%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

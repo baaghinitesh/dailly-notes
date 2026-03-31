@@ -3,7 +3,7 @@ title: "Bridges and Articulation Points"
 topic: "Bridges and Articulation Points"
 section: "dsa"
 tags: "dsa, bridges-and-articulation-points, programming, notes, interview"
-banner: "https://picsum.photos/seed/984/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Bridges%20and%20Articulation%20Points%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

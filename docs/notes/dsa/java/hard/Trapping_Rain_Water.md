@@ -4,13 +4,13 @@ language: "java"
 difficulty: "hard"
 section: "dsa"
 tags: "dsa, java, hard, two-pointers, leetcode"
-banner: "https://picsum.photos/seed/rainwater-java/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Trapping%20Rain%20Water%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
 # Trapping Rain Water
 
-![Trapping Rain Water](https://picsum.photos/seed/rainwater-java/1200/630)
+![Trapping Rain Water](https://image.pollinations.ai/prompt/dsa%20Trapping%20Rain%20Water%20programming%20abstract?width=1200&height=630&nologo=true)
 
 ## Approach
 Two-pointer approach. Maintain `left` and `right` pointers and track `maxLeft` and `maxRight`. At each step, process the side with the smaller max height — the water trapped at that position is `max - height[i]`. Move the pointer inward.

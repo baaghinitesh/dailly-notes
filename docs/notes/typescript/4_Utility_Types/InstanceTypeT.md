@@ -3,7 +3,7 @@ title: "InstanceType<T>"
 topic: "InstanceType<T>"
 section: "typescript"
 tags: "typescript, instancetype<t>, programming, notes, interview"
-banner: "https://picsum.photos/seed/648/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20InstanceType<T>%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

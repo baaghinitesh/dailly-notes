@@ -3,7 +3,7 @@ title: "Drawbacks: Callback Hell (mitigated by async/await)"
 topic: "Drawbacks: Callback Hell (mitigated by async/await)"
 section: "nodejs"
 tags: "nodejs, drawbacks, programming, notes, interview"
-banner: "https://picsum.photos/seed/768/1200/630"
+banner: "https://image.pollinations.ai/prompt/nodejs%20Drawbacks%20Callback%20Hell%20(mitigated%20by%20asyncawait)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

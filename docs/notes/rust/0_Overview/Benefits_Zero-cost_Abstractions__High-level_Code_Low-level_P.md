@@ -3,7 +3,7 @@ title: "Benefits: Zero-cost Abstractions — High-level Code, Low-level Performa
 topic: "Benefits: Zero-cost Abstractions — High-level Code, Low-level Performance"
 section: "rust"
 tags: "rust, benefits, programming, notes, interview"
-banner: "https://picsum.photos/seed/584/1200/630"
+banner: "https://image.pollinations.ai/prompt/rust%20Benefits%20Zero-cost%20Abstractions%20—%20High-level%20Code,%20Low-level%20Performance%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

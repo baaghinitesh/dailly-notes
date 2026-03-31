@@ -3,7 +3,7 @@ title: "DRY, KISS, YAGNI: Practical Coding Principles"
 topic: "DRY, KISS, YAGNI: Practical Coding Principles"
 section: "software-engineering"
 tags: "software-engineering, dry,-kiss,-yagni, programming, notes, interview"
-banner: "https://picsum.photos/seed/848/1200/630"
+banner: "https://image.pollinations.ai/prompt/software-engineering%20DRY,%20KISS,%20YAGNI%20Practical%20Coding%20Principles%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -4,13 +4,13 @@ language: "python"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, python, medium, bfs, graph, collections"
-banner: "https://picsum.photos/seed/bfs-python/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Graph%20BFS%20with%20collections.deque%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
 # Graph BFS with collections.deque
 
-![Graph BFS Python](https://picsum.photos/seed/bfs-python/1200/630)
+![Graph BFS Python](https://image.pollinations.ai/prompt/dsa%20Graph%20BFS%20with%20collections.deque%20programming%20abstract?width=1200&height=630&nologo=true)
 
 ## Approach
 Use `collections.deque` as the BFS queue — `popleft()` is O(1) vs O(n) for `list.pop(0)`. Start from the source, mark visited, and process level by level. Returns shortest path distances from source.

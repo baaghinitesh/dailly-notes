@@ -3,7 +3,7 @@ title: "Crypto API: crypto.randomUUID(), crypto.subtle"
 topic: "Crypto API: crypto.randomUUID(), crypto.subtle"
 section: "web-fundamentals"
 tags: "web-fundamentals, crypto-api, programming, notes, interview"
-banner: "https://picsum.photos/seed/894/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20Crypto%20API%20crypto.randomUUID(),%20crypto.subtle%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

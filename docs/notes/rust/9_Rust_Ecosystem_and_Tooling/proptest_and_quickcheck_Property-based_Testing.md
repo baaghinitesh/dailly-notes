@@ -3,7 +3,7 @@ title: "proptest and quickcheck: Property-based Testing"
 topic: "proptest and quickcheck: Property-based Testing"
 section: "rust"
 tags: "rust, proptest-and-quickcheck, programming, notes, interview"
-banner: "https://picsum.photos/seed/560/1200/630"
+banner: "https://image.pollinations.ai/prompt/rust%20proptest%20and%20quickcheck%20Property-based%20Testing%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

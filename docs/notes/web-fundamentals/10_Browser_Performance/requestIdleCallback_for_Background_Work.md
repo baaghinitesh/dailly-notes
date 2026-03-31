@@ -3,7 +3,7 @@ title: "requestIdleCallback for Background Work"
 topic: "requestIdleCallback for Background Work"
 section: "web-fundamentals"
 tags: "web-fundamentals, requestidlecallback-for-background-work, programming, notes, interview"
-banner: "https://picsum.photos/seed/296/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20requestIdleCallback%20for%20Background%20Work%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

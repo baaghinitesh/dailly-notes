@@ -3,7 +3,7 @@ title: "Language Interoperability: JVM (Java/Kotlin/Scala), .NET (C#/F#/VB)"
 topic: "Language Interoperability: JVM (Java/Kotlin/Scala), .NET (C#/F#/VB)"
 section: "languages-overview"
 tags: "languages-overview, language-interoperability, programming, notes, interview"
-banner: "https://picsum.photos/seed/80/1200/630"
+banner: "https://image.pollinations.ai/prompt/languages-overview%20Language%20Interoperability%20JVM%20(JavaKotlinScala),%20.NET%20(C#F#VB)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

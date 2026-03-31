@@ -3,7 +3,7 @@ title: "Ansible: Playbooks, Roles, Inventory"
 topic: "Ansible: Playbooks, Roles, Inventory"
 section: "devops"
 tags: "devops, ansible, programming, notes, interview"
-banner: "https://picsum.photos/seed/206/1200/630"
+banner: "https://image.pollinations.ai/prompt/devops%20Ansible%20Playbooks,%20Roles,%20Inventory%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

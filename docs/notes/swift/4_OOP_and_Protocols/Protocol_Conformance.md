@@ -3,7 +3,7 @@ title: "Protocol Conformance"
 topic: "Protocol Conformance"
 section: "swift"
 tags: "swift, protocol-conformance, programming, notes, interview"
-banner: "https://picsum.photos/seed/662/1200/630"
+banner: "https://image.pollinations.ai/prompt/swift%20Protocol%20Conformance%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

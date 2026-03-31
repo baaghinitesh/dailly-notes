@@ -4,7 +4,7 @@ language: "c"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, c, medium, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/691/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Trie%20Implementation%20in%20C%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "Streams: Readable, Writable, Duplex, Transform"
 topic: "Streams: Readable, Writable, Duplex, Transform"
 section: "nodejs"
 tags: "nodejs, streams, programming, notes, interview"
-banner: "https://picsum.photos/seed/342/1200/630"
+banner: "https://image.pollinations.ai/prompt/nodejs%20Streams%20Readable,%20Writable,%20Duplex,%20Transform%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

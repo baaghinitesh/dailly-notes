@@ -4,7 +4,7 @@ language: "python"
 difficulty: "hard"
 section: "dsa"
 tags: "dsa, python, hard, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/72/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20All%20Nodes%20Distance%20K%20in%20Binary%20Tree%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

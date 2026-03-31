@@ -3,7 +3,7 @@ title: "New Architecture: JSI, Fabric Renderer, TurboModules — No More Bridge"
 topic: "New Architecture: JSI, Fabric Renderer, TurboModules — No More Bridge"
 section: "react-native"
 tags: "react-native, new-architecture, programming, notes, interview"
-banner: "https://picsum.photos/seed/24/1200/630"
+banner: "https://image.pollinations.ai/prompt/react-native%20New%20Architecture%20JSI,%20Fabric%20Renderer,%20TurboModules%20—%20No%20More%20Bridge%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

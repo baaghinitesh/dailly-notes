@@ -3,7 +3,7 @@ title: "Unpacking: *, ** in assignments and function calls"
 topic: "Unpacking: *, ** in assignments and function calls"
 section: "python"
 tags: "python, unpacking, programming, notes, interview"
-banner: "https://picsum.photos/seed/206/1200/630"
+banner: "https://image.pollinations.ai/prompt/python%20Unpacking%20*,%20**%20in%20assignments%20and%20function%20calls%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

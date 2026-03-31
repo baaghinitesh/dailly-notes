@@ -3,7 +3,7 @@ title: "Mocking API Calls with MSW (Mock Service Worker)"
 topic: "Mocking API Calls with MSW (Mock Service Worker)"
 section: "react"
 tags: "react, mocking-api-calls-with-msw-(mock-service-worker), programming, notes, interview"
-banner: "https://picsum.photos/seed/668/1200/630"
+banner: "https://image.pollinations.ai/prompt/react%20Mocking%20API%20Calls%20with%20MSW%20(Mock%20Service%20Worker)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

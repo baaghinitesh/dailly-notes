@@ -3,7 +3,7 @@ title: "Hexagonal Architecture (Ports and Adapters)"
 topic: "Hexagonal Architecture (Ports and Adapters)"
 section: "software-engineering"
 tags: "software-engineering, hexagonal-architecture-(ports-and-adapters), programming, notes, interview"
-banner: "https://picsum.photos/seed/704/1200/630"
+banner: "https://image.pollinations.ai/prompt/software-engineering%20Hexagonal%20Architecture%20(Ports%20and%20Adapters)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

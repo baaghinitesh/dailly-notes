@@ -3,7 +3,7 @@ title: "Interface Composition"
 topic: "Interface Composition"
 section: "golang"
 tags: "golang, interface-composition, programming, notes, interview"
-banner: "https://picsum.photos/seed/0/1200/630"
+banner: "https://image.pollinations.ai/prompt/golang%20Interface%20Composition%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

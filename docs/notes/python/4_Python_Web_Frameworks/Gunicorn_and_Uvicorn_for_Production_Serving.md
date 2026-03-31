@@ -3,7 +3,7 @@ title: "Gunicorn and Uvicorn for Production Serving"
 topic: "Gunicorn and Uvicorn for Production Serving"
 section: "python"
 tags: "python, gunicorn-and-uvicorn-for-production-serving, programming, notes, interview"
-banner: "https://picsum.photos/seed/656/1200/630"
+banner: "https://image.pollinations.ai/prompt/python%20Gunicorn%20and%20Uvicorn%20for%20Production%20Serving%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

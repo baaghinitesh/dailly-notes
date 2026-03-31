@@ -4,13 +4,13 @@ language: "javascript"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, javascript, medium, lru-cache, map, design"
-banner: "https://picsum.photos/seed/lrucache-js/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20LRU%20Cache%20with%20Map%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
 # LRU Cache with Map
 
-![LRU Cache JavaScript](https://picsum.photos/seed/lrucache-js/1200/630)
+![LRU Cache JavaScript](https://image.pollinations.ai/prompt/dsa%20LRU%20Cache%20with%20Map%20programming%20abstract?width=1200&height=630&nologo=true)
 
 ## Approach
 JavaScript's `Map` maintains insertion order, making it perfect for LRU. On `get`, delete and re-insert the key to move it to the end (most recently used). On `put`, if at capacity, delete the first key (least recently used = `map.keys().next().value`).

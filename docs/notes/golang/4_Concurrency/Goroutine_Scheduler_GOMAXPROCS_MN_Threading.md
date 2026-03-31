@@ -3,7 +3,7 @@ title: "Goroutine Scheduler: GOMAXPROCS, M:N Threading"
 topic: "Goroutine Scheduler: GOMAXPROCS, M:N Threading"
 section: "golang"
 tags: "golang, goroutine-scheduler, programming, notes, interview"
-banner: "https://picsum.photos/seed/882/1200/630"
+banner: "https://image.pollinations.ai/prompt/golang%20Goroutine%20Scheduler%20GOMAXPROCS,%20MN%20Threading%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

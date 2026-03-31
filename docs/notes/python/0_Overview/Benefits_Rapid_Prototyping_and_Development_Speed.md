@@ -3,7 +3,7 @@ title: "Benefits: Rapid Prototyping and Development Speed"
 topic: "Benefits: Rapid Prototyping and Development Speed"
 section: "python"
 tags: "python, benefits, programming, notes, interview"
-banner: "https://picsum.photos/seed/224/1200/630"
+banner: "https://image.pollinations.ai/prompt/python%20Benefits%20Rapid%20Prototyping%20and%20Development%20Speed%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

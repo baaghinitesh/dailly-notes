@@ -3,7 +3,7 @@ title: "Data Types: int, long, long long, float, double, char, bool, void"
 topic: "Data Types: int, long, long long, float, double, char, bool, void"
 section: "cpp"
 tags: "cpp, data-types, programming, notes, interview"
-banner: "https://picsum.photos/seed/488/1200/630"
+banner: "https://image.pollinations.ai/prompt/cpp%20Data%20Types%20int,%20long,%20long%20long,%20float,%20double,%20char,%20bool,%20void%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

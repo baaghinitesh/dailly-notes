@@ -3,7 +3,7 @@ title: "Modular Arithmetic and Modular Exponentiation"
 topic: "Modular Arithmetic and Modular Exponentiation"
 section: "dsa"
 tags: "dsa, modular-arithmetic-and-modular-exponentiation, programming, notes, interview"
-banner: "https://picsum.photos/seed/720/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Modular%20Arithmetic%20and%20Modular%20Exponentiation%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

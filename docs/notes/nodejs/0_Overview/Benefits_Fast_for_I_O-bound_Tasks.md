@@ -3,7 +3,7 @@ title: "Benefits: Fast for I/O-bound Tasks"
 topic: "Benefits: Fast for I/O-bound Tasks"
 section: "nodejs"
 tags: "nodejs, benefits, programming, notes, interview"
-banner: "https://picsum.photos/seed/522/1200/630"
+banner: "https://image.pollinations.ai/prompt/nodejs%20Benefits%20Fast%20for%20IO-bound%20Tasks%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

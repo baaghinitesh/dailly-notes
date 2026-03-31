@@ -3,7 +3,7 @@ title: "TypeScript with Prisma: Auto-generated Types"
 topic: "TypeScript with Prisma: Auto-generated Types"
 section: "typescript"
 tags: "typescript, typescript-with-prisma, programming, notes, interview"
-banner: "https://picsum.photos/seed/538/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20TypeScript%20with%20Prisma%20Auto-generated%20Types%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

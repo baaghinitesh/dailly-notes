@@ -3,7 +3,7 @@ title: "Chaos Engineering with Chaos Monkey"
 topic: "Chaos Engineering with Chaos Monkey"
 section: "devops"
 tags: "devops, chaos-engineering-with-chaos-monkey, programming, notes, interview"
-banner: "https://picsum.photos/seed/600/1200/630"
+banner: "https://image.pollinations.ai/prompt/devops%20Chaos%20Engineering%20with%20Chaos%20Monkey%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

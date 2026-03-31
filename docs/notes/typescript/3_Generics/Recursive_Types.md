@@ -3,7 +3,7 @@ title: "Recursive Types"
 topic: "Recursive Types"
 section: "typescript"
 tags: "typescript, recursive-types, programming, notes, interview"
-banner: "https://picsum.photos/seed/312/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20Recursive%20Types%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

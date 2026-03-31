@@ -3,7 +3,7 @@ title: "Celery: Task Queues, Workers, Beat Scheduler, Chains, Groups"
 topic: "Celery: Task Queues, Workers, Beat Scheduler, Chains, Groups"
 section: "python"
 tags: "python, celery, programming, notes, interview"
-banner: "https://picsum.photos/seed/522/1200/630"
+banner: "https://image.pollinations.ai/prompt/python%20Celery%20Task%20Queues,%20Workers,%20Beat%20Scheduler,%20Chains,%20Groups%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

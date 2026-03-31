@@ -3,7 +3,7 @@ title: "Introduction to React: What and Why"
 topic: "Introduction to React: What and Why"
 section: "react"
 tags: "react, introduction-to-react, programming, notes, interview"
-banner: "https://picsum.photos/seed/376/1200/630"
+banner: "https://image.pollinations.ai/prompt/react%20Introduction%20to%20React%20What%20and%20Why%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

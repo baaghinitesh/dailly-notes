@@ -3,7 +3,7 @@ title: "Sorting Algorithms: Bubble, Selection, Insertion, Merge, Quick, Heap, Co
 topic: "Sorting Algorithms: Bubble, Selection, Insertion, Merge, Quick, Heap, Counting, Radix"
 section: "dsa"
 tags: "dsa, sorting-algorithms, programming, notes, interview"
-banner: "https://picsum.photos/seed/304/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Sorting%20Algorithms%20Bubble,%20Selection,%20Insertion,%20Merge,%20Quick,%20Heap,%20Counting,%20Radix%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

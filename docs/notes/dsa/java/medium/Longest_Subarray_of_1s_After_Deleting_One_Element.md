@@ -4,7 +4,7 @@ language: "java"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, java, medium, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/166/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Longest%20Subarray%20of%201s%20After%20Deleting%20One%20Element%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

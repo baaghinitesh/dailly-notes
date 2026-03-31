@@ -3,7 +3,7 @@ title: "shadcn/ui Component Library"
 topic: "shadcn/ui Component Library"
 section: "react"
 tags: "react, shadcn-ui-component-library, programming, notes, interview"
-banner: "https://picsum.photos/seed/424/1200/630"
+banner: "https://image.pollinations.ai/prompt/react%20shadcnui%20Component%20Library%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

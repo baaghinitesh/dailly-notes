@@ -3,7 +3,7 @@ title: "PostgreSQL-specific Types: UUID, JSONB, JSON, ARRAY, HSTORE, INET, CIDR"
 topic: "PostgreSQL-specific Types: UUID, JSONB, JSON, ARRAY, HSTORE, INET, CIDR"
 section: "databases"
 tags: "databases, postgresql-specific-types, programming, notes, interview"
-banner: "https://picsum.photos/seed/616/1200/630"
+banner: "https://image.pollinations.ai/prompt/databases%20PostgreSQL-specific%20Types%20UUID,%20JSONB,%20JSON,%20ARRAY,%20HSTORE,%20INET,%20CIDR%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

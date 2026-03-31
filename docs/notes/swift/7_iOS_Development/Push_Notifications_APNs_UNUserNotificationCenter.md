@@ -3,7 +3,7 @@ title: "Push Notifications: APNs, UNUserNotificationCenter"
 topic: "Push Notifications: APNs, UNUserNotificationCenter"
 section: "swift"
 tags: "swift, push-notifications, programming, notes, interview"
-banner: "https://picsum.photos/seed/336/1200/630"
+banner: "https://image.pollinations.ai/prompt/swift%20Push%20Notifications%20APNs,%20UNUserNotificationCenter%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

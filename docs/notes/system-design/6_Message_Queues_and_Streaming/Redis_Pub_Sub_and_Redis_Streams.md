@@ -3,7 +3,7 @@ title: "Redis Pub/Sub and Redis Streams"
 topic: "Redis Pub/Sub and Redis Streams"
 section: "system-design"
 tags: "system-design, redis-pub-sub-and-redis-streams, programming, notes, interview"
-banner: "https://picsum.photos/seed/464/1200/630"
+banner: "https://image.pollinations.ai/prompt/system-design%20Redis%20PubSub%20and%20Redis%20Streams%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

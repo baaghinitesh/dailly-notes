@@ -3,7 +3,7 @@ title: "C++ vs Rust: Systems Programming Comparison"
 topic: "C++ vs Rust: Systems Programming Comparison"
 section: "languages-overview"
 tags: "languages-overview, c++-vs-rust, programming, notes, interview"
-banner: "https://picsum.photos/seed/360/1200/630"
+banner: "https://image.pollinations.ai/prompt/languages-overview%20C++%20vs%20Rust%20Systems%20Programming%20Comparison%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "Frontend Developer Path: HTML/CSS → JavaScript → TypeScript → Reac
 topic: "Frontend Developer Path: HTML/CSS → JavaScript → TypeScript → React"
 section: "languages-overview"
 tags: "languages-overview, frontend-developer-path, programming, notes, interview"
-banner: "https://picsum.photos/seed/40/1200/630"
+banner: "https://image.pollinations.ai/prompt/languages-overview%20Frontend%20Developer%20Path%20HTMLCSS%20→%20JavaScript%20→%20TypeScript%20→%20React%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

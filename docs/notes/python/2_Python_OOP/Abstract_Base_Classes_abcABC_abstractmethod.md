@@ -3,7 +3,7 @@ title: "Abstract Base Classes: abc.ABC, @abstractmethod"
 topic: "Abstract Base Classes: abc.ABC, @abstractmethod"
 section: "python"
 tags: "python, abstract-base-classes, programming, notes, interview"
-banner: "https://picsum.photos/seed/248/1200/630"
+banner: "https://image.pollinations.ai/prompt/python%20Abstract%20Base%20Classes%20abc.ABC,%20@abstractmethod%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

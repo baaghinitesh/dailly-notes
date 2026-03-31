@@ -3,7 +3,7 @@ title: "Pointers: *, &, nullptr"
 topic: "Pointers: *, &, nullptr"
 section: "cpp"
 tags: "cpp, pointers, programming, notes, interview"
-banner: "https://picsum.photos/seed/136/1200/630"
+banner: "https://image.pollinations.ai/prompt/cpp%20Pointers%20*,%20&,%20nullptr%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

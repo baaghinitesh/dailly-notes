@@ -3,7 +3,7 @@ title: "esbuild: Extremely Fast Go-based Bundler"
 topic: "esbuild: Extremely Fast Go-based Bundler"
 section: "frontend-tooling"
 tags: "frontend-tooling, esbuild, programming, notes, interview"
-banner: "https://picsum.photos/seed/462/1200/630"
+banner: "https://image.pollinations.ai/prompt/frontend-tooling%20esbuild%20Extremely%20Fast%20Go-based%20Bundler%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

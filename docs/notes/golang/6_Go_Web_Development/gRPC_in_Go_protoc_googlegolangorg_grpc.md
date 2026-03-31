@@ -3,7 +3,7 @@ title: "gRPC in Go: protoc, google.golang.org/grpc"
 topic: "gRPC in Go: protoc, google.golang.org/grpc"
 section: "golang"
 tags: "golang, grpc-in-go, programming, notes, interview"
-banner: "https://picsum.photos/seed/436/1200/630"
+banner: "https://image.pollinations.ai/prompt/golang%20gRPC%20in%20Go%20protoc,%20google.golang.orggrpc%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "Flow: Cold Asynchronous Stream"
 topic: "Flow: Cold Asynchronous Stream"
 section: "kotlin"
 tags: "kotlin, flow, programming, notes, interview"
-banner: "https://picsum.photos/seed/736/1200/630"
+banner: "https://image.pollinations.ai/prompt/kotlin%20Flow%20Cold%20Asynchronous%20Stream%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "cargo clippy: Linter"
 topic: "cargo clippy: Linter"
 section: "rust"
 tags: "rust, cargo-clippy, programming, notes, interview"
-banner: "https://picsum.photos/seed/782/1200/630"
+banner: "https://image.pollinations.ai/prompt/rust%20cargo%20clippy%20Linter%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

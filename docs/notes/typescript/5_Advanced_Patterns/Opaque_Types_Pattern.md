@@ -3,7 +3,7 @@ title: "Opaque Types Pattern"
 topic: "Opaque Types Pattern"
 section: "typescript"
 tags: "typescript, opaque-types-pattern, programming, notes, interview"
-banner: "https://picsum.photos/seed/924/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20Opaque%20Types%20Pattern%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

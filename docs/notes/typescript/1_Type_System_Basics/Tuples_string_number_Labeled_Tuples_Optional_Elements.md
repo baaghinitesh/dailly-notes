@@ -3,7 +3,7 @@ title: "Tuples: [string, number], Labeled Tuples, Optional Elements"
 topic: "Tuples: [string, number], Labeled Tuples, Optional Elements"
 section: "typescript"
 tags: "typescript, tuples, programming, notes, interview"
-banner: "https://picsum.photos/seed/872/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20Tuples%20[string,%20number],%20Labeled%20Tuples,%20Optional%20Elements%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

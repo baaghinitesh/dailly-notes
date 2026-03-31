@@ -3,7 +3,7 @@ title: "Bellman-Ford Algorithm"
 topic: "Bellman-Ford Algorithm"
 section: "dsa"
 tags: "dsa, bellman-ford-algorithm, programming, notes, interview"
-banner: "https://picsum.photos/seed/8/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Bellman-Ford%20Algorithm%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

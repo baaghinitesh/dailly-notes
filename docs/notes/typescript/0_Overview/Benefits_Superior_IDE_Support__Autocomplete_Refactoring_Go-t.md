@@ -3,7 +3,7 @@ title: "Benefits: Superior IDE Support — Autocomplete, Refactoring, Go-to-Defi
 topic: "Benefits: Superior IDE Support — Autocomplete, Refactoring, Go-to-Definition"
 section: "typescript"
 tags: "typescript, benefits, programming, notes, interview"
-banner: "https://picsum.photos/seed/680/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20Benefits%20Superior%20IDE%20Support%20—%20Autocomplete,%20Refactoring,%20Go-to-Definition%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -4,7 +4,7 @@ language: "javascript"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, javascript, medium, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/562/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Implementing%20a%20Retry%20with%20Exponential%20Backoff%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

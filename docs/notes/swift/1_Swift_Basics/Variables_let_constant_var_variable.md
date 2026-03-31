@@ -3,7 +3,7 @@ title: "Variables: let (constant), var (variable)"
 topic: "Variables: let (constant), var (variable)"
 section: "swift"
 tags: "swift, variables, programming, notes, interview"
-banner: "https://picsum.photos/seed/8/1200/630"
+banner: "https://image.pollinations.ai/prompt/swift%20Variables%20let%20(constant),%20var%20(variable)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

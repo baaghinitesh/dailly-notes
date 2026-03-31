@@ -4,7 +4,7 @@ language: "java"
 difficulty: "hard"
 section: "dsa"
 tags: "dsa, java, hard, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/339/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Design%20Phone%20Directory%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "Splay Tree and Self-Adjusting Trees"
 topic: "Splay Tree and Self-Adjusting Trees"
 section: "dsa"
 tags: "dsa, splay-tree-and-self-adjusting-trees, programming, notes, interview"
-banner: "https://picsum.photos/seed/320/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Splay%20Tree%20and%20Self-Adjusting%20Trees%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

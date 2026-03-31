@@ -3,7 +3,7 @@ title: "Python 2 vs Python 3: Always Use Python 3"
 topic: "Python 2 vs Python 3: Always Use Python 3"
 section: "python"
 tags: "python, python-2-vs-python-3, programming, notes, interview"
-banner: "https://picsum.photos/seed/504/1200/630"
+banner: "https://image.pollinations.ai/prompt/python%20Python%202%20vs%20Python%203%20Always%20Use%20Python%203%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

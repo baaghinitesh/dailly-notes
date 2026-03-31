@@ -4,7 +4,7 @@ language: "c"
 difficulty: "easy"
 section: "dsa"
 tags: "dsa, c, easy, leetcode, algorithms, coding-interview"
-banner: "https://picsum.photos/seed/672/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Factorial%20Recursive%20and%20Iterative%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -4,13 +4,13 @@ language: "cpp"
 difficulty: "medium"
 section: "dsa"
 tags: "dsa, cpp, medium, segment-tree, range-query"
-banner: "https://picsum.photos/seed/segtree-cpp/1200/630"
+banner: "https://image.pollinations.ai/prompt/dsa%20Segment%20Tree%20Build%20and%20Query%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
 # Segment Tree Build and Query
 
-![Segment Tree](https://picsum.photos/seed/segtree-cpp/1200/630)
+![Segment Tree](https://image.pollinations.ai/prompt/dsa%20Segment%20Tree%20Build%20and%20Query%20programming%20abstract?width=1200&height=630&nologo=true)
 
 ## Approach
 Build a segment tree over an array to support range sum queries and point updates in O(log n). The tree is stored in a 1-indexed array of size 4n. Build bottom-up; query and update top-down with range splitting.

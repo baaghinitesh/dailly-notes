@@ -3,7 +3,7 @@ title: "Environment Variables with app.config.js"
 topic: "Environment Variables with app.config.js"
 section: "react-native"
 tags: "react-native, environment-variables-with-app.config.js, programming, notes, interview"
-banner: "https://picsum.photos/seed/592/1200/630"
+banner: "https://image.pollinations.ai/prompt/react-native%20Environment%20Variables%20with%20app.config.js%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

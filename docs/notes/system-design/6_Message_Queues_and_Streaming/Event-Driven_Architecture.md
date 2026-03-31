@@ -3,7 +3,7 @@ title: "Event-Driven Architecture"
 topic: "Event-Driven Architecture"
 section: "system-design"
 tags: "system-design, event-driven-architecture, programming, notes, interview"
-banner: "https://picsum.photos/seed/608/1200/630"
+banner: "https://image.pollinations.ai/prompt/system-design%20Event-Driven%20Architecture%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

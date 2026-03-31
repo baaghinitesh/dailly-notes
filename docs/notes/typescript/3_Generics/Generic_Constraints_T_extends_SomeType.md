@@ -3,7 +3,7 @@ title: "Generic Constraints: T extends SomeType"
 topic: "Generic Constraints: T extends SomeType"
 section: "typescript"
 tags: "typescript, generic-constraints, programming, notes, interview"
-banner: "https://picsum.photos/seed/96/1200/630"
+banner: "https://image.pollinations.ai/prompt/typescript%20Generic%20Constraints%20T%20extends%20SomeType%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "When to Use: Serverless Functions (AWS Lambda, Vercel, Cloudflare Worker
 topic: "When to Use: Serverless Functions (AWS Lambda, Vercel, Cloudflare Workers)"
 section: "nodejs"
 tags: "nodejs, when-to-use, programming, notes, interview"
-banner: "https://picsum.photos/seed/506/1200/630"
+banner: "https://image.pollinations.ai/prompt/nodejs%20When%20to%20Use%20Serverless%20Functions%20(AWS%20Lambda,%20Vercel,%20Cloudflare%20Workers)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

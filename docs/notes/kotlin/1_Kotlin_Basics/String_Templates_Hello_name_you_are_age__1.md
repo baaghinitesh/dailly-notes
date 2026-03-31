@@ -3,7 +3,7 @@ title: "String Templates: "Hello $name, you are ${age + 1}""
 topic: "String Templates: "Hello $name, you are ${age + 1}""
 section: "kotlin"
 tags: "kotlin, string-templates, programming, notes, interview"
-banner: "https://picsum.photos/seed/328/1200/630"
+banner: "https://image.pollinations.ai/prompt/kotlin%20String%20Templates%20"Hello%20$name,%20you%20are%20${age%20+%201}"%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

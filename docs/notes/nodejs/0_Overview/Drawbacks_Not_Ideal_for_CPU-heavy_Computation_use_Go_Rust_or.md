@@ -3,7 +3,7 @@ title: "Drawbacks: Not Ideal for CPU-heavy Computation (use Go, Rust, or Worker 
 topic: "Drawbacks: Not Ideal for CPU-heavy Computation (use Go, Rust, or Worker Threads)"
 section: "nodejs"
 tags: "nodejs, drawbacks, programming, notes, interview"
-banner: "https://picsum.photos/seed/308/1200/630"
+banner: "https://image.pollinations.ai/prompt/nodejs%20Drawbacks%20Not%20Ideal%20for%20CPU-heavy%20Computation%20(use%20Go,%20Rust,%20or%20Worker%20Threads)%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

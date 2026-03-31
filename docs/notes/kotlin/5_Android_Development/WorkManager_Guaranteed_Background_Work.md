@@ -3,7 +3,7 @@ title: "WorkManager: Guaranteed Background Work"
 topic: "WorkManager: Guaranteed Background Work"
 section: "kotlin"
 tags: "kotlin, workmanager, programming, notes, interview"
-banner: "https://picsum.photos/seed/968/1200/630"
+banner: "https://image.pollinations.ai/prompt/kotlin%20WorkManager%20Guaranteed%20Background%20Work%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

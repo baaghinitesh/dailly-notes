@@ -3,7 +3,7 @@ title: "SNS: Topics and Subscriptions"
 topic: "SNS: Topics and Subscriptions"
 section: "cloud-aws"
 tags: "cloud-aws, sns, programming, notes, interview"
-banner: "https://picsum.photos/seed/440/1200/630"
+banner: "https://image.pollinations.ai/prompt/cloud-aws%20SNS%20Topics%20and%20Subscriptions%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

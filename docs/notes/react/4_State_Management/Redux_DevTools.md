@@ -3,7 +3,7 @@ title: "Redux DevTools"
 topic: "Redux DevTools"
 section: "react"
 tags: "react, redux-devtools, programming, notes, interview"
-banner: "https://picsum.photos/seed/844/1200/630"
+banner: "https://image.pollinations.ai/prompt/react%20Redux%20DevTools%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

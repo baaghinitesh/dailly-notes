@@ -3,7 +3,7 @@ title: "Docker Security: Non-root User, Read-only Filesystem"
 topic: "Docker Security: Non-root User, Read-only Filesystem"
 section: "devops"
 tags: "devops, docker-security, programming, notes, interview"
-banner: "https://picsum.photos/seed/326/1200/630"
+banner: "https://image.pollinations.ai/prompt/devops%20Docker%20Security%20Non-root%20User,%20Read-only%20Filesystem%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

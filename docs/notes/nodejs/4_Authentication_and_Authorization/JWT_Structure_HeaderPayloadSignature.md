@@ -3,7 +3,7 @@ title: "JWT Structure: Header.Payload.Signature"
 topic: "JWT Structure: Header.Payload.Signature"
 section: "nodejs"
 tags: "nodejs, jwt-structure, programming, notes, interview"
-banner: "https://picsum.photos/seed/696/1200/630"
+banner: "https://image.pollinations.ai/prompt/nodejs%20JWT%20Structure%20Header.Payload.Signature%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

@@ -3,7 +3,7 @@ title: "Drawbacks: Server-side Swift Ecosystem is Small"
 topic: "Drawbacks: Server-side Swift Ecosystem is Small"
 section: "swift"
 tags: "swift, drawbacks, programming, notes, interview"
-banner: "https://picsum.photos/seed/424/1200/630"
+banner: "https://image.pollinations.ai/prompt/swift%20Drawbacks%20Server-side%20Swift%20Ecosystem%20is%20Small%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 

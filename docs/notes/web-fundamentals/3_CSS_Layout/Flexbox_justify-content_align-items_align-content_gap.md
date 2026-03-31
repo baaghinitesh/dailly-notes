@@ -3,7 +3,7 @@ title: "Flexbox: justify-content, align-items, align-content, gap"
 topic: "Flexbox: justify-content, align-items, align-content, gap"
 section: "web-fundamentals"
 tags: "web-fundamentals, flexbox, programming, notes, interview"
-banner: "https://picsum.photos/seed/544/1200/630"
+banner: "https://image.pollinations.ai/prompt/web-fundamentals%20Flexbox%20justify-content,%20align-items,%20align-content,%20gap%20programming%20abstract?width=1200&height=630&nologo=true"
 update_count: 0
 ---
 
