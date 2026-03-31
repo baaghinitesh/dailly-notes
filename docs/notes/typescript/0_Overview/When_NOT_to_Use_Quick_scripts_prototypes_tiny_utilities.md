@@ -131,15 +131,22 @@ console.log(poppedNumber);
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[TypeScript Code] --> B[Parser]
-    B --> C[Abstract Syntax Tree (AST)]
-    C --> D[Type Checker]
-    D --> E[Type Inference]
-    E --> F[Code Generator]
-    F --> G[JavaScript Code]
-    G --> H[JavaScript Engine]
-    H --> I[Execution]
+graph TD
+    A([TypeScript Code]) --> B[Parser]
+
+    subgraph "TypeScript Compiler Phase"
+        B --> C[Abstract Syntax Tree - AST]
+        C --> D[Type Checker]
+        D --> E[Type Inference]
+        E --> F[Code Generator]
+    end
+
+    F --> G([JavaScript Code])
+
+    subgraph "Runtime Phase"
+        G --> H[JavaScript Engine]
+        H --> I((Execution))
+    end
 ```
 > **Note:** This diagram illustrates the TypeScript compilation process, from parsing the TypeScript code to executing the generated JavaScript code.
 
