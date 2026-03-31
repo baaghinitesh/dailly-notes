@@ -80,18 +80,18 @@ This example shows how the IDE's go-to-definition feature can help navigate to t
 ## Visual Diagram
 ```mermaid
 graph LR
-    A[Code Editor] -->|Syntax Analysis|> B[Parser]
-    B -->|Semantic Analysis|> C[Analyzer]
-    C -->|Caching|> D[Cache]
-    D -->|Autocomplete|> E[Code Completion]
-    E -->|Refactoring|> F[Code Refactoring]
-    F -->|Go-to-Definition|> G[Code Navigation]
-    G -->|Code Inspection|> H[Code Quality]
-    H -->|Code Optimization|> I[Code Performance]
-    I -->|Code Maintenance|> J[Code Sustainability]
-    J -->|Code Review|> K[Code Collaboration]
-    K -->|Code Versioning|> L[Code History]
-    L -->|Code Security|> M[Code Compliance]
+    A[Code Editor] -->|Syntax Analysis| B[Parser]
+    B -->|Semantic Analysis| C[Analyzer]
+    C -->|Caching| D[Cache]
+    D -->|Autocomplete| E[Code Completion]
+    E -->|Refactoring| F[Code Refactoring]
+    F -->|Go-to-Definition| G[Code Navigation]
+    G -->|Code Inspection| H[Code Quality]
+    H -->|Code Optimization| I[Code Performance]
+    I -->|Code Maintenance| J[Code Sustainability]
+    J -->|Code Review| K[Code Collaboration]
+    K -->|Code Versioning| L[Code History]
+    L -->|Code Security| M[Code Compliance]
 ```
 This diagram illustrates the internal workings of an IDE, highlighting the various components and features that provide superior IDE support.
 
