@@ -590,9 +590,21 @@ def cleanup_files(paths: List[str]):
         except Exception as e:
             print(f"⚠️  Could not clean up {path}: {e}")
 
+def generate_manifest():
+    """Outputs all existing .md files into articles_manifest.json."""
+    existing = scan_existing_files()
+    import json
+    try:
+        with open("articles_manifest.json", "w", encoding="utf-8") as f:
+            json.dump(sorted(list(existing)), f, indent=2)
+        print(f"✅ Generated articles_manifest.json with {len(existing)} articles.")
+    except Exception as e:
+        print(f"⚠️  Could not write articles_manifest.json: {e}")
+
 # ─── Git ──────────────────────────────────────────────────────────────────────
 
 def commit_and_push(message: str, retries: int = 3) -> bool:
+    generate_manifest()
     for attempt in range(1, retries + 1):
         try:
             repo = git.Repo(".")
