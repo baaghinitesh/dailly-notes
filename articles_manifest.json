@@ -5,6 +5,7 @@
   "docs/notes/computer-science/index.md",
   "docs/notes/cpp/1_Fundamentals/Data_Types_int_long_long_long_float_double_char_bool_void.md",
   "docs/notes/cpp/1_Fundamentals/Pointers___nullptr.md",
+  "docs/notes/cpp/2_OOP/Move_Semantics_Move_Constructor_Move_Assignment_C11.md",
   "docs/notes/cpp/2_OOP/typeid_and_RTTI.md",
   "docs/notes/cpp/3_Modern_Cpp/C17_stdfilesystem_stdstring_view_Parallel_Algorithms.md",
   "docs/notes/cpp/4_Templates_and_Metaprogramming/Concepts_C20_requires_Clause_Named_Concepts.md",
@@ -39,6 +40,7 @@
   "docs/notes/dsa/7_Graphs/DFS_and_BFS_Traversals.md",
   "docs/notes/dsa/9_Backtracking/Rat_in_a_Maze.md",
   "docs/notes/dsa/c/easy/Factorial_Recursive_and_Iterative.md",
+  "docs/notes/dsa/c/easy/Find_Max_Min_in_Array.md",
   "docs/notes/dsa/c/easy/Two_Sum_using_Hash_Table.md",
   "docs/notes/dsa/c/hard/Distinct_Subsequences_DP.md",
   "docs/notes/dsa/c/hard/Implementing_a_Counting_Sort_in_C.md",
@@ -111,6 +113,7 @@
   "docs/notes/dsa/javascript/easy/Two_Sum_with_Map.md",
   "docs/notes/dsa/javascript/easy/Unique_Values_in_Array.md",
   "docs/notes/dsa/javascript/hard/Implementing_a_REST_API_with_Express_from_Scratch.md",
+  "docs/notes/dsa/javascript/hard/JS_Async_Build_a_Message_Queue_with_Priority.md",
   "docs/notes/dsa/javascript/hard/Race_Car_JS_BFS_DP.md",
   "docs/notes/dsa/javascript/medium/Generate_Parentheses.md",
   "docs/notes/dsa/javascript/medium/Implementing_a_Retry_with_Exponential_Backoff.md",
@@ -118,6 +121,7 @@
   "docs/notes/dsa/javascript/medium/Minimum_Path_Sum_JS_DP.md",
   "docs/notes/dsa/javascript/super_advanced/Implementing_a_Transducer_Library.md",
   "docs/notes/dsa/javascript/super_advanced/JIT_Compilation_Concepts_for_JavaScript.md",
+  "docs/notes/dsa/javascript/super_advanced/WebAssembly_Integration_with_JavaScript.md",
   "docs/notes/dsa/python/easy/Check_Armstrong_Number.md",
   "docs/notes/dsa/python/easy/Climbing_Stairs_DP.md",
   "docs/notes/dsa/python/easy/Counter_Usage.md",
@@ -272,5 +276,6 @@
   "docs/notes/web-fundamentals/8_JavaScript_DOM_and_BOM/Keyboard_Events_keydown_keyup_key_vs_keyCode.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Crypto_API_cryptorandomUUID_cryptosubtle.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Regular_Expressions_Syntax_Flags_g_i_m_s_u_v_Groups_Lookahea.md",
+  "docs/notes/web-fundamentals/9_JavaScript_Advanced/The_packagejson_exports_field_for_Subpath_Exports.md",
   "docs/notes/web-fundamentals/index.md"
 ]
