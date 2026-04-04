@@ -347,18 +347,30 @@ def fix_mermaid_syntax(content: str) -> str:
             if len(edges) >= 4:
                 block = re.sub(r'(graph|flowchart)\s+LR', r'\1 TD', block)
 
-        # 3. Quote node labels containing special characters (brackets, slashes, etc)
-        # Handle NodeID[Text], NodeID{Text}, NodeID(Text)
-        def _quote_node(m):
-            node_id, opener, text, closer = m.groups()
-            if any(c in text for c in "()[]{}?/>") and not (text.startswith('"') and text.endswith('"')):
-                return f'{node_id}{opener}"{text}"{closer}'
+        # 3. Aggressive Node Label Quoting
+        def _quote_label(m):
+            prefix, opener, label, closer = m.groups()
+            if not (label.startswith('"') and label.endswith('"')) and any(c in label for c in "()[]{}?/\\>!@#$%^&*+-=:;.,"):
+                safe_label = label.replace('"', '\\"')
+                return f'{prefix}{opener}"{safe_label}"{closer}'
             return m.group(0)
 
-        # Node patterns: id[Text], id{Text}, id(Text)
-        block = re.sub(r'([A-Za-z0-9_-]+)(\[)([^"\]][^\]]*)(\])', _quote_node, block)
-        block = re.sub(r'([A-Za-z0-9_-]+)(\{)([^"\}][^\}]*)(\})', _quote_node, block)
-        block = re.sub(r'([A-Za-z0-9_-]+)(\()([^"\)][^\)]*)(\))', _quote_node, block)
+        # Shape patterns: [ ], { }, (( )), ([ ]), [[ ]], {{ }}, [/ /], [\ \], ( )
+        shapes = [
+            (r'([A-Za-z0-9_-]+)(\[)', r'(\])'),
+            (r'([A-Za-z0-9_-]+)(\{)', r'(\})'),
+            (r'([A-Za-z0-9_-]+)(\(\()', r'(\)\))'),
+            (r'([A-Za-z0-9_-]+)(\(\[)', r'(\]\))'),
+            (r'([A-Za-z0-9_-]+)(\[\[)', r'(\]\])'),
+            (r'([A-Za-z0-9_-]+)(\{\{)', r'(\}\})'),
+            (r'([A-Za-z0-9_-]+)(\[\/)', r'(\/\])'),
+            (r'([A-Za-z0-9_-]+)(\[\\)', r'(\\\])'),
+            (r'([A-Za-z0-9_-]+)(\()', r'(\))'),
+        ]
+        
+        for opener_pat, closer_pat in shapes:
+            full_pat = opener_pat + r'([\s\S]*?)' + closer_pat
+            block = re.sub(full_pat, _quote_label, block)
 
         # 4. Clean non-breaking spaces and zero-width spaces
         block = block.replace('\u00A0', ' ').replace('\u200B', '')
