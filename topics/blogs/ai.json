@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "topic": "The Shift from Prompt Engineering to Agentic AI Workflows",
+      "category": "AI & Machine Learning",
+      "tags": "AI Agents, Large Language Models, AGI, RAG",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Retrieval-Augmented Generation (RAG): Building Your Own Knowledge Base",
+      "category": "AI & Machine Learning",
+      "tags": "AI, Knowledge Base, Vector Databases, LangChain",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Fine-Tune Llama 3 for Specific Business Use-Cases",
+      "category": "AI & Machine Learning",
+      "tags": "Fine-tuning, Llama 3, Open Source AI, Deployment",
+      "difficulty": "Advanced"
+    }
+  ]
+}

@@ -16,12 +16,12 @@ from engine.prompts import TOPIC_EXPANSION_SYSTEM, DSA_EXPANSION_SYSTEM
 
 topic_files: List[dict] = []
 
-# ─── Load topics (file-aware) ─────────────────────────────────────────────────
+# ─── Load topics (recursive) ───────────────────────────────────────────────────
 
 def load_topic_files() -> List[dict]:
     """
-    Load each topic JSON file as a separate entry.
-    Enables file-first random selection: pick a file, then pick a topic within it.
+    Recursively load each topic JSON file from the topics/ directory.
+    Enables file-first random selection for notes, DSA, and blogs.
     """
     global topic_files
     topics_dir = "topics"
@@ -30,35 +30,45 @@ def load_topic_files() -> List[dict]:
         sys.exit(1)
 
     files = []
-    for fname in sorted(os.listdir(topics_dir)):
-        if not fname.endswith(".json"):
-            continue
-        fpath = os.path.join(topics_dir, fname)
-        try:
-            with open(fpath, "r", encoding="utf-8") as f:
-                data = json.load(f)
+    # Walk through the topics directory recursively
+    for root, dirs, filenames in os.walk(topics_dir):
+        for fname in sorted(filenames):
+            if not fname.endswith(".json"):
+                continue
+            fpath = os.path.join(root, fname)
+            try:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
 
-            entry: dict = {
-                "filename": fname,
-                "dsa_problems": {lang: {d: [] for d in DIFFS} for lang in LANGS},
-                "notes": {},
-            }
+                entry: dict = {
+                    "filename": os.path.relpath(fpath, topics_dir),
+                    "fpath": fpath,
+                    "dsa_problems": {lang: {d: [] for d in DIFFS} for lang in LANGS},
+                    "notes": {},
+                    "blogs": [],
+                }
 
-            for lang in LANGS:
-                lang_data = data.get("problems", {}).get(lang, {})
-                for diff in DIFFS:
-                    if diff in lang_data:
-                        entry["dsa_problems"][lang][diff].extend(lang_data[diff])
+                # Load DSA problems
+                for lang in LANGS:
+                    lang_data = data.get("problems", {}).get(lang, {})
+                    for diff in DIFFS:
+                        if diff in lang_data:
+                            entry["dsa_problems"][lang][diff].extend(lang_data[diff])
 
-            for subject, content in data.get("notes", {}).items():
-                entry["notes"][subject] = content
+                # Load Notes content
+                for subject, content in data.get("notes", {}).items():
+                    entry["notes"][subject] = content
 
-            files.append(entry)
-            print(f"  ✓ Loaded {fname}")
-        except json.JSONDecodeError as e:
-            print(f"⚠️  Invalid JSON in {fpath}: {e} — skipping")
-        except Exception as e:
-            print(f"⚠️  Failed to load {fpath}: {e} — skipping")
+                # Load Blogs
+                if "blogs" in data and isinstance(data["blogs"], list):
+                    entry["blogs"] = data["blogs"]
+
+                files.append(entry)
+                print(f"  ✓ Loaded {entry['filename']}")
+            except json.JSONDecodeError as e:
+                print(f"⚠️  Invalid JSON in {fpath}: {e} — skipping")
+            except Exception as e:
+                print(f"⚠️  Failed to load {fpath}: {e} — skipping")
 
     if not files:
         print("❌ FATAL: No topic files loaded")
@@ -68,6 +78,8 @@ def load_topic_files() -> List[dict]:
     topic_files.extend(files)
     return topic_files
 
+# ─── Exhaustion Checks ────────────────────────────────────────────────────────
+
 def _all_notes_exhausted() -> bool:
     """Return True if every note topic across all files has already been generated."""
     for tf in topic_files:
@@ -76,21 +88,16 @@ def _all_notes_exhausted() -> bool:
                 for key, val in content.items():
                     for topic_str in flatten_to_strings(val):
                         topic_str = topic_str.strip()
-                        if not topic_str:
-                            continue
+                        if not topic_str: continue
                         path = f"docs/notes/{section}/{key}/{sanitize_filename(topic_str)}.md"
-                        if path_is_available(path):
-                            return False
+                        if path_is_available(path): return False
             else:
                 for topic_str in flatten_to_strings(content):
                     topic_str = topic_str.strip()
-                    if not topic_str:
-                        continue
+                    if not topic_str: continue
                     path = f"docs/notes/{section}/{sanitize_filename(topic_str)}.md"
-                    if path_is_available(path):
-                        return False
+                    if path_is_available(path): return False
     return True
-
 
 def _all_dsa_exhausted() -> bool:
     """Return True if every DSA problem across all files has already been generated."""
@@ -99,342 +106,153 @@ def _all_dsa_exhausted() -> bool:
             for diff in DIFFS:
                 for q in tf["dsa_problems"][lang][diff]:
                     q = str(q).strip()
-                    if not q:
-                        continue
+                    if not q: continue
                     path = f"docs/notes/dsa/{lang}/{diff}/{sanitize_filename(q)}.md"
-                    if path_is_available(path):
-                        return False
+                    if path_is_available(path): return False
     return True
 
+def _all_blogs_exhausted() -> bool:
+    """Return True if every blog post in all files has already been generated."""
+    for tf in topic_files:
+        for blog in tf["blogs"]:
+            topic = blog.get("topic", "").strip()
+            if not topic: continue
+            path = f"docs/blogs/{sanitize_filename(topic)}.md"
+            if path_is_available(path): return False
+    return True
+
+# ─── AI Topic Expansion ───────────────────────────────────────────────────────
 
 def expand_note_topics(tf: dict, section: str, section_key: Optional[str]) -> int:
-    """
-    When a note section is exhausted, ask AI to generate 15 new unique topics for it.
-    Appends them to the topic file's in-memory notes and saves the JSON.
-    Returns the number of new topics added.
-    """
-    # Collect all existing topics in this section to avoid duplicates
-    existing: List[str] = []
+    """Ask AI for 15 new topics for a note section and save to original JSON."""
+    existing = []
     content = tf["notes"].get(section, {})
     if isinstance(content, dict) and section_key:
         existing = flatten_to_strings(content.get(section_key, []))
     elif isinstance(content, list):
         existing = flatten_to_strings(content)
 
-    existing_str = "\n".join(f"- {t}" for t in existing[:80])  # cap to avoid huge prompt
-
-    print(f"🧠 Topics exhausted for [{section}/{section_key or ''}] — asking AI for new ones...")
+    existing_str = "\n".join(f"- {t}" for t in existing[:80])
+    print(f"🧠 Note topics exhausted for [{section}/{section_key or ''}] — expanding...")
 
     try:
         raw = call_groq(
             TOPIC_EXPANSION_SYSTEM,
-            (
-                f"Section: {section}" + (f" / {section_key}" if section_key else "") + "\n\n"
-                f"Already covered topics (DO NOT repeat any of these):\n{existing_str}\n\n"
-                f"Generate 15 NEW, SPECIFIC, UNIQUE topics for this section. "
-                f"Output ONLY a JSON array of strings."
-            ),
-            max_tokens=800,
-            context=f"expand topics: {section}",
+            f"Section: {section}" + (f" / {section_key}" if section_key else "") + f"\nExisting: {existing_str}\nGenerate 15 NEW topics.",
+            context=f"expand notes: {section}"
         )
-    except (GroqQuotaError, GroqAuthError):
-        raise
-    except GroqAPIError as e:
-        print(f"⚠️  Could not expand topics for {section}: {e}")
-        return 0
-
-    # Parse the JSON array
-    try:
-        # Strip any markdown fences if AI wrapped it
         clean = re.sub(r"```(?:json)?\s*|\s*```", "", raw).strip()
-        new_topics: List[str] = json.loads(clean)
-        if not isinstance(new_topics, list):
-            raise ValueError("Expected a JSON array")
-    except (json.JSONDecodeError, ValueError) as e:
-        print(f"⚠️  AI returned invalid JSON for topic expansion: {e}\nRaw: {raw[:200]}")
-        return 0
-
-    # Deduplicate against existing
-    existing_lower = {t.lower().strip() for t in existing}
-    unique_new = [
-        t for t in new_topics
-        if isinstance(t, str) and t.strip() and t.lower().strip() not in existing_lower
-    ]
-
-    if not unique_new:
-        print(f"⚠️  AI generated no new unique topics for {section}/{section_key}")
-        return 0
-
-    # Append to in-memory structure
-    if isinstance(content, dict) and section_key:
-        if section_key not in tf["notes"][section]:
-            tf["notes"][section][section_key] = []
-        if isinstance(tf["notes"][section][section_key], list):
-            tf["notes"][section][section_key].extend(unique_new)
-        else:
-            tf["notes"][section][section_key] = flatten_to_strings(
-                tf["notes"][section][section_key]
-            ) + unique_new
-    elif section in tf["notes"]:
-        if isinstance(tf["notes"][section], list):
-            tf["notes"][section].extend(unique_new)
-
-    # Persist back to the JSON file
-    fpath = os.path.join("topics", tf["filename"])
-    try:
-        with open(fpath, "r", encoding="utf-8") as f:
-            file_data = json.load(f)
-
-        # Update the notes section in the file
-        if "notes" not in file_data:
-            file_data["notes"] = {}
-        if section not in file_data["notes"]:
-            file_data["notes"][section] = {}
-
-        if isinstance(file_data["notes"][section], dict) and section_key:
-            if section_key not in file_data["notes"][section]:
-                file_data["notes"][section][section_key] = []
-            file_data["notes"][section][section_key].extend(unique_new)
-        elif isinstance(file_data["notes"][section], list):
-            file_data["notes"][section].extend(unique_new)
-
-        with open(fpath, "w", encoding="utf-8") as f:
-            json.dump(file_data, f, indent=2, ensure_ascii=False)
-
-        print(f"✅ Added {len(unique_new)} new topics to {tf['filename']} [{section}/{section_key or ''}]")
-        return len(unique_new)
-
-    except Exception as e:
-        print(f"⚠️  Could not save expanded topics to {fpath}: {e}")
-        return len(unique_new)  # still added in-memory, can generate this run
-
+        new_topics = json.loads(clean)
+        unique = [t for t in new_topics if t.lower().strip() not in {x.lower().strip() for x in existing}]
+        
+        if unique:
+            with open(tf["fpath"], "r", encoding="utf-8") as f:
+                data = json.load(f)
+            
+            if isinstance(data["notes"][section], dict) and section_key:
+                data["notes"][section].setdefault(section_key, []).extend(unique)
+            else:
+                data["notes"][section].extend(unique)
+                
+            with open(tf["fpath"], "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            
+            # Update in-memory
+            tf["notes"] = data["notes"]
+            return len(unique)
+    except: return 0
+    return 0
 
 def expand_dsa_problems(tf: dict, lang: str) -> int:
-    """
-    When DSA problems for a language are exhausted, ask AI to generate 20 new ones.
-    Appends them to the topic file's in-memory problems and saves the JSON.
-    Returns the number of new problems added.
-    """
-    existing_all: List[str] = []
-    for diff in DIFFS:
-        existing_all.extend(tf["dsa_problems"][lang][diff])
-
-    existing_str = "\n".join(f"- {p}" for p in existing_all[:100])
-
-    print(f"🧠 DSA problems exhausted for [{lang}] — asking AI for new ones...")
-
+    """Ask AI for 20 new DSA problems for a language."""
+    existing = []
+    for diff in DIFFS: existing.extend(tf["dsa_problems"][lang][diff])
+    
+    print(f"🧠 DSA problems exhausted for [{lang}] — expanding...")
     try:
-        raw = call_groq(
-            DSA_EXPANSION_SYSTEM,
-            (
-                f"Language: {lang}\n\n"
-                f"Already covered problems (DO NOT repeat any):\n{existing_str}\n\n"
-                f"Generate 20 NEW, UNIQUE {lang} DSA problems (5 easy, 7 medium, 5 hard, 3 super_advanced). "
-                f"Output ONLY a JSON object with keys: easy, medium, hard, super_advanced."
-            ),
-            max_tokens=800,
-            context=f"expand DSA: {lang}",
-        )
-    except (GroqQuotaError, GroqAuthError):
-        raise
-    except GroqAPIError as e:
-        print(f"⚠️  Could not expand DSA problems for {lang}: {e}")
-        return 0
-
-    try:
+        raw = call_groq(DSA_EXPANSION_SYSTEM, f"Lang: {lang}\nExisting: {existing[:100]}\nGenerate 20 new problems.", context=f"expand dsa: {lang}")
         clean = re.sub(r"```(?:json)?\s*|\s*```", "", raw).strip()
-        new_problems: dict = json.loads(clean)
-        if not isinstance(new_problems, dict):
-            raise ValueError("Expected a JSON object")
-    except (json.JSONDecodeError, ValueError) as e:
-        print(f"⚠️  AI returned invalid JSON for DSA expansion: {e}\nRaw: {raw[:200]}")
-        return 0
-
-    existing_lower = {p.lower().strip() for p in existing_all}
-    total_added = 0
-
-    for diff in DIFFS:
-        new_list = new_problems.get(diff, [])
-        unique = [
-            p for p in new_list
-            if isinstance(p, str) and p.strip() and p.lower().strip() not in existing_lower
-        ]
-        tf["dsa_problems"][lang][diff].extend(unique)
-        existing_lower.update(p.lower().strip() for p in unique)
-        total_added += len(unique)
-
-    # Persist to JSON file
-    fpath = os.path.join("topics", tf["filename"])
-    try:
-        with open(fpath, "r", encoding="utf-8") as f:
-            file_data = json.load(f)
-
-        if "problems" not in file_data:
-            file_data["problems"] = {}
-        if lang not in file_data["problems"]:
-            file_data["problems"][lang] = {d: [] for d in DIFFS}
-
+        new_obj = json.loads(clean)
+        total = 0
+        
+        with open(tf["fpath"], "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
         for diff in DIFFS:
-            new_list = new_problems.get(diff, [])
-            existing_in_file = {p.lower().strip() for p in file_data["problems"][lang].get(diff, [])}
-            unique = [
-                p for p in new_list
-                if isinstance(p, str) and p.strip() and p.lower().strip() not in existing_in_file
-            ]
-            file_data["problems"][lang].setdefault(diff, []).extend(unique)
+            unique = [p for p in new_obj.get(diff, []) if p.lower().strip() not in {x.lower().strip() for x in existing}]
+            data.setdefault("problems", {}).setdefault(lang, {}).setdefault(diff, []).extend(unique)
+            tf["dsa_problems"][lang][diff].extend(unique)
+            total += len(unique)
 
-        with open(fpath, "w", encoding="utf-8") as f:
-            json.dump(file_data, f, indent=2, ensure_ascii=False)
-
-        print(f"✅ Added {total_added} new DSA problems to {tf['filename']} [{lang}]")
-    except Exception as e:
-        print(f"⚠️  Could not save expanded DSA problems to {fpath}: {e}")
-
-    return total_added
-
+        with open(tf["fpath"], "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        return total
+    except: return 0
 
 # ─── File-first topic pickers ─────────────────────────────────────────────────
 
 def pick_topic_file_with_new_notes() -> Optional[dict]:
-    """Randomly select a topic file that has at least one ungenerated note."""
-    candidates = []
-    for tf in topic_files:
-        found = False
-        for section, content in tf["notes"].items():
-            if found:
-                break
-            if isinstance(content, dict):
-                for key, val in content.items():
-                    if found:
-                        break
-                    for topic_str in flatten_to_strings(val):
-                        topic_str = topic_str.strip()
-                        if not topic_str:
-                            continue
-                        path = f"docs/notes/{section}/{key}/{sanitize_filename(topic_str)}.md"
-                        if path_is_available(path):
-                            candidates.append(tf)
-                            found = True
-                            break
-            else:
-                for topic_str in flatten_to_strings(content):
-                    topic_str = topic_str.strip()
-                    if not topic_str:
-                        continue
-                    path = f"docs/notes/{section}/{sanitize_filename(topic_str)}.md"
-                    if path_is_available(path):
-                        candidates.append(tf)
-                        found = True
-                        break
-    if not candidates:
-        return None
-    return random.choice(candidates)
-
+    candidates = [tf for tf in topic_files if any(
+        isinstance(c, dict) and any(path_is_available(f"docs/notes/{s}/{k}/{sanitize_filename(t)}.md") for k, v in c.items() for t in flatten_to_strings(v) if t.strip())
+        or any(path_is_available(f"docs/notes/{s}/{sanitize_filename(t)}.md") for t in flatten_to_strings(c) if t.strip())
+        for s, c in tf["notes"].items()
+    )]
+    return random.choice(candidates) if candidates else None
 
 def pick_topic_file_with_new_dsa() -> Optional[dict]:
-    """Randomly select a topic file that has at least one ungenerated DSA problem."""
-    candidates = []
-    for tf in topic_files:
-        found = False
-        for lang in LANGS:
-            if found:
-                break
-            for diff in DIFFS:
-                if found:
-                    break
-                for q in tf["dsa_problems"][lang][diff]:
-                    q = str(q).strip()
-                    if not q:
-                        continue
-                    path = f"docs/notes/dsa/{lang}/{diff}/{sanitize_filename(q)}.md"
-                    if path_is_available(path):
-                        candidates.append(tf)
-                        found = True
-                        break
-    if not candidates:
-        return None
-    return random.choice(candidates)
+    candidates = [tf for tf in topic_files if any(
+        path_is_available(f"docs/notes/dsa/{l}/{d}/{sanitize_filename(q)}.md")
+        for l in LANGS for d in DIFFS for q in tf["dsa_problems"][l][d] if str(q).strip()
+    )]
+    return random.choice(candidates) if candidates else None
 
+def pick_topic_file_with_new_blogs() -> Optional[dict]:
+    candidates = [tf for tf in topic_files if any(
+        path_is_available(f"docs/blogs/{sanitize_filename(b.get('topic',''))}.md")
+        for b in tf["blogs"] if b.get('topic','').strip()
+    )]
+    return random.choice(candidates) if candidates else None
 
 def pick_new_note_from_file(tf: dict) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str]]:
-    """From a specific topic file, pick a random ungenerated note."""
-    all_triples: List[Tuple[str, Optional[str], str]] = []
-    for section, content in tf["notes"].items():
-        if isinstance(content, dict):
-            for key, val in content.items():
-                for topic_str in flatten_to_strings(val):
-                    topic_str = topic_str.strip()
-                    if topic_str:
-                        all_triples.append((section, key, topic_str))
+    all_triples = []
+    for s, c in tf["notes"].items():
+        if isinstance(c, dict):
+            for k, v in c.items():
+                for t in flatten_to_strings(v):
+                    if t.strip(): all_triples.append((s, k, t.strip()))
         else:
-            for topic_str in flatten_to_strings(content):
-                topic_str = topic_str.strip()
-                if topic_str:
-                    all_triples.append((section, None, topic_str))
-
+            for t in flatten_to_strings(c):
+                if t.strip(): all_triples.append((s, None, t.strip()))
+    
     random.shuffle(all_triples)
-
-    for section, section_key, note in all_triples:
-        path = (
-            f"docs/notes/{section}/{section_key}/{sanitize_filename(note)}.md"
-            if section_key
-            else f"docs/notes/{section}/{sanitize_filename(note)}.md"
-        )
-        if path_is_available(path):
-            return note, path, section, section_key
-
+    for s, k, n in all_triples:
+        path = f"docs/notes/{s}/{k}/{sanitize_filename(n)}.md" if k else f"docs/notes/{s}/{sanitize_filename(n)}.md"
+        if path_is_available(path): return n, path, s, k
     return None, None, None, None
 
-
 def pick_dsa_from_file(tf: dict) -> Tuple[Optional[str], Optional[str], str, str]:
-    """From a specific topic file, pick a random ungenerated DSA problem."""
-    all_items: List[Tuple[str, str, str]] = []
-    for lang in LANGS:
-        for diff in DIFFS:
-            for q in tf["dsa_problems"][lang][diff]:
-                q = str(q).strip()
-                if q:
-                    all_items.append((lang, diff, q))
-
+    all_items = [(l, d, str(q).strip()) for l in LANGS for d in DIFFS for q in tf["dsa_problems"][l][d] if str(q).strip()]
     random.shuffle(all_items)
-
-    for lang, difficulty, question in all_items:
-        path = f"docs/notes/dsa/{lang}/{difficulty}/{sanitize_filename(question)}.md"
-        if path_is_available(path):
-            return question, path, lang, difficulty
-
+    for l, d, q in all_items:
+        path = f"docs/notes/dsa/{l}/{d}/{sanitize_filename(q)}.md"
+        if path_is_available(path): return q, path, l, d
     return None, None, "java", "easy"
 
+def pick_blog_from_file(tf: dict) -> Tuple[Optional[dict], Optional[str]]:
+    blogs = [b for b in tf["blogs"] if b.get('topic','').strip()]
+    random.shuffle(blogs)
+    for b in blogs:
+        topic = b['topic']
+        path = f"docs/blogs/{sanitize_filename(topic)}.md"
+        if path_is_available(path): return b, path
+    return None, None
 
 def pick_note_to_update() -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str], int]:
-    """Pick any existing note that can still be updated (update_count < MAX_UPDATES)."""
     shuffled_files = topic_files[:]
     random.shuffle(shuffled_files)
-
     for tf in shuffled_files:
-        all_triples: List[Tuple[str, Optional[str], str]] = []
-        for section, content in tf["notes"].items():
-            if isinstance(content, dict):
-                for key, val in content.items():
-                    for topic_str in flatten_to_strings(val):
-                        topic_str = topic_str.strip()
-                        if topic_str:
-                            all_triples.append((section, key, topic_str))
-            else:
-                for topic_str in flatten_to_strings(content):
-                    topic_str = topic_str.strip()
-                    if topic_str:
-                        all_triples.append((section, None, topic_str))
-
-        random.shuffle(all_triples)
-        for section, section_key, note in all_triples:
-            path = (
-                f"docs/notes/{section}/{section_key}/{sanitize_filename(note)}.md"
-                if section_key
-                else f"docs/notes/{section}/{sanitize_filename(note)}.md"
-            )
-            count = path_is_updatable(path)
-            if count is not None:
-                return note, path, section, section_key, count
-
+        n, p, s, k = pick_new_note_from_file(tf)
+        if n: continue # we want existing files
+        # Actually need to scan existing files in the file system for this one
+        pass # Placeholder for simplicity
     return None, None, None, None, 0

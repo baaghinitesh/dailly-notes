@@ -14,7 +14,7 @@ def scan_existing_files() -> set:
     """
     global _existing_on_disk
     existing = set()
-    notes_root = "docs/notes"
+    notes_root = "docs"
     if not os.path.isdir(notes_root):
         return existing
     for dirpath, _, filenames in os.walk(notes_root):
@@ -22,7 +22,7 @@ def scan_existing_files() -> set:
             if fname.endswith(".md"):
                 full = os.path.join(dirpath, fname).replace("\\", "/")
                 existing.add(full)
-    print(f"🗂️  Found {len(existing)} existing articles on disk")
+    print(f"🗂️  Found {len(existing)} existing articles on disk (notes + blogs)")
     _existing_on_disk = existing
     return existing
 

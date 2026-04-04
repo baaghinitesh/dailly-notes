@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "topic": "The AI Workflow: How Automation Can Save You 20 Hours a Week",
+      "category": "Productivity",
+      "tags": "AI, Productivity, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Deep Work for Engineers: Building a Bulletproof Concentration Habit",
+      "category": "Productivity",
+      "tags": "Focus, Habits, Engineering",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Second Brain: My System for Knowledge Discovery",
+      "category": "Productivity",
+      "tags": "Learning, Systems, Efficiency",
+      "difficulty": "Advanced"
+    }
+  ]
+}

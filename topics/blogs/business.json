@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "topic": "Scaling Your SaaS: From First Customer to 100k MRR",
+      "category": "Business",
+      "tags": "SaaS, Startups, Growth, Revenue",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Art of Pivot: Knowing When to Change Direction",
+      "category": "Business",
+      "tags": "Product Management, Strategy, Startups",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Hiring Your First Employee: A Guide for Solo Founders",
+      "category": "Business",
+      "tags": "Startup, HR, Leadership",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Pricing Strategies that Won't Leave Money on the Table",
+      "category": "Business",
+      "tags": "Sales, Marketing, Strategy",
+      "difficulty": "Advanced"
+    }
+  ]
+}

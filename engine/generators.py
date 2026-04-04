@@ -8,16 +8,15 @@ from engine.utils import (
     picsum_seed, fix_mermaid_syntax, read_frontmatter, build_frontmatter
 )
 from engine.topics import (
-    pick_topic_file_with_new_dsa, _all_dsa_exhausted, expand_dsa_problems, 
-    topic_files, pick_topic_file_with_new_notes, pick_dsa_from_file,
     _all_notes_exhausted, expand_note_topics, pick_new_note_from_file,
-    pick_note_to_update
+    pick_note_to_update, pick_topic_file_with_new_blogs, _all_blogs_exhausted,
+    pick_blog_from_file
 )
 from engine.api import call_groq
 from engine.validation import validate_dsa_content, validate_note_content
 from engine.io import save_file
 from engine.prompts import (
-    DSA_SYSTEM, DSA_SUMMARY_SYSTEM, NOTE_SYSTEM, UPDATE_SYSTEM
+    DSA_SYSTEM, DSA_SUMMARY_SYSTEM, NOTE_SYSTEM, UPDATE_SYSTEM, BLOG_GENERATION_SYSTEM
 )
 
 def generate_dsa() -> Optional[str]:
@@ -314,3 +313,67 @@ def update_existing_note() -> Optional[str]:
     except Exception as e:
         print(f"❌ Failed to write updated note '{note}': {e}")
         return None
+
+def generate_blog() -> Optional[str]:
+    """
+    Generate one professional blog post.
+    Flow: pick file → pick blog topic → call Groq (full article) → validate → write file
+    """
+    tf = pick_topic_file_with_new_blogs()
+    if not tf:
+        if _all_blogs_exhausted():
+            print("🧠 All blog topics exhausted — skipping blog generation.")
+            return None
+        else:
+            print("⚠️  No blog file with available topics found.")
+            return None
+
+    blog_data, md_path = pick_blog_from_file(tf)
+    if not blog_data:
+        print("⚠️  No available blog in selected file.")
+        return None
+
+    topic = blog_data.get("topic")
+    category = blog_data.get("category", "Technology")
+    tags = blog_data.get("tags", "blog, tech, business")
+    difficulty = blog_data.get("difficulty", "Intermediate")
+
+    print(f"✍️  Generating Blog [{category}] from [{tf['filename']}]: {topic}")
+
+    # ── Step 1: Generate full article ─────────────────────────────────────────
+    try:
+        content_body = call_groq(
+            BLOG_GENERATION_SYSTEM,
+            (
+                f"Topic: {topic}\n"
+                f"Category: {category}\n"
+                f"Tags: {tags}\n"
+                f"Difficulty: {difficulty}\n"
+                f"Full Article Content Instructions: Provide a deep, insightful, and professional blog post."
+            ),
+            max_tokens=4096,
+            context=f"Blog: {topic}",
+        )
+    except (GroqQuotaError, GroqAuthError):
+        raise
+    except GroqAPIError as e:
+        print(f"❌ Blog generation failed for '{topic}': {e}")
+        return None
+
+    # ── Step 2: Validate content ─────────────────────────────────────────────
+    # Standard blog validation (length + structure)
+    if not content_body or len(content_body.strip()) < 1000:
+        print(f"⚠️  Blog content too short for '{topic}' — skipping")
+        return None
+
+    # ── Step 3: Write file ───────────────────────────────────────────────────
+    final_content = fix_mermaid_syntax(content_body)
+    
+    # Ensure source: github is in the frontmatter if AI missed it
+    if "source: github" not in final_content:
+        # Simple injection if frontmatter exists
+        final_content = re.sub(r"---(\r?\n)", r"--- \1source: github\1", final_content, count=1)
+
+    save_file(md_path, final_content)
+    print(f"✅ Blog article written: {md_path}")
+    return f"Blog Post [{category}]: {topic}"

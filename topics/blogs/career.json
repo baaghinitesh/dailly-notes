@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "topic": "The Freelance Roadmap: Going from Amateur to Professional",
+      "category": "Career",
+      "tags": "Freelancing, Career, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Mastering the Technical Interview: 10 Advanced Coding Patterns",
+      "category": "Career",
+      "tags": "Interview Prep, DSA, Success",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Build a Personal Brand that Attracts High-Paying Clients",
+      "category": "Career",
+      "tags": "Personal Brand, Marketing, Freelance",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Hybrid Work Dilemma: How to Stay Relevant in 2026",
+      "category": "Career",
+      "tags": "Future of Work, Corporate, Remote",
+      "difficulty": "Intermediate"
+    }
+  ]
+}
