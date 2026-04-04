@@ -17,6 +17,12 @@
       "category": "Technology",
       "tags": "Rust, Wasm, Performance, Web Development",
       "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building Scalable Microservices with Node.js and gRPC",
+      "category": "Technology",
+      "tags": "Node.js, gRPC, Microservices, Scalability",
+      "difficulty": "Advanced"
     }
   ]
 }

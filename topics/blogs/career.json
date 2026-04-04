@@ -23,6 +23,18 @@
       "category": "Career",
       "tags": "Future of Work, Corporate, Remote",
       "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The $100k Freelancer Blueprint: Moving from Upwork to Direct Clients",
+      "category": "Career",
+      "tags": "Client Acquisition, Pricing, Strategy, Client Management",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering Your Personal Brand as a Technical Freelancer",
+      "category": "Career",
+      "tags": "Personal Branding, LinkedIn, Networking, Career Growth",
+      "difficulty": "Beginner-Intermediate"
     }
   ]
 }

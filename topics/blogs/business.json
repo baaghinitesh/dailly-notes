@@ -23,6 +23,12 @@
       "category": "Business",
       "tags": "Sales, Marketing, Strategy",
       "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Micro-SaaS Phenomenon: Building Small, Profitable Software",
+      "category": "Business",
+      "tags": "Micro-SaaS, SaaS, Startups, Solopreneurship",
+      "difficulty": "Intermediate"
     }
   ]
 }
