@@ -65,7 +65,7 @@ Output: true (the input tree is a valid BST)
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B[In-order Traversal]
+    A[Start] --> B["In-order Traversal"]
     B --> C[Check Left Subtree]
     C --> D[Check Current Node]
     D --> E[Check Right Subtree]

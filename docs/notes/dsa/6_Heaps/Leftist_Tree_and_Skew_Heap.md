@@ -233,14 +233,14 @@ graph TD
     B --> E[Right Grandchild]
     C --> F[Left Grandchild]
     C --> G[Right Grandchild]
-    D --> H[Left Great-Grandchild]
-    D --> I[Right Great-Grandchild]
-    E --> J[Left Great-Grandchild]
-    E --> K[Right Great-Grandchild]
-    F --> L[Left Great-Grandchild]
-    F --> M[Right Great-Grandchild]
-    G --> N[Left Great-Grandchild]
-    G --> O[Right Great-Grandchild]
+    D --> H["Left Great-Grandchild"]
+    D --> I["Right Great-Grandchild"]
+    E --> J["Left Great-Grandchild"]
+    E --> K["Right Great-Grandchild"]
+    F --> L["Left Great-Grandchild"]
+    F --> M["Right Great-Grandchild"]
+    G --> N["Left Great-Grandchild"]
+    G --> O["Right Great-Grandchild"]
 ```
 The above diagram illustrates a leftist tree with multiple levels of nodes.
 

@@ -57,7 +57,7 @@ flowchart TD
     H --> I[Replace Root Node]
     I --> J[Heapify Down]
     J --> K[Return Minimum Node]
-    C -->|Yes| L[Error: Heap Full]
+    C -->|Yes| L["Error: Heap Full"]
 ```
 ## Key Insight
 > **Tip:** The key insight is to use a min-heap data structure to implement the priority queue, which allows for efficient insertion and deletion of elements based on their priority.

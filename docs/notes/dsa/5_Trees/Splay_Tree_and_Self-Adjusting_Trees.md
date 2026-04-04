@@ -258,14 +258,14 @@ graph TD
     B --> E[Right Grandchild]
     C --> F[Left Grandchild]
     C --> G[Right Grandchild]
-    D --> H[Left Great-Grandchild]
-    D --> I[Right Great-Grandchild]
-    E --> J[Left Great-Grandchild]
-    E --> K[Right Great-Grandchild]
-    F --> L[Left Great-Grandchild]
-    F --> M[Right Great-Grandchild]
-    G --> N[Left Great-Grandchild]
-    G --> O[Right Great-Grandchild]
+    D --> H["Left Great-Grandchild"]
+    D --> I["Right Great-Grandchild"]
+    E --> J["Left Great-Grandchild"]
+    E --> K["Right Great-Grandchild"]
+    F --> L["Left Great-Grandchild"]
+    F --> M["Right Great-Grandchild"]
+    G --> N["Left Great-Grandchild"]
+    G --> O["Right Great-Grandchild"]
 ```
 The diagram shows a splay tree with multiple levels of nodes. The root node is at the top, and the left and right child nodes are below it. Each node has its own left and right child nodes, and so on. The splaying algorithm moves nodes up the tree by rotating them, which changes the structure of the tree.
 

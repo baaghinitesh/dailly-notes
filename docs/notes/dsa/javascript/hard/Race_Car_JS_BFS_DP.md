@@ -46,7 +46,7 @@ flowchart TD
     F --> B
     B -->|No| G{"Target Reached?"}
     G -->|Yes| H[Return Moves]
-    G -->|No| I[Return -1]
+    G -->|No| I["Return -1"]
 ```
 This flowchart shows the algorithm's decision flow and data transformation.
 

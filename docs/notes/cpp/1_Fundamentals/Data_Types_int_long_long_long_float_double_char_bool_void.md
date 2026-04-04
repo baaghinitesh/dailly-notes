@@ -107,7 +107,7 @@ graph TD
     B --> E["4 bytes (32 bits)"]
     C --> F["4 bytes (32 bits) or 8 bytes (64 bits)"]
     D --> G["8 bytes (64 bits)"]
-    H[Floating-Point Types] --> I[float]
+    H["Floating-Point Types"] --> I[float]
     H --> J[double]
     I --> K["4 bytes (32 bits)"]
     J --> L["8 bytes (64 bits)"]

@@ -61,8 +61,8 @@ flowchart TD
     A[Start] --> B[Initialize max_sum and current_sum]
     B --> C[Iterate through array]
     C --> D{"Should current number be included in current_sum?"}
-    D -->|Yes| E[Update current_sum = current_sum + num]
-    D -->|No| F[Start new sum: current_sum = num]
+    D -->|Yes| E["Update current_sum = current_sum + num"]
+    D -->|No| F["Start new sum: current_sum = num"]
     E --> G["Update max_sum if current_sum > max_sum"]
     F --> G
     G --> H[Repeat iteration until end of array]

@@ -98,7 +98,7 @@ flowchart TD
     A[Java 11 String Methods] -->|strip()| B["Remove Leading/Trailing Whitespace"]
     A -->|stripLeading()| C[Remove Leading Whitespace]
     A -->|stripTrailing()| D[Remove Trailing Whitespace]
-    E[Files.readString] -->|Read File Contents| F[String]
+    E["Files.readString"] -->|Read File Contents| F[String]
     G[HTTP Client API] -->|Send HTTP Request| H[HTTP Response]
     H -->|Handle Response| I[Process Response Data]
     I -->|Return Response| J[Client Code]

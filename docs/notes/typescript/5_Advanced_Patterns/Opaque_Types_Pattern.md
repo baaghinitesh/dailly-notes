@@ -102,7 +102,7 @@ classDiagram
   class OpaqueType {
     -_value: string
     +getValue(): string
-    +setValue(value: string): void
+    +setValue("value: string"): void
   }
 
   class AdvancedOpaqueType {

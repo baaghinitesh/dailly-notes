@@ -180,7 +180,7 @@ main()
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[Prisma Schema] -->|generate| B[Auto-generated Types]
+    A[Prisma Schema] -->|generate| B["Auto-generated Types"]
     B -->|import| C[TypeScript Code]
     C -->|type checking| D[Type Safety]
     D -->|compile| E[JavaScript Code]

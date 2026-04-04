@@ -46,7 +46,7 @@ Output: The linked list is circular (tortoise and hare meet at node 1)
 flowchart TD
     A[Start] --> B[Initialize tortoise and hare]
     B --> C[Move tortoise one step and hare two steps]
-    C --> D{tortoise == hare}
+    C --> D{"tortoise == hare"}
     D -->|Yes| E[Return circular]
     D -->|No| C
     C --> F{"hare == NULL or hare->next == NULL"}

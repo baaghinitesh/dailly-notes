@@ -157,10 +157,10 @@ main();
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Define API Endpoints] --> B[Generate Client-side Code]
-    B --> C[Use Client-side Code]
+    A[Define API Endpoints] --> B["Generate Client-side Code"]
+    B --> C["Use Client-side Code"]
     C --> D[Make Requests to API Endpoints]
-    D --> E[Type Checking at Compile-time]
+    D --> E["Type Checking at Compile-time"]
     E --> F[Error Handling and Debugging]
     F --> G[Improved Code Quality and Maintainability]
     style G fill:#f9f,stroke:#333,stroke-width:4px

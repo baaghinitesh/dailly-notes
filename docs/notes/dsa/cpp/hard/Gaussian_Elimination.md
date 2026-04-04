@@ -70,7 +70,7 @@ flowchart TD
     C --> D[Make pivot element 1]
     D --> E[Eliminate pivot variable from rows below]
     E --> F[Repeat for each column]
-    F --> G[Output row-echelon form]
+    F --> G["Output row-echelon form"]
 ```
 
 ## Key Insight

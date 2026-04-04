@@ -91,10 +91,10 @@ graph TD
     F --> G[Improved Productivity]
     G --> H[KISS Principle]
     H --> I[Simple Solutions]
-    I --> J[Less Over-Engineering]
+    I --> J["Less Over-Engineering"]
     J --> K[YAGNI Principle]
     K --> L[Focus on Current Requirements]
-    L --> M[Avoid Over-Engineering]
+    L --> M["Avoid Over-Engineering"]
     M --> N[Improved Code Quality]
 ```
 The diagram illustrates the relationship between code duplication, the DRY principle, and the KISS and YAGNI principles. By applying the DRY principle, we can extract duplicated code into a single function, making it easier to maintain and update. The KISS principle encourages us to prefer simple solutions over complex ones, while the YAGNI principle advises us to avoid adding unnecessary functionality.

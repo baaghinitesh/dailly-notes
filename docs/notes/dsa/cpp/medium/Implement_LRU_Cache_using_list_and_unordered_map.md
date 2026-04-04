@@ -40,7 +40,7 @@ Output: [1, -1, -1, 3, 4]
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B[Put key-value pair]
+    A[Start] --> B["Put key-value pair"]
     B --> C{"Key in cache?"}
     C -->|Yes| D[Update value and move to front]
     C -->|No| E{"Cache full?"}

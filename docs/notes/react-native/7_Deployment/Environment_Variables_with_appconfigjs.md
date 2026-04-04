@@ -104,7 +104,7 @@ export default App;
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[app.config.js] -->|read| B[Build System]
+    A["app.config.js"] -->|read| B[Build System]
     B -->|parse| C[Environment Variables]
     C -->|store| D[Memory]
     D -->|use| E[Build Configuration]

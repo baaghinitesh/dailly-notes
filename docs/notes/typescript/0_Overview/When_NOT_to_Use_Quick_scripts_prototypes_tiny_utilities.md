@@ -135,7 +135,7 @@ graph TD
     A("[TypeScript Code]") --> B[Parser]
 
     subgraph "TypeScript Compiler Phase"
-        B --> C[Abstract Syntax Tree - AST]
+        B --> C["Abstract Syntax Tree - AST"]
         C --> D[Type Checker]
         D --> E[Type Inference]
         E --> F[Code Generator]

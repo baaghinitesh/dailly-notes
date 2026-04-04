@@ -132,7 +132,7 @@ classDiagram
     }
 
     class EnumMap {
-        +put(Enum, Object): Object
+        +put("Enum, Object"): Object
         +get(Enum): Object
         +containsKey(Enum): boolean
     }

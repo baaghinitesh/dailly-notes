@@ -64,9 +64,9 @@ flowchart TD
     D --> E[Iterate through elements]
     E --> F[Add current element to subset and call backtrack with updated start index]
     F --> G[Add current subset to result list]
-    G --> H[Backtrack, remove current element from subset]
+    G --> H["Backtrack, remove current element from subset"]
     H --> E
-    E --> I[Backtrack, return from recursive call]
+    E --> I["Backtrack, return from recursive call"]
     I --> J[Return result list]
 ```
 

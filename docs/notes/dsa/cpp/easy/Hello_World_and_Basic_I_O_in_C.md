@@ -37,7 +37,7 @@ Output: The program prints "Hello, World!" and a greeting message with the user'
 ```mermaid
 flowchart TD
     A[Start] --> B[Create HelloWorld instance]
-    B --> C[Print "Hello, World!"]
+    B --> C["Print \"Hello, World!\""]
     C --> D[Prompt user for input]
     D --> E[Read user input]
     E --> F{"Is input empty?"}

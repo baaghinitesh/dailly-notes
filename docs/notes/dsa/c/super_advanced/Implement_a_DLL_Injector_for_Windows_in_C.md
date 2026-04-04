@@ -52,17 +52,17 @@ Output: The DLL is injected into the target process
 flowchart TD
     A[Start] --> B{Find Target Process}
     B -->|Success| C[Open Target Process]
-    B -->|Failure| D[Error: Target Process Not Found]
+    B -->|Failure| D["Error: Target Process Not Found"]
     C --> E[Allocate Memory for DLL Path]
-    C -->|Failure| F[Error: Memory Allocation Failed]
+    C -->|Failure| F["Error: Memory Allocation Failed"]
     E --> G[Write DLL Path to Allocated Memory]
-    E -->|Failure| H[Error: Write to Memory Failed]
+    E -->|Failure| H["Error: Write to Memory Failed"]
     G --> I[Get Address of LoadLibraryA Function]
-    G -->|Failure| J[Error: LoadLibraryA Function Not Found]
+    G -->|Failure| J["Error: LoadLibraryA Function Not Found"]
     I --> K[Create Remote Thread to Inject DLL]
-    I -->|Failure| L[Error: Remote Thread Creation Failed]
+    I -->|Failure| L["Error: Remote Thread Creation Failed"]
     K --> M[Wait for Remote Thread to Finish]
-    K -->|Failure| N[Error: Remote Thread Did Not Finish]
+    K -->|Failure| N["Error: Remote Thread Did Not Finish"]
     M --> O[Clean Up]
     O --> P[Return Success]
     D --> P

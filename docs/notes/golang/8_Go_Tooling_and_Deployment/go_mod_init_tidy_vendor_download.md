@@ -163,7 +163,7 @@ go run main.go
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[go mod init] --> B[Create go.mod]
+    A[go mod init] --> B["Create go.mod"]
     B --> C[Add dependencies]
     C --> D[go mod tidy]
     D --> E[go mod vendor]

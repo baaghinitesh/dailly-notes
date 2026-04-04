@@ -111,15 +111,15 @@ This example demonstrates the use of worker threads to handle CPU-intensive task
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Node.js Application] --> B{"I/O-bound or CPU-intensive"}
+    A["Node.js Application"] --> B{"I/O-bound or CPU-intensive"}
     B -->|I/O-bound| C[Asynchronous Programming]
     B -->|CPU-intensive| D[Child Process or Worker Thread]
     C --> E[Event Loop]
     D --> F{Child Process or Worker Thread}
     F -->|Child Process| G[Spawn New Process]
     F -->|Worker Thread| H[Create New Thread]
-    G --> I[Execute CPU-intensive Task]
-    H --> J[Execute CPU-intensive Task]
+    G --> I["Execute CPU-intensive Task"]
+    H --> J["Execute CPU-intensive Task"]
     I --> K[Return Result to Parent Process]
     J --> L[Return Result to Main Thread]
     K --> M[Parent Process Handles Result]

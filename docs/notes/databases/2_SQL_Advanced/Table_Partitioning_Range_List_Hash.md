@@ -100,7 +100,7 @@ SELECT * FROM orders WHERE user_id = 1;
 flowchart TD
     A[Query] -->|Received by database| B{Determine required partitions}
     B -->|Yes| C[Retrieve data from partitions]
-    B -->|No| D[Error: no partitions required]
+    B -->|No| D["Error: no partitions required"]
     C -->|Combine data| E[Return result set]
     E -->|Result set| F[Client]
     F -->|Result set| G[User]

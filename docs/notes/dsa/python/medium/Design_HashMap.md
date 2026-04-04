@@ -48,18 +48,18 @@ Output: 1, -1
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B[Put key-value pair]
+    A[Start] --> B["Put key-value pair"]
     B --> C[Calculate hash value]
     C --> D[Get corresponding bucket]
-    D --> E[Append or update key-value pair]
+    D --> E["Append or update key-value pair"]
     E --> F[Get value for key]
     F --> G[Calculate hash value]
     G --> H[Get corresponding bucket]
-    H --> I[Return value or -1]
-    I --> J[Remove key-value pair]
+    H --> I["Return value or -1"]
+    I --> J["Remove key-value pair"]
     J --> K[Calculate hash value]
     K --> L[Get corresponding bucket]
-    L --> M[Remove key-value pair]
+    L --> M["Remove key-value pair"]
 ```
 ## Key Insight
 > **Tip:** The key insight to this solution is to use a chaining hash table to handle collisions, which allows us to efficiently store and retrieve key-value pairs.

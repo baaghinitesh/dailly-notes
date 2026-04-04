@@ -39,7 +39,7 @@ This walkthrough demonstrates the recursive backtracking process, generating all
 ```mermaid
 flowchart TD
     A[Start] --> B[Initialize result array]
-    B --> C[Start backtracking with openCount = 0, closeCount = 0, and currentCombination = ""]
+    B --> C["Start backtracking with openCount = 0, closeCount = 0, and currentCombination = \"\""]
     C --> D{openCount < n}
     D -->|yes| E[Add an open parenthesis and update counts]
     D -->|no| F{closeCount < openCount}

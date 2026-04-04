@@ -130,13 +130,13 @@ classDiagram
         + area()
     }
     class PaymentGateway {
-        + process_payment(amount: float)
+        + process_payment("amount: float")
     }
     class StripePaymentGateway {
-        + process_payment(amount: float)
+        + process_payment("amount: float")
     }
     class PayPalPaymentGateway {
-        + process_payment(amount: float)
+        + process_payment("amount: float")
     }
     class Vehicle {
         + start_engine()

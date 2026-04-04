@@ -138,9 +138,9 @@ int main() {
 ```mermaid
 graph TD
     A[Base] -->| inheritance | B[Derived]
-    C[typeid] -->| returns | D[std::type_info]
+    C[typeid] -->| returns | D["std::type_info"]
     E[RTTI] -->| uses | F[typeid]
-    G[std::type_info] -->| contains | H[type name]
+    G["std::type_info"] -->| contains | H[type name]
     H -->| contains | I[hash code]
     J[dynamic_cast] -->| uses | K[RTTI]
     K -->| uses | L[typeid]

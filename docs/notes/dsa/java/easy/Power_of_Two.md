@@ -37,7 +37,7 @@ Output: true
 flowchart TD
     A[Start] --> B{"Is n <= 0?"}
     B -->|Yes| C[Return false]
-    B -->|No| D[Calculate n - 1]
+    B -->|No| D["Calculate n - 1"]
     D --> E[Perform bitwise AND operation]
     E --> F{"Is result 0?"}
     F -->|Yes| G[Return true]

@@ -168,11 +168,11 @@ esbuild.build(config).then(() => {
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[esbuild] -->|loads| B[config.json]
+    A[esbuild] -->|loads| B["config.json"]
     B -->|parses| C[build config]
     C -->|bundles| D[code]
     D -->|minifies| E[minified code]
-    E -->|writes| F[bundle.js]
+    E -->|writes| F["bundle.js"]
     F -->|serves| G[web server]
     G -->|serves| H[client]
     H -->|requests| G

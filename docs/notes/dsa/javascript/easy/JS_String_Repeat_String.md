@@ -41,7 +41,7 @@ Output: 2
 flowchart TD
     A[Start] --> B{Input Validation}
     B -->|Valid| C[Initialize Variables]
-    B -->|Invalid| D[Return -1]
+    B -->|Invalid| D["Return -1"]
     C --> E[Repeat String]
     E --> F{Repeated String Length}
     F -->|Exceeds Target| G[Check Substring]

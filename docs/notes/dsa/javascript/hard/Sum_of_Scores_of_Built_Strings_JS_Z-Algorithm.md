@@ -55,7 +55,7 @@ This walkthrough shows the calculation of the sum of scores for a given input.
 flowchart TD
     A[Start] --> B{"Is word empty?"}
     B -->|Yes| C[Skip word]
-    B -->|No| D[Calculate Z-Array]
+    B -->|No| D["Calculate Z-Array"]
     D --> E[Calculate score]
     E --> F[Add score to sum]
     F --> G[Next word]

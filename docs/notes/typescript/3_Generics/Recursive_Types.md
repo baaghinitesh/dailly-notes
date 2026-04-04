@@ -105,12 +105,12 @@ This example defines a recursive type `RecursiveList`, which has a `head` proper
 ## Visual Diagram
 ```mermaid
 graph TD
-  A[RecursiveType] --> B[Value: string]
-  A --> C[Next: RecursiveType | null]
+  A[RecursiveType] --> B["Value: string"]
+  A --> C["Next: RecursiveType | null"]
   C --> D[RecursiveType]
   C --> E[null]
-  D --> F[Value: string]
-  D --> G[Next: RecursiveType | null]
+  D --> F["Value: string"]
+  D --> G["Next: RecursiveType | null"]
   G --> H[RecursiveType]
   G --> I[null]
 ```

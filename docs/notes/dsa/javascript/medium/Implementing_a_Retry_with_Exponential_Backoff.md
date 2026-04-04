@@ -45,11 +45,11 @@ flowchart TD
     A[Start] --> B[Attempt to execute function]
     B --> C{Function succeeds}
     C -->|Yes| D[Return result]
-    C -->|No| E[Increment attempt, calculate next delay]
+    C -->|No| E["Increment attempt, calculate next delay"]
     E --> F[Wait for next delay]
     F --> B
     E --> G{Attempt limit reached}
-    G -->|Yes| H[Reject with error, call error callback]
+    G -->|Yes| H["Reject with error, call error callback"]
     G -->|No| B
 ```
 This flowchart illustrates the decision flow and retry process.

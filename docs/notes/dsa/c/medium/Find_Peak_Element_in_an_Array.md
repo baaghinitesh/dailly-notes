@@ -40,8 +40,8 @@ This example demonstrates how the algorithm finds the peak element by iterativel
 flowchart TD
     A[Start] --> B{Initialize left and right pointers}
     B --> C{Calculate mid index}
-    C --> D{"nums[mid] < nums[mid + 1]?"}
-    D -->|Yes| E{Move left pointer to mid + 1}
+    C --> D{"nums[mid] < nums["mid + 1"]?"}
+    D -->|Yes| E{"Move left pointer to mid + 1"}
     D -->|No| F{Move right pointer to mid}
     E --> C
     F --> C

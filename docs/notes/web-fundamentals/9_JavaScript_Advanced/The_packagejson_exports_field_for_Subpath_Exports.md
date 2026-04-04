@@ -155,7 +155,7 @@ This example demonstrates an advanced usage of the `exports` field, where a pack
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Package] -->|exports| B[Sub-path exports]
+    A[Package] -->|exports| B["Sub-path exports"]
     B -->|./lib/utils| C["./lib/utils/index.js"]
     B -->|./lib/models| D["./lib/models/index.js"]
     D -->|./user| E["./lib/models/user.js"]
@@ -163,7 +163,7 @@ flowchart TD
     C -->|export| G[add function]
     E -->|export| H[User class]
     F -->|export| I[Product class]
-    G -->|import| J[main.js]
+    G -->|import| J["main.js"]
     H -->|import| J
     I -->|import| J
 ```

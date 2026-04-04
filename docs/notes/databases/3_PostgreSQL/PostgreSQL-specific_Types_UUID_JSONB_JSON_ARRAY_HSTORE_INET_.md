@@ -97,7 +97,7 @@ graph TD
     C -->|stores| J[JSONB data]
     D -->|stores| K[JSON data]
     E -->|supports| L[array operations]
-    F -->|stores| M[key-value pairs]
+    F -->|stores| M["key-value pairs"]
     G -->|stores| N[IP addresses]
     H -->|represents| O[network ranges]
 ```

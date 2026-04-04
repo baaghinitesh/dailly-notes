@@ -50,7 +50,7 @@ flowchart TD
     A[Start] --> B[Add Line]
     B --> C{"Is Hull Empty?"}
     C -->|Yes| D[Insert Line]
-    C -->|No| E[Update Line X-Coordinate]
+    C -->|No| E["Update Line X-Coordinate"]
     E --> F[Insert Line]
     F --> G{"Is Line Below New Line?"}
     G -->|Yes| H[Remove Line]

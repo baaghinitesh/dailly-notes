@@ -92,8 +92,8 @@ int main() {
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[C++17 Features] --> B[std::filesystem]
-    A --> C[std::string_view]
+    A["C++17 Features"] --> B["std::filesystem"]
+    A --> C["std::string_view"]
     A --> D[Parallel Algorithms]
     B --> E[Directory Iteration]
     B --> F[File Status]

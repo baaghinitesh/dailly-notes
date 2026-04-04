@@ -39,7 +39,7 @@ flowchart TD
     A[Start] --> B[Initialize nonZeroIndex and currentIndex]
     B --> C[Iterate through array]
     C --> D{"Is current element non-zero?"}
-    D -->|Yes| E[Swap non-zero element with element at nonZeroIndex]
+    D -->|Yes| E["Swap non-zero element with element at nonZeroIndex"]
     E --> F[Increment nonZeroIndex]
     D -->|No| F
     F --> G{"Is end of array reached?"}

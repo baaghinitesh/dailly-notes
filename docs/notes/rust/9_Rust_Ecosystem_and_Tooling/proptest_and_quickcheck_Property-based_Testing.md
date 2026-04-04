@@ -102,7 +102,7 @@ graph TD
     D --> E[Counterexample]
     E --> F[Debugging]
     F --> G[Code Fix]
-    G --> H[Re-Test]
+    G --> H["Re-Test"]
     H --> A
 ```
 This diagram illustrates the property-based testing process, from defining a property to debugging and fixing code.

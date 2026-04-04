@@ -93,11 +93,11 @@ This example combines the non-root user and read-only filesystem features. The `
 ```mermaid
 graph TD
     A[Docker Image] -->|Create| B[Docker Container]
-    B -->|Set User| C[Non-root User]
-    B -->|Mount Filesystem| D[Read-only Filesystem]
+    B -->|Set User| C["Non-root User"]
+    B -->|Mount Filesystem| D["Read-only Filesystem"]
     C -->|Run Command| E[CMD]
     D -->|Run Command| E
-    E -->|Output| F[Hello, World!]
+    E -->|Output| F["Hello, World!"]
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#ccf,stroke:#333,stroke-width:4px

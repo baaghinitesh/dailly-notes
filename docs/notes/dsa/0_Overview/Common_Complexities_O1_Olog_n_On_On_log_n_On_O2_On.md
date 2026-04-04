@@ -91,7 +91,7 @@ graph TD
     A --> E["O(n log n)"]
     A --> F["O(n²)"]
     A --> G["O(2ⁿ)"]
-    A --> H["O(n!)"]
+    A --> H["O("n!")"]
     B --> I[Constant Time]
     C --> J[Logarithmic Time]
     D --> K[Linear Time]

@@ -40,7 +40,7 @@ This walkthrough demonstrates how the algorithm efficiently finds the minimum el
 ```mermaid
 flowchart TD
     A[Start] --> B{"Middle element > Rightmost element?"}
-    B -->|Yes| C[Move left pointer to mid + 1]
+    B -->|Yes| C["Move left pointer to mid + 1"]
     B -->|No| D[Move right pointer to mid]
     C --> E{"Left pointer < Right pointer?"}
     D --> E

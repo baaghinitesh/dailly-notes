@@ -129,7 +129,7 @@ graph TD
     API_Gateway -->|Response| Client
     API_Gateway -->|Cache Response| Redis[Redis]
     Redis -->|Cached Response| API_Gateway
-    API_Gateway -->|Authenticate Request| OAuth2[OAuth 2.0]
+    API_Gateway -->|Authenticate Request| OAuth2["OAuth 2.0"]
     OAuth2 -->|Access Token| API_Gateway
 ```
 The diagram illustrates the API Gateway Pattern, showing how the API Gateway routes requests to microservices, caches responses, and authenticates requests using OAuth 2.0.

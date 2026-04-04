@@ -66,7 +66,7 @@ Output: The connection between nodes 0 and 2 is initially Yes, and then becomes 
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B[Initialize Link-Cut Tree]
+    A[Start] --> B["Initialize Link-Cut Tree"]
     B --> C[Add Edge]
     C --> D[Check Connection]
     D --> E[Remove Edge]

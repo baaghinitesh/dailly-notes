@@ -96,7 +96,7 @@ console.log(evenNumbers); // [2, 4]
 ## Visual Diagram
 ```mermaid
 graph TD
-    A[JavaScript Library] -->|Type Definitions| B[@types Package]
+    A[JavaScript Library] -->|Type Definitions| B["@types Package"]
     B -->|Installation| C[Project]
     C -->|Type Checking| D[TypeScript Compiler]
     D -->|Error Reporting| E[Developer]

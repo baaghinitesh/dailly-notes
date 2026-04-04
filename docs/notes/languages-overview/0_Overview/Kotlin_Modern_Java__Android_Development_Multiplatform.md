@@ -91,7 +91,7 @@ flowchart TD
     D -->|Libraries| E[Kotlin Standard Library]
     E -->|Frameworks| F[Kotlin Coroutines]
     F -->|Async/Await| G[Delayed Greet]
-    G -->|Print| H[Hello, World!]
+    G -->|Print| H["Hello, World!"]
 ```
 This diagram illustrates the internal mechanics of Kotlin, from compilation to execution.
 

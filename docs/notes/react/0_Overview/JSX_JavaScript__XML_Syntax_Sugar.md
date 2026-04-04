@@ -119,7 +119,7 @@ graph TD
     H --> I[User Interaction]
     I --> J[Event Handlers]
     J --> K[State Updates]
-    K --> L[Re-render]
+    K --> L["Re-render"]
     L --> H
 ```
 This diagram illustrates the process of how JSX code is compiled and executed. It starts with the JSX code, which is parsed into an abstract syntax tree (AST). The AST is then transformed into JavaScript code, which is executed by the browser or Node.js. The resulting UI is then rendered to the DOM, and user interactions trigger event handlers, which update the state and cause the component to re-render.

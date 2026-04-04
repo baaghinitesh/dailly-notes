@@ -43,7 +43,7 @@ flowchart TD
     F --> C
     C --> G{"Is target reachable?"}
     G -->|Yes| H[Return minimum number of refueling stops]
-    G -->|No| I[Return -1]
+    G -->|No| I["Return -1"]
 ```
 
 ## Key Insight

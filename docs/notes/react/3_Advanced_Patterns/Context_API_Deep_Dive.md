@@ -184,7 +184,7 @@ flowchart TD
     F --> G[Use Context Value in Component]
     G --> H[Update Context Value]
     H --> I[Provider Notifies Consumers]
-    I --> J[Consumers Re-Render]
+    I --> J["Consumers Re-Render"]
     J --> K[Component Tree Updates]
 ```
 The Context API works by creating a context object that is shared between components. The provider component wraps the app and provides the context to its child components. The consumer component uses the context value in its component. When the provider's value changes, all child components that use the consumer will re-render with the new value.

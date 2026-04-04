@@ -46,8 +46,8 @@ flowchart TD
     E --> G[Tries excluding current number]
     F --> H[Recursive call]
     G --> H
-    H --> I[Base case: target sum achieved]
-    H --> J[Edge case: index out of bounds]
+    H --> I["Base case: target sum achieved"]
+    H --> J["Edge case: index out of bounds"]
     I --> K[Return true]
     J --> L[Return false]
 ```

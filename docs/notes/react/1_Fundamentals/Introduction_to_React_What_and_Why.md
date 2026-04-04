@@ -145,7 +145,7 @@ graph TD
   D --> E[Real DOM]
   E --> F[User Interaction]
   F --> G[State Update]
-  G --> H[Re-render]
+  G --> H["Re-render"]
   H --> I[Updated Virtual DOM]
   I --> J[Diffing]
   J --> K[Updated Real DOM]
