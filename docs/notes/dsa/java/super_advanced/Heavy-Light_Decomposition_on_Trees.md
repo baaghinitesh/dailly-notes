@@ -182,7 +182,7 @@ Output:
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is Node null?}
+    A[Start] --> B{"Is Node null?"}
     B -->|Yes| C[Return]
     B -->|No| D[Perform DFS]
     D --> E[Update sizes and heavy children]

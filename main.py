@@ -325,6 +325,49 @@ def validate_note_content(content: str, topic: str) -> None:
             raise ContentValidationError(f"AI returned a refusal response: {stripped[:80]}")
 
 
+def fix_mermaid_syntax(content: str) -> str:
+    """
+    Post-processing to fix common Mermaid syntax errors made by AI.
+    - Fixes trailing arrows in labels like -->|Text|>
+    - Converts LR to TD for large graphs
+    - Quotes node labels containing special characters
+    - Cleans up non-breaking spaces
+    """
+
+    def _fix_block(match):
+        block = match.group(1)
+
+        # 1. Fix Bad Edge Label Syntax: -->|Text|> to -->|Text|
+        # Also handles -.->|Text|> and ==>|Text|>
+        block = re.sub(r'(-+>|=+>|-+\.-+>)\|([^|]+)\|\s*>', r'\1|\2|', block)
+
+        # 2. Convert LR to TD if graph has many edges (better mobile layout)
+        if re.search(r'(graph|flowchart)\s+LR', block):
+            edges = re.findall(r'-->|-.->|==>', block)
+            if len(edges) >= 4:
+                block = re.sub(r'(graph|flowchart)\s+LR', r'\1 TD', block)
+
+        # 3. Quote node labels containing special characters (brackets, slashes, etc)
+        # Handle NodeID[Text], NodeID{Text}, NodeID(Text)
+        def _quote_node(m):
+            node_id, opener, text, closer = m.groups()
+            if any(c in text for c in "()[]{}?/>") and not (text.startswith('"') and text.endswith('"')):
+                return f'{node_id}{opener}"{text}"{closer}'
+            return m.group(0)
+
+        # Node patterns: id[Text], id{Text}, id(Text)
+        block = re.sub(r'([A-Za-z0-9_-]+)(\[)([^"\]][^\]]*)(\])', _quote_node, block)
+        block = re.sub(r'([A-Za-z0-9_-]+)(\{)([^"\}][^\}]*)(\})', _quote_node, block)
+        block = re.sub(r'([A-Za-z0-9_-]+)(\()([^"\)][^\)]*)(\))', _quote_node, block)
+
+        # 4. Clean non-breaking spaces and zero-width spaces
+        block = block.replace('\u00A0', ' ').replace('\u200B', '')
+
+        return f'```mermaid\n{block}```'
+
+    return re.sub(r'```mermaid\s+([\s\S]*?)```', _fix_block, content)
+
+
 def validate_dsa_content(code: str, summary: str, topic: str) -> None:
     """
     Validate that a generated DSA solution meets quality standards.
@@ -1402,9 +1445,10 @@ def generate_dsa() -> Optional[str]:
         f'```{lang_tag}\n{code}\n```\n'
     )
 
+    md_content = fix_mermaid_syntax(md_content)
     save_file(md_path, md_content)
     print(f"✅ DSA article written: {md_path}")
-    return f"📘 DSA [{lang}/{difficulty}]: {question}"
+    return f"DSA Study [{lang}/{difficulty}]: {question}"
 
 
 def generate_note() -> Optional[str]:
@@ -1501,9 +1545,10 @@ def generate_note() -> Optional[str]:
         "interview",
     ]
     frontmatter = build_frontmatter(note, note, section, tags, update_count=0)
-    save_file(path, frontmatter + "\n" + content_body)
+    final_content = fix_mermaid_syntax(frontmatter + "\n" + content_body)
+    save_file(path, final_content)
     print(f"✅ Note article written: {path}")
-    return f"📝 [{label}] {note}"
+    return f"Study Note [{label}]: {note}"
 
 
 def update_existing_note() -> Optional[str]:
@@ -1568,9 +1613,10 @@ def update_existing_note() -> Optional[str]:
     )
 
     try:
-        save_file(path, new_frontmatter + "\n" + body + "\n\n" + new_section_text)
+        final_content = fix_mermaid_syntax(new_frontmatter + "\n" + body + "\n\n" + new_section_text)
+        save_file(path, final_content)
         print(f"✅ Note updated: {path}")
-        return f"🔄 [{label}] {note} (v{new_count})"
+        return f"Update [{label}]: {note} (revised)"
     except Exception as e:
         print(f"❌ Failed to write updated note '{note}': {e}")
         # Restore original
@@ -1667,7 +1713,13 @@ def main():
             batch_msg = commit_messages[0]
         else:
             titles = "\n".join(f"  • {m}" for m in commit_messages)
-            batch_msg = f"🤖 Auto-generated {len(commit_messages)} articles\n\n{titles}"
+            prefixes = [
+                f"Add {len(commit_messages)} new study articles",
+                f"Content Update: Added {len(commit_messages)} new resources",
+                f"Published {len(commit_messages)} new technical notes",
+                f"Update library with {len(commit_messages)} new study guides"
+            ]
+            batch_msg = f"{random.choice(prefixes)}\n\n{titles}"
 
         success = commit_and_push(batch_msg)
         if not success:

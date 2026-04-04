@@ -155,17 +155,17 @@ This example demonstrates an advanced usage of the `exports` field, where a pack
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Package] -->|exports|> B[Sub-path exports]
-    B -->|./lib/utils|> C[./lib/utils/index.js]
-    B -->|./lib/models|> D[./lib/models/index.js]
-    D -->|./user|> E[./lib/models/user.js]
-    D -->|./product|> F[./lib/models/product.js]
-    C -->|export|> G[add function]
-    E -->|export|> H[User class]
-    F -->|export|> I[Product class]
-    G -->|import|> J[main.js]
-    H -->|import|> J
-    I -->|import|> J
+    A[Package] -->|exports| B[Sub-path exports]
+    B -->|./lib/utils| C["./lib/utils/index.js"]
+    B -->|./lib/models| D["./lib/models/index.js"]
+    D -->|./user| E["./lib/models/user.js"]
+    D -->|./product| F["./lib/models/product.js"]
+    C -->|export| G[add function]
+    E -->|export| H[User class]
+    F -->|export| I[Product class]
+    G -->|import| J[main.js]
+    H -->|import| J
+    I -->|import| J
 ```
 This diagram illustrates the exports field and its corresponding sub-path exports.
 

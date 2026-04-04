@@ -105,13 +105,13 @@ This example demonstrates the advanced usage of the **requires clause** and name
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Template Definition] -->|requires clause|> B[Constraint Checking]
-    B -->|satisfied|> C[Template Instantiation]
-    B -->|not satisfied|> D[Error Reporting]
-    C -->|instantiated|> E[Code Generation]
-    E -->|generated|> F[Binary Code]
-    F -->|executed|> G[Program Execution]
-    D -->|reported|> H[Error Handling]
+    A[Template Definition] -->|requires clause| B[Constraint Checking]
+    B -->|satisfied| C[Template Instantiation]
+    B -->|not satisfied| D[Error Reporting]
+    C -->|instantiated| E[Code Generation]
+    E -->|generated| F[Binary Code]
+    F -->|executed| G[Program Execution]
+    D -->|reported| H[Error Handling]
 ```
 This diagram illustrates the internal workflow of the **requires clause** and **named concepts**, from template definition to code generation and execution.
 

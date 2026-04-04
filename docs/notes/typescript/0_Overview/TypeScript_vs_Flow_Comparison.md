@@ -83,13 +83,13 @@ console.log(identity("Alice" + 42)); // Error: Type 'string | number' is not ass
 ## Visual Diagram
 ```mermaid
 flowchart TD
-  A[JavaScript Code] -->|Type Annotations|> B[Type Checker]
-  B -->|Type Inference|> C[Inferred Types]
-  C -->|Type Checking|> D[Type Errors]
-  D -->|Error Reporting|> E[Developer]
-  E -->|Code Fixes|> A
-  A -->|Type Checking|> F[Type Safety]
-  F -->|Code Confidence|> G[Release]
+  A[JavaScript Code] -->|Type Annotations| B[Type Checker]
+  B -->|Type Inference| C[Inferred Types]
+  C -->|Type Checking| D[Type Errors]
+  D -->|Error Reporting| E[Developer]
+  E -->|Code Fixes| A
+  A -->|Type Checking| F[Type Safety]
+  F -->|Code Confidence| G[Release]
 ```
 This diagram illustrates the workflow of using a type checker like TypeScript or Flow. The developer writes JavaScript code with type annotations, which are then analyzed by the type checker. The type checker infers the types of variables and functions, checks them against the type annotations, and reports any type errors found. The developer fixes the code based on the error reports, and the process repeats until the code is type-safe.
 

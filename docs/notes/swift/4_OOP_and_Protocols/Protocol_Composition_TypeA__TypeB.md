@@ -135,14 +135,14 @@ intManager.parseValue(value: intManager.getValue()) // Output: Parsing value: 42
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Protocol Composition] -->|adopts|> B[TypeA]
-    A -->|adopts|> C[TypeB]
-    B -->|defines|> D[Method A]
-    C -->|defines|> E[Method B]
-    F[Class/Struct/Enum] -->|adopts|> A
-    F -->|implements|> D
-    F -->|implements|> E
-    G[Swift Compiler] -->|checks|> F
+    A[Protocol Composition] -->|adopts| B[TypeA]
+    A -->|adopts| C[TypeB]
+    B -->|defines| D[Method A]
+    C -->|defines| E[Method B]
+    F["Class/Struct/Enum"] -->|adopts| A
+    F -->|implements| D
+    F -->|implements| E
+    G[Swift Compiler] -->|checks| F
 ```
 The diagram illustrates the process of protocol composition, where a class, struct, or enum adopts a protocol composition that inherits the requirements of the individual protocols.
 

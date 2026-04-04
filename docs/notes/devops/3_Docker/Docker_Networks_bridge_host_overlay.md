@@ -72,33 +72,33 @@ docker exec -it container1 ping container2
 
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Container 1] -->|Network Interface|> B(Bridge)
-    B -->|Network Interface|> C[Container 2]
-    C -->|Network Interface|> D[Host System]
-    D -->|Network Interface|> E[Overlay Network]
-    E -->|Network Interface|> F[Container 3]
-    F -->|Network Interface|> G[Container 4]
-    G -->|Network Interface|> H[Host System 2]
-    H -->|Network Interface|> I[Overlay Network]
-    I -->|Network Interface|> J[Container 5]
-    J -->|Network Interface|> K[Container 6]
-    K -->|Network Interface|> L[Host System 3]
-    L -->|Network Interface|> M[Overlay Network]
-    M -->|Network Interface|> N[Container 7]
-    N -->|Network Interface|> O[Container 8]
-    O -->|Network Interface|> P[Host System 4]
-    P -->|Network Interface|> Q[Overlay Network]
-    Q -->|Network Interface|> R[Container 9]
-    R -->|Network Interface|> S[Container 10]
-    S -->|Network Interface|> T[Host System 5]
-    T -->|Network Interface|> U[Overlay Network]
-    U -->|Network Interface|> V[Container 11]
-    V -->|Network Interface|> W[Container 12]
-    W -->|Network Interface|> X[Host System 6]
-    X -->|Network Interface|> Y[Overlay Network]
-    Y -->|Network Interface|> Z[Container 13]
-    Z -->|Network Interface|> A
+graph TD
+    A[Container 1] -->|Network Interface| B(Bridge)
+    B -->|Network Interface| C[Container 2]
+    C -->|Network Interface| D[Host System]
+    D -->|Network Interface| E[Overlay Network]
+    E -->|Network Interface| F[Container 3]
+    F -->|Network Interface| G[Container 4]
+    G -->|Network Interface| H[Host System 2]
+    H -->|Network Interface| I[Overlay Network]
+    I -->|Network Interface| J[Container 5]
+    J -->|Network Interface| K[Container 6]
+    K -->|Network Interface| L[Host System 3]
+    L -->|Network Interface| M[Overlay Network]
+    M -->|Network Interface| N[Container 7]
+    N -->|Network Interface| O[Container 8]
+    O -->|Network Interface| P[Host System 4]
+    P -->|Network Interface| Q[Overlay Network]
+    Q -->|Network Interface| R[Container 9]
+    R -->|Network Interface| S[Container 10]
+    S -->|Network Interface| T[Host System 5]
+    T -->|Network Interface| U[Overlay Network]
+    U -->|Network Interface| V[Container 11]
+    V -->|Network Interface| W[Container 12]
+    W -->|Network Interface| X[Host System 6]
+    X -->|Network Interface| Y[Overlay Network]
+    Y -->|Network Interface| Z[Container 13]
+    Z -->|Network Interface| A
 ```
 This diagram illustrates the relationship between containers, bridges, and overlay networks in a Docker environment.
 

@@ -68,16 +68,16 @@ navController.navigate(R.id.dialog_fragment)
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Navigation Graph] -->|defined in|> B[Navigation XML File]
-    B -->|inflated by|> C[NavGraphInflater]
-    C -->|creates|> D[NavGraph]
-    D -->|used by|> E[NavController]
-    E -->|navigates to|> F[Destination 1]
-    F -->|navigates to|> G[Destination 2]
-    G -->|navigates to|> H[Destination 3]
-    H -->|navigates back to|> F
-    F -->|navigates back to|> E
-    E -->|handles back stack|> I[Back Stack]
+    A[Navigation Graph] -->|defined in| B[Navigation XML File]
+    B -->|inflated by| C[NavGraphInflater]
+    C -->|creates| D[NavGraph]
+    D -->|used by| E[NavController]
+    E -->|navigates to| F[Destination 1]
+    F -->|navigates to| G[Destination 2]
+    G -->|navigates to| H[Destination 3]
+    H -->|navigates back to| F
+    F -->|navigates back to| E
+    E -->|handles back stack| I[Back Stack]
 ```
 The above diagram illustrates the navigation flow within an application. The navigation graph is defined in a navigation XML file and inflated by the `NavGraphInflater`. The navigation controller uses the navigation graph to navigate to different destinations.
 

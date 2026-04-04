@@ -86,14 +86,14 @@ In this example, we define a generic function `merge` that takes two type parame
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    id["Type Parameter"] -->|default type|> id2["Default Type"]
-    id2 -->|substitution|> id3["Type Inference"]
-    id3 -->|analysis|> id4["Syntax Analysis"]
-    id4 -->|identification|> id5["Type Parameters"]
-    id5 -->|compatibility check|> id6["Type Compatibility"]
-    id6 -->|error handling|> id7["Type Error"]
-    id7 -->|fallback|> id8["Default Type"]
-    id8 -->|substitution|> id9["Type Inference"]
+    id["Type Parameter"] -->|default type| id2["Default Type"]
+    id2 -->|substitution| id3["Type Inference"]
+    id3 -->|analysis| id4["Syntax Analysis"]
+    id4 -->|identification| id5["Type Parameters"]
+    id5 -->|compatibility check| id6["Type Compatibility"]
+    id6 -->|error handling| id7["Type Error"]
+    id7 -->|fallback| id8["Default Type"]
+    id8 -->|substitution| id9["Type Inference"]
 ```
 This diagram illustrates the process of default type parameter substitution and type inference.
 

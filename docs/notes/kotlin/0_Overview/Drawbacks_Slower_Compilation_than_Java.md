@@ -69,7 +69,7 @@ This example demonstrates how Kotlin's coroutines can be used to perform asynchr
 ```mermaid
 flowchart TD
     A[Source Code] -->| Lexical Analysis |--> B[Tokens]
-    B -->| Syntax Analysis |--> C[Abstract Syntax Tree (AST)]
+    B -->| Syntax Analysis |--> C["Abstract Syntax Tree (AST)"]
     C -->| Type Checking |--> D[Type-Checked AST]
     D -->| Intermediate Representation Generation |--> E[Intermediate Representation]
     E -->| Bytecode Generation |--> F[Java Bytecode]

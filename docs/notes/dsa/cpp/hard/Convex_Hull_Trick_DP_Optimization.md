@@ -48,11 +48,11 @@ Output: 19
 ```mermaid
 flowchart TD
     A[Start] --> B[Add Line]
-    B --> C{Is Hull Empty?}
+    B --> C{"Is Hull Empty?"}
     C -->|Yes| D[Insert Line]
     C -->|No| E[Update Line X-Coordinate]
     E --> F[Insert Line]
-    F --> G{Is Line Below New Line?}
+    F --> G{"Is Line Below New Line?"}
     G -->|Yes| H[Remove Line]
     G -->|No| I[Query Convex Hull]
     I --> J[Find Line with Maximum Value]

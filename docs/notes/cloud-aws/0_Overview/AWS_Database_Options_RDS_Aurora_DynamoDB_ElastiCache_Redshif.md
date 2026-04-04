@@ -106,15 +106,15 @@ client.set('my-key', 'Hello, World!', (err, reply) => {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Application] -->|OLTP|> B(RDS)
-    A -->|OLAP|> C(Redshift)
-    B -->|Cache|> D(ElastiCache)
-    C -->|Data Integration|> E(S3)
-    D -->|Data Retrieval|> F(DynamoDB)
-    E -->|Data Processing|> G(EMR)
-    F -->|Data Storage|> H(S3)
-    G -->|Data Analysis|> I(QuickSight)
-    H -->|Data Archiving|> J(Glacier)
+    A[Application] -->|OLTP| B(RDS)
+    A -->|OLAP| C(Redshift)
+    B -->|Cache| D(ElastiCache)
+    C -->|Data Integration| E(S3)
+    D -->|Data Retrieval| F(DynamoDB)
+    E -->|Data Processing| G(EMR)
+    F -->|Data Storage| H(S3)
+    G -->|Data Analysis| I(QuickSight)
+    H -->|Data Archiving| J(Glacier)
 ```
 
 This diagram illustrates the relationships between various AWS services, including database options like RDS, Aurora, DynamoDB, ElastiCache, and Redshift.

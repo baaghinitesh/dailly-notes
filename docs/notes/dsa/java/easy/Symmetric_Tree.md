@@ -44,14 +44,14 @@ Output: true (the tree is symmetric)
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Tree empty?}
+    A[Start] --> B{"Tree empty?"}
     B -->|Yes| C[Return true]
     B -->|No| D[Call isMirror]
-    D --> E{Both trees empty?}
+    D --> E{"Both trees empty?"}
     E -->|Yes| F[Return true]
-    E -->|No| G{One tree empty?}
+    E -->|No| G{"One tree empty?"}
     G -->|Yes| H[Return false]
-    G -->|No| I{Node values equal?}
+    G -->|No| I{"Node values equal?"}
     I -->|No| H
     I -->|Yes| J[Recursively call isMirror]
     J --> K[Return result of recursive calls]

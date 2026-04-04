@@ -204,12 +204,12 @@ This example demonstrates how to create an advanced navigation flow with state m
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Home Screen] -->|push|> B[Details Screen]
-    B -->|pop|> A
-    A -->|replace|> C[Login Screen]
-    C -->|push|> A
-    A -->|push|> D[Settings Screen]
-    D -->|pop|> A
+    A[Home Screen] -->|push| B[Details Screen]
+    B -->|pop| A
+    A -->|replace| C[Login Screen]
+    C -->|push| A
+    A -->|push| D[Settings Screen]
+    D -->|pop| A
 ```
 This diagram illustrates the navigation flow between different screens in a React Native application.
 

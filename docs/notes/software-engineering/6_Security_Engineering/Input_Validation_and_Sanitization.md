@@ -113,13 +113,13 @@ public class InputSanitizer {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-  A[User Input] -->|Data Reception|> B[Validation]
-  B -->|Validation Rules|> C{Valid?}
-  C -->|Yes|> D[Sanitization]
-  C -->|No|> E[Error Handling]
-  D -->|Sanitization Rules|> F[Normalization]
-  F -->|Normalized Data|> G[Processing]
-  E -->|Error Message|> H[User Notification]
+  A[User Input] -->|Data Reception| B[Validation]
+  B -->|Validation Rules| C{"Valid?"}
+  C -->|Yes| D[Sanitization]
+  C -->|No| E[Error Handling]
+  D -->|Sanitization Rules| F[Normalization]
+  F -->|Normalized Data| G[Processing]
+  E -->|Error Message| H[User Notification]
 ```
 The above diagram illustrates the flow of input validation and sanitization, from data reception to processing.
 

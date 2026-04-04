@@ -98,17 +98,17 @@ SELECT * FROM orders WHERE user_id = 1;
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Query] -->|Received by database|> B{Determine required partitions}
-    B -->|Yes|> C[Retrieve data from partitions]
-    B -->|No|> D[Error: no partitions required]
-    C -->|Combine data|> E[Return result set]
-    E -->|Result set|> F[Client]
-    F -->|Result set|> G[User]
-    G -->|Request new query|> A
+    A[Query] -->|Received by database| B{Determine required partitions}
+    B -->|Yes| C[Retrieve data from partitions]
+    B -->|No| D[Error: no partitions required]
+    C -->|Combine data| E[Return result set]
+    E -->|Result set| F[Client]
+    F -->|Result set| G[User]
+    G -->|Request new query| A
     subgraph Partitioned Table
-        H[Partition 1] -->|Data|> C
-        I[Partition 2] -->|Data|> C
-        J[Partition 3] -->|Data|> C
+        H[Partition 1] -->|Data| C
+        I[Partition 2] -->|Data| C
+        J[Partition 3] -->|Data| C
     end
 ```
 The above diagram illustrates the process of querying a partitioned table. The database receives a query, determines which partitions are required, retrieves the data from each partition, combines the data into a single result set, and returns the result set to the client.

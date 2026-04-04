@@ -120,15 +120,15 @@ document.body.appendChild(svg);
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[SVG Document] -->|parsed|> B[SVG DOM]
-    B -->|contains|> C[SVG Elements]
-    C -->|have|> D[Attributes]
-    D -->|define|> E[Appearance and Behavior]
-    E -->|affected by|> F[CSS Styles]
-    F -->|override|> G[SVG Attributes]
-    G -->|define|> H[Appearance and Behavior]
-    H -->|rendered|> I[Screen]
-    I -->|display|> J[Graphics]
+    A[SVG Document] -->|parsed| B[SVG DOM]
+    B -->|contains| C[SVG Elements]
+    C -->|have| D[Attributes]
+    D -->|define| E[Appearance and Behavior]
+    E -->|affected by| F[CSS Styles]
+    F -->|override| G[SVG Attributes]
+    G -->|define| H[Appearance and Behavior]
+    H -->|rendered| I[Screen]
+    I -->|display| J[Graphics]
 ```
 The diagram illustrates the relationship between the SVG document, SVG DOM, SVG elements, attributes, and CSS styles. It shows how the SVG DOM is created by parsing the SVG document and how the attributes of SVG elements define their appearance and behavior.
 

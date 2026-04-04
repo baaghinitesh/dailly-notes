@@ -75,12 +75,12 @@ fetch('https://example.com/api/data')
 ## Visual Diagram
 ```mermaid
 flowchart TD
-  A[Fetch API] -->|Send Request|> B[Server]
-  B -->|Process Request|> C[Response]
-  C -->|Send Response|> D[Fetch API]
-  D -->|Resolve Promise|> E[Application]
-  E -->|Handle Response|> F[Console]
-  F -->|Log Data|> G[Done]
+  A[Fetch API] -->|Send Request| B[Server]
+  B -->|Process Request| C[Response]
+  C -->|Send Response| D[Fetch API]
+  D -->|Resolve Promise| E[Application]
+  E -->|Handle Response| F[Console]
+  F -->|Log Data| G[Done]
   style A fill:#f9f,stroke:#333,stroke-width:4px
   style B fill:#ccc,stroke:#333,stroke-width:4px
   style C fill:#ccc,stroke:#333,stroke-width:4px

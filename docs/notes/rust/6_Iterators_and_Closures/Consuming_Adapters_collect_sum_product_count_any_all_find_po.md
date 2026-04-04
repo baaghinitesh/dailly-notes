@@ -87,19 +87,19 @@ This example demonstrates how to use the `max()` method to find the maximum elem
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Iterator] -->|next()|> B[Element]
-    B -->|consume|> C[Consuming Adapter]
-    C -->|sum()|> D[Sum]
-    C -->|product()|> E[Product]
-    C -->|count()|> F[Count]
-    C -->|any()|> G[Any]
-    C -->|all()|> H[All]
-    C -->|find()|> I[Find]
-    C -->|position()|> J[Position]
-    C -->|max()|> K[Max]
-    C -->|min()|> L[Min]
-    C -->|fold()|> M[Fold]
-    C -->|reduce()|> N[Reduce]
+    A[Iterator] -->|next()| B[Element]
+    B -->|consume| C[Consuming Adapter]
+    C -->|sum()| D[Sum]
+    C -->|product()| E[Product]
+    C -->|count()| F[Count]
+    C -->|any()| G[Any]
+    C -->|all()| H[All]
+    C -->|find()| I[Find]
+    C -->|position()| J[Position]
+    C -->|max()| K[Max]
+    C -->|min()| L[Min]
+    C -->|fold()| M[Fold]
+    C -->|reduce()| N[Reduce]
 ```
 This diagram illustrates the different types of consuming adapters and how they work.
 

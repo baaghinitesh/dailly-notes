@@ -74,13 +74,13 @@ Output: 18
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Calculate gcd(a, b)}
-    B --> C{Calculate lcm(a, b)}
-    C --> D{Initialize search range [left, right]}
+    A[Start] --> B{"Calculate gcd(a, b)"}
+    B --> C{"Calculate lcm(a, b)"}
+    C --> D{"Initialize search range [left, right]"}
     D --> E{Perform binary search}
     E --> F{Calculate midpoint mid}
-    F --> G{Calculate count(mid)}
-    G --> H{count(mid) < n}
+    F --> G{"Calculate count(mid)"}
+    G --> H{"count(mid) < n"}
     H -->|Yes| I{Move left pointer to mid + 1}
     H -->|No| J{Move right pointer to mid}
     I --> E

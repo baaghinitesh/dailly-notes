@@ -58,7 +58,7 @@ This example exercises the main logic path of the algorithm, demonstrating how t
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Queue empty?}
+    A[Start] --> B{"Queue empty?"}
     B -->|No| C[Dequeue a node]
     C --> D[Enqueue its children]
     D --> E[Update result with the leftmost node's value]

@@ -115,12 +115,12 @@ public class Main {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Client Request] -->|Request Resource|> B[Server]
-    B -->|Compress Resource|> C[Gzip/Brotli]
-    C -->|Compressed Resource|> D[Client]
-    D -->|Decompress Resource|> E[Original Resource]
-    E -->|Display Resource|> F[Client]
-    F -->|Send Request|> A
+    A[Client Request] -->|Request Resource| B[Server]
+    B -->|Compress Resource| C["Gzip/Brotli"]
+    C -->|Compressed Resource| D[Client]
+    D -->|Decompress Resource| E[Original Resource]
+    E -->|Display Resource| F[Client]
+    F -->|Send Request| A
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

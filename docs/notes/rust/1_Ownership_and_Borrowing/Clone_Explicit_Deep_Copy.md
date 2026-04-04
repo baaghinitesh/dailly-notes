@@ -123,13 +123,13 @@ fn main() {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Value] -->|clone()|> B[New Memory]
-    B -->|copy contents|> C[New Value]
-    C -->|return reference|> D[New Value Reference]
-    D -->|assign to new variable|> E[New Variable]
-    E -->|use new variable|> F[New Value]
-    F -->|drop original value|> G[Release Resources]
-    G -->|return|> H[End]
+    A[Value] -->|clone()| B[New Memory]
+    B -->|copy contents| C[New Value]
+    C -->|return reference| D[New Value Reference]
+    D -->|assign to new variable| E[New Variable]
+    E -->|use new variable| F[New Value]
+    F -->|drop original value| G[Release Resources]
+    G -->|return| H[End]
 ```
 The diagram illustrates the process of cloning a value in Rust. The **clone** method is called on the original value, which allocates new memory for the copy. The contents of the original value are then copied into the new memory, and a reference to the new copy is returned. The new copy can then be assigned to a new variable and used independently of the original value.
 

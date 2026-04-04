@@ -103,15 +103,15 @@ print(cluster.get('{user:1}:foo'))
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Client] -->|Request|> B[Node 1]
-    B -->|Hash Slot|> C[Hash Slot 1]
-    C -->|Redirect|> D[Node 2]
-    D -->|Process Request|> E[Response]
-    E -->|Return Response|> A
-    B -->|Hash Slot|> F[Hash Slot 2]
-    F -->|Redirect|> G[Node 3]
-    G -->|Process Request|> H[Response]
-    H -->|Return Response|> A
+    A[Client] -->|Request| B[Node 1]
+    B -->|Hash Slot| C[Hash Slot 1]
+    C -->|Redirect| D[Node 2]
+    D -->|Process Request| E[Response]
+    E -->|Return Response| A
+    B -->|Hash Slot| F[Hash Slot 2]
+    F -->|Redirect| G[Node 3]
+    G -->|Process Request| H[Response]
+    H -->|Return Response| A
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

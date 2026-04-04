@@ -178,18 +178,18 @@ int main() {
 ```mermaid
 flowchart TD
     A[Client Request] --> B{Load Balancer}
-    B -->|Forward Request|> C[Primary Node]
-    C -->|Return Data|> A
-    B -->|Forward Request|> D[Secondary Node 1]
-    D -->|Return Data|> A
-    B -->|Forward Request|> E[Secondary Node 2]
-    E -->|Return Data|> A
-    C -->|Heartbeat|> F[Heartbeat Monitor]
-    D -->|Heartbeat|> F
-    E -->|Heartbeat|> F
-    F -->|Detect Failure|> B
-    B -->|Failover|> D
-    D -->|Return Data|> A
+    B -->|Forward Request| C[Primary Node]
+    C -->|Return Data| A
+    B -->|Forward Request| D[Secondary Node 1]
+    D -->|Return Data| A
+    B -->|Forward Request| E[Secondary Node 2]
+    E -->|Return Data| A
+    C -->|Heartbeat| F[Heartbeat Monitor]
+    D -->|Heartbeat| F
+    E -->|Heartbeat| F
+    F -->|Detect Failure| B
+    B -->|Failover| D
+    D -->|Return Data| A
 ```
 The diagram illustrates a load-balanced system with primary and secondary nodes. The load balancer forwards requests to the primary node, which returns data to the client. If the primary node fails, the load balancer detects the failure and fails over to a secondary node.
 

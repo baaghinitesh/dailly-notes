@@ -108,16 +108,16 @@ This example demonstrates the advanced usage of `COUNT() OVER` with partitioning
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Input Data] -->|Partitioning|> B[Partition 1]
-    A -->|Partitioning|> C[Partition 2]
-    B -->|Ordering|> D[Ordered Rows 1]
-    C -->|Ordering|> E[Ordered Rows 2]
-    D -->|Window Definition|> F[Window 1]
-    E -->|Window Definition|> G[Window 2]
-    F -->|Calculation|> H[Result 1]
-    G -->|Calculation|> I[Result 2]
-    H -->|Output|> J[Final Result]
-    I -->|Output|> J
+    A[Input Data] -->|Partitioning| B[Partition 1]
+    A -->|Partitioning| C[Partition 2]
+    B -->|Ordering| D[Ordered Rows 1]
+    C -->|Ordering| E[Ordered Rows 2]
+    D -->|Window Definition| F[Window 1]
+    E -->|Window Definition| G[Window 2]
+    F -->|Calculation| H[Result 1]
+    G -->|Calculation| I[Result 2]
+    H -->|Output| J[Final Result]
+    I -->|Output| J
 ```
 This diagram illustrates the process of applying an aggregate window function to a set of data, including partitioning, ordering, window definition, calculation, and output.
 

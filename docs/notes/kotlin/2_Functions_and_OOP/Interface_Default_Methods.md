@@ -116,13 +116,13 @@ In this example, the `Logger` interface has default implementations for the `log
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Interface] -->|implements|> B[Class]
-    B -->|uses|> C[Default Method]
-    C -->|calls|> D[Default Implementation]
-    D -->|returns|> E[Result]
-    E -->|used by|> B
-    B -->|provides|> F[Custom Implementation]
-    F -->|overrides|> C
+    A[Interface] -->|implements| B[Class]
+    B -->|uses| C[Default Method]
+    C -->|calls| D[Default Implementation]
+    D -->|returns| E[Result]
+    E -->|used by| B
+    B -->|provides| F[Custom Implementation]
+    F -->|overrides| C
 ```
 This diagram illustrates the relationship between an interface, a class, and a default method. The class implements the interface and uses the default method, which calls the default implementation and returns a result. The class can also provide a custom implementation that overrides the default method.
 

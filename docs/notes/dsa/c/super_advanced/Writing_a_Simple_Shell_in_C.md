@@ -41,9 +41,9 @@ This example demonstrates the main logic path of the shell, from reading user in
 ```mermaid
 flowchart TD
     A[Start] --> B[Read Input]
-    B --> C{Empty Input?}
+    B --> C{"Empty Input?"}
     C -->|Yes| A
-    C -->|No| D{Exit Command?}
+    C -->|No| D{"Exit Command?"}
     D -->|Yes| E[Exit Shell]
     D -->|No| F[Tokenize Input]
     F --> G[Execute Command]

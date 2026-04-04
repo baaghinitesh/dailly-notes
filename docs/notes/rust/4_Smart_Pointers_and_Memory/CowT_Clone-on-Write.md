@@ -65,10 +65,10 @@ fn main() {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Create Cow] -->|with reference to original data|> B[Check if data is owned]
-    B -->|yes|> C[Apply modification to owned data]
-    B -->|no|> D[Create copy of original data]
-    D -->|apply modification to copy|> E[Store modified data in Cow]
+    A[Create Cow] -->|with reference to original data| B[Check if data is owned]
+    B -->|yes| C[Apply modification to owned data]
+    B -->|no| D[Create copy of original data]
+    D -->|apply modification to copy| E[Store modified data in Cow]
     E --> F[Return modified data]
     F --> G[Print modified data]
 ```

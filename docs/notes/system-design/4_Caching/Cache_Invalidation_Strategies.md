@@ -267,14 +267,14 @@ public class DistributedCache {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Client] -->|Request|> B[Cache]
-    B -->|Cache Hit|> C[Return Data]
-    B -->|Cache Miss|> D[Database]
-    D -->|Retrieve Data|> E[Return Data]
-    E -->|Update Cache|> B
-    F[Data Change] -->|Invalidate Cache|> B
-    B -->|Remove Entry|> G[Cache]
-    G -->|Update Cache|> B
+    A[Client] -->|Request| B[Cache]
+    B -->|Cache Hit| C[Return Data]
+    B -->|Cache Miss| D[Database]
+    D -->|Retrieve Data| E[Return Data]
+    E -->|Update Cache| B
+    F[Data Change] -->|Invalidate Cache| B
+    B -->|Remove Entry| G[Cache]
+    G -->|Update Cache| B
 ```
 This diagram illustrates the basic flow of a caching system with cache invalidation. When a client requests data, the cache is checked first. If the data is found in the cache (cache hit), it is returned directly. If not (cache miss), the data is retrieved from the database and stored in the cache. When the underlying data changes, the cache is invalidated, and the corresponding entry is removed.
 

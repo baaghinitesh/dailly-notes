@@ -39,9 +39,9 @@ This example illustrates how the algorithm makes choices at each house based on 
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Empty input?}
+    A[Start] --> B{"Empty input?"}
     B -->|Yes| C[Return 0]
-    B -->|No| D{Single house?}
+    B -->|No| D{"Single house?"}
     D -->|Yes| E[Return house value]
     D -->|No| F[Initialize dp array]
     F --> G[Fill up dp array]

@@ -39,9 +39,9 @@ This walkthrough shows how the algorithm iterates through the array and updates 
 flowchart TD
     A[Start] --> B{Initialize max and min}
     B --> C[Iterate through array]
-    C --> D{Current element > max?}
+    C --> D{"Current element > max?"}
     D -->|Yes| E[Update max]
-    D -->|No| F{Current element < min?}
+    D -->|No| F{"Current element < min?"}
     F -->|Yes| G[Update min]
     F -->|No| H[Continue iteration]
     H -->|End of array| I[Return max and min]

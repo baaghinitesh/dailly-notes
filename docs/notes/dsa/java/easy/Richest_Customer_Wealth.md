@@ -39,11 +39,11 @@ This example walks through the algorithm's logic for finding the maximum wealth.
 flowchart TD
     A[Start] --> B[Initialize maxWealth to 0]
     B --> C[Iterate through each customer's accounts]
-    C --> D{Is customer's wealth greater than maxWealth?}
+    C --> D{"Is customer's wealth greater than maxWealth?"}
     D -->|Yes| E[Update maxWealth]
     D -->|No| F[Continue to next customer]
     E --> F
-    F --> G{Are all customers processed?}
+    F --> G{"Are all customers processed?"}
     G -->|Yes| H[Return maxWealth]
     G -->|No| C
 ```

@@ -37,12 +37,12 @@ This example demonstrates the `every()` function with a callback that checks if 
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Empty Array?}
+    A[Start] --> B{"Empty Array?"}
     B -->|Yes| C[Return True]
     B -->|No| D[Iterate Through Array]
-    D --> E{Callback Returns False?}
+    D --> E{"Callback Returns False?"}
     E -->|Yes| F[Return False]
-    E -->|No| G{End of Array?}
+    E -->|No| G{"End of Array?"}
     G -->|Yes| H[Return True]
     G -->|No| D
 ```

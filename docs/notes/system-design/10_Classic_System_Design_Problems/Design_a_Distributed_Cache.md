@@ -206,17 +206,17 @@ print(distributed_cache.get('key'))  # Output: value
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Client] -->|request data|> B[Cache Manager]
-    B -->|check cache|> C[Cache]
-    C -->|cache hit|> B
-    B -->|return data|> A
-    C -->|cache miss|> D[Underlying Storage System]
-    D -->|return data|> B
-    B -->|store data in cache|> C
-    B -->|replicate data to nodes|> E[Nodes]
-    E -->|store data|> C
-    B -->|invalidate data|> C
-    C -->|remove data|> E
+    A[Client] -->|request data| B[Cache Manager]
+    B -->|check cache| C[Cache]
+    C -->|cache hit| B
+    B -->|return data| A
+    C -->|cache miss| D[Underlying Storage System]
+    D -->|return data| B
+    B -->|store data in cache| C
+    B -->|replicate data to nodes| E[Nodes]
+    E -->|store data| C
+    B -->|invalidate data| C
+    C -->|remove data| E
 ```
 This diagram illustrates the flow of data in a distributed cache system. The client requests data from the cache manager, which checks the cache for a hit or miss. If the data is in the cache, it is returned to the client. If not, the cache manager requests the data from the underlying storage system, stores it in the cache, and replicates it to all nodes.
 

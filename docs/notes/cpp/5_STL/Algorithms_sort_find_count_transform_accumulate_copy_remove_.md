@@ -91,14 +91,14 @@ This example demonstrates transforming and accumulating elements using the `std:
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Container] -->|Iterators|> B[Algorithm]
-    B -->|Functors|> C[Operation]
-    C -->|Result|> D[Output]
-    D -->|Error Handling|> E[Exception]
-    E -->|Recovery|> F[Retry]
-    F -->|Success|> G[Result]
-    G -->|Final Output|> H[Result]
-    H -->|Cleanup|> I[Done]
+    A[Container] -->|Iterators| B[Algorithm]
+    B -->|Functors| C[Operation]
+    C -->|Result| D[Output]
+    D -->|Error Handling| E[Exception]
+    E -->|Recovery| F[Retry]
+    F -->|Success| G[Result]
+    G -->|Final Output| H[Result]
+    H -->|Cleanup| I[Done]
 ```
 This diagram illustrates the internal flow of STL algorithms, from iterators to functors to operations and results.
 

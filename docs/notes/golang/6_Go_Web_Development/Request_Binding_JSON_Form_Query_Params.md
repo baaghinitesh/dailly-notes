@@ -164,9 +164,9 @@ func main() {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Request Parsing] -->|JSON|> B[JSON Binding]
-    A[Request Parsing] -->|Form|> C[Form Binding]
-    A[Request Parsing] -->|Query|> D[Query Parameter Binding]
+    A[Request Parsing] -->|JSON| B[JSON Binding]
+    A[Request Parsing] -->|Form| C[Form Binding]
+    A[Request Parsing] -->|Query| D[Query Parameter Binding]
     B --> E[Data Mapping]
     C --> E
     D --> E

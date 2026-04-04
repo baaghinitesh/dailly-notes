@@ -37,7 +37,7 @@ This example shows how the algorithm works by rotating the list [1, 2, 3, 4, 5] 
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is list empty or only one node?}
+    A[Start] --> B{"Is list empty or only one node?"}
     B -->|Yes| C[Return original list]
     B -->|No| D[Find length of list]
     D --> E[Connect tail to head]

@@ -123,15 +123,15 @@ public class TlsSslExample {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    id["Client"] -->|Client Hello|> id1["Server"]
-    id1 -->|Server Hello|> id2["Client"]
-    id2 -->|Certificate|> id3["Server"]
-    id3 -->|Key Exchange|> id4["Client"]
-    id4 -->|Change Cipher Spec|> id5["Server"]
-    id5 -->|Finished|> id6["Client"]
-    id6 -->|Finished|> id7["Server"]
-    id7 -->|Encrypted Data|> id8["Client"]
-    id8 -->|Encrypted Data|> id9["Server"]
+    id["Client"] -->|Client Hello| id1["Server"]
+    id1 -->|Server Hello| id2["Client"]
+    id2 -->|Certificate| id3["Server"]
+    id3 -->|Key Exchange| id4["Client"]
+    id4 -->|Change Cipher Spec| id5["Server"]
+    id5 -->|Finished| id6["Client"]
+    id6 -->|Finished| id7["Server"]
+    id7 -->|Encrypted Data| id8["Client"]
+    id8 -->|Encrypted Data| id9["Server"]
 ```
 The diagram illustrates the TLS/SSL handshake process, including the client hello, server hello, certificate exchange, key exchange, change cipher spec, and finished messages.
 

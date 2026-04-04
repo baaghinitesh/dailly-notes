@@ -118,14 +118,14 @@ In this example, we define two interfaces `Rectangle` and `Circle`, and a type g
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Type Guard] -->|evaluates|> B[Type Predicate]
-    B -->|narrowing|> C[Type of Value]
-    C -->| updates |> D[Type of Value]
-    D -->|in scope|> E[Type Guard Scope]
-    E -->|ends|> F[Type Guard End]
-    F -->|evaluates|> G[Type Predicate]
-    G -->|narrowing|> H[Type of Value]
-    H -->|updates|> I[Type of Value]
+    A[Type Guard] -->|evaluates| B[Type Predicate]
+    B -->|narrowing| C[Type of Value]
+    C -->| updates | D[Type of Value]
+    D -->|in scope| E[Type Guard Scope]
+    E -->|ends| F[Type Guard End]
+    F -->|evaluates| G[Type Predicate]
+    G -->|narrowing| H[Type of Value]
+    H -->|updates| I[Type of Value]
 ```
 This diagram illustrates the process of type guarding, from evaluating the type guard expression to updating the type of the value within the specific scope.
 

@@ -40,13 +40,13 @@ Output: A random node's value from the list (1, 2, or 3 with equal probability)
 flowchart TD
     A[Start] --> B{Initialize result and count}
     B --> C[Traverse Linked List]
-    C --> D{Is current node the first node?}
+    C --> D{"Is current node the first node?"}
     D -->|Yes| E[Set result to current node's value]
     D -->|No| F[Generate random number]
-    F --> G{Is random number 0?}
+    F --> G{"Is random number 0?"}
     G -->|Yes| H[Update result to current node's value]
     G -->|No| I[Move to next node]
-    I --> J{Is end of list reached?}
+    I --> J{"Is end of list reached?"}
     J -->|Yes| K[Return result]
     J -->|No| C
 ```

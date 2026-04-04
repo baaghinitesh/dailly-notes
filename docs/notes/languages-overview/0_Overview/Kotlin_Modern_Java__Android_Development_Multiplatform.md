@@ -85,13 +85,13 @@ This example demonstrates Kotlin's **extension functions** and **operator overlo
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Kotlin Code] -->|Compilation|> B[Java Bytecode]
-    B -->|Execution|> C[JVM]
-    C -->|Runtime|> D[Kotlin Runtime]
-    D -->|Libraries|> E[Kotlin Standard Library]
-    E -->|Frameworks|> F[Kotlin Coroutines]
-    F -->|Async/Await|> G[Delayed Greet]
-    G -->|Print|> H[Hello, World!]
+    A[Kotlin Code] -->|Compilation| B[Java Bytecode]
+    B -->|Execution| C[JVM]
+    C -->|Runtime| D[Kotlin Runtime]
+    D -->|Libraries| E[Kotlin Standard Library]
+    E -->|Frameworks| F[Kotlin Coroutines]
+    F -->|Async/Await| G[Delayed Greet]
+    G -->|Print| H[Hello, World!]
 ```
 This diagram illustrates the internal mechanics of Kotlin, from compilation to execution.
 

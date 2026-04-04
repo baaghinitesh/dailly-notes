@@ -46,12 +46,12 @@ Output: The median is 2, which is the max of the lower_half
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is lower_half empty or num <= -lower_half[0]?}
+    A[Start] --> B{"Is lower_half empty or num <= -lower_half[0]?"}
     B -->|Yes| C[Push num to lower_half]
     B -->|No| D[Push num to upper_half]
     C --> E[Balance heaps]
     D --> E
-    E --> F{Is size difference > 1?}
+    E --> F{"Is size difference > 1?"}
     F -->|Yes| G[Balance heaps]
     F -->|No| H[Return median]
 ```

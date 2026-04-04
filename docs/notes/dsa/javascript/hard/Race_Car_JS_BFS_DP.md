@@ -44,7 +44,7 @@ flowchart TD
     D --> E{Reverse}
     E -->|Valid| F{Add to Queue}
     F --> B
-    B -->|No| G{Target Reached?}
+    B -->|No| G{"Target Reached?"}
     G -->|Yes| H[Return Moves]
     G -->|No| I[Return -1]
 ```

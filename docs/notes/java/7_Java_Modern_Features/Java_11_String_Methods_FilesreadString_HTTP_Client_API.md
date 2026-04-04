@@ -95,13 +95,13 @@ public class HttpClientExample {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Java 11 String Methods] -->|strip()|> B[Remove Leading/Trailing Whitespace]
-    A -->|stripLeading()|> C[Remove Leading Whitespace]
-    A -->|stripTrailing()|> D[Remove Trailing Whitespace]
-    E[Files.readString] -->|Read File Contents|> F[String]
-    G[HTTP Client API] -->|Send HTTP Request|> H[HTTP Response]
-    H -->|Handle Response|> I[Process Response Data]
-    I -->|Return Response|> J[Client Code]
+    A[Java 11 String Methods] -->|strip()| B["Remove Leading/Trailing Whitespace"]
+    A -->|stripLeading()| C[Remove Leading Whitespace]
+    A -->|stripTrailing()| D[Remove Trailing Whitespace]
+    E[Files.readString] -->|Read File Contents| F[String]
+    G[HTTP Client API] -->|Send HTTP Request| H[HTTP Response]
+    H -->|Handle Response| I[Process Response Data]
+    I -->|Return Response| J[Client Code]
 ```
 
 The diagram illustrates the relationships between Java 11's string methods, `Files.readString`, and the HTTP Client API. It shows how these features can be used to perform common tasks, such as removing whitespace from strings, reading file contents, and sending HTTP requests.

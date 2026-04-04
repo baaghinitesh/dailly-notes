@@ -36,12 +36,12 @@ Output: Since dp[2] >= target, return 2
 flowchart TD
     A[Start] --> B{Initialize dp array}
     B --> C[Iterate over stations]
-    C --> D{Is current station reachable?}
+    C --> D{"Is current station reachable?"}
     D -->|Yes| E[Update dp array]
     D -->|No| F[Skip to next station]
     E --> C
     F --> C
-    C --> G{Is target reachable?}
+    C --> G{"Is target reachable?"}
     G -->|Yes| H[Return minimum number of refueling stops]
     G -->|No| I[Return -1]
 ```

@@ -63,10 +63,10 @@ Output: cascaded array
 ```mermaid
 flowchart TD
     A[Start] --> B[Sort each array and store sorted indices]
-    B --> C{Perform fractional cascading?}
+    B --> C{"Perform fractional cascading?"}
     C -->|Yes| D[Perform binary search to find minimum value]
     D --> E[Store result in cascaded array]
-    E --> F{Query minimum value?}
+    E --> F{"Query minimum value?"}
     F -->|Yes| G[Return minimum value]
     F -->|No| A
 ```

@@ -202,14 +202,14 @@ server.listen().then(({ url }) => {
 ```
 ## Visual Diagram
 ```mermaid
-graph LR
-    A[Client] -->|Query|> B[Apollo Server]
-    B -->|Validate Query|> C[Schema]
-    C -->|Resolve Fields|> D[Resolvers]
-    D -->|Fetch Data|> E[Data Sources]
-    E -->|Return Data|> D
-    D -->|Return Response|> B
-    B -->|Return Response|> A
+graph TD
+    A[Client] -->|Query| B[Apollo Server]
+    B -->|Validate Query| C[Schema]
+    C -->|Resolve Fields| D[Resolvers]
+    D -->|Fetch Data| E[Data Sources]
+    E -->|Return Data| D
+    D -->|Return Response| B
+    B -->|Return Response| A
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

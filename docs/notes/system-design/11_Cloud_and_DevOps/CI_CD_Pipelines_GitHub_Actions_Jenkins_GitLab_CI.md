@@ -122,13 +122,13 @@ This example demonstrates an advanced GitLab CI/CD pipeline with multiple stages
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Source Code Management] -->|Commit|> B[CI/CD Tool]
-    B -->|Build|> C[Build Stage]
-    C -->|Test|> D[Test Stage]
-    D -->|Deploy|> E[Deployment Stage]
-    E -->|Monitor|> F[Monitoring Stage]
-    F -->|Alert|> G[Alert Stage]
-    G -->|Fix|> A
+    A[Source Code Management] -->|Commit| B["CI/CD Tool"]
+    B -->|Build| C[Build Stage]
+    C -->|Test| D[Test Stage]
+    D -->|Deploy| E[Deployment Stage]
+    E -->|Monitor| F[Monitoring Stage]
+    F -->|Alert| G[Alert Stage]
+    G -->|Fix| A
 ```
 This diagram illustrates the basic stages of a CI/CD pipeline, including source code management, build, test, deployment, monitoring, alerting, and fixing.
 

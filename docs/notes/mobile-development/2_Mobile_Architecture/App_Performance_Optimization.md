@@ -68,12 +68,12 @@ CoroutineScope(Dispatchers.IO).launch {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[User Input] -->|Received by UI thread|> B[UI Thread]
-    B -->|Send request to main thread|> C[Main Thread]
-    C -->|Process request|> D[Background Thread]
-    D -->|Perform task|> E[Task Completed]
-    E -->|Send response to UI thread|> B
-    B -->|Update UI|> F[UI Updated]
+    A[User Input] -->|Received by UI thread| B[UI Thread]
+    B -->|Send request to main thread| C[Main Thread]
+    C -->|Process request| D[Background Thread]
+    D -->|Perform task| E[Task Completed]
+    E -->|Send response to UI thread| B
+    B -->|Update UI| F[UI Updated]
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#f9f,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px

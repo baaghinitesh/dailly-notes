@@ -94,16 +94,16 @@ print(replica2.get('foo'))  # Output: b'bar'
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Client] -->|Write Command|> B[Master]
-    B -->|Replication|> C[Replica 1]
-    B -->|Replication|> D[Replica 2]
-    C -->|Acknowledgment|> B
-    D -->|Acknowledgment|> B
-    B -->|Response|> A
-    C -->|Data|> E[Data Store]
-    D -->|Data|> E
-    E -->|Data|> C
-    E -->|Data|> D
+    A[Client] -->|Write Command| B[Master]
+    B -->|Replication| C[Replica 1]
+    B -->|Replication| D[Replica 2]
+    C -->|Acknowledgment| B
+    D -->|Acknowledgment| B
+    B -->|Response| A
+    C -->|Data| E[Data Store]
+    D -->|Data| E
+    E -->|Data| C
+    E -->|Data| D
 ```
 The diagram illustrates the Redis Replication process, where a client sends a write command to the master, which replicates the data to multiple replicas. The replicas send acknowledgments to the master, and the master responds to the client.
 

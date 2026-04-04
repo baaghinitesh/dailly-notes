@@ -162,7 +162,7 @@ go run main.go
 
 ## Visual Diagram
 ```mermaid
-graph LR
+graph TD
     A[go mod init] --> B[Create go.mod]
     B --> C[Add dependencies]
     C --> D[go mod tidy]

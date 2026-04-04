@@ -108,7 +108,7 @@ print(df_filled)
 ```mermaid
 flowchart TD
     A[Create DataFrame] --> B[Check for missing values]
-    B --> C{Are there missing values?}
+    B --> C{"Are there missing values?"}
     C -->|Yes| D[Drop rows or columns with missing values using dropna]
     C -->|No| E[Proceed with data analysis]
     D --> F[Fill missing values with a specified value using fillna]

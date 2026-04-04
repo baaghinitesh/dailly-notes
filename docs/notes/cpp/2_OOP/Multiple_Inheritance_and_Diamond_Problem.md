@@ -138,19 +138,19 @@ int main() {
 ## Visual Diagram
 ```mermaid
 flowchart TD
-    A[Grandparent] -->|inherits|> B[Parent1]
-    A[Grandparent] -->|inherits|> C[Parent2]
-    B[Parent1] -->|inherits|> D[Child]
-    C[Parent2] -->|inherits|> D[Child]
-    D[Child] -->|uses|> E[Grandparent]
-    D[Child] -->|uses|> F[Parent1]
-    D[Child] -->|uses|> G[Parent2]
-    E[Grandparent] -->|provides|> H[print()]
-    F[Parent1] -->|provides|> I[print()]
-    G[Parent2] -->|provides|> J[print()]
-    H[print()] -->|called by|> D[Child]
-    I[print()] -->|called by|> D[Child]
-    J[print()] -->|called by|> D[Child]
+    A[Grandparent] -->|inherits| B[Parent1]
+    A[Grandparent] -->|inherits| C[Parent2]
+    B[Parent1] -->|inherits| D[Child]
+    C[Parent2] -->|inherits| D[Child]
+    D[Child] -->|uses| E[Grandparent]
+    D[Child] -->|uses| F[Parent1]
+    D[Child] -->|uses| G[Parent2]
+    E[Grandparent] -->|provides| H["print()"]
+    F[Parent1] -->|provides| I["print()"]
+    G[Parent2] -->|provides| J["print()"]
+    H["print()"] -->|called by| D[Child]
+    I["print()"] -->|called by| D[Child]
+    J["print()"] -->|called by| D[Child]
 ```
 The diagram illustrates the Diamond Problem and how virtual inheritance can be used to resolve it. The `Grandparent` class is inherited by both `Parent1` and `Parent2`, which are then inherited by the `Child` class. The `Child` class can access the `print()` function from all three classes.
 

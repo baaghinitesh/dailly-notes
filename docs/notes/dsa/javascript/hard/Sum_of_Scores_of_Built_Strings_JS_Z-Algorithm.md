@@ -53,7 +53,7 @@ This walkthrough shows the calculation of the sum of scores for a given input.
 ## Visual Flow
 ```mermaid
 flowchart TD
-    A[Start] --> B{Is word empty?}
+    A[Start] --> B{"Is word empty?"}
     B -->|Yes| C[Skip word]
     B -->|No| D[Calculate Z-Array]
     D --> E[Calculate score]
