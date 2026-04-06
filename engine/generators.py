@@ -10,7 +10,9 @@ from engine.utils import (
 from engine.topics import (
     _all_notes_exhausted, expand_note_topics, pick_new_note_from_file,
     pick_note_to_update, pick_topic_file_with_new_blogs, _all_blogs_exhausted,
-    pick_blog_from_file
+    pick_blog_from_file, pick_topic_file_with_new_dsa, _all_dsa_exhausted,
+    pick_dsa_from_file, expand_dsa_problems, pick_topic_file_with_new_notes,
+    topic_files
 )
 from engine.api import call_groq
 from engine.validation import validate_dsa_content, validate_note_content
