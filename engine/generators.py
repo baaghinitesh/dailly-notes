@@ -371,10 +371,28 @@ def generate_blog() -> Optional[str]:
     # ── Step 3: Write file ───────────────────────────────────────────────────
     final_content = fix_mermaid_syntax(content_body)
     
-    # Ensure source: github is in the frontmatter if AI missed it
-    if "source: github" not in final_content:
-        # Simple injection if frontmatter exists
-        final_content = re.sub(r"---(\r?\n)", r"--- \1source: github\1", final_content, count=1)
+    # If the LLM failed to include frontmatter, prepend one manually
+    if not final_content.startswith("---"):
+        seed = "".join(c for c in topic if c.isalnum() or c.isspace()).replace(" ", "-").lower()
+        banner_url = f"https://picsum.photos/seed/{seed}/1200/630"
+        fallback_fm = (
+            f"---\n"
+            f"title: \"{topic}\"\n"
+            f"excerpt: \"An in-depth article about {topic}\"\n"
+            f"category: \"{category}\"\n"
+            f"tags: \"{tags}\"\n"
+            f"difficulty: \"{difficulty}\"\n"
+            f"banner: \"{banner_url}\"\n"
+            f"source: \"github\"\n"
+            f"---\n\n"
+        )
+        # Strip any leading markdown heading that matches the title to avoid duplication
+        final_content = re.sub(rf"^#\s+{re.escape(topic)}\s*\n", "", final_content, flags=re.IGNORECASE)
+        final_content = fallback_fm + final_content.lstrip()
+
+    # Ensure source: github is in the frontmatter if AI generated it but missed it
+    elif "source: github" not in final_content:
+        final_content = re.sub(r"---(\r?\n)", r"---\1source: github\1", final_content, count=1)
 
     save_file(md_path, final_content)
     print(f"✅ Blog article written: {md_path}")

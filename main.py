@@ -21,8 +21,8 @@ def main():
     scan_existing_files()
     load_topic_files()
 
-    # 2. Daily Quota: 4 Resources (Notes/DSA) and 2 Blog Posts
-    target_resources = 4
+    # 2. Daily Quota: 3 Resources (Notes/DSA) and 2 Blog Posts
+    target_resources = 3
     target_blogs = 2
     
     generated_resources = 0

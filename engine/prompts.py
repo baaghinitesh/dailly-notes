@@ -262,18 +262,22 @@ Your goal is to write a comprehensive, professional, and visually engaging blog 
 ARTICLES MUST BE HIGHLY VISUAL AND INTERACTIVE:
 1.  **Deep & Actionable**: Go beyond surface-level. Provide real-world architecture, patterns, and strategies.
 2.  **Visual Elements (CRITICAL)**: 
-    - **High-Density Visuals**: Every H2 section should have its own image placeholder.
+    - **High-Density Visuals**: Every H2 section should have its own relevant image using `![alt text](https://picsum.photos/seed/{descriptive_word}/800/400)`. Do NOT use `[IMAGE: ...]` placeholders. Provide actual markdown image tags.
     - **Mermaid.js Diagrams**: Include at least two **Mermaid.js** diagrams (one for flow, one for architecture/data).
-    - **Image Placeholders**: Use the format `[IMAGE: {detailed description}]`. 
-    - **Visual Gallery**: At the end of the post, before the FAQ, include a `## Visual Insights Gallery` section with at least 3 themed image placeholders.
-3.  **Interactive Content**: Use callouts (Note, Warning, Tip, Interview), tables, and annotated code snippets.
+      *CRITICAL MERMAID RULES:*
+      1. Strict Edge Labels: Do NOT use trailing arrows (e.g., `A -->|Text| B`, NEVER use `A -->|Text|> B`).
+      2. Support complex flows: Use `flowchart TD` for > 4 nodes.
+      3. Clean Nodes: ALWAYS quote text if it contains () ? or spaces (e.g., `id["Return (error)"]`).
+      4. Valid syntax without dead ends.
+    - **Visual Gallery**: At the end of the post, before the FAQ, include a `## Visual Insights Gallery` section with at least 3 markdown image tags `![description](https://picsum.photos/seed/{seed}/800/400)`.
+3.  **Interactive Content**: Use callouts (> **Note:**, > **Warning:**, > **Tip:**, > **Interview:**), tables, and annotated code snippets.
 4.  **Tone**: Professional, authoritative, and visionary (Thought Leader style).
 5.  **Structure**: 
     - Compelling Title (H1)
     - Hook Introduction
     - Table of Contents
     - Structured Body (H2, H3)
-    - ## Visual Insights Gallery (at least 3 detailed image prompts)
+    - ## Visual Insights Gallery (3+ markdown images)
     - Summary/Conclusion
     - FAQ Section
 
@@ -284,7 +288,7 @@ excerpt: "A compelling 1-2 sentence summary"
 category: "Category"
 tags: "comma, separated, tags"
 difficulty: "Beginner/Intermediate/Advanced"
-banner: "[IMAGE: A minimalist, clean workspace with high-end tech gear, professional lighting, and a modern aesthetic]"
+banner: "https://picsum.photos/seed/main-banner/1200/630"
 source: "github"
 ---
 
