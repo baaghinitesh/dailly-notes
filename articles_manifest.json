@@ -96,6 +96,7 @@
   "docs/notes/dsa/c/medium/Priority_Queue_using_Min-Heap.md",
   "docs/notes/dsa/c/medium/Trie_Implementation_in_C.md",
   "docs/notes/dsa/c/super_advanced/Implement_a_DLL_Injector_for_Windows_in_C.md",
+  "docs/notes/dsa/c/super_advanced/Implement_an_Inode-based_File_System_Structure.md",
   "docs/notes/dsa/c/super_advanced/Implementing_a_Mini_OS_Kernel_Concepts_in_C.md",
   "docs/notes/dsa/c/super_advanced/Lock-Free_Data_Structures_Queue_Stack.md",
   "docs/notes/dsa/c/super_advanced/Writing_a_Simple_Shell_in_C.md",
