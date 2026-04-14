@@ -268,6 +268,7 @@
   "docs/notes/java/1_Java_Basics/JDK_vs_JRE_vs_JVM.md",
   "docs/notes/java/2_OOP/Enums_Fields_Methods_Constructors_EnumSet_EnumMap.md",
   "docs/notes/java/2_OOP/Functional_Interfaces_FunctionalInterface.md",
+  "docs/notes/java/2_OOP/static_Members_Initializer_Blocks_Nested_Classes.md",
   "docs/notes/java/4_Generics_and_Functional/Lambda_Expressions_params_-_expression.md",
   "docs/notes/java/5_Concurrency/BlockingQueue_ArrayBlockingQueue_LinkedBlockingQueue.md",
   "docs/notes/java/5_Concurrency/CompletableFuture.md",
@@ -288,6 +289,7 @@
   "docs/notes/kotlin/5_Android_Development/Navigation_Component_NavGraph_NavController_Safe_Args.md",
   "docs/notes/kotlin/5_Android_Development/WorkManager_Guaranteed_Background_Work.md",
   "docs/notes/kotlin/6_Jetpack_Compose/Animations_animateFloatAsState_AnimatedVisibility_Crossfade.md",
+  "docs/notes/kotlin/6_Jetpack_Compose/Canvas_API_in_Compose.md",
   "docs/notes/kotlin/7_Kotlin_Multiplatform/Compose_Multiplatform_Shared_UI.md",
   "docs/notes/kotlin/7_Kotlin_Multiplatform/SQLDelight_Multiplatform_Database.md",
   "docs/notes/kotlin/8_Server_Side_Kotlin/Spring_Boot_with_Kotlin.md",
@@ -437,6 +439,7 @@
   "docs/notes/web-fundamentals/7_JavaScript_Async/Fetch_API_Request_Response_Headers.md",
   "docs/notes/web-fundamentals/8_JavaScript_DOM_and_BOM/Keyboard_Events_keydown_keyup_key_vs_keyCode.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Crypto_API_cryptorandomUUID_cryptosubtle.md",
+  "docs/notes/web-fundamentals/9_JavaScript_Advanced/Module_Federation_in_Webpack_5_Micro-frontends.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Regular_Expressions_Syntax_Flags_g_i_m_s_u_v_Groups_Lookahea.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/The_packagejson_exports_field_for_Subpath_Exports.md",
   "docs/notes/web-fundamentals/index.md"
