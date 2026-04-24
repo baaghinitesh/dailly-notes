@@ -312,6 +312,7 @@
   "docs/notes/dsa/python/super_advanced/IDA_Iterative_Deepening_A_in_Python.md",
   "docs/notes/dsa/python/super_advanced/Implementing_a_Type_Checker_with_mypy_Plugins.md",
   "docs/notes/dsa/python/super_advanced/Writing_a_subset_of_Python_compiler_targeting_WebAssembly.md",
+  "docs/notes/frontend-tooling/0_Overview/Monorepo_Tools_Turborepo_Nx_Lerna.md",
   "docs/notes/frontend-tooling/0_Overview/esbuild_Extremely_Fast_Go-based_Bundler.md",
   "docs/notes/frontend-tooling/1_Build_Tools/esbuild_Extremely_Fast_Bundler.md",
   "docs/notes/frontend-tooling/2_Package_Management/Yarn_Workspaces_PnP.md",
@@ -364,6 +365,7 @@
   "docs/notes/kotlin/2_Functions_and_OOP/Extension_Properties.md",
   "docs/notes/kotlin/2_Functions_and_OOP/Interface_Default_Methods.md",
   "docs/notes/kotlin/2_Functions_and_OOP/Vararg_Parameters.md",
+  "docs/notes/kotlin/3_Collections_and_Functional/partition_Split_into_Two_Lists.md",
   "docs/notes/kotlin/4_Coroutines/Flow_Cold_Asynchronous_Stream.md",
   "docs/notes/kotlin/5_Android_Development/Navigation_Component_NavGraph_NavController_Safe_Args.md",
   "docs/notes/kotlin/5_Android_Development/Room_Database_Entity_Dao_Database.md",
@@ -553,5 +555,6 @@
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Module_Federation_in_Webpack_5_Micro-frontends.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Regular_Expressions_Syntax_Flags_g_i_m_s_u_v_Groups_Lookahea.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/The_packagejson_exports_field_for_Subpath_Exports.md",
+  "docs/notes/web-fundamentals/9_JavaScript_Advanced/Well-known_Symbols_Symbolunscopables_and_the_with_Statement.md",
   "docs/notes/web-fundamentals/index.md"
 ]
