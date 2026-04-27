@@ -299,6 +299,7 @@
   "docs/notes/dsa/python/easy/Rotate_List_by_K.md",
   "docs/notes/dsa/python/easy/Two_Sum_using_Dictionary.md",
   "docs/notes/dsa/python/easy/Valid_Parentheses.md",
+  "docs/notes/dsa/python/easy/Writing_to_Files_using_with_statement.md",
   "docs/notes/dsa/python/hard/Advanced_Regex_Positive_Negative_Lookaheads.md",
   "docs/notes/dsa/python/hard/All_Nodes_Distance_K_in_Binary_Tree.md",
   "docs/notes/dsa/python/hard/Bridges_and_Articulation_Points.md",
@@ -482,6 +483,7 @@
   "docs/notes/rust/1_Ownership_and_Borrowing/Clone_Explicit_Deep_Copy.md",
   "docs/notes/rust/4_Smart_Pointers_and_Memory/CowT_Clone-on-Write.md",
   "docs/notes/rust/6_Iterators_and_Closures/Consuming_Adapters_collect_sum_product_count_any_all_find_po.md",
+  "docs/notes/rust/7_Async_Rust/Tokio_Mutex_and_RwLock.md",
   "docs/notes/rust/9_Rust_Ecosystem_and_Tooling/Cargo_Workspaces_for_Monorepos.md",
   "docs/notes/rust/9_Rust_Ecosystem_and_Tooling/Macros_Declarative_macro_rules_and_Procedural.md",
   "docs/notes/rust/9_Rust_Ecosystem_and_Tooling/cargo_clippy_Linter.md",
@@ -591,6 +593,7 @@
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Module_Federation_in_Webpack_5_Micro-frontends.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Regular_Expressions_Syntax_Flags_g_i_m_s_u_v_Groups_Lookahea.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/The_packagejson_exports_field_for_Subpath_Exports.md",
+  "docs/notes/web-fundamentals/9_JavaScript_Advanced/View_Transitions_API_Single-Page_App_DOM_morphing.md",
   "docs/notes/web-fundamentals/9_JavaScript_Advanced/Well-known_Symbols_Symbolunscopables_and_the_with_Statement.md",
   "docs/notes/web-fundamentals/index.md"
 ]
