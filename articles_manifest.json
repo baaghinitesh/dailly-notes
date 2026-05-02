@@ -564,6 +564,7 @@
   "docs/notes/software-engineering/6_Security_Engineering/Password_Hashing_bcrypt_Argon2_scrypt.md",
   "docs/notes/software-engineering/6_Security_Engineering/Secrets_Management_Vault_AWS_Secrets_Manager.md",
   "docs/notes/software-engineering/6_Security_Engineering/TLS_SSL_Handshake_Certificates_Certificate_Authorities.md",
+  "docs/notes/software-engineering/6_Security_Engineering/Zero_Trust_Security_Model.md",
   "docs/notes/software-engineering/index.md",
   "docs/notes/swift/0_Overview/Benefits_Open_Source__Available_on_Linux_and_Windows.md",
   "docs/notes/swift/0_Overview/Drawbacks_Server-side_Swift_Ecosystem_is_Small.md",
