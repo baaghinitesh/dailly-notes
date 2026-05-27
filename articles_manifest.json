@@ -708,6 +708,7 @@
   "docs/notes/python/0_Overview/Benefits_Rapid_Prototyping_and_Development_Speed.md",
   "docs/notes/python/0_Overview/Python_2_vs_Python_3_Always_Use_Python_3.md",
   "docs/notes/python/0_Overview/When_to_Use_Rapid_Prototyping.md",
+  "docs/notes/python/1_Python_Basics/Dict_Comprehensions_and_Merge_Operators__.md",
   "docs/notes/python/1_Python_Basics/Functions_def_return_default_args_args_kwargs_keyword-only_a.md",
   "docs/notes/python/1_Python_Basics/Lambda_Functions.md",
   "docs/notes/python/1_Python_Basics/Python_Syntax_Indentation_Comments_Variables_Dynamic_Typing.md",
