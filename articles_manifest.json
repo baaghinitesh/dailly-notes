@@ -950,6 +950,7 @@
   "docs/notes/web-fundamentals/0_Overview/SVG_Scalable_Vector_Graphics_DOM_manipulation_on_the_Web.md",
   "docs/notes/web-fundamentals/0_Overview/Statelessness_of_HTTP_and_Overcoming_it_with_Tokens.md",
   "docs/notes/web-fundamentals/10_Browser_Performance/Chrome_DevTools_Performance_Timeline_Analyzing_Flame_Charts.md",
+  "docs/notes/web-fundamentals/10_Browser_Performance/Compositor-Only_Properties_Animating_transform_and_opacity.md",
   "docs/notes/web-fundamentals/10_Browser_Performance/Compression_Gzip_Brotli__server_configuration.md",
   "docs/notes/web-fundamentals/10_Browser_Performance/Performance_Metrics_FCP_LCP_CLS_FID_INP_TTFB.md",
   "docs/notes/web-fundamentals/10_Browser_Performance/requestIdleCallback_for_Background_Work.md",
