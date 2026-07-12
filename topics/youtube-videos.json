@@ -1,0 +1,50 @@
+{
+  "Tutorials": [
+    {
+      "id": "uCKhX_z3C1M",
+      "title": "PrepGuide Tutorial: How to Create an Online Test in PrepGuide",
+      "description": "A comprehensive step-by-step walkthrough showing you how to set up, format, and deploy customized online tests and assessments in PrepGuide.",
+      "thumbnail": "https://img.youtube.com/vi/uCKhX_z3C1M/hqdefault.jpg",
+      "publishedAt": "2024-02-15T10:00:00Z"
+    },
+    {
+      "id": "w01467_-xbw",
+      "title": "Launch Your Concept - Project Development Walkthrough",
+      "description": "Go behind the scenes of our development process. See how we turn concepts, designs, and mockups into fully functional production applications.",
+      "thumbnail": "https://img.youtube.com/vi/w01467_-xbw/hqdefault.jpg",
+      "publishedAt": "2024-02-10T11:30:00Z"
+    }
+  ],
+  "Introductory": [
+    {
+      "id": "lDZ54ta8sI4",
+      "title": "Welcome to Launch Your Concept - Custom Web & App Development",
+      "description": "Learn about our mission to provide high-quality, scalable, and affordable custom software development, mobile apps, and developer services.",
+      "thumbnail": "https://img.youtube.com/vi/lDZ54ta8sI4/hqdefault.jpg",
+      "publishedAt": "2024-01-20T09:00:00Z"
+    },
+    {
+      "id": "8sv2qi65YYM",
+      "title": "How We Transform Ideas Into Successful Products",
+      "description": "An introductory overview explaining our complete pipeline from product blueprint, system architecture, prototyping, to final deployment.",
+      "thumbnail": "https://img.youtube.com/vi/8sv2qi65YYM/hqdefault.jpg",
+      "publishedAt": "2024-01-18T14:45:00Z"
+    },
+    {
+      "id": "jhvxT2pR4QQ",
+      "title": "Meet the Team behind Launch Your Concept",
+      "description": "Get to know our dedicated founders, designers, and engineering lead, committed to delivering state-of-the-art tech products.",
+      "thumbnail": "https://img.youtube.com/vi/jhvxT2pR4QQ/hqdefault.jpg",
+      "publishedAt": "2024-01-15T16:00:00Z"
+    }
+  ],
+  "Shorts": [
+    {
+      "id": "5RTvx5RHCwo",
+      "title": "Building Next-Gen Tech Solutions #Shorts",
+      "description": "Fast-paced visual showcase of our UI transitions, micro-animations, and system design patterns.",
+      "thumbnail": "https://img.youtube.com/vi/5RTvx5RHCwo/hqdefault.jpg",
+      "publishedAt": "2024-02-20T08:00:00Z"
+    }
+  ]
+}
