@@ -1,0 +1,604 @@
+{
+  "blogs": [
+    {
+      "topic": "How to Integrate Cloud-native Edge Function into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes, Cloud, DevOps",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Building a Custom GitOps Workflow: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Cloud",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Multi-cloud Prometheus Metrics is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, DevOps, Kubernetes",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Kubernetes Core Concepts: Pods, Services, and Ingress",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, AWS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Prometheus Metrics: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, DevOps",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Terraform Module to Support Millions of Requests",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, AWS, DevOps",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Infrastructure-as-code Prometheus Metrics and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, AWS, Cloud",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Docker Containers: Layer Optimization and Multi-stage Builds",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, DevOps",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding AWS VPC: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Future of Deployment Pipeline: Key Trends to Watch",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, DevOps, AWS, Kubernetes",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Designing High-Availability Architectures on AWS",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, DevOps, Cloud",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Automating Infrastructure Testing with Terratest",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Secure Service Mesh Implementations",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Deployment Pipeline to Support Millions of Requests",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, Kubernetes, Terraform",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering Lambda Function: Strategies for Senior Tech Leaders",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Terraform, Cloud",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Terraform Module: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, DevOps",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Future of Kubernetes Cluster: Key Trends to Watch",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Edge Computing: Deploying Serverless Functions close to Users",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, DevOps, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why High-Availability Prometheus Metrics is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Cloud",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Building a Custom Lambda Function: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, AWS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Containerized Deployment Pipeline into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Kubernetes, Terraform",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Containerized Kubernetes Cluster is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, AWS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Infrastructure-as-code Prometheus Metrics is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, DevOps",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Containerized Terraform Module and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS, Kubernetes",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Building a Custom Terraform Module: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes, DevOps, Cloud",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of AWS VPC: Key Trends to Watch",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, AWS, Terraform, DevOps",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Centralized Logging: Setting up the ELK Stack in Production",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, AWS, Cloud",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Serverless Architectures: AWS Lambda and API Gateway",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Terraform, Kubernetes, AWS",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Lambda Function: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, Kubernetes",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Automated IAM Policy and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Cloud, DevOps, Terraform",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Deployment Pipeline: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS, Kubernetes",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Chaos Engineering: Injecting Failure with Chaos Mesh",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, AWS, Kubernetes",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our Service Mesh to Support Millions of Requests",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Kubernetes",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Secure Service Mesh into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Cloud, Kubernetes",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our AWS VPC to Support Millions of Requests",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Cloud",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing AWS VPC for Extreme Performance and Reliability",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Terraform",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Mastering Kubernetes Cluster: Strategies for Senior Tech Leaders",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS, Cloud",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Future of Lambda Function: Key Trends to Watch",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes, Cloud",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Infrastructure-as-code Edge Function into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, DevOps, Terraform",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building GitOps Workflows with ArgoCD and Kubernetes",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Serverless Service Mesh and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Terraform, Cloud, DevOps",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "S3 Storage Lifecycle Optimization: Lowering Cloud Costs",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Terraform, Cloud",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Mastering IAM Policy: Strategies for Senior Tech Leaders",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Terraform, Kubernetes, Cloud",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Automated Kubernetes Cluster is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Terraform, Kubernetes, AWS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Infrastructure-as-code Lambda Function and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, AWS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Resilient GitOps Workflow and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, DevOps, Kubernetes",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Secure IAM Policy is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS, Cloud",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Building a Custom AWS VPC: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, DevOps, Cloud, Terraform",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing Deployment Pipeline for Extreme Performance and Reliability",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, DevOps, Cloud",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Cloud-native Terraform Module and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, DevOps, Kubernetes, AWS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Secure IAM Policy Implementations",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, DevOps, AWS, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding IAM Policy: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Terraform, AWS, Kubernetes",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our GitOps Workflow to Support Millions of Requests",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Cloud, DevOps, Kubernetes",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "AWS VPC Architecture: Designing Secure Network Topologies",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Cloud",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Prometheus Metrics to Support Millions of Requests",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Cloud-native IAM Policy and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Blue-Green vs Canary Deployments: Safe Release Strategies",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Kubernetes",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Automated Kubernetes Cluster Implementations",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, Kubernetes, AWS",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing GitOps Workflow for Extreme Performance and Reliability",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Terraform",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "AWS IAM Policies: Least Privilege Authorization",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, DevOps",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Optimized Lambda Function into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Kubernetes",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing Kubernetes Resources: Requests and Limits",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, Cloud, AWS",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Building a Custom Deployment Pipeline: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Kubernetes, Cloud, AWS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Automated Lambda Function and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes, DevOps, Cloud",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Service Mesh: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes, DevOps",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing IAM Policy for Extreme Performance and Reliability",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, DevOps, Terraform, Kubernetes",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why Multi-cloud Lambda Function is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS, Kubernetes",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Optimized Terraform Module and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Mastering AWS VPC: Strategies for Senior Tech Leaders",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Mastering GitOps Workflow: Strategies for Senior Tech Leaders",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Kubernetes, AWS, DevOps",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Optimized Service Mesh and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, AWS, Kubernetes, Terraform",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Infrastructure-as-code IAM Policy and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Serverless AWS VPC is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, Terraform",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Containerized Lambda Function into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, AWS, DevOps, Cloud",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Edge Function: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, Cloud, DevOps, Kubernetes",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Optimized Kubernetes Cluster Implementations",
+      "category": "Cloud Computing & DevOps",
+      "tags": "AWS, DevOps",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Prometheus Metrics: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Monitoring and Alerting: Prometheus and Grafana Setup",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, Terraform, Kubernetes",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to High-Availability Deployment Pipeline Implementations",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Resilient Kubernetes Cluster Implementations",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Infrastructure as Code (IaC): Terraform Best Practices",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS, Cloud, Kubernetes",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Multi-cloud GitOps Workflow and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud, Terraform, AWS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding GitOps Workflow: Best Practices for Engineers",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, AWS, DevOps",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Optimized Edge Function and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Containerized GitOps Workflow Implementations",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Kubernetes, DevOps",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Building a Custom IAM Policy: Step-by-Step Architecture Guide",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform, AWS, DevOps",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Resilient Edge Function and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Terraform",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Future of GitOps Workflow: Key Trends to Watch",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, DevOps, AWS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Multi-Cloud Deployments: Managing Infrastructure on AWS and GCP",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, DevOps, Kubernetes, AWS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Infrastructure-as-code Service Mesh into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, Cloud, Terraform",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Serverless Prometheus Metrics and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, DevOps",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Serverless Edge Function into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, AWS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Infrastructure-as-code Terraform Module and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, Cloud",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Future of IAM Policy: Key Trends to Watch",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Cloud, Kubernetes, AWS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Optimized GitOps Workflow into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "DevOps, AWS, Kubernetes, Cloud",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing Service Mesh for Extreme Performance and Reliability",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Kubernetes, DevOps, Terraform",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing Prometheus Metrics for Extreme Performance and Reliability",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Terraform",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Automated GitOps Workflow is Critical for Modern Products",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Terraform, Cloud, AWS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Serverless Terraform Module and How to Avoid Them",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, AWS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Multi-cloud Lambda Function into Existing Workflows",
+      "category": "Cloud Computing & DevOps",
+      "tags": "Cloud, Kubernetes",
+      "difficulty": "Advanced"
+    }
+  ]
+}

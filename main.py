@@ -6,7 +6,7 @@ from engine.config import (
 )
 from engine.utils import scan_existing_files
 from engine.topics import load_topic_files
-from engine.generators import generate_dsa, generate_note, generate_blog
+from engine.generators import generate_dsa, generate_note, generate_blog, generate_blog_followup
 from engine.io import commit_and_push
 
 def main():
@@ -53,7 +53,14 @@ def main():
     # 4. Generate Blogs
     print(f"\n--- Generating {target_blogs} Professional Blog Posts ---")
     while generated_blogs < target_blogs and not _quota_exhausted:
-        res = generate_blog()
+        if random.random() < 0.3:
+            res = generate_blog_followup()
+            # If no blogs exist yet or it fails to follow-up, fallback to new blog
+            if not res:
+                res = generate_blog()
+        else:
+            res = generate_blog()
+            
         if res:
             history.append(res)
             generated_blogs += 1

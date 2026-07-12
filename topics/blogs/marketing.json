@@ -1,0 +1,604 @@
+{
+  "blogs": [
+    {
+      "topic": "Product-Led Growth (PLG): Building Growth Loops into the Product",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Data-driven Lead Generation into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Social Media Marketing: Growing a Technical Brand on LinkedIn",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO, SaaS, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Conversion Rate Optimization (CRO) Secrets for SaaS Landing Pages",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing, SaaS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Strategic SEO Strategy Implementations",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, SEO, Growth",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Community-Led Growth: How to Build a Loyal Brand Community",
+      "category": "Marketing & Growth",
+      "tags": "SEO, SaaS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Optimizing Growth Loop for Extreme Performance and Reliability",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing, B2B, Growth",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing Brand Authority for Extreme Performance and Reliability",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing, B2B, Growth",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Scalable Marketing Funnel Implementations",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Marketing Funnel: Step-by-Step Architecture Guide",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO, B2B",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering SEO Strategy: Strategies for Senior Tech Leaders",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Scalable Growth Loop is Critical for Modern Products",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing, SEO, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our Growth Loop to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing, SEO",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Optimizing Content Engine for Extreme Performance and Reliability",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing, Growth",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "SEO in 2026: Optimizing for AI Search Engines (GEO)",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, B2B",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Growth Loop: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, B2B, Marketing",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Targeted Conversion Rate into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, SEO, B2B",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Future of Conversion Rate: Key Trends to Watch",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Targeted Growth Loop and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "B2B, SaaS, Growth",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Custom Email Campaign: Step-by-Step Architecture Guide",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, SEO, B2B",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Retargeting Ad Campaigns: Converting Lost Traffic with Dynamic Ads",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Growth, SaaS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Referral Loops: Engineering Viral Growth in Product Features",
+      "category": "Marketing & Growth",
+      "tags": "SEO, B2B, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Targeted SEO Strategy into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "B2B, SEO, SaaS",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Customer Acquisition Cost (CAC) vs Lifetime Value (LTV) Optimization",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How We Scaled Our SEO Strategy to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Growth, B2B",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Viral Marketing Funnel into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "SaaS Marketing: From Zero to 10k Monthly Organic Visits",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, B2B",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Scalable Lead Generation into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO, B2B",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Viral Lead Generation into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Growth, Marketing, SEO",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Email Campaign: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, SaaS, Growth",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Product Launch: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SaaS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Organic Marketing Funnel into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Growth, Marketing",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Affiliate Marketing: Setting up a Win-Win Referral Program",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SaaS, B2B, SEO",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Organic SEO Strategy is Critical for Modern Products",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing, Growth, SEO",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing SEO Strategy for Extreme Performance and Reliability",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth, B2B, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Effective Product Launch into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of Brand Authority: Key Trends to Watch",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Growth",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Marketing Funnel: Strategies for Senior Tech Leaders",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How We Scaled Our Lead Generation to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Content Engine: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SaaS",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Complete Guide to High-growth Lead Generation Implementations",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SaaS, Marketing",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Marketing Funnel to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, SEO",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Mastering Lead Generation: Strategies for Senior Tech Leaders",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Growth, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Content Marketing Matrix: Aligning Content with Buyer Personas",
+      "category": "Marketing & Growth",
+      "tags": "Growth, Marketing, SaaS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Integrate Strategic Marketing Funnel into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO, SaaS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Viral Growth Loop Implementations",
+      "category": "Marketing & Growth",
+      "tags": "B2B, SaaS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Customer Acquisition: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing, SaaS, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "A/B Testing: How to Run Scientifically Valid Growth Experiments",
+      "category": "Marketing & Growth",
+      "tags": "Growth, Marketing, B2B, SaaS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Video Marketing: Creating Engaging Demos and Tutorials",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Effective Lead Generation is Critical for Modern Products",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing, Growth",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Power of Storytelling in Product Marketing",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth, Marketing, B2B",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Viral Lead Generation is Critical for Modern Products",
+      "category": "Marketing & Growth",
+      "tags": "SEO, B2B",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in SaaS-focused Lead Generation and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing, Growth, B2B",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate High-growth SEO Strategy into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO, B2B, Marketing",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in High-growth Lead Generation and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, B2B",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate SaaS-focused Marketing Funnel into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Growth",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Future of Lead Generation: Key Trends to Watch",
+      "category": "Marketing & Growth",
+      "tags": "Growth, Marketing, SaaS",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Mastering Conversion Rate: Strategies for Senior Tech Leaders",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, Growth, B2B, SEO",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why SaaS-focused Email Campaign is Critical for Modern Products",
+      "category": "Marketing & Growth",
+      "tags": "SEO, SaaS",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of Growth Loop: Key Trends to Watch",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering Email Campaign: Strategies for Senior Tech Leaders",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Viral Product Launch is Critical for Modern Products",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, B2B",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Lead Generation: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, B2B, SaaS, SEO",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Optimizing Customer Acquisition for Extreme Performance and Reliability",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, SEO",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Brand Authority to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our Content Engine to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing, SEO",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Building a Custom Content Engine: Step-by-Step Architecture Guide",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Brand Authority: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO, SaaS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Growth Loop: Strategies for Senior Tech Leaders",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Growth",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Effective Customer Acquisition into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, B2B",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding SEO Strategy: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, SaaS, SEO, Growth",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why SaaS-focused Customer Acquisition is Critical for Modern Products",
+      "category": "Marketing & Growth",
+      "tags": "SEO, B2B, SaaS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Copywriting Frameworks: AIDA, PAS, and BAB for Landing Pages",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, B2B",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Future of Marketing Funnel: Key Trends to Watch",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing, Growth, B2B",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Organic Email Campaign into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Growth, B2B, Marketing, SEO",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Future of Customer Acquisition: Key Trends to Watch",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing, B2B, Growth",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Custom SEO Strategy: Step-by-Step Architecture Guide",
+      "category": "Marketing & Growth",
+      "tags": "B2B, SEO, Growth",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Organic Product Launch Implementations",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SaaS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Scalable Content Engine and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, SEO, B2B, Growth",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Future of Content Engine: Key Trends to Watch",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, SEO, SaaS",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Conversion Rate: Best Practices for Engineers",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth, SaaS, Marketing",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Custom Lead Generation: Step-by-Step Architecture Guide",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Complete Guide to Targeted Growth Loop Implementations",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing, SEO, Growth",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in SaaS-focused Email Campaign and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate B2B Customer Acquisition into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Marketing, SaaS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How We Scaled Our Product Launch to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Marketing",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Effective Growth Loop and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Strategic Product Launch and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing, B2B, SEO",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Build a High-Converting Email Newsletter",
+      "category": "Marketing & Growth",
+      "tags": "Growth, Marketing",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our Email Campaign to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "B2B, Growth, Marketing, SEO",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Building a Custom Conversion Rate: Step-by-Step Architecture Guide",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SEO, Marketing",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Viral Customer Acquisition and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "B2B, SEO",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Scalable Brand Authority and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "B2B, SEO, SaaS",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Organic Product Launch into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, SEO, B2B",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Integrate Effective Marketing Funnel into Existing Workflows",
+      "category": "Marketing & Growth",
+      "tags": "Growth, SaaS, SEO",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our Conversion Rate to Support Millions of Requests",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, SEO, Marketing",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Launch on Product Hunt and Reach #1 Product of the Day",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Marketing, Growth, SaaS",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Viral Customer Acquisition Implementations",
+      "category": "Marketing & Growth",
+      "tags": "SaaS, Marketing",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Targeted Lead Generation Implementations",
+      "category": "Marketing & Growth",
+      "tags": "B2B, SaaS, Marketing",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Viral Email Campaign and How to Avoid Them",
+      "category": "Marketing & Growth",
+      "tags": "SEO, Growth, SaaS",
+      "difficulty": "Intermediate"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ from engine.api import call_groq
 from engine.validation import validate_dsa_content, validate_note_content
 from engine.io import save_file
 from engine.prompts import (
-    DSA_SYSTEM, DSA_SUMMARY_SYSTEM, NOTE_SYSTEM, UPDATE_SYSTEM, BLOG_GENERATION_SYSTEM
+    DSA_SYSTEM, DSA_SUMMARY_SYSTEM, NOTE_SYSTEM, UPDATE_SYSTEM, BLOG_GENERATION_SYSTEM, BLOG_FOLLOWUP_SYSTEM
 )
 
 def generate_dsa() -> Optional[str]:
@@ -397,3 +397,83 @@ def generate_blog() -> Optional[str]:
     save_file(md_path, final_content)
     print(f"✅ Blog article written: {md_path}")
     return f"Blog Post [{category}]: {topic}"
+
+def generate_blog_followup() -> Optional[str]:
+    """
+    Generate a Part 2 follow-up for an existing blog post (Approach 1).
+    """
+    # 1. Pick a random existing blog file
+    import os, glob
+    blogs_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "blogs")
+    existing_blogs = glob.glob(os.path.join(blogs_dir, "*.md"))
+    
+    if not existing_blogs:
+        print("⚠️  No existing blogs found for a follow-up.")
+        return None
+
+    selected_blog = random.choice(existing_blogs)
+    with open(selected_blog, "r", encoding="utf-8") as f:
+        existing_content = f.read()
+
+    # Parse metadata to figure out series info
+    meta = read_frontmatter(selected_blog)
+    original_title = meta.get("title", "Unknown Topic")
+    series_name = meta.get("series", original_title)
+    current_part = int(meta.get("part", "1"))
+    next_part = current_part + 1
+
+    category = meta.get("category", "Technology")
+    tags = meta.get("tags", "blog, tech, business")
+
+    print(f"📚 Generating Follow-Up {next_part} for Series: {series_name}")
+
+    # Generate the follow up
+    try:
+        content_body = call_groq(
+            BLOG_FOLLOWUP_SYSTEM.replace("{ORIGINAL_SERIES_NAME}", series_name).replace("{NEXT_PART_NUMBER}", str(next_part)),
+            (
+                f"Original Article Content:\n{existing_content[:2000]}...\n\n"
+                f"Write a comprehensive Part {next_part} that explores advanced edge-cases and deeper architecture."
+            ),
+            max_tokens=4096,
+            context=f"Blog Follow-Up: {series_name} Part {next_part}",
+        )
+    except (GroqQuotaError, GroqAuthError):
+        raise
+    except GroqAPIError as e:
+        print(f"❌ Blog follow-up generation failed for '{series_name}': {e}")
+        return None
+
+    if not content_body or len(content_body.strip()) < 1000:
+        print(f"⚠️  Blog follow-up content too short for '{series_name}' — skipping")
+        return None
+
+    final_content = fix_mermaid_syntax(content_body)
+
+    # Force frontmatter if LLM fails
+    if not final_content.startswith("---"):
+        seed = "".join(c for c in series_name if c.isalnum() or c.isspace()).replace(" ", "-").lower() + f"-part-{next_part}"
+        banner_url = f"https://picsum.photos/seed/{seed}/1200/630"
+        new_title = f"{series_name} (Part {next_part})"
+        fallback_fm = (
+            f"---\n"
+            f"title: \"{new_title}\"\n"
+            f"excerpt: \"Advanced Part {next_part} of the {series_name} series.\"\n"
+            f"category: \"{category}\"\n"
+            f"tags: \"{tags}\"\n"
+            f"difficulty: \"Advanced\"\n"
+            f"banner: \"{banner_url}\"\n"
+            f"source: \"github\"\n"
+            f"series: \"{series_name}\"\n"
+            f"part: {next_part}\n"
+            f"---\n\n"
+        )
+        final_content = fallback_fm + final_content.lstrip()
+    
+    # Save as new file
+    safe_name = "".join(c if c.isalnum() else "_" for c in series_name)
+    new_path = os.path.join(blogs_dir, f"{safe_name}_Part_{next_part}.md")
+    
+    save_file(new_path, final_content)
+    print(f"✅ Blog Follow-Up written: {new_path}")
+    return f"Blog Follow-Up [{category}]: {series_name} (Part {next_part})"

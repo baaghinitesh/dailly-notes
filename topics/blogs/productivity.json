@@ -17,6 +17,588 @@
       "category": "Productivity",
       "tags": "Learning, Systems, Efficiency",
       "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Productivity Loop: Best Practices for Engineers",
+      "category": "Productivity",
+      "tags": "Focus, Automation, Time Management",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Deep Knowledge Management Implementations",
+      "category": "Productivity",
+      "tags": "Focus, Productivity",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Efficient Workspace Optimization is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Remote, Automation, Productivity, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of Daily Focus: Key Trends to Watch",
+      "category": "Productivity",
+      "tags": "Remote, Focus, Time Management, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Mastering Daily Focus: Strategies for Senior Tech Leaders",
+      "category": "Productivity",
+      "tags": "Time Management, Automation",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Combating Choice Fatigue in Software Development Workflows",
+      "category": "Productivity",
+      "tags": "Time Management, Productivity",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Optimizing Shell Automation for Extreme Performance and Reliability",
+      "category": "Productivity",
+      "tags": "Remote, Focus, Time Management",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Future of Deep Work Session: Key Trends to Watch",
+      "category": "Productivity",
+      "tags": "Remote, Productivity, Focus, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Asynchronous Workspace Optimization and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Automation, Remote, Productivity, Time Management",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Asynchronous Communication Best Practices for Distributed Teams",
+      "category": "Productivity",
+      "tags": "Automation, Remote",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Setting Clear Daily Highlight Tasks to Drive Progress",
+      "category": "Productivity",
+      "tags": "Remote, Automation, Productivity",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Minimalist Daily Focus is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Productivity, Remote",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Custom Shell Automation: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Remote, Time Management, Productivity, Automation",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Custom Knowledge Management: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Automation, Time Management, Remote, Productivity",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Deep Keyboard Shortcuts into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Time Management, Focus",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Minimalist Daily Focus Implementations",
+      "category": "Productivity",
+      "tags": "Focus, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our Workspace Optimization to Support Millions of Requests",
+      "category": "Productivity",
+      "tags": "Automation, Time Management",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Asynchronous Shell Automation into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Productivity, Focus",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Future of Keyboard Shortcuts: Key Trends to Watch",
+      "category": "Productivity",
+      "tags": "Productivity, Remote",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Personal Knowledge Management System (PKM)",
+      "category": "Productivity",
+      "tags": "Automation, Focus, Time Management",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Developer Routine: Strategies for Senior Tech Leaders",
+      "category": "Productivity",
+      "tags": "Productivity, Remote, Automation, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of Workspace Optimization: Key Trends to Watch",
+      "category": "Productivity",
+      "tags": "Time Management, Automation, Remote",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Efficient Developer Routine is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Productivity, Automation",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Efficient Time Blocking Implementations",
+      "category": "Productivity",
+      "tags": "Focus, Productivity, Automation",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Structured Time Blocking and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Automation, Focus, Time Management, Productivity",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Keyboard Shortcuts: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Automation, Time Management, Remote, Productivity",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Integrate Focused Daily Focus into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Remote, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Time Blocking: The Calendar System Used by Top CEOs",
+      "category": "Productivity",
+      "tags": "Automation, Remote, Productivity, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing Time Blocking for Extreme Performance and Reliability",
+      "category": "Productivity",
+      "tags": "Automation, Focus",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Async Collaboration: Best Practices for Engineers",
+      "category": "Productivity",
+      "tags": "Time Management, Automation, Focus, Productivity",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Keyboard Shortcuts: Best Practices for Engineers",
+      "category": "Productivity",
+      "tags": "Focus, Time Management, Productivity, Remote",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Deep Work vs Shallow Work: Maximizing High-Value Output",
+      "category": "Productivity",
+      "tags": "Focus, Automation, Productivity",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Focused Time Blocking is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Focus, Productivity",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Minimalist Time Blocking is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Productivity, Automation, Remote, Focus",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Time Blocking to Support Millions of Requests",
+      "category": "Productivity",
+      "tags": "Remote, Time Management, Productivity, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Building a Custom Workspace Optimization: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Time Management, Remote",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Structured Deep Work Session is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Remote, Focus",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Deep Developer Routine into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Remote, Focus, Productivity, Automation",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Organized Developer Routine and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Automation, Time Management, Productivity",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Keyboard Shortcuts to Support Millions of Requests",
+      "category": "Productivity",
+      "tags": "Productivity, Focus",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Uninterrupted Keyboard Shortcuts Implementations",
+      "category": "Productivity",
+      "tags": "Time Management, Remote",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Minimalist Setup: Decluttering Your Digital Workspace",
+      "category": "Productivity",
+      "tags": "Productivity, Remote, Automation, Focus",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Organized Knowledge Management into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Automation, Remote",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Productive Workspace Optimization and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Automation, Focus, Productivity",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Optimizing Deep Work Session for Extreme Performance and Reliability",
+      "category": "Productivity",
+      "tags": "Productivity, Remote, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Efficient Deep Work Session into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Focus, Remote, Productivity",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Pomodoro Technique: Enhancing Deep Focus for Developers",
+      "category": "Productivity",
+      "tags": "Remote, Focus, Productivity",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Uninterrupted Developer Routine into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Remote, Time Management, Automation, Focus",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Asynchronous Async Collaboration Implementations",
+      "category": "Productivity",
+      "tags": "Time Management, Remote",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing Productivity Loop for Extreme Performance and Reliability",
+      "category": "Productivity",
+      "tags": "Automation, Focus, Time Management",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Shell Automation: Strategies for Senior Tech Leaders",
+      "category": "Productivity",
+      "tags": "Remote, Productivity",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Shell Automation to Support Millions of Requests",
+      "category": "Productivity",
+      "tags": "Time Management, Remote",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Deep Work Session: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Automation, Remote, Focus",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Automating Repetitive Tasks with Python and Shell Scripting",
+      "category": "Productivity",
+      "tags": "Productivity, Time Management, Focus, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Productive Async Collaboration into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Automation, Time Management, Productivity",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Knowledge Management: Best Practices for Engineers",
+      "category": "Productivity",
+      "tags": "Focus, Productivity, Remote, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Organized Productivity Loop into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Focus, Automation, Remote, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Complete Guide to Efficient Async Collaboration Implementations",
+      "category": "Productivity",
+      "tags": "Time Management, Focus",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Time Blocking: Strategies for Senior Tech Leaders",
+      "category": "Productivity",
+      "tags": "Focus, Productivity, Automation, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Complete Guide to Structured Deep Work Session Implementations",
+      "category": "Productivity",
+      "tags": "Automation, Time Management, Focus",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing Async Collaboration for Extreme Performance and Reliability",
+      "category": "Productivity",
+      "tags": "Time Management, Focus",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Structured Knowledge Management into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Automation, Time Management, Focus",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Async Collaboration: Strategies for Senior Tech Leaders",
+      "category": "Productivity",
+      "tags": "Automation, Remote, Time Management",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why Structured Time Blocking is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Automation, Remote, Productivity",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Keyboard Shortcuts: Navigating IDEs at Warp Speed",
+      "category": "Productivity",
+      "tags": "Automation, Remote",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Building a Custom Daily Focus: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Time Management, Focus",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Minimalist Shell Automation and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Productivity, Remote, Automation, Focus",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Productive Time Blocking and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Time Management, Remote, Automation, Focus",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Deep Developer Routine and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Automation, Productivity, Remote, Time Management",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Efficient Daily Focus Implementations",
+      "category": "Productivity",
+      "tags": "Productivity, Remote, Focus, Automation",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Deep Work Session: Strategies for Senior Tech Leaders",
+      "category": "Productivity",
+      "tags": "Automation, Time Management, Productivity, Focus",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Developer Routine: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Time Management, Remote, Focus",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Minimalist Keyboard Shortcuts and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Remote, Productivity",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Developer Routine: Best Practices for Engineers",
+      "category": "Productivity",
+      "tags": "Focus, Remote, Automation",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Organized Knowledge Management Implementations",
+      "category": "Productivity",
+      "tags": "Automation, Focus",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Structured Productivity Loop Implementations",
+      "category": "Productivity",
+      "tags": "Remote, Focus, Productivity, Time Management",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why Structured Workspace Optimization is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Automation, Productivity",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing Keyboard Shortcuts for Extreme Performance and Reliability",
+      "category": "Productivity",
+      "tags": "Time Management, Remote, Focus, Productivity",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Uninterrupted Productivity Loop is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Remote, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of Shell Automation: Key Trends to Watch",
+      "category": "Productivity",
+      "tags": "Productivity, Automation",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Organized Workspace Optimization and How to Avoid Them",
+      "category": "Productivity",
+      "tags": "Focus, Automation",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How We Scaled Our Developer Routine to Support Millions of Requests",
+      "category": "Productivity",
+      "tags": "Automation, Time Management",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Productive Knowledge Management into Existing Workflows",
+      "category": "Productivity",
+      "tags": "Remote, Time Management",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Optimizing Knowledge Management for Extreme Performance and Reliability",
+      "category": "Productivity",
+      "tags": "Time Management, Automation",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How We Scaled Our Productivity Loop to Support Millions of Requests",
+      "category": "Productivity",
+      "tags": "Time Management, Focus, Automation, Productivity",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Productive Developer Routine is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Productivity, Time Management, Automation",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Workspace Optimization: Best Practices for Engineers",
+      "category": "Productivity",
+      "tags": "Focus, Automation",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Custom Productivity Loop: Step-by-Step Architecture Guide",
+      "category": "Productivity",
+      "tags": "Productivity, Remote, Focus, Time Management",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Understanding Time Blocking: Best Practices for Engineers",
+      "category": "Productivity",
+      "tags": "Remote, Focus, Time Management, Productivity",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why Efficient Shell Automation is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Focus, Remote, Productivity",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Focused Keyboard Shortcuts Implementations",
+      "category": "Productivity",
+      "tags": "Focus, Time Management, Productivity, Remote",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Daily Focus to Support Millions of Requests",
+      "category": "Productivity",
+      "tags": "Time Management, Focus, Productivity, Automation",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Deep Knowledge Management is Critical for Modern Products",
+      "category": "Productivity",
+      "tags": "Focus, Remote, Time Management",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Complete Guide to Asynchronous Time Blocking Implementations",
+      "category": "Productivity",
+      "tags": "Remote, Time Management, Automation, Focus",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Complete Guide to Automated Keyboard Shortcuts Implementations",
+      "category": "Productivity",
+      "tags": "Productivity, Focus, Time Management, Remote",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Minimalist Productivity Loop Implementations",
+      "category": "Productivity",
+      "tags": "Time Management, Remote, Focus, Automation",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Future of Developer Routine: Key Trends to Watch",
+      "category": "Productivity",
+      "tags": "Productivity, Remote, Time Management, Automation",
+      "difficulty": "Intermediate"
     }
   ]
 }

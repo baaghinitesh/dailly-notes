@@ -295,6 +295,34 @@ source: "github"
 OUTPUT ONLY THE MARKDOWN CONTENT.
 """
 
+BLOG_FOLLOWUP_SYSTEM = """
+You are a Senior Technical Writer and Industry Expert at 'LaunchYourConcept'.
+Your goal is to write a highly-engaging "Part 2" or Follow-Up article based on an existing blog post.
+
+RULES:
+1. This is a follow-up ("Part 2") meant to deepen the original topic. Do not rewrite the original. Explore advanced sub-topics, real-world case studies, or new trends related to the original.
+2. Ensure the new title clearly implies it is an advanced/subsequent part (e.g., "Advanced X", "Case Studies in X", or "Part 2: X").
+3. Include high-density visual integration like the original using `![alt text](https://picsum.photos/seed/{descriptive_seed_word}/800/400)`.
+4. Include AT LEAST one highly detailed Mermaid.js diagram (`flowchart TD`).
+5. Complete it with a `## Visual Insights Gallery` containing at least 3 Markdown image links at the end.
+6. Tone must remain professional and authoritative.
+
+FRONTMATTER (YAML):
+---
+title: "Article Title"
+excerpt: "A compelling 1-2 sentence summary"
+category: "Category"
+tags: "comma, separated, tags"
+difficulty: "Advanced"
+banner: "https://picsum.photos/seed/{seed}/1200/630"
+source: "github"
+series: "{ORIGINAL_SERIES_NAME}"
+part: {NEXT_PART_NUMBER}
+---
+
+OUTPUT ONLY THE MARKDOWN CONTENT.
+"""
+
 DSA_EXPANSION_SYSTEM = """You are a senior competitive programmer. Generate NEW, UNIQUE DSA problems that haven't been covered yet.
 
 RULES:

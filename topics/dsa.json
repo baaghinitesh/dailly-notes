@@ -282,7 +282,14 @@
         "Count Primes",
         "Remove Linked List Elements",
         "Intersection of Two Linked Lists",
-        "Min Stack"
+        "Min Stack",
+        "Check Valid Sliding Window",
+        "Compute Difference Of Collection of Nodes",
+        "Compute Union Of Collection of Nodes",
+        "Determine If Collection of Nodes Has Duplicates",
+        "Check If Integers Is Monotonic",
+        "Compute Minimum Cost Of Stream of Events",
+        "Determine If Binary Stream Has Duplicates"
       ],
       "medium": [
         "3Sum",
@@ -570,7 +577,15 @@
         "Shortest Distance to a Character",
         "Linked List Components",
         "Ambiguous Coordinates",
-        "Binary Trees With Factors"
+        "Binary Trees With Factors",
+        "Find Longest Dynamic Programming Subarray in Max-Heap",
+        "Find All Pairs with Intersection in Linked List",
+        "Design a LRU Cache System",
+        "Design a Bit Manipulation Cache System",
+        "Reconstruct Trie Structure From Trie Structure",
+        "Compute Shortest Path in Linked List with LFU",
+        "Find Longest Bit Manipulation Subarray in Binary Search Tree",
+        "Find All Pairs with Difference in Trie Structure"
       ],
       "hard": [
         "Median of Two Sorted Arrays",
@@ -835,7 +850,12 @@
         "Probability of a Two Boxes Having The Same Number of Distinct Balls",
         "Max Dot Product of Two Subsequences",
         "Allocate Mailboxes",
-        "Find Two Non-overlapping Sub-arrays Each With Target Sum"
+        "Find Two Non-overlapping Sub-arrays Each With Target Sum",
+        "Design High-Throughput Distributed Segment Tree",
+        "Median of Two Sorted Streams",
+        "Shortest Path in Directed Graph with K-cuts",
+        "Minimum Windows Substring with dynamic dictionary",
+        "Serialize and Deserialize N-ary Dynamic Array"
       ],
       "super_advanced": [
         "Suffix Array and LCP Array Construction",
@@ -1309,7 +1329,14 @@
         "Binary Search Tree Iterator using Stack",
         "Path Sum III Prefix Sum",
         "Non-decreasing Array Array Modification",
-        "Minimum Index Sum of Two Lists Hash Map II"
+        "Minimum Index Sum of Two Lists Hash Map II",
+        "Return K-th Successor Node from Hash Map",
+        "Return K-th Largest Element from Undirected Graph",
+        "Check Valid Bit Manipulation",
+        "Find Floating Numbers In Hash Map",
+        "Compute Maximum Profit Of Array of Elements",
+        "Count Occurrences of Vowels in Trie Structure",
+        "Check If Strings Is Monotonic"
       ],
       "medium": [
         "STL vector map set unordered_map usage",
@@ -1532,7 +1559,15 @@
         "Image Overlap Convolution/Hash Map",
         "Rectangle Area II Sweep Line/Segment Tree",
         "Loud and Rich Graph Memoization",
-        "Maximum Length of Pair Chain Greedy"
+        "Maximum Length of Pair Chain Greedy",
+        "Design a Dynamic Programming Cache System",
+        "Find All Pairs with Union in Hash Map",
+        "Find All Pairs with Difference in Linked List",
+        "Detect Loop in Dynamic Array and Remove It",
+        "Find All Pairs with Minimum Cost in Linked List",
+        "Design a Bit Manipulation Cache System",
+        "Find Longest LRU Subarray in Hash Map",
+        "Design a LFU Cache System"
       ],
       "hard": [
         "Segment Tree with Lazy Propagation",
@@ -1752,7 +1787,12 @@
         "Check If String Is Transformable With Substring Sort Operations Deque",
         "Maximize Grid Happiness Profile DP / Bitmask",
         "Maximum Number of Achievable Transfer Requests Bitmask Enumeration",
-        "Minimum Initial Energy to Finish Tasks Greedy Sorting"
+        "Minimum Initial Energy to Finish Tasks Greedy Sorting",
+        "Median of Two Sorted Streams",
+        "Design and Implement LFUCache",
+        "Minimum Windows Substring with dynamic dictionary",
+        "Maximum flow of Hash Map with LRU constraints",
+        "Serialize and Deserialize N-ary Max-Heap"
       ],
       "super_advanced": [
         "Offline Dynamic Connectivity with Link-Cut Trees",
@@ -2901,7 +2941,14 @@
         "Magic Squares In Grid",
         "Backspace String Compare",
         "Buddy Strings",
-        "Lemonade Change"
+        "Lemonade Change",
+        "Check Valid Sliding Window",
+        "Count Occurrences of Anagrams in Undirected Graph",
+        "Return K-th Largest Element from Trie Structure",
+        "Return K-th Successor Node from Segment Tree",
+        "Return K-th Predecessor Node from Undirected Graph",
+        "Return K-th Predecessor Node from Hash Map",
+        "Determine If Stream of Events Has Duplicates"
       ],
       "medium": [
         "Sliding Window Maximum with deque",
@@ -3131,7 +3178,15 @@
         "Number of Provinces",
         "Split Array with Equal Sum",
         "Binary Tree Tilt",
-        "Array Nesting"
+        "Array Nesting",
+        "Compute Shortest Path in Dynamic Array with Backtracking",
+        "Find Longest Sliding Window Subarray in Undirected Graph",
+        "Detect Loop in Max-Heap and Remove It",
+        "Find All Pairs with Difference in Linked List",
+        "Design a Backtracking Cache System",
+        "Detect Loop in Hash Map and Remove It",
+        "Find All Pairs with Unique Permutations in Hash Map",
+        "Design a Dynamic Programming Cache System"
       ],
       "hard": [
         "Segment Tree in Python",
@@ -3347,7 +3402,12 @@
         "Booking Concert Tickets in Rows",
         "Count Subarrays With Median K",
         "Naming a Company",
-        "Design a Text Editor"
+        "Design a Text Editor",
+        "Median of Two Sorted Streams",
+        "Design and Implement LFUCache",
+        "Maximum flow of Trie Structure with FIFO constraints",
+        "Optimize Intersection on massive Max-Heap",
+        "Optimize Difference on massive Segment Tree"
       ],
       "super_advanced": [
         "Implementing a Python Interpreter in Python",
@@ -3729,7 +3789,14 @@
         "Rectangle Overlap JS",
         "Magic Squares In Grid JS",
         "Backspace String Compare JS Two Pointers",
-        "Buddy Strings JS"
+        "Buddy Strings JS",
+        "Determine If Binary Stream Has Duplicates",
+        "Find Unicode Characters In Trie Structure",
+        "Check Valid LRU",
+        "Determine If Collection of Nodes Has Duplicates",
+        "Count Occurrences of Vowels in Segment Tree",
+        "Return K-th Middle Node from Binary Search Tree",
+        "Convert Segment Tree to Segment Tree"
       ],
       "medium": [
         "Sliding Window Technique",
@@ -3932,7 +3999,15 @@
         "Maximum Vacation Days JS DP",
         "Valid Triangle Number JS Two Pointers",
         "Merge Two Binary Trees JS DFS",
-        "Design Circular Queue JS Array"
+        "Design Circular Queue JS Array",
+        "Compute Shortest Path in Segment Tree with Dynamic Programming",
+        "Design a Sliding Window Cache System",
+        "Evaluate Post-fix Notations using Undirected Graph",
+        "Design a LFU Cache System",
+        "Find All Pairs with Intersection in Dynamic Array",
+        "Optimized Minimum Cost on Trie Structure",
+        "Find Longest LRU Subarray in Binary Search Tree",
+        "Optimized Maximum Profit on Trie Structure"
       ],
       "hard": [
         "Segment Tree in JavaScript",
@@ -4109,7 +4184,12 @@
         "Booking Concert Tickets in Rows JS Segment Tree",
         "Count Subarrays With Median K JS Map",
         "Naming a Company JS String Math",
-        "Design a Text Editor JS DLL"
+        "Design a Text Editor JS DLL",
+        "Serialize and Deserialize N-ary Max-Heap",
+        "Design High-Throughput Distributed Binary Search Tree",
+        "Maximum flow of Binary Search Tree with LRU constraints",
+        "Optimize Difference on massive Max-Heap",
+        "Minimum Windows Substring with dynamic dictionary"
       ],
       "super_advanced": [
         "V8 Engine Internals: Hidden Classes and Inline Caches",
@@ -4247,6 +4327,34 @@
         "Gomory's Cutting Plane Method for ILP in JS",
         "Column Generation Algorithm for Linear Programming in JS",
         "Interior Point Methods simulation in JS"
+      ]
+    },
+    "go": {
+      "easy": [
+        "Check If Floating Numbers Is Monotonic",
+        "Determine If Array of Elements Has Duplicates",
+        "Find Integers In Trie Structure",
+        "Determine If Collection of Nodes Has Duplicates",
+        "Convert Linked List to Linked List",
+        "Return K-th Predecessor Node from Hash Map",
+        "Return K-th Smallest Element from Segment Tree"
+      ],
+      "medium": [
+        "Design a LFU Cache System",
+        "Reconstruct Max-Heap From Max-Heap",
+        "Detect Loop in Binary Search Tree and Remove It",
+        "Reconstruct Undirected Graph From Undirected Graph",
+        "Design a Backtracking Cache System",
+        "Optimized Minimum Cost on Hash Map",
+        "Evaluate Arithmetic Expressions using Hash Map",
+        "Evaluate Regular Expressions using Trie Structure"
+      ],
+      "hard": [
+        "Shortest Path in Directed Graph with K-cuts",
+        "Maximum flow of Linked List with LFU constraints",
+        "Maximum flow of Dynamic Array with Dynamic Programming constraints",
+        "Median of Two Sorted Streams",
+        "Minimum Windows Substring with dynamic dictionary"
       ]
     }
   },
@@ -7564,6 +7672,108 @@
         "Avoiding object creation overhead in Java garbage collection",
         "Using 1D flat arrays instead of Objects/Structs for graph representation speed",
         "Participating strategies: Penalty time management, Virtual contests, Upsolving routine"
+      ],
+      "16_Modern_DSA_Interview_Questions": [
+        "Designing Scalable Systems with Segment Tree updates",
+        "Backtracking DFS/BFS Graph traversal: Core Concepts and Implementations",
+        "Sorting Time Complexity O(n): Core Concepts and Implementations",
+        "Memoizing Trie Prefix storage for High-Performance Applications",
+        "Under the Hood: How Trie Prefix storage Works Internally",
+        "Backtracking Space Complexity O(1): Core Concepts and Implementations",
+        "A Senior Engineer's Guide to Scalable Backtracking search state",
+        "Best Practices for Traversing Efficient Two Pointer technique in Production",
+        "Hashing DFS/BFS Graph traversal: Core Concepts and Implementations",
+        "Traversing Trie Prefix storage: Core Concepts and Implementations",
+        "Common Pitfalls When Optimizing Space Complexity O(1)",
+        "Understanding the Lifecycle and Mechanics of DFS/BFS Graph traversal",
+        "Space Complexity O(1) vs Alternative Approaches: Performance Comparison",
+        "Understanding the Lifecycle and Mechanics of Space Complexity O(1)",
+        "Designing Statically-allocated Systems with Segment Tree updates",
+        "Advanced Patterns for Searching Binary Search intervals at Scale",
+        "Best Practices for Traversing Recursive Trie Prefix storage in Production",
+        "Advanced Patterns for Backtracking Trie Prefix storage at Scale",
+        "Under the Hood: How Two Pointer technique Works Internally",
+        "Designing Greedy Systems with Segment Tree updates",
+        "Common Pitfalls When Sorting Time Complexity O(n)",
+        "Designing Scalable Systems with Binary Search intervals",
+        "Backtracking Sliding Window pattern for High-Performance Applications",
+        "Designing Efficient Systems with Sliding Window pattern",
+        "Segment Tree updates vs Alternative Approaches: Performance Comparison",
+        "Under the Hood: How Space Complexity O(1) Works Internally",
+        "Advanced Patterns for Searching Space Complexity O(1) at Scale",
+        "Under the Hood: How Backtracking search state Works Internally",
+        "Backtracking Backtracking search state: Core Concepts and Implementations",
+        "Sorting Dynamic Programming memoization: Core Concepts and Implementations",
+        "Under the Hood: How Sliding Window pattern Works Internally",
+        "Best Practices for Updating Scalable Space Complexity O(1) in Production",
+        "Common Pitfalls When Traversing Segment Tree updates",
+        "Under the Hood: How Binary Search intervals Works Internally",
+        "A Senior Engineer's Guide to Iterative Segment Tree updates",
+        "Advanced Patterns for Searching Trie Prefix storage at Scale",
+        "Traversing Binary Search intervals for High-Performance Applications",
+        "Understanding the Lifecycle and Mechanics of Trie Prefix storage",
+        "Common Pitfalls When Hashing Sliding Window pattern",
+        "Best Practices for Updating Recursive Backtracking search state in Production",
+        "Common Pitfalls When Searching Dynamic Programming memoization",
+        "Memoizing Two Pointer technique: Core Concepts and Implementations",
+        "Advanced Patterns for Updating Two Pointer technique at Scale",
+        "Traversing Two Pointer technique for High-Performance Applications",
+        "Advanced Patterns for Sorting Space Complexity O(1) at Scale",
+        "Optimizing Time Complexity O(n): Core Concepts and Implementations",
+        "Backtracking Binary Search intervals: Core Concepts and Implementations",
+        "Binary Search intervals vs Alternative Approaches: Performance Comparison",
+        "Common Pitfalls When Memoizing Time Complexity O(n)",
+        "Advanced Patterns for Memoizing Space Complexity O(1) at Scale",
+        "Updating DFS/BFS Graph traversal: Core Concepts and Implementations",
+        "Sliding Window pattern vs Alternative Approaches: Performance Comparison",
+        "Backtracking Two Pointer technique: Core Concepts and Implementations",
+        "A Senior Engineer's Guide to Iterative Backtracking search state",
+        "Designing Amortized Systems with Two Pointer technique",
+        "A Senior Engineer's Guide to Iterative Binary Search intervals",
+        "Two Pointer technique vs Alternative Approaches: Performance Comparison",
+        "Traversing Sliding Window pattern for High-Performance Applications",
+        "Advanced Patterns for Sorting Binary Search intervals at Scale",
+        "Understanding the Lifecycle and Mechanics of Time Complexity O(n)",
+        "Searching Time Complexity O(n): Core Concepts and Implementations",
+        "Searching Dynamic Programming memoization for High-Performance Applications",
+        "Common Pitfalls When Sorting Two Pointer technique",
+        "Advanced Patterns for Traversing Sliding Window pattern at Scale",
+        "Advanced Patterns for Backtracking Space Complexity O(1) at Scale",
+        "Advanced Patterns for Sorting Dynamic Programming memoization at Scale",
+        "Trie Prefix storage vs Alternative Approaches: Performance Comparison",
+        "A Senior Engineer's Guide to Dynamic Two Pointer technique",
+        "Common Pitfalls When Memoizing Two Pointer technique",
+        "Understanding the Lifecycle and Mechanics of Backtracking search state",
+        "Understanding the Lifecycle and Mechanics of Sliding Window pattern",
+        "Sorting Space Complexity O(1) for High-Performance Applications",
+        "Under the Hood: How Time Complexity O(n) Works Internally",
+        "Searching Backtracking search state: Core Concepts and Implementations",
+        "A Senior Engineer's Guide to Greedy Binary Search intervals",
+        "Time Complexity O(n) vs Alternative Approaches: Performance Comparison",
+        "Designing Amortized Systems with Trie Prefix storage",
+        "A Senior Engineer's Guide to Greedy Segment Tree updates",
+        "Common Pitfalls When Updating Space Complexity O(1)",
+        "Under the Hood: How DFS/BFS Graph traversal Works Internally",
+        "Designing Iterative Systems with Time Complexity O(n)",
+        "Best Practices for Backtracking Statically-allocated Sliding Window pattern in Production",
+        "A Senior Engineer's Guide to Statically-allocated DFS/BFS Graph traversal",
+        "Understanding the Lifecycle and Mechanics of Binary Search intervals",
+        "Designing Scalable Systems with Time Complexity O(n)",
+        "Best Practices for Sorting Optimal DFS/BFS Graph traversal in Production",
+        "Understanding the Lifecycle and Mechanics of Segment Tree updates",
+        "Designing Scalable Systems with Two Pointer technique",
+        "Advanced Patterns for Hashing Backtracking search state at Scale",
+        "Designing Iterative Systems with Sliding Window pattern",
+        "Backtracking Sliding Window pattern: Core Concepts and Implementations",
+        "A Senior Engineer's Guide to Optimal Dynamic Programming memoization",
+        "Best Practices for Sorting Iterative Two Pointer technique in Production",
+        "Best Practices for Traversing Greedy Time Complexity O(n) in Production",
+        "Advanced Patterns for Memoizing DFS/BFS Graph traversal at Scale",
+        "Searching Time Complexity O(n) for High-Performance Applications",
+        "Under the Hood: How Segment Tree updates Works Internally",
+        "Searching Trie Prefix storage for High-Performance Applications",
+        "Advanced Patterns for Sorting DFS/BFS Graph traversal at Scale",
+        "Advanced Patterns for Hashing Two Pointer technique at Scale"
       ]
     }
   }

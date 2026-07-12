@@ -1,0 +1,604 @@
+{
+  "blogs": [
+    {
+      "topic": "Understanding Rate Limiter: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Architecture, Microservices, DDD",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Designing BFF (Backend-for-Frontend) API Layers",
+      "category": "Software Architecture",
+      "tags": "System Design, Microservices",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Mastering Database Shard: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "Architecture, Microservices, Software Engineering",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Building a Custom Rate Limiter: Step-by-Step Architecture Guide",
+      "category": "Software Architecture",
+      "tags": "Architecture, Microservices, System Design",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Decoupled Database Shard and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "System Design, Microservices, Software Engineering",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Clean Domain-Driven Design Implementations",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Microservices System: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Architecture",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Future of Domain-Driven Design: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices, System Design",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate Resilient SaaS Architecture into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "DDD, Microservices, Architecture",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Rate Limiter: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "Microservices, DDD, Software Engineering",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Architecting Real-Time Systems: WebSockets, SSE, and gRPC",
+      "category": "Software Architecture",
+      "tags": "DDD, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Future of SaaS Architecture: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "Microservices, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Integrate Scalable Database Shard into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "System Design, DDD, Architecture, Microservices",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Modular Circuit Breaker and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "DDD, System Design, Microservices, Software Engineering",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Monolithic vs Microservices Architecture: A Pragmatic Comparison",
+      "category": "Software Architecture",
+      "tags": "Architecture, System Design, DDD, Microservices",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How to Integrate High-performance Circuit Breaker into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "System Design, DDD",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Data Consistency in Microservices: The Saga Pattern",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture, Microservices",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Decoupled Message Broker Implementations",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Mastering Microservices System: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Architecture, Microservices",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Circuit Breaker: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Microservices, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Clean Microservices System Implementations",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, DDD",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Future of Event Stream: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "Microservices, System Design, Software Engineering, DDD",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our SaaS Architecture to Support Millions of Requests",
+      "category": "Software Architecture",
+      "tags": "System Design, Microservices",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Rate Limiting Architectures: Token Bucket vs Leaky Bucket",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD, System Design, Software Engineering",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Database Shard to Support Millions of Requests",
+      "category": "Software Architecture",
+      "tags": "System Design, Software Engineering",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Modular Rate Limiter is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, System Design, DDD, Microservices",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Hexagonal Architecture (Ports and Adapters) in Practice",
+      "category": "Software Architecture",
+      "tags": "Microservices, Architecture, Software Engineering",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Decoupled Microservices System Implementations",
+      "category": "Software Architecture",
+      "tags": "Architecture, System Design, Software Engineering, DDD",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why Clean SaaS Architecture is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "Architecture, Microservices, System Design",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering Message Broker: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "System Design, Architecture",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Clean Architecture Principles: Decoupling Core Business Logic",
+      "category": "Software Architecture",
+      "tags": "DDD, Software Engineering, System Design",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of Saga Workflow: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "DDD, Microservices, System Design",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Mastering Circuit Breaker: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "System Design, Software Engineering",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Micro-frontends Architecture: Splitting the Monolithic UI",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Load Balancing Algorithms: Round Robin, Least Connections, IP Hash",
+      "category": "Software Architecture",
+      "tags": "System Design, Architecture",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to Service-oriented Message Broker Implementations",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Saga Workflow: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD, System Design, Software Engineering",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Microservices System: Step-by-Step Architecture Guide",
+      "category": "Software Architecture",
+      "tags": "Architecture, Microservices, Software Engineering",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in High-performance Domain-Driven Design and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD, Software Engineering",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Scalable SaaS Architecture Implementations",
+      "category": "Software Architecture",
+      "tags": "Microservices, Software Engineering, DDD, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Designing Scalable RESTful and GraphQL API Architectures",
+      "category": "Software Architecture",
+      "tags": "Architecture, System Design",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Event-Driven Architecture: Event Sourcing and CQRS",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Decoupled Domain-Driven Design and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "DDD, System Design, Software Engineering, Architecture",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Designing Idempotent APIs: Handling Network Failures Safely",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How to Integrate Decoupled Rate Limiter into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "DDD, Software Engineering",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Building a Custom Message Broker: Step-by-Step Architecture Guide",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Architecture",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding SaaS Architecture: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Microservices, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Complete Guide to High-performance Database Shard Implementations",
+      "category": "Software Architecture",
+      "tags": "Microservices, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Designing Search Architectures with Elasticsearch and Postgres",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture, Microservices",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Microservices System to Support Millions of Requests",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices, DDD",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering Domain-Driven Design: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "Microservices, DDD, Architecture",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our CQRS Pattern to Support Millions of Requests",
+      "category": "Software Architecture",
+      "tags": "Microservices, System Design, DDD",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Event-driven CQRS Pattern and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing Event Stream for Extreme Performance and Reliability",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture, Microservices, System Design",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Understanding Database Shard: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Event-driven Circuit Breaker is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices, DDD, System Design",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Building Event-Driven Systems with Apache Kafka and RabbitMQ",
+      "category": "Software Architecture",
+      "tags": "System Design, DDD, Architecture, Software Engineering",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Service-Oriented Architecture (SOA) vs Microservices",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, DDD",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Fault-tolerant Domain-Driven Design into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering Event Stream: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "Architecture, Microservices",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Optimizing Rate Limiter for Extreme Performance and Reliability",
+      "category": "Software Architecture",
+      "tags": "System Design, DDD",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Idempotent Database Shard and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "Microservices, Software Engineering",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why Idempotent Microservices System is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Future of Microservices System: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "Microservices, Software Engineering, Architecture, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "The Future of Database Shard: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "DDD, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Caching Strategies for High-Performance Applications",
+      "category": "Software Architecture",
+      "tags": "Microservices, DDD, Software Engineering, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How We Scaled Our Rate Limiter to Support Millions of Requests",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, DDD",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Building a Custom Circuit Breaker: Step-by-Step Architecture Guide",
+      "category": "Software Architecture",
+      "tags": "System Design, Software Engineering, DDD",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Future of Rate Limiter: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Designing Resilient Systems: Circuit Breaker and Retry Patterns",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "The Complete Guide to Decoupled CQRS Pattern Implementations",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, System Design",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Mastering Saga Workflow: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "Architecture, Software Engineering",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Message Queueing Patterns: Pub/Sub, Fan-out, and Work Queues",
+      "category": "Software Architecture",
+      "tags": "Microservices, Architecture, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Why Modular Event Stream is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "DDD, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in High-performance Circuit Breaker and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "System Design, Architecture",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Event-driven SaaS Architecture and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "Architecture, Software Engineering, DDD",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Common Mistakes in Decoupled Message Broker and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "Architecture, Software Engineering, Microservices, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing CQRS Pattern for Extreme Performance and Reliability",
+      "category": "Software Architecture",
+      "tags": "Microservices, Architecture",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Event-driven Saga Workflow and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Architecture, Microservices, DDD",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Why Scalable SaaS Architecture is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "DDD, Architecture, Software Engineering",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Fault-tolerant Message Broker and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "DDD, Software Engineering, Microservices, Architecture",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "How to Integrate Service-oriented Domain-Driven Design into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "Architecture, Microservices, System Design",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "How We Scaled Our Circuit Breaker to Support Millions of Requests",
+      "category": "Software Architecture",
+      "tags": "DDD, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Common Mistakes in Scalable Circuit Breaker and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "DDD, System Design",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Common Mistakes in Modular Database Shard and How to Avoid Them",
+      "category": "Software Architecture",
+      "tags": "Architecture, Software Engineering",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Why Idempotent Rate Limiter is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "DDD, Software Engineering, Architecture",
+      "difficulty": "Beginner"
+    },
+    {
+      "topic": "Optimizing Circuit Breaker for Extreme Performance and Reliability",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Architecture, DDD, Microservices",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Building a Custom Saga Workflow: Step-by-Step Architecture Guide",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices, System Design, Architecture",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Database Sharding and Partitioning: Horizontal Scaling Strategies",
+      "category": "Software Architecture",
+      "tags": "System Design, Architecture, DDD",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Future of Message Broker: Key Trends to Watch",
+      "category": "Software Architecture",
+      "tags": "System Design, Microservices, DDD",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Integrate Scalable Message Broker into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "Microservices, System Design",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Understanding Domain-Driven Design: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Microservices, Software Engineering, Architecture",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Mastering CQRS Pattern: Strategies for Senior Tech Leaders",
+      "category": "Software Architecture",
+      "tags": "DDD, Microservices",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Why Service-oriented CQRS Pattern is Critical for Modern Products",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD, System Design, Microservices",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "Understanding Event Stream: Best Practices for Engineers",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD",
+      "difficulty": "Intermediate"
+    },
+    {
+      "topic": "Domain-Driven Design (DDD): Structuring Complex Systems",
+      "category": "Software Architecture",
+      "tags": "Microservices, Architecture, Software Engineering, DDD",
+      "difficulty": "Intermediate-Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Idempotent SaaS Architecture Implementations",
+      "category": "Software Architecture",
+      "tags": "System Design, Microservices",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "How to Integrate Modular Database Shard into Existing Workflows",
+      "category": "Software Architecture",
+      "tags": "Architecture, DDD",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "The Complete Guide to Fault-tolerant Microservices System Implementations",
+      "category": "Software Architecture",
+      "tags": "Software Engineering, Microservices, System Design, DDD",
+      "difficulty": "Advanced"
+    },
+    {
+      "topic": "Optimizing Microservices System for Extreme Performance and Reliability",
+      "category": "Software Architecture",
+      "tags": "Architecture, System Design, Software Engineering, DDD",
+      "difficulty": "Advanced"
+    }
+  ]
+}
