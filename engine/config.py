@@ -2,6 +2,10 @@ import os
 import sys
 from groq import Groq
 
+# Reconfigure stdout to use UTF-8 to prevent unicode print crashes on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 # ─── Config ───────────────────────────────────────────────────────────────────
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")

@@ -12,10 +12,10 @@ def _classify_groq_error(err_str: str) -> str:
     e = err_str.lower()
     if any(x in e for x in ("invalid_api_key", "authentication", "unauthorized", "401")):
         return "auth"
-    if any(x in e for x in ("quota", "billing", "insufficient_quota", "payment", "402")):
-        return "quota"
     if any(x in e for x in ("rate_limit", "rate limit", "too many requests", "429")):
         return "rate_limit"
+    if any(x in e for x in ("quota", "billing", "insufficient_quota", "payment", "402")):
+        return "quota"
     if any(x in e for x in ("context_length", "context length", "maximum context", "token", "too long")):
         return "context_length"
     if any(x in e for x in ("model_decommissioned", "model_not_found", "model not found", "no such model")):

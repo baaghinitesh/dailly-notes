@@ -3,6 +3,12 @@ import json
 import sys
 import urllib.request
 import urllib.parse
+import re
+import html
+
+# Reconfigure stdout to use UTF-8 to prevent unicode print crashes on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 API_KEY = os.environ.get("YOUTUBE_API_KEY")
 
@@ -12,10 +18,52 @@ PLAYLISTS = {
     "Shorts": "PLamO7b9OnT4M"
 }
 
+def fetch_playlist_videos_rss(playlist_id):
+    videos = []
+    try:
+        url = f"https://www.youtube.com/feeds/videos.xml?playlist_id={playlist_id}"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req) as response:
+            xml_content = response.read().decode("utf-8")
+            
+        entries = re.findall(r"<entry>([\s\S]*?)</entry>", xml_content)
+        for entry in entries:
+            video_id_match = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", entry)
+            title_match = re.search(r"<title>([^<]+)</title>", entry)
+            description_match = re.search(r"<media:description>([\s\S]*?)</media:description>", entry)
+            thumbnail_match = re.search(r'<media:thumbnail[^>]+url="([^"]+)"', entry)
+            published_match = re.search(r"<published>([^<]+)</published>", entry)
+            
+            if video_id_match and title_match:
+                video_id = video_id_match.group(1).strip()
+                title = html.unescape(title_match.group(1).strip())
+                description = html.unescape(description_match.group(1).strip()) if description_match else ""
+                
+                thumbnail_url = ""
+                if thumbnail_match:
+                    thumbnail_url = thumbnail_match.group(1).strip()
+                if not thumbnail_url:
+                    thumbnail_url = f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
+                    
+                published_at = published_match.group(1).strip() if published_match else ""
+                
+                if title not in ("Deleted video", "Private video"):
+                    videos.append({
+                        "id": video_id,
+                        "title": title,
+                        "description": description,
+                        "thumbnail": thumbnail_url,
+                        "publishedAt": published_at
+                    })
+        return videos
+    except Exception as e:
+        print(f"❌ Failed fetching playlist {playlist_id} via RSS: {e}")
+        return []
+
 def fetch_playlist_videos(playlist_id):
     if not API_KEY:
-        print("❌ Error: YOUTUBE_API_KEY environment variable is missing.")
-        sys.exit(1)
+        print(f"⚠️ YOUTUBE_API_KEY environment variable is missing. Attempting RSS fallback for playlist {playlist_id}...")
+        return fetch_playlist_videos_rss(playlist_id)
         
     videos = []
     next_page_token = ""
