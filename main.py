@@ -79,18 +79,22 @@ def main():
         # Deploy
         msg = f"Auto-content: {total_generated} new articles (Resources: {generated_resources}, Blogs: {generated_blogs})"
         if commit_and_push(msg):
-            # 6. Sync with website (Shadow entries)
+            # 6. Sync with website (Shadow entries and Articles index)
             print("\n🔄 Triggering website synchronization...")
             try:
-                # Assuming relative path or absolute path to launchyourconcept
-                # We use node to run the sync script
                 import subprocess
+                # Update Next-client authentic X articles index
+                for gen_path in ["../launchyourconcept/scripts/fetch_all_authentic_articles.py", "../../launchyourconcept/scripts/fetch_all_authentic_articles.py"]:
+                    if os.path.exists(gen_path):
+                        subprocess.run(["python", gen_path], check=False)
+                        print("✨ Authentic X articles index updated successfully!")
+                        break
+
                 sync_script = "../../launchyourconcept/server/scripts/syncBlogs.js"
                 if os.path.exists(sync_script):
                     subprocess.run(["node", "scripts/syncBlogs.js"], cwd="../../launchyourconcept/server", check=True)
                     print("✨ Website synchronization complete!")
                 else:
-                    # Try another path if not found (e.g. in workspace root)
                     sync_script_alt = "../launchyourconcept/server/scripts/syncBlogs.js"
                     if os.path.exists(sync_script_alt):
                         subprocess.run(["node", "scripts/syncBlogs.js"], cwd="../launchyourconcept/server", check=True)
